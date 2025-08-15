@@ -1,60 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Felipe Sotille — Portfolio / CV</title>
-  <meta name="description" content="Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer.">
+  <meta name="description" content="Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer with ≈17 years 7 months of experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      /* DARK THEME (default) */
       --bg-0:#070b14;
       --bg-1:#0b1020;
-      --bg-2:#101828;
-      --bg-grad-1:#172032;
       --surface:#121a2b;
       --text:#e2e8f0;
       --muted:#94a3b8;
       --line:#22304b;
       --accent:#38bdf8;
       --accent-2:#22d3ee;
-      --ok:#22c55e;
-      --warn:#f59e0b;
-      --bad:#ef4444;
       --shadow: 0 10px 30px rgba(0,0,0,.45);
       --radius: 14px;
       --maxw: 1120px;
-      --navA: rgba(16,24,40,.75);
-      --navB: rgba(16,24,40,.35);
-      --card-1: rgba(9,15,28,.85);
-      --card-2: rgba(8,13,25,.7);
+      --card-grad: linear-gradient(180deg, rgba(9,15,28,.85), rgba(8,13,25,.7));
+      --hero-grad: linear-gradient(180deg, rgba(10,18,35,.8), rgba(8,14,28,.6));
+      --bg-grad: radial-gradient(900px 600px at 50% -10%, #172032 0%, #0b1020 60%, #060913 100%), linear-gradient(180deg, var(--bg-1), var(--bg-0));
+      --btn-bg: linear-gradient(180deg, #12203b, #0f172a);
       --chip-bg: rgba(2,6,23,.5);
-      --kbd-bg:#0b1220;
     }
+    /* Light theme overrides */
     [data-theme="light"]{
-      --bg-0:#f8fafc;
-      --bg-1:#eef2ff;
-      --bg-2:#e2e8f0;
-      --bg-grad-1:#dbeafe;
+      --bg-0:#f6f8fb;
+      --bg-1:#eef2f8;
       --surface:#ffffff;
       --text:#0b1220;
       --muted:#475569;
-      --line:#e2e8f0;
+      --line:#cbd5e1;
       --accent:#0ea5e9;
-      --accent-2:#06b6d4;
-      --ok:#16a34a;
-      --warn:#d97706;
-      --bad:#dc2626;
-      --shadow: 0 10px 24px rgba(2,6,23,.08);
-      --navA: rgba(255,255,255,.85);
-      --navB: rgba(255,255,255,.65);
-      --card-1:#ffffff;
-      --card-2:#f8fafc;
-      --chip-bg:#f1f5f9;
-      --kbd-bg:#f1f5f9;
+      --accent-2:#60a5fa;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --card-grad: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
+      --hero-grad: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
+      --bg-grad: radial-gradient(900px 600px at 50% -10%, #eaf2ff 0%, #f4f7fb 60%, #eef2f8 100%), linear-gradient(180deg, var(--bg-1), var(--bg-0));
+      --btn-bg: linear-gradient(180deg, #f1f5f9, #e2e8f0);
+      --chip-bg: rgba(241,245,249,.8);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -62,13 +50,11 @@
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(900px 600px at 50% -10%, var(--bg-grad-1) 0%, var(--bg-1) 60%, var(--bg-0) 100%) fixed,
-        linear-gradient(180deg, var(--bg-1), var(--bg-0));
+      background: var(--bg-grad) fixed;
       line-height:1.55;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      transition: background .3s ease, color .3s ease;
+      transition: background .3s ease, color .2s ease;
     }
     a{color:var(--accent); text-decoration:none}
     a:hover{opacity:.9}
@@ -76,9 +62,11 @@
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, var(--navA), var(--navB));
+      background: linear-gradient(180deg, rgba(16,24,40,.75), rgba(16,24,40,.35));
       border-bottom:1px solid var(--line);
-      transition: background .3s ease;
+    }
+    [data-theme="light"] header{
+      background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
     }
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:var(--maxw); margin:0 auto}
     .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
@@ -96,52 +84,41 @@
       mix-blend-mode:screen;
     }
     .nav a{color:var(--text); opacity:.84; font-weight:600}
-    .links{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .links{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
     .btn{
       display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px;
-      background:linear-gradient(180deg, #12203b, #0f172a); border:1px solid var(--line);
+      background:var(--btn-bg); border:1px solid var(--line);
       box-shadow: var(--shadow);
-      font-weight:600; color:#dbeafe; cursor:pointer;
-      transition: transform .15s ease, background .3s ease, color .3s ease;
+      font-weight:600; color:var(--text); cursor:pointer;
     }
-    [data-theme="light"] .btn{ background:linear-gradient(180deg, #ffffff, #f8fafc); color:#0b1220 }
     .btn:hover{transform:translateY(-1px)}
-    .ghost{background:transparent; border-color:#223049; color:#cbd5e1}
-    [data-theme="light"] .ghost{ border-color: var(--line); color:#0b1220 }
+    .ghost{background:transparent}
     .btn.sm{padding:6px 10px; border-radius:8px; font-size:13px}
     .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--line); border-radius:999px; background:var(--chip-bg)}
-    .lang-toggle{display:inline-flex; border:1px solid var(--line); border-radius:12px; overflow:hidden}
-    .lang-toggle button{background:transparent; border:0; color:var(--text); padding:8px 12px; font-weight:700; cursor:pointer}
-    .lang-toggle button[aria-pressed="true"]{background:linear-gradient(180deg, #12203b, #0f172a); color:#e6f3ff}
-    [data-theme="light"] .lang-toggle button[aria-pressed="true"]{ background:linear-gradient(180deg, #ffffff, #f8fafc); color:#0b1220 }
+    .lang-toggle, .theme-toggle{display:inline-flex; border:1px solid var(--line); border-radius:12px; overflow:hidden}
+    .lang-toggle button, .theme-toggle button{background:transparent; border:0; color:var(--text); padding:8px 12px; font-weight:700; cursor:pointer}
+    .lang-toggle button[aria-pressed="true"]{background:var(--btn-bg)}
     main{padding:18px 0 64px}
     .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:28px 0 12px}
     .headline{font-size: clamp(28px, 5vw, 56px); line-height:1.08; letter-spacing:.2px; font-weight:800; margin:0 0 6px}
-    .scramble{font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight:300; font-size: clamp(16px, 2.4vw, 20px); color:#cbd5e1; min-height:1.6em}
-    [data-theme="light"] .scramble{ color:#475569 }
+    .scramble{font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight:300; font-size: clamp(16px, 2.4vw, 20px); color:var(--muted); min-height:1.6em}
     .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
     .hero-card{
       position:relative; border-radius:var(--radius);
-      background:linear-gradient(180deg, var(--card-1), var(--card-2));
+      background:var(--hero-grad);
       border:1px solid var(--line);
       padding:22px; box-shadow: var(--shadow);
       transform-style:preserve-3d; will-change:transform;
-      transition: background .3s ease;
     }
     /* Orb container */
     .orb-wrap{
       width:min(380px, 90%); aspect-ratio:1/1; border-radius:24px; margin:0 auto;
       background: radial-gradient(200px 140px at 30% 20%, rgba(56,189,248,.22), transparent),
                   radial-gradient(200px 160px at 70% 80%, rgba(129,140,248,.16), transparent),
-                  #0b1220;
+                  var(--surface);
       display:grid; place-items:center; border:1px solid var(--line); position:relative; overflow:hidden;
     }
-    [data-theme="light"] .orb-wrap{
-      background: radial-gradient(200px 140px at 30% 20%, rgba(14,165,233,.18), transparent),
-                  radial-gradient(200px 160px at 70% 80%, rgba(6,182,212,.16), transparent),
-                  #f8fafc;
-    }
-    .sphere{width:86%; height:86%; filter: drop-shadow(0 16px 28px rgba(0,0,0,.25));}
+    .sphere{width:86%; height:86%; filter: drop-shadow(0 16px 28px rgba(0,0,0,.2));}
     .sphere path{fill:none; stroke:url(#sphereGradient); stroke-linecap:round; stroke-width:1.25}
     .sphere .disc{fill:url(#sphereGradient); opacity:.08}
     section{margin-top:42px}
@@ -150,38 +127,33 @@
     .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
     .grid.cols-2{grid-template-columns: repeat(2, 1fr)}
     .card{
-      background:linear-gradient(180deg, var(--card-1), var(--card-2));
+      background:var(--card-grad);
       border:1px solid var(--line); border-radius:16px; padding:18px 18px; box-shadow:var(--shadow);
       transform: translate3d(0,6px,0);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .3s ease;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
       will-change: transform;
     }
     .card:hover{transform: translate3d(0,0,0); border-color:#2f436b}
     .muted{color:var(--muted)}
-    .kbd{border:1px solid var(--line); padding:2px 6px; border-radius:6px; background:var(--kbd-bg); font-family: "JetBrains Mono", monospace}
+    .kbd{border:1px solid var(--line); padding:2px 6px; border-radius:6px; background:var(--surface); font-family: "JetBrains Mono", monospace}
     ul{padding-left:20px; margin:10px 0}
     li{margin:6px 0}
     .timeline{position:relative; padding-left:26px}
     .timeline::before{content:""; position:absolute; left:8px; top:4px; bottom:4px; width:2px; background:linear-gradient(#1f2a44,#22304b)}
-    [data-theme="light"] .timeline::before{ background:linear-gradient(#cbd5e1,#e2e8f0) }
+    [data-theme="light"] .timeline::before{background:linear-gradient(#cbd5e1,#94a3b8)}
     .tl-item{position:relative; margin:0 0 18px}
-    .tl-item::before{content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border:2px solid #2f436b; background:#0b1220; border-radius:50%}
-    [data-theme="light"] .tl-item::before{ background:#f8fafc; border-color:#93c5fd }
-    .tl-meta{font:600 12px/1.6 Inter, system-ui; color:#a8b3c7; letter-spacing:.3px}
-    [data-theme="light"] .tl-meta{ color:#64748b }
+    .tl-item::before{content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border:2px solid #2f436b; background:var(--surface); border-radius:50%}
+    .tl-meta{font:600 12px/1.6 Inter, system-ui; color:var(--muted); letter-spacing:.3px}
     .tl-role{font-weight:700; letter-spacing:.2px}
     .stack{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
-    .tag{padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:var(--chip-bg); font:600 12px/1 Inter}
-    .skillbar{height:10px; background:#0f172a; border:1px solid var(--line); border-radius:999px; overflow:hidden}
-    [data-theme="light"] .skillbar{ background:#e2e8f0 }
+    .tag{padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:var(--surface); font:600 12px/1 Inter}
+    .skillbar{height:10px; background:var(--surface); border:1px solid var(--line); border-radius:999px; overflow:hidden}
     .skillbar > i{display:block; height:100%; width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); transition:width 1.2s ease}
     .project a{color:var(--text)}
     .project .title{font-weight:700}
-    .project .meta{font:600 12px/1.6 Inter; color:#9fb0c7}
-    [data-theme="light"] .project .meta{ color:#64748b }
+    .project .meta{font:600 12px/1.6 Inter; color:var(--muted)}
     .contact{display:grid; gap:12px}
-    footer{margin:48px 0 16px; color:#91a0b8; font-size:14px; text-align:center}
-    [data-theme="light"] footer{ color:#64748b }
+    footer{margin:48px 0 16px; color:var(--muted); font-size:14px; text-align:center}
     .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
     .reveal.visible{opacity:1; transform:none}
     .pill{display:inline-flex; align-items:center; padding:6px 10px; gap:8px; border-radius:999px; border:1px solid var(--line); background:var(--chip-bg); font-weight:600}
@@ -189,9 +161,7 @@
     .kv{display:grid; grid-template-columns: 1fr auto; gap:8px 12px; align-items:center}
     .stars{letter-spacing:2px}
     blockquote{margin:0; padding:0; border-left:3px solid #2f436b; padding-left:12px}
-    [data-theme="light"] blockquote{ border-left-color:#93c5fd }
-    cite{display:block; color:#9fb0c7; font-style:normal; margin-top:6px}
-    [data-theme="light"] cite{ color:#64748b }
+    cite{display:block; color:var(--muted); font-style:normal; margin-top:6px}
     /* Responsive */
     @media (max-width: 980px){ .hero{grid-template-columns: 1fr; text-align:center} .actions{justify-content:center} .nav{padding:10px 16px} .two-col{grid-template-columns:1fr} }
     @media (prefers-reduced-motion: reduce){
@@ -202,7 +172,7 @@
     @media print{
       :root{--text:#0b1220; --muted:#334155; --line:#cbd5e1}
       body{background:#fff; color:var(--text)}
-      header, .actions, .links, .chip, .btn, .lang-toggle{display:none !important}
+      header, .actions, .links, .chip, .btn, .lang-toggle, .theme-toggle{display:none !important}
       .card, .hero-card{box-shadow:none; border-color:#e2e8f0}
       a{color:#0b1220; text-decoration:underline}
     }
@@ -225,7 +195,11 @@
           <button class="sm" data-lang="en" aria-pressed="true">EN</button>
           <button class="sm" data-lang="pt">PT‑BR</button>
         </div>
-        <button class="btn ghost sm" id="theme-toggle" aria-pressed="false" title="Toggle color theme">🌓 Theme</button>
+        <div class="theme-toggle" role="group" aria-label="Theme">
+          <button class="sm" id="theme-dark" title="Dark">🌙</button>
+          <button class="sm" id="theme-light" title="Light">☀️</button>
+          <button class="sm" id="theme-auto" title="Auto">🖥️</button>
+        </div>
         <button class="btn ghost sm" id="btn-pdf" data-i18n="btn_download_pdf" title="Download / Print PDF" onclick="window.print()">Download PDF</button>
       </div>
     </nav>
@@ -238,7 +212,7 @@
         <p class="pill" aria-live="polite"><span aria-hidden="true">🟢</span> <span data-i18n="hero_pill">Open to OSS collaborations</span></p>
         <h1 class="headline" data-i18n="headline">Sr. DevSecOps & Software Engineer</h1>
         <div class="scramble" id="scramble" aria-live="polite"></div>
-        <p class="muted" data-i18n="hero_desc">14 years across banking, ERPs, real‑time and social apps. Backend engineer, frontend enthusiast and DevOps lover.</p>
+        <p class="muted" data-i18n="hero_desc">17+ years across banking, ERPs, real‑time and social apps. Backend engineer, frontend enthusiast and DevOps lover.</p>
         <div class="actions">
           <a class="btn" href="#experience" data-i18n="btn_view_experience">View experience</a>
           <a class="btn ghost" href="mailto:fsotille@gmail.com" data-i18n="btn_email">Email</a>
@@ -246,6 +220,7 @@
           <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
         </div>
         <div class="stack" style="margin-top:12px">
+          <span class="chip">≈17 years 7 months</span>
           <span class="chip">Java · Spring</span>
           <span class="chip">Angular · TypeScript</span>
           <span class="chip">Kubernetes · Docker</span>
@@ -299,7 +274,7 @@
           </div>
           <div class="card">
             <div class="tl-meta" data-i18n="card_interests_title">Interests</div>
-            <div class="tl-role" data-i18n="card_interests_value">Mountains · Chess · Sci‑Fi</div>
+            <div class="tl-role" data-i18n="card_interests_value">Mountains · Chess · Music · Technology · AI · Sci‑Fi</div>
           </div>
         </div>
       </div>
@@ -310,7 +285,7 @@
       <h2 class="sec-title" data-i18n="section_about_title">About</h2>
       <div class="grid cols-2">
         <article class="card">
-          <p data-i18n="about_intro">I’m a distinguished software engineer with 14 years of experience. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.</p>
+          <p data-i18n="about_intro">I’m a distinguished software engineer with ≈17 years 7 months in the industry. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.</p>
           <p class="muted" data-i18n="about_quote">“Strive not to be a success, but rather to be of value.” — Albert Einstein</p>
         </article>
         <aside class="card">
@@ -332,22 +307,22 @@
             <div class="tl-item">
               <div class="tl-meta" data-i18n="expA_meta">2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Belgium</div>
               <div class="tl-role" data-i18n="expA_role">DevSecOps & CI/CD</div>
-              <div data-i18n="expA_bullets"></div>
+              <ul class="muted" data-i18n-list="expA_bullets"></ul>
             </div>
             <div class="tl-item">
               <div class="tl-meta" data-i18n="expB_meta">2024 — 2025 · Sr. Software Engineer (Consultant) · Swissquote · Switzerland</div>
               <div class="tl-role" data-i18n="expB_role">Data migration & database engineering</div>
-              <div data-i18n="expB_bullets"></div>
+              <ul class="muted" data-i18n-list="expB_bullets"></ul>
             </div>
             <div class="tl-item">
               <div class="tl-meta" data-i18n="expC_meta">2019 — 2024 · Sr. Software Engineer (Consultant) · Swift · Belgium</div>
               <div class="tl-role" data-i18n="expC_role">Full‑stack engineering & platform evolution</div>
-              <div data-i18n="expC_bullets"></div>
+              <ul class="muted" data-i18n-list="expC_bullets"></ul>
             </div>
             <div class="tl-item">
               <div class="tl-meta" data-i18n="expD_meta">2018 — 2019 · Sr. Software Engineer & Dev. Lead · Eleven Sports · Portugal</div>
               <div class="tl-role" data-i18n="expD_role">Real‑time microservices & team leadership</div>
-              <div data-i18n="expD_bullets"></div>
+              <ul class="muted" data-i18n-list="expD_bullets"></ul>
             </div>
           </div>
         </article>
@@ -516,7 +491,7 @@
     const $ = (sel, el = document) => el.querySelector(sel);
     const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
 
-    // i18n dictionary (EN default)
+    // i18n dictionary (EN default) with list arrays
     const I18N = {
       en: {
         title: "Felipe Sotille — Portfolio / CV",
@@ -529,13 +504,13 @@
         btn_download_pdf: "Download PDF",
         hero_pill: "Open to OSS collaborations",
         headline: "Sr. DevSecOps & Software Engineer",
-        hero_desc: "14 years across banking, ERPs, real‑time and social apps. Backend engineer, frontend enthusiast and DevOps lover.",
+        hero_desc: "17+ years across banking, ERPs, real‑time and social apps. Backend engineer, frontend enthusiast and DevOps lover.",
         btn_view_experience: "View experience",
         btn_email: "Email",
         btn_linkedin: "LinkedIn",
         btn_github: "GitHub",
         section_about_title: "About",
-        about_intro: "I’m a distinguished software engineer with 14 years of experience. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.",
+        about_intro: "I’m a distinguished software engineer with ≈17 years 7 months in the industry. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.",
         about_quote: "“Strive not to be a success, but rather to be of value.” — Albert Einstein",
         aside_loc: "Location",
         aside_loc_value: "Brussels Metropolitan Area (remote/global)",
@@ -546,16 +521,47 @@
         section_experience_title: "Experience",
         expA_meta: "2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Belgium",
         expA_role: "DevSecOps & CI/CD",
-        expA_bullets: "<ul class='muted'><li>Blueprints of CI/CD pipelines.</li><li>Release orchestration (driving a key KPI).</li><li>Standardization of CI/CD.</li><li>Security scans for several applications (static analysis).</li><li>DevOps coaching across squads.</li><li>Automation and tooling scripting.</li></ul>",
+        expA_bullets: [
+          "Blueprints of CI/CD pipelines.",
+          "Release orchestration (driving a key KPI).",
+          "Standardization of CI/CD.",
+          "Security scans for several applications (static analysis).",
+          "DevOps coaching across squads.",
+          "Automation and tooling scripting."
+        ],
         expB_meta: "2024 — 2025 · Sr. Software Engineer (Consultant) · Swissquote · Switzerland",
         expB_role: "Data migration & database engineering",
-        expB_bullets: "<ul class='muted'><li>Created reports for the DBA squad to explain migration efforts.</li><li>Migrated a huge database with billions of financial transaction records to Oracle.</li><li>Improved database interactions by rewriting queries for optimal results.</li><li>Built a Java data loader to move billions of records seamlessly.</li><li>Applied denormalization and table partitioning to optimize performance.</li></ul>",
+        expB_bullets: [
+          "Created reports for the DBA squad to explain migration efforts.",
+          "Migrated a huge database with billions of financial transaction records to Oracle.",
+          "Improved database interactions by rewriting queries for optimal results.",
+          "Built a Java data loader to move billions of records seamlessly.",
+          "Applied denormalization and table partitioning to optimize performance."
+        ],
         expC_meta: "2019 — 2024 · Sr. Software Engineer (Consultant) · Swift · Belgium",
         expC_role: "Full‑stack engineering & platform evolution",
-        expC_bullets: "<ul class='muted'><li>Full‑stack engineer across multiple squads.</li><li>Implemented Coveo AI Search in Knowledge Centre Angular application.</li><li>Fixed security vulnerabilities and code smells across back‑office apps.</li><li>Upgraded Angular versions in more than 10 applications.</li><li>Wrote documentation/specifications with stakeholders for new features.</li><li>Upgraded Docker images to align with current technologies.</li><li>Interviewed candidates for technical and cultural fit.</li><li>Led migration from monolith to microservices in Identity Management app.</li><li>Delivered JSF → Angular migration, pivotal for company KPIs.</li><li>Acted as Scrum Master with agile coaches to improve agility and motivation.</li><li>Integrated Adobe Experience Cloud into the application flow.</li><li>Received nominations from colleagues: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player.</li></ul>",
+        expC_bullets: [
+          "Full‑stack engineer across multiple squads.",
+          "Implemented Coveo AI Search in Knowledge Centre Angular application.",
+          "Fixed security vulnerabilities and code smells across back‑office apps.",
+          "Upgraded Angular versions in more than 10 applications.",
+          "Wrote documentation/specifications with stakeholders for new features.",
+          "Upgraded Docker images to align with current technologies.",
+          "Interviewed candidates for technical and cultural fit.",
+          "Led migration from monolith to microservices in Identity Management app.",
+          "Delivered JSF → Angular migration, pivotal for company KPIs.",
+          "Acted as Scrum Master with agile coaches to improve agility and motivation.",
+          "Integrated Adobe Experience Cloud into the application flow.",
+          "Received nominations: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player."
+        ],
         expD_meta: "2018 — 2019 · Sr. Software Engineer & Dev. Lead · Eleven Sports · Portugal",
         expD_role: "Real‑time microservices & team leadership",
-        expD_bullets: "<ul class='muted'><li>Designed and launched a cloud‑centric, scalable microservice backend using Vert.x to elevate the player experience.</li><li>Built a real‑time app with the Kafka ecosystem to connect football players and their fanbase (social‑network‑like).</li><li>Used Kubernetes and Google Cloud Platform to handle hundreds of thousands of interactions.</li><li>Led a passionate engineering team and cultivated a positive environment.</li></ul>",
+        expD_bullets: [
+          "Designed and launched a cloud‑centric, scalable microservice backend using Vert.x to elevate the player experience.",
+          "Built a real‑time app with the Kafka ecosystem to connect football players and their fanbase (social‑network‑like).",
+          "Used Kubernetes and Google Cloud Platform to handle hundreds of thousands of interactions.",
+          "Led a passionate engineering team and cultivated a positive environment."
+        ],
         aside_prev_title: "Previous experiences",
         prev1: "Senior Java Developer · Wplex (Public Transport) · Brazil · 2015–2018",
         prev2: "Java Developer · Metaway (Education) · Brazil · 2015",
@@ -616,7 +622,7 @@
           "Felipe Sotille",
           "Sr. DevSecOps & Software Engineer",
           "Consultant — Swift, Swissquote",
-          "14+ years: Java, Spring, Angular, K8s",
+          "17+ years: Java, Spring, Angular, K8s",
           "Banking · Real‑time · Social · ERP"
         ]
       },
@@ -631,13 +637,13 @@
         btn_download_pdf: "Baixar PDF",
         hero_pill: "Aberto a colaborações OSS",
         headline: "Sr. DevSecOps & Software Engineer",
-        hero_desc: "14 anos entre banking, ERPs, apps em tempo real e sociais. Engenheiro de backend, entusiasta de frontend e apaixonado por DevOps.",
+        hero_desc: "17+ years entre banking, ERPs, apps em tempo real e sociais. Engenheiro de backend, entusiasta de frontend e apaixonado por DevOps.",
         btn_view_experience: "Ver experiência",
         btn_email: "E‑mail",
         btn_linkedin: "LinkedIn",
         btn_github: "GitHub",
         section_about_title: "Sobre",
-        about_intro: "Sou um engenheiro de software com 14 anos de experiência. Contribuí para catálogos de produtos, ERPs, aplicações em tempo real e sociais, e para o setor bancário. Desenvolvedor versátil: engenheiro de backend, entusiasta de frontend e apaixonado por DevOps. Sempre aberto a compartilhar conhecimento e ajudar.",
+        about_intro: "Sou um engenheiro de software com ≈17 years 7 months de atuação. Contribuí para catálogos de produtos, ERPs, aplicações em tempo real e sociais, e para o setor bancário. Desenvolvedor versátil: engenheiro de backend, entusiasta de frontend e apaixonado por DevOps. Sempre aberto a compartilhar conhecimento e ajudar.",
         about_quote: "“Esforce‑se não para ser um sucesso, mas para ser valioso.” — Albert Einstein",
         aside_loc: "Local",
         aside_loc_value: "Área metropolitana de Bruxelas (remoto/global)",
@@ -648,16 +654,47 @@
         section_experience_title: "Experiência",
         expA_meta: "2025 — Atual · Sr. DevSecOps Engineer (Consultor) · Swift · Bélgica",
         expA_role: "DevSecOps & CI/CD",
-        expA_bullets: "<ul class='muted'><li>Blueprints de pipelines de CI/CD.</li><li>Orquestração de releases (impulsionando KPI chave).</li><li>Padronização de CI/CD.</li><li>Scans de segurança em várias aplicações (análise estática).</li><li>Coaching DevOps para diversos squads.</li><li>Automação e scripts de tooling.</li></ul>",
+        expA_bullets: [
+          "Blueprints de pipelines de CI/CD.",
+          "Orquestração de releases (impulsionando KPI chave).",
+          "Padronização de CI/CD.",
+          "Scans de segurança em várias aplicações (análise estática).",
+          "Coaching DevOps para diversos squads.",
+          "Automação e scripts de tooling."
+        ],
         expB_meta: "2024 — 2025 · Sr. Software Engineer (Consultor) · Swissquote · Suíça",
         expB_role: "Migração de dados & engenharia de banco de dados",
-        expB_bullets: "<ul class='muted'><li>Relatórios para o time de DBA explicando os esforços de migração.</li><li>Migração de um banco com bilhões de registros de transações financeiras para Oracle.</li><li>Melhoria nas interações com o banco reescrevendo queries para resultados ótimos.</li><li>Criação de loader em Java para mover bilhões de registros sem interrupções.</li><li>Aplicação de desnormalização e particionamento para otimizar performance.</li></ul>",
+        expB_bullets: [
+          "Relatórios para o time de DBA explicando os esforços de migração.",
+          "Migração de um banco com bilhões de registros de transações financeiras para Oracle.",
+          "Melhoria nas interações com o banco reescrevendo queries para resultados ótimos.",
+          "Criação de loader em Java para mover bilhões de registros sem interrupções.",
+          "Aplicação de desnormalização e particionamento para otimizar performance."
+        ],
         expC_meta: "2019 — 2024 · Sr. Software Engineer (Consultor) · Swift · Bélgica",
         expC_role: "Engenharia full‑stack & evolução de plataforma",
-        expC_bullets: "<ul class='muted'><li>Atuação full‑stack em múltiplos squads.</li><li>Implementação do Coveo AI Search no app Angular do Knowledge Centre.</li><li>Correção de vulnerabilidades e code smells em apps de back‑office.</li><li>Upgrade de Angular em mais de 10 aplicações.</li><li>Documentação/especificações de novas features junto a stakeholders.</li><li>Upgrade de imagens Docker para tecnologias atuais.</li><li>Entrevistas técnicas e de fit cultural.</li><li>Liderança na migração de monólito para microserviços no app de Identity Management.</li><li>Entrega da migração JSF → Angular, crucial para KPIs.</li><li>Atuação como Scrum Master com agile coaches para aumentar a agilidade e motivação.</li><li>Integração do Adobe Experience Cloud no fluxo do app.</li><li>Indicações dos colegas: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player.</li></ul>",
+        expC_bullets: [
+          "Atuação full‑stack em múltiplos squads.",
+          "Implementação do Coveo AI Search no app Angular do Knowledge Centre.",
+          "Correção de vulnerabilidades e code smells em apps de back‑office.",
+          "Upgrade de Angular em mais de 10 aplicações.",
+          "Documentação/especificações de novas features com stakeholders.",
+          "Upgrade de imagens Docker para tecnologias atuais.",
+          "Entrevistas de candidatos para fit técnico e cultural.",
+          "Liderança na migração de monólito para microserviços no app de Identity Management.",
+          "Entrega da migração JSF → Angular, crucial para KPIs.",
+          "Atuação como Scrum Master com agile coaches para aumentar agilidade e motivação.",
+          "Integração do Adobe Experience Cloud no fluxo do app.",
+          "Indicações: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player."
+        ],
         expD_meta: "2018 — 2019 · Sr. Software Engineer & Dev. Leader · Eleven Sports · Portugal",
         expD_role: "Microserviços em tempo real & liderança de time",
-        expD_bullets: "<ul class='muted'><li>Design e lançamento de backend escalável em microserviços com Vert.x.</li><li>App em tempo real com Kafka para ligação entre jogadores e fãs (estilo rede social).</li><li>Uso de Kubernetes e Google Cloud Platform para alto throughput.</li><li>Liderança de equipe e cultura positiva.</li></ul>",
+        expD_bullets: [
+          "Design e lançamento de backend escalável em microserviços com Vert.x.",
+          "App em tempo real com Kafka para conectar jogadores e fãs (estilo rede social).",
+          "Uso de Kubernetes e Google Cloud Platform para alto throughput.",
+          "Liderança de equipe e cultura positiva."
+        ],
         aside_prev_title: "Experiências anteriores",
         prev1: "Senior Java Developer · Wplex (Transporte Público) · Brasil · 2015–2018",
         prev2: "Java Developer · Metaway (Educação) · Brasil · 2015",
@@ -718,13 +755,13 @@
           "Felipe Sotille",
           "Sr. DevSecOps & Software Engineer",
           "Consultor — Swift, Swissquote",
-          "14+ anos: Java, Spring, Angular, K8s",
+          "17+ years: Java, Spring, Angular, K8s",
           "Banking · Tempo real · Social · ERP"
         ]
       }
     };
 
-    // Default language: EN (unless user saved preference)
+    // Default language: EN (unless user saved a preference)
     const storedLang = localStorage.getItem('lang');
     let LANG = storedLang || 'en';
 
@@ -736,9 +773,14 @@
         const key = el.getAttribute('data-i18n');
         const v = I18N[lang][key];
         if (v !== undefined){
-          // FIX: detect HTML correctly
           if (/<[a-z][\s\S]*>/i.test(v)) el.innerHTML = v; else el.textContent = v;
         }
+      });
+      // Render lists
+      $$("[data-i18n-list]").forEach(el => {
+        const key = el.getAttribute('data-i18n-list');
+        const arr = I18N[lang][key] || [];
+        el.innerHTML = arr.map(item => `<li>${item}</li>`).join("");
       });
       $$('.lang-toggle [data-lang]').forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)));
       setPhrases(I18N[lang].scramble);
@@ -867,26 +909,6 @@
       });
     }
 
-    // THEME: dark/light
-    const themeBtn = document.getElementById('theme-toggle');
-    const storedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    function setTheme(theme){
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      if (themeBtn){
-        themeBtn.setAttribute('aria-pressed', theme === 'dark');
-        themeBtn.innerText = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
-      }
-    }
-    setTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
-    if (themeBtn){
-      themeBtn.addEventListener('click', () => {
-        const current = document.documentElement.getAttribute('data-theme') || 'dark';
-        setTheme(current === 'dark' ? 'light' : 'dark');
-      });
-    }
-
     // Language switch
     $$('.lang-toggle [data-lang]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -899,10 +921,31 @@
       });
     });
 
+    // THEME: dark/light/auto with persistence
+    function setTheme(mode){
+      if (mode === 'auto'){
+        document.documentElement.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', mode);
+      }
+      localStorage.setItem('theme', mode);
+    }
+    function initTheme(){
+      const stored = localStorage.getItem('theme') || 'auto';
+      setTheme(stored);
+    }
+    $('#theme-dark').addEventListener('click', () => setTheme('dark'));
+    $('#theme-light').addEventListener('click', () => setTheme('light'));
+    $('#theme-auto').addEventListener('click', () => setTheme('auto'));
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if ((localStorage.getItem('theme') || 'auto') === 'auto') setTheme('auto');
+    });
+
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Initial render
+    initTheme();
     applyI18n(LANG);
     prepareSphere();
     animateSphere();

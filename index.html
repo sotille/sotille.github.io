@@ -1,178 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <title>Felipe Sotille - Software Engineer</title>
-    
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Responsive HTML5 Resume/CV Template for Developers">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
-    <link rel="shortcut icon" href="favicon.ico">  
-    <!-- Google Font -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <!-- FontAwesome JS-->
-	<script defer src="assets/fontawesome/js/all.min.js"></script>
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="assets/css/orbit-1.css">
-</head> 
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Felipe Sotille — Text Scramble</title>
 
+  <!-- Optional mono font (remove if you prefer system monospace) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b1020; --text:#eaf2ff; --muted:#94a3b8; --accent:#38bdf8;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      background: radial-gradient(1200px 900px at 50% 20%, #172032 0%, #0b1020 60%, #060914 100%) fixed;
+      color:var(--text);
+      display:grid; place-items:center;
+    }
+    .container{display:grid; gap:16px; place-items:center; padding:24px; text-align:center}
+    .text{font-weight:100; font-size:clamp(20px,3.4vw,42px); line-height:1.3; letter-spacing:.02em}
+    .dud{color:var(--muted)}
+    .sub{font-size:clamp(12px,1.8vw,16px); color:var(--muted)}
+    a{color:var(--accent); text-decoration:none}
+    a:focus-visible{outline:2px solid var(--accent); outline-offset:4px; border-radius:4px}
+    @media (prefers-reduced-motion: reduce){ .dud{display:none} }
+  </style>
+</head>
 <body>
-    <div class="wrapper mt-lg-5">
-        <div class="sidebar-wrapper">
-            <div class="profile-container">
-                <img class="profile" src="assets/images/profile.jpg" alt="" width="150"/>
-                <h1 class="name">Felipe Sotille</h1>
-                <h3 class="tagline">Software Engineer</h3>
-            </div><!--//profile-container-->
-            
-            <div class="contact-container container-block">
-                <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fas fa-envelope"></i><a href="mailto: yourname@email.com">fsotille@gmail.com</a></li>
-                    <li class="linkedin"><i class="fab fa-linkedin-in"></i><a href="#" target="_blank">linkedin.com/in/felipe-sotille</a></li>
-                    <li class="github"><i class="fab fa-github"></i><a href="#" target="_blank">github.com/sotille</a></li>
-                </ul>
-            </div><!--//contact-container-->
-            <div class="education-container container-block">
-                <h2 class="container-block-title">Education</h2>
-                <div class="item">
-                    <h4 class="degree">MSc in Computer Science</h4>
-                    <h5 class="meta">Universidade de Passo Fundo</h5>
-	                    <div class="time">2012 - 2017</div>
-                </div><!--//item-->
-            </div><!--//education-container-->
-            
-            <div class="languages-container container-block">
-                <h2 class="container-block-title">Languages</h2>
-                <ul class="list-unstyled interests-list">
-                    <li>Portuguese <span class="lang-desc">(Native)</span></li>
-                    <li>English <span class="lang-desc">(Professional)</span></li>
-                    <li>French <span class="lang-desc">(Learning)</span></li>
-                </ul>
-            </div><!--//interests-->
-            
-            <div class="interests-container container-block">
-                <h2 class="container-block-title">Interests</h2>
-                <ul class="list-unstyled interests-list">
-                    <li>Climbing</li>
-                    <li>Technology</li>
-                    <li>Hiking</li>
-                    <li>Travel</li>
-                    <li>Cooking</li>
-                </ul>
-            </div><!--//interests-->
-            
-        </div><!--//sidebar-wrapper-->
-        
-        <div class="main-wrapper">
-            
-            <section class="section summary-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-user"></i></span>Career Profile</h2>
-                <div class="summary">
-                    <p>Senior Software Engineer and Master degree(Europe Equivalence, 5 Years Bachelor in Brazil) in Computer Science, in those 10+ years of experience in software development, I did work for software houses, including backend and frontend, product catalogs, ERP's, real-time monitoring systems and social applications with high throughput capacity, as well a short experience leading an engineering team, natural conflict solver, giving always my best for the company and always willing to helping my workmates. </p>
-                    <p>The use of best practices in software development - unit and integrated testing, clean code and continuous integration - is part of my daily tasks. A versatile developer, an engineer in the back-end and enthusiast in the front end. Worried about the quality of my work. Always willing to help my colleagues and available to exchange technical information.</p>
-                </div><!--//summary-->
-            </section><!--//section-->
-            
-            <section class="section experiences-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-briefcase"></i></span>Most Recent Experiences</h2>
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Senior Software Engineer</h3>
-                            <div class="time">2020 - Present</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Swift, Belgium</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>As a full stack engineer, I contributed to migrate the monolith application into microservices architecture, created new functionalities, got rid of JSF and use angular, keeping the service up and running during all migration. As a team’s docker champion, I'm responsible for the best possible solution for our container environment.</p>
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Team Leader & Senior Software Engineer</h3>
-                            <div class="time">2018 - 2019</div>
-                        </div><!--//upper-row-->
-                        <div class="company">MyCujoo, Portugal</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>As the first backend engineer, I developed from scratch a full cloud clustered asynchronous and reactive microservice oriented backend architecture to support the high throughput volume of data, high availability and highly scalable with Vert.x to our player experience platform. As well, coordinated the team to work with joy and passion in our project, helped other teams implement vert.x technology in their context.</p>
-                        
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">UI Developer</h3>
-                            <div class="time">2016 - 2018</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Wplex, Brazil</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>Created, analyzed and developed real-time urban transport systems features. I worked in a real-time monitoring system where we delivered an app to urban transport for citizens.</p>
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-            </section><!--//section-->
-            
-            <section class="skills-section section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket"></i></span>Skills &amp; Proficiency</h2>
-                <div class="skillset">        
-                    <div class="item">
-                        <h3 class="level-title">Java &amp; Spring</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 99%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                               
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">Javascript</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                              
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">React &amp; Angular</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                                 
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">HTML5 &amp; CSS</h3>
-                        <div class="progress level-bar">
-							    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                                
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">DevOps</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                                  
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">Cloud Development</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                                 
-                    </div><!--//item-->
-                    
-                </div>  
-            </section><!--//skills-section-->
-            
-        </div><!--//main-body-->
-    </div>
+  <div class="container">
+    <div class="text" aria-live="polite"></div>
+    <div class="sub">Press <kbd>R</kbd> to replay • <a href="https://github.com/sotille" rel="noopener">github.com/sotille</a></div>
+  </div>
 
+  <script>
+    // Based on the “Scramble text” pattern from the referenced CodePen. :contentReference[oaicite:2]{index=2}
+    class TextScramble {
+      constructor(el){ this.el = el; this.chars = '!<>-_\\/[]{}—=+*^?#________'; this.update = this.update.bind(this); }
+      setText(newText){
+        const oldText = this.el.innerText || "";
+        const length = Math.max(oldText.length, newText.length);
+        const promise = new Promise(resolve => this.resolve = resolve);
+        this.queue = [];
+        for (let i = 0; i < length; i++){
+          const from = oldText[i] || '';
+          const to   = newText[i] || '';
+          const start = Math.floor(Math.random() * 40);
+          const end   = start + Math.floor(Math.random() * 40);
+          this.queue.push({ from, to, start, end });
+        }
+        cancelAnimationFrame(this.frameRequest);
+        this.frame = 0; this.update(); return promise;
+      }
+      update(){
+        let output = '', complete = 0;
+        for (let i = 0, n = this.queue.length; i < n; i++){
+          let { from, to, start, end, char } = this.queue[i];
+          if (this.frame >= end){ complete++; output += to; }
+          else if (this.frame >= start){
+            if (!char || Math.random() < 0.28){ char = this.randomChar(); this.queue[i].char = char; }
+            output += '<span class="dud">' + char + '</span>';
+          } else { output += from; }
+        }
+        this.el.innerHTML = output;
+        if (complete === this.queue.length){ this.resolve(); }
+        else { this.frameRequest = requestAnimationFrame(this.update); this.frame++; }
+      }
+      randomChar(){ return this.chars[Math.floor(Math.random() * this.chars.length)]; }
+    }
+
+    const phrases = [
+      "Felipe Sotille",
+      "Tech Lead · Cloud‑Native · Platform Engineering",
+      "Kubernetes · Java · Spring · TypeScript · AWS",
+      "Open‑source collaborator",
+      "Mountains · Nature · Chess · Sci‑Fi"
+    ];
+
+    const el = document.querySelector('.text');
+    const fx = new TextScramble(el);
+    let counter = 0;
+    function next(){
+      fx.setText(phrases[counter]).then(() => setTimeout(next, 1200));
+      counter = (counter + 1) % phrases.length;
+    }
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) el.textContent = phrases[0]; else next();
+
+    // Replay with "R"
+    addEventListener('keydown', (e) => (e.key.toLowerCase() === 'r') && next());
+  </script>
 </body>
-</html> 
-
+</html>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Felipe Sotille — Portfolio / CV</title>
-  <meta name="description" content="Interactive CV of Felipe Sotille — Tech Lead, Cloud‑Native, Platform Engineering.">
+  <meta name="description" content="Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
@@ -80,7 +80,7 @@
     .lang-toggle button[aria-pressed="true"]{background:linear-gradient(180deg, #12203b, #0f172a); color:#e6f3ff}
     main{padding:18px 0 64px}
     .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:28px 0 12px}
-    .headline{font-size: clamp(28px, 5vw, 58px); line-height:1.08; letter-spacing:.2px; font-weight:800; margin:0 0 6px}
+    .headline{font-size: clamp(28px, 5vw, 56px); line-height:1.08; letter-spacing:.2px; font-weight:800; margin:0 0 6px}
     .scramble{font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight:300; font-size: clamp(16px, 2.4vw, 20px); color:#cbd5e1; min-height:1.6em}
     .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
     .hero-card{
@@ -90,8 +90,7 @@
       padding:22px; box-shadow: var(--shadow);
       transform-style:preserve-3d; will-change:transform;
     }
-
-    /* Orb container replacing avatar */
+    /* Orb container */
     .orb-wrap{
       width:min(380px, 90%); aspect-ratio:1/1; border-radius:24px; margin:0 auto;
       background: radial-gradient(200px 140px at 30% 20%, rgba(56,189,248,.22), transparent),
@@ -99,11 +98,9 @@
                   #0b1220;
       display:grid; place-items:center; border:1px solid var(--line); position:relative; overflow:hidden;
     }
-    .orb{width:82%; height:82%; filter: drop-shadow(0 16px 28px rgba(0,0,0,.5));}
-    .orb circle{fill:none; stroke:rgba(200,200,220,.75); stroke-linecap:round; stroke-width:1.2}
-    .orb .glow{filter:url(#orbGlow)}
-    .orb .fade{opacity:.85}
-
+    .sphere{width:86%; height:86%; filter: drop-shadow(0 16px 28px rgba(0,0,0,.5));}
+    .sphere path{fill:none; stroke:url(#sphereGradient); stroke-linecap:round; stroke-width:1.25}
+    .sphere .disc{fill:url(#sphereGradient); opacity:.08}
     section{margin-top:42px}
     .sec-title{font-weight:800; font-size: clamp(18px, 2.4vw, 24px); margin:0 0 12px; letter-spacing:.4px}
     .grid{display:grid; gap:16px}
@@ -139,8 +136,13 @@
     .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
     .reveal.visible{opacity:1; transform:none}
     .pill{display:inline-flex; align-items:center; padding:6px 10px; gap:8px; border-radius:999px; border:1px solid var(--line); background:rgba(2,6,23,.5); font-weight:600}
+    .two-col{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+    .kv{display:grid; grid-template-columns: 1fr auto; gap:8px 12px; align-items:center}
+    .stars{letter-spacing:2px}
+    blockquote{margin:0; padding:0; border-left:3px solid #2f436b; padding-left:12px}
+    cite{display:block; color:#9fb0c7; font-style:normal; margin-top:6px}
     /* Responsive */
-    @media (max-width: 980px){ .hero{grid-template-columns: 1fr; text-align:center} .actions{justify-content:center} .nav{padding:10px 16px} }
+    @media (max-width: 980px){ .hero{grid-template-columns: 1fr; text-align:center} .actions{justify-content:center} .nav{padding:10px 16px} .two-col{grid-template-columns:1fr} }
     @media (prefers-reduced-motion: reduce){
       *{scroll-behavior:auto !important}
       .reveal{transition:none}
@@ -163,11 +165,11 @@
         <div>Felipe Sotille</div>
       </div>
       <div class="links">
-        <a href="#sobre" data-i18n="nav_about">About</a>
-        <a href="#experiencia" data-i18n="nav_experience">Experience</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#experience" data-i18n="nav_experience">Experience</a>
         <a href="#skills" data-i18n="nav_skills">Skills</a>
-        <a href="#projetos" data-i18n="nav_projects">Projects</a>
-        <a href="#contato" data-i18n="nav_contact">Contact</a>
+        <a href="#projects" data-i18n="nav_projects">Projects</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
         <div class="lang-toggle" role="group" aria-label="Language">
           <button class="sm" data-lang="en" aria-pressed="true">EN</button>
           <button class="sm" data-lang="pt">PT‑BR</button>
@@ -182,46 +184,66 @@
     <section class="hero reveal">
       <div>
         <p class="pill" aria-live="polite"><span aria-hidden="true">🟢</span> <span data-i18n="hero_pill">Open to OSS collaborations</span></p>
-        <h1 class="headline" data-i18n="headline">Tech Lead · Cloud‑Native · Platform Engineering</h1>
+        <h1 class="headline" data-i18n="headline">Sr. DevSecOps & Software Engineer</h1>
         <div class="scramble" id="scramble" aria-live="polite"></div>
-        <p class="muted" data-i18n="hero_desc">I build resilient platforms and developer experiences that speed up teams. Passionate about technology and nature.</p>
+        <p class="muted" data-i18n="hero_desc">14 years across banking, ERPs, real‑time and social apps. Backend engineer, frontend enthusiast and DevOps lover.</p>
         <div class="actions">
-          <a class="btn" href="#projetos" data-i18n="btn_view_projects">View projects</a>
-          <a class="btn ghost" href="https://linkedin.com/in/felipe-sotille/" target="_blank" rel="noopener" data-i18n="btn_linkedin">LinkedIn</a>
+          <a class="btn" href="#experience" data-i18n="btn_view_experience">View experience</a>
+          <a class="btn ghost" href="mailto:fsotille@gmail.com" data-i18n="btn_email">Email</a>
+          <a class="btn ghost" href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener" data-i18n="btn_linkedin">LinkedIn</a>
           <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
         </div>
         <div class="stack" style="margin-top:12px">
-          <span class="chip" data-i18n="chip_k8s">Kubernetes</span>
-          <span class="chip" data-i18n="chip_java">Java · Spring</span>
-          <span class="chip" data-i18n="chip_ts">TypeScript · Angular</span>
-          <span class="chip" data-i18n="chip_cloud">AWS · GCP</span>
-          <span class="chip" data-i18n="chip_docker">Docker</span>
-          <span class="chip" data-i18n="chip_platform">Platform Eng</span>
+          <span class="chip">Java · Spring</span>
+          <span class="chip">Angular · TypeScript</span>
+          <span class="chip">Kubernetes · Docker</span>
+          <span class="chip">CI/CD · DevSecOps</span>
+          <span class="chip">AWS · GCP · Oracle</span>
         </div>
       </div>
 
       <div class="hero-card tilt" aria-label="Animated orb">
         <div class="orb-wrap">
-          <!-- Orb SVG will be built via JS -->
-          <svg class="orb" viewBox="0 0 440 440" aria-hidden="true">
+          <!-- Sphere animation inspired by Julian Garnier's pen -->
+          <svg class="sphere" viewBox="0 0 440 440" aria-hidden="true">
             <defs>
-              <linearGradient id="orbGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+              <linearGradient id="sphereGradient" x1="0%" x2="0%" y1="0%" y2="100%">
                 <stop stop-color="#8ab4ff" offset="0%"/>
                 <stop stop-color="#38bdf8" offset="50%"/>
                 <stop stop-color="#22d3ee" offset="100%"/>
               </linearGradient>
-              <filter id="orbGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="4" result="b"/>
-                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
             </defs>
-            <g class="fade glow" stroke="url(#orbGrad)"></g>
+            <circle class="disc" cx="220" cy="220" r="175"/>
+            <g class="lat">
+              <!-- wireframe paths (latitude-like) -->
+              <path d="M361.604 361.238c-24.407 24.408-51.119 37.27-59.662 28.727-8.542-8.543 4.319-35.255 28.726-59.663 24.408-24.407 51.12-37.269 59.663-28.726 8.542 8.543-4.319 35.255-28.727 59.662z"/>
+              <path d="M360.72 360.354c-35.879 35.88-75.254 54.677-87.946 41.985-12.692-12.692 6.105-52.067 41.985-87.947 35.879-35.879 75.254-54.676 87.946-41.984 12.692 12.692-6.105 52.067-41.984 87.946z"/>
+              <path d="M357.185 356.819c-44.91 44.91-94.376 68.258-110.485 52.149-16.11-16.11 7.238-65.575 52.149-110.485 44.91-44.91 94.376-68.259 110.485-52.15 16.11 16.11-7.239 65.576-52.149 110.486z"/>
+              <path d="M350.998 350.632c-53.21 53.209-111.579 81.107-130.373 62.313-18.794-18.793 9.105-77.163 62.314-130.372 53.209-53.21 111.579-81.108 130.373-62.314 18.794 18.794-9.105 77.164-62.314 130.373z"/>
+              <path d="M343.043 342.677c-59.8 59.799-125.292 91.26-146.283 70.268-20.99-20.99 10.47-86.483 70.269-146.282 59.799-59.8 125.292-91.26 146.283-70.269 20.99 20.99-10.47 86.484-70.27 146.283z"/>
+              <path d="M334.646 334.28c-65.169 65.169-136.697 99.3-159.762 76.235-23.065-23.066 11.066-94.593 76.235-159.762s136.697-99.3 159.762-76.235c23.065 23.065-11.066 94.593-76.235 159.762z"/>
+              <path d="M324.923 324.557c-69.806 69.806-146.38 106.411-171.031 81.76-24.652-24.652 11.953-101.226 81.759-171.032 69.806-69.806 146.38-106.411 171.031-81.76 24.652 24.653-11.953 101.226-81.759 171.032z"/>
+              <path d="M312.99 312.625c-73.222 73.223-153.555 111.609-179.428 85.736-25.872-25.872 12.514-106.205 85.737-179.428s153.556-111.609 179.429-85.737c25.872 25.873-12.514 106.205-85.737 179.429z"/>
+              <path d="M300.175 299.808c-75.909 75.909-159.11 115.778-185.837 89.052-26.726-26.727 13.143-109.929 89.051-185.837 75.908-75.908 159.11-115.778 185.837-89.051 26.726 26.726-13.143 109.928-89.051 185.836z"/>
+              <path d="M284.707 284.34c-77.617 77.617-162.303 118.773-189.152 91.924-26.848-26.848 14.308-111.534 91.924-189.15C265.096 109.496 349.782 68.34 376.63 95.188c26.849 26.849-14.307 111.535-91.923 189.151z"/>
+              <path d="M269.239 267.989c-78.105 78.104-163.187 119.656-190.035 92.807-26.849-26.848 14.703-111.93 92.807-190.035 78.105-78.104 163.187-119.656 190.035-92.807 26.849 26.848-14.703 111.93-92.807 190.035z"/>
+              <path d="M252.887 252.52C175.27 330.138 90.584 371.294 63.736 344.446 36.887 317.596 78.043 232.91 155.66 155.293 233.276 77.677 317.962 36.521 344.81 63.37c26.85 26.848-14.307 111.534-91.923 189.15z"/>
+              <path d="M236.977 236.61C161.069 312.52 77.867 352.389 51.14 325.663c-26.726-26.727 13.143-109.928 89.052-185.837 75.908-75.908 159.11-115.777 185.836-89.05 26.727 26.726-13.143 109.928-89.051 185.836z"/>
+              <path d="M221.067 220.7C147.844 293.925 67.51 332.31 41.639 306.439c-25.873-25.873 12.513-106.206 85.736-179.429C200.6 53.786 280.931 15.4 306.804 41.272c25.872 25.873-12.514 106.206-85.737 179.429z"/>
+              <path d="M205.157 204.79c-69.806 69.807-146.38 106.412-171.031 81.76-24.652-24.652 11.953-101.225 81.759-171.031 69.806-69.807 146.38-106.411 171.031-81.76 24.652 24.652-11.953 101.226-81.759 171.032z"/>
+              <path d="M189.247 188.881c-65.169 65.169-136.696 99.3-159.762 76.235-23.065-23.065 11.066-94.593 76.235-159.762s136.697-99.3 159.762-76.235c23.065 23.065-11.066 94.593-76.235 159.762z"/>
+              <path d="M173.337 172.971c-59.799 59.8-125.292 91.26-146.282 70.269-20.991-20.99 10.47-86.484 70.268-146.283 59.8-59.799 125.292-91.26 146.283-70.269 20.99 20.991-10.47 86.484-70.269 146.283z"/>
+              <path d="M157.427 157.061c-53.209 53.21-111.578 81.108-130.372 62.314-18.794-18.794 9.104-77.164 62.313-130.373 53.21-53.209 111.58-81.108 130.373-62.314 18.794 18.794-9.105 77.164-62.314 130.373z"/>
+              <path d="M141.517 141.151c-44.91 44.91-94.376 68.259-110.485 52.15-16.11-16.11 7.239-65.576 52.15-110.486 44.91-44.91 94.375-68.258 110.485-52.15 16.109 16.11-7.24 65.576-52.15 110.486z"/>
+              <path d="M125.608 125.241c-35.88 35.88-75.255 54.677-87.947 41.985-12.692-12.692 6.105-52.067 41.985-87.947C115.525 43.4 154.9 24.603 167.592 37.295c12.692 12.692-6.105 52.067-41.984 87.946z"/>
+            </g>
+            <g class="lon" transform="rotate(90 220 220)"></g>
           </svg>
         </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px">
+        <div class="two-col" style="margin-top:14px">
           <div class="card">
             <div class="tl-meta" data-i18n="card_focus_title">Current focus</div>
-            <div class="tl-role" data-i18n="card_focus_value">K8s · IaC · Observability</div>
+            <div class="tl-role" data-i18n="card_focus_value">CI/CD, DevSecOps, Observability</div>
           </div>
           <div class="card">
             <div class="tl-meta" data-i18n="card_interests_title">Interests</div>
@@ -232,112 +254,132 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="sobre" class="reveal">
+    <section id="about" class="reveal">
       <h2 class="sec-title" data-i18n="section_about_title">About</h2>
       <div class="grid cols-2">
         <article class="card">
-          <p data-i18n="about_p1">I'm a Tech Lead focused on cloud‑native platforms, Developer Experience and reliability. I like to combine solid engineering practices with clear communication so ideas become stable, operable products.</p>
-          <ul class="muted">
-            <li data-i18n="about_ul_1">I design scalable architectures, CI/CD pipelines, observability and platform standards.</li>
-            <li data-i18n="about_ul_2">I lead quality and performance initiatives focused on user value.</li>
-            <li data-i18n="about_ul_3">Constantly learning about investments; open to exchange ideas.</li>
-          </ul>
-          <p class="muted" data-i18n="about_current">Currently Tech Lead at <a href="https://www.swissquote.com" target="_blank" rel="noopener">Swissquote</a>, Switzerland’s leader in digital banking.</p>
+          <p data-i18n="about_intro">I’m a distinguished software engineer with 14 years of experience. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.</p>
+          <p class="muted" data-i18n="about_quote">“Strive not to be a success, but rather to be of value.” — Albert Einstein</p>
         </article>
         <aside class="card">
           <div class="grid" style="gap:10px">
             <div class="pill"><strong data-i18n="aside_loc">Location</strong>: <span data-i18n="aside_loc_value">Brussels Metropolitan Area (remote/global)</span></div>
-            <div class="pill"><strong data-i18n="aside_langs">Languages</strong>: <span data-i18n="aside_langs_value">PT · EN · IT (basic)</span></div>
-            <div class="pill"><strong data-i18n="aside_avail">Availability</strong>: <span data-i18n="aside_avail_value">OSS collaborations & light mentoring</span></div>
+            <div class="pill"><strong data-i18n="aside_langs">Languages</strong>: <span data-i18n="aside_langs_value">Portuguese, English, French</span></div>
+            <div class="pill"><strong data-i18n="aside_avail">Availability</strong>: <span data-i18n="aside_avail_value">Consulting & OSS collaborations</span></div>
           </div>
         </aside>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experiencia" class="reveal">
+    <section id="experience" class="reveal">
       <h2 class="sec-title" data-i18n="section_experience_title">Experience</h2>
       <div class="grid cols-2">
         <article class="card">
           <div class="timeline">
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="exp1_meta">2023 — Present · Tech Lead · Swissquote</div>
-              <div class="tl-role" data-i18n="exp1_role">Platform technical leadership</div>
-              <p class="muted" data-i18n="exp1_desc">Design and evolution of a Kubernetes platform (GitOps CI/CD), service standards, security and SRE. Partnering with product teams to speed up delivery.</p>
-              <div class="stack">
-                <span class="tag">Kubernetes</span><span class="tag">Helm</span><span class="tag">Argo CD</span><span class="tag">Grafana</span><span class="tag">Prometheus</span>
-              </div>
+              <div class="tl-meta" data-i18n="expA_meta">2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Belgium</div>
+              <div class="tl-role" data-i18n="expA_role">DevSecOps & CI/CD</div>
+              <div data-i18n="expA_bullets"></div>
             </div>
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="exp2_meta">2020 — 2023 · Senior Software Engineer</div>
-              <div class="tl-role" data-i18n="exp2_role">Architecture & backend</div>
-              <p class="muted" data-i18n="exp2_desc">Resilient Java/Spring APIs, messaging, caching and observability practices. Collaborated in cloud migrations.</p>
-              <div class="stack">
-                <span class="tag">Java</span><span class="tag">Spring</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span>
-              </div>
+              <div class="tl-meta" data-i18n="expB_meta">2024 — 2025 · Sr. Software Engineer (Consultant) · Swissquote · Switzerland</div>
+              <div class="tl-role" data-i18n="expB_role">Data migration & database engineering</div>
+              <div data-i18n="expB_bullets"></div>
             </div>
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="exp3_meta">2017 — 2020 · Full‑stack Engineer</div>
-              <div class="tl-role" data-i18n="exp3_role">Web apps & DX</div>
-              <p class="muted" data-i18n="exp3_desc">Angular/TypeScript apps with Node/Java backends. Continuous DX improvements and build/deploy automations.</p>
-              <div class="stack">
-                <span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">Node.js</span>
-              </div>
+              <div class="tl-meta" data-i18n="expC_meta">2019 — 2024 · Sr. Software Engineer (Consultant) · Swift · Belgium</div>
+              <div class="tl-role" data-i18n="expC_role">Full‑stack engineering & platform evolution</div>
+              <div data-i18n="expC_bullets"></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-meta" data-i18n="expD_meta">2018 — 2019 · Sr. Software Engineer & Dev. Lead · Eleven Sports · Portugal</div>
+              <div class="tl-role" data-i18n="expD_role">Real‑time microservices & team leadership</div>
+              <div data-i18n="expD_bullets"></div>
             </div>
           </div>
         </article>
 
         <aside class="card">
-          <h3 style="margin:0 0 10px" data-i18n="aside_results_title">Highlights</h3>
+          <h3 style="margin:0 0 10px" data-i18n="aside_prev_title">Previous experiences</h3>
           <ul class="muted">
-            <li data-i18n="res1">Reduced deploy lead time by &gt;30% with GitOps standardization.</li>
-            <li data-i18n="res2">Increased reliability with SLOs and symptom‑based alerts.</li>
-            <li data-i18n="res3">Improved DX with internal templates and CLIs (best practices & security).</li>
+            <li data-i18n="prev1">Senior Java Developer · Wplex (Public Transport) · Brazil · 2015–2018</li>
+            <li data-i18n="prev2">Java Developer · Metaway (Education) · Brazil · 2015</li>
+            <li data-i18n="prev3">Java Developer · Citta Informatica (Government & Legal) · Brazil · 2010–2014</li>
+            <li data-i18n="prev4">Junior Java Developer · Allcance (Industry) · Brazil · 2008–2009</li>
           </ul>
-          <div class="chip" data-i18n="chip_refs">References available upon request</div>
+          <div class="chip" data-i18n="chip_linkedin">Detailed roles and responsibilities available on my LinkedIn profile.</div>
         </aside>
       </div>
     </section>
 
-    <!-- SKILLS & EDUCATION -->
+    <!-- SKILLS -->
     <section id="skills" class="reveal">
       <h2 class="sec-title" data-i18n="section_skills_title">Skills</h2>
       <div class="grid cols-2">
         <article class="card">
-          <h3 style="margin:0 0 8px" data-i18n="skills_stack_title">Primary stack</h3>
-          <div class="stack">
-            <span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">GitHub Actions</span>
-            <span class="tag">Java</span><span class="tag">Spring</span><span class="tag">TypeScript</span><span class="tag">Angular</span>
-            <span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span>
+          <h3 style="margin:0 0 8px" data-i18n="skills_hard_title">Hard skills</h3>
+          <div class="kv">
+            <div>Java / Linux</div><div>14y</div>
+            <div>Serverless / Microservices</div><div>4y</div>
+            <div>Spring (Security, Web, Boot...)</div><div>7y</div>
+            <div>Docker / Containers</div><div>6y</div>
+            <div>SQL (HQL, Oracle, Postgres)</div><div>8y</div>
+            <div>SOLID OOP</div><div>8y</div>
+            <div>Angular 10+</div><div>5y</div>
+            <div>Agile / Scrum</div><div>10y</div>
+            <div>Clean & Secure Coding</div><div>6y</div>
+            <div>CI/CD & DevOps (Jenkins/CloudBees, Heroku, CircleCI)</div><div>7y</div>
+            <div>Kafka / Kubernetes / AWS / GCP</div><div>2y</div>
+            <div>Cloud integrations (Coveo, Adobe Cloud, Twilio)</div><div>3y</div>
+            <div>Ansible Tower / Scripting</div><div>3y</div>
           </div>
-          <div style="margin-top:14px; display:grid; gap:10px">
-            <label data-i18n="skillbars_platform">Platforms & SRE</label>
-            <div class="skillbar" data-skill="88"><i></i></div>
-            <label data-i18n="skillbars_backend">Back‑end (Java/Spring)</label>
-            <div class="skillbar" data-skill="84"><i></i></div>
-            <label data-i18n="skillbars_frontend">Front‑end (Angular/TS)</label>
-            <div class="skillbar" data-skill="72"><i></i></div>
-          </div>
+
+          <h3 style="margin:16px 0 8px" data-i18n="skills_bars_title">Proficiency overview</h3>
+          <label data-i18n="skillbars_platform">Platforms & DevSecOps</label>
+          <div class="skillbar" data-skill="88"><i></i></div>
+          <label data-i18n="skillbars_backend">Back‑end (Java/Spring)</label>
+          <div class="skillbar" data-skill="86"><i></i></div>
+          <label data-i18n="skillbars_frontend">Front‑end (Angular/TS)</label>
+          <div class="skillbar" data-skill="72"><i></i></div>
           <p class="muted" style="margin-top:10px" data-i18n="skills_note">*Self‑assessed indicators for quick visualization.</p>
         </article>
+
         <aside class="card">
-          <h3 style="margin:0 0 8px" data-i18n="edu_title">Education</h3>
+          <h3 style="margin:0 0 8px" data-i18n="skills_soft_title">Soft skills</h3>
+          <div class="stack">
+            <span class="tag" data-i18n="soft1">Interpersonal</span>
+            <span class="tag" data-i18n="soft2">Team member</span>
+            <span class="tag" data-i18n="soft3">Collaborative</span>
+            <span class="tag" data-i18n="soft4">Creative thinker</span>
+            <span class="tag" data-i18n="soft5">Attention to detail</span>
+            <span class="tag" data-i18n="soft6">Problem‑solver</span>
+            <span class="tag" data-i18n="soft7">Time management</span>
+            <span class="tag" data-i18n="soft8">Authentic & approachable</span>
+            <span class="tag" data-i18n="soft9">Open & honest</span>
+            <span class="tag" data-i18n="soft10">Natural leader</span>
+          </div>
+
+          <h3 style="margin:16px 0 8px" data-i18n="skills_lang_title">Languages</h3>
+          <div class="kv">
+            <div>Portuguese</div><div class="stars">★★★★★</div>
+            <div>English</div><div class="stars">★★★★★</div>
+            <div>French</div><div class="stars">★★★★★</div>
+          </div>
+
+          <h3 style="margin:16px 0 8px" data-i18n="edu_title">Education</h3>
           <ul class="muted">
-            <li data-i18n="edu1">Universidade de Passo Fundo (UPF)</li>
+            <li data-i18n="edu1">Specialization — Blockchain, Smart Contracts & Cloud Security · UPF · 2023</li>
+            <li data-i18n="edu2">Specialization — Artificial Intelligence & Data Science · UPF · 2023</li>
+            <li data-i18n="edu3">B.Sc. in Computer Science · UPF · 2015</li>
+            <li data-i18n="edu4">Security+ (CompTIA) · 2015</li>
           </ul>
-          <h3 style="margin:12px 0 8px" data-i18n="skills_cert_title">Certifications / Study</h3>
-          <ul class="muted">
-            <li data-i18n="cert1">Kubernetes, Cloud and Observability (ongoing).</li>
-            <li data-i18n="cert2">Java & service architecture.</li>
-            <li data-i18n="cert3">Security & platforms (IAM, policies, SBOM).</li>
-          </ul>
-          <div class="chip" data-i18n="chip_mentoring">Always learning · Light mentoring available</div>
         </aside>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projetos" class="reveal">
+    <!-- PROJECTS (kept minimal; replace with your repos if desired) -->
+    <section id="projects" class="reveal">
       <h2 class="sec-title" data-i18n="section_projects_title">Featured projects</h2>
       <div class="grid cols-3">
         <article class="card project tilt">
@@ -365,24 +407,43 @@
       <p style="margin-top:10px"><a class="btn ghost" href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener" data-i18n="btn_view_all_repos">View all repositories</a></p>
     </section>
 
+    <!-- RECOMMENDATIONS -->
+    <section id="recommendations" class="reveal">
+      <h2 class="sec-title" data-i18n="section_reco_title">Recommendations</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <blockquote data-i18n="rec1_text">“I had the chance to closely collaborate with Felipe in our squad. Felipe adapts very quickly to our day‑to‑day process. He finds improvements at different levels and shares ideas that are always relevant and helpful. He doesn’t hesitate to leave his comfort zone and try new technologies and tools. He’s respectful and always ready to help.”</blockquote>
+          <cite data-i18n="rec1_cite">— Jérôme Vervier, Full‑stack Developer & Trainer (Swift)</cite>
+        </article>
+        <article class="card">
+          <blockquote data-i18n="rec2_text">“He is the go‑to man when it comes to Linux and microservices. We worked closely on microservices together at Swift — nice colleague to work with. I recommend him for IT development roles.”</blockquote>
+          <cite data-i18n="rec2_cite">— Sadhana Italiya, Java Software Developer (Swift)</cite>
+        </article>
+        <article class="card">
+          <blockquote data-i18n="rec3_text">“I have had the pleasure to work with Felipe, probably the most skilled developer I have ever met. Enthusiastic about new technologies and making things work, but also a fun and relaxed teammate.”</blockquote>
+          <cite data-i18n="rec3_cite">— Arnau Rovira, DevOps Engineer (Eleven Sports)</cite>
+        </article>
+      </div>
+    </section>
+
     <!-- CONTACT -->
-    <section id="contato" class="reveal">
+    <section id="contact" class="reveal">
       <h2 class="sec-title" data-i18n="section_contact_title">Contact</h2>
       <div class="grid cols-2 contact">
         <article class="card">
-          <p data-i18n="contact_p">Open to invitations for open‑source collaboration, technical review and investment chats.</p>
+          <p class="muted"><strong>E‑mail:</strong> <a href="mailto:fsotille@gmail.com">fsotille@gmail.com</a> • <strong>Phone:</strong> <a href="tel:+32456250429">+32&nbsp;456&nbsp;250&nbsp;429</a> • <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener">linkedin.com/in/Felipe‑Sotille</a></p>
           <div class="stack">
-            <a class="btn" href="mailto:felipe.sotille+cv@proton.me" data-i18n="btn_email">Send email</a>
-            <a class="btn ghost" href="https://linkedin.com/in/felipe-sotille/" target="_blank" rel="noopener" data-i18n="btn_linkedin">LinkedIn</a>
+            <a class="btn" href="mailto:fsotille@gmail.com" data-i18n="btn_email">Send email</a>
+            <a class="btn ghost" href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener" data-i18n="btn_linkedin">LinkedIn</a>
             <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
           </div>
         </article>
         <aside class="card">
           <h3 style="margin:0 0 10px" data-i18n="links_quick_title">Quick links</h3>
           <div class="stack">
-            <a class="chip" href="#experiencia" data-i18n="link_experience">Experience</a>
+            <a class="chip" href="#experience" data-i18n="link_experience">Experience</a>
             <a class="chip" href="#skills" data-i18n="link_skills">Skills</a>
-            <a class="chip" href="#projetos" data-i18n="link_projects">Projects</a>
+            <a class="chip" href="#projects" data-i18n="link_projects">Projects</a>
             <a class="chip" href="#" onclick="window.print();return false;" data-i18n="link_download_pdf">Download PDF</a>
           </div>
           <p class="muted" style="margin-top:8px" data-i18n="tip_replay">Tip: press <span class='kbd'>R</span> to replay the top animation.</p>
@@ -395,7 +456,7 @@
     <div>© <span id="year"></span> Felipe Sotille • <span data-i18n="footer_text">Made with plain HTML/CSS/JS • Deployed on GitHub Pages</span></div>
   </footer>
 
-  <!-- Anime.js for the orb animation (inspired by Julian Garnier's demo) -->
+  <!-- Anime.js for the orb animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
   <script>
@@ -403,11 +464,11 @@
     const $ = (sel, el = document) => el.querySelector(sel);
     const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
 
-    // i18n dictionary
+    // i18n dictionary (EN default)
     const I18N = {
       en: {
         title: "Felipe Sotille — Portfolio / CV",
-        meta_desc: "Interactive CV of Felipe Sotille — Tech Lead, Cloud‑Native, Platform Engineering.",
+        meta_desc: "Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer.",
         nav_about: "About",
         nav_experience: "Experience",
         nav_skills: "Skills",
@@ -415,61 +476,64 @@
         nav_contact: "Contact",
         btn_download_pdf: "Download PDF",
         hero_pill: "Open to OSS collaborations",
-        headline: "Tech Lead · Cloud‑Native · Platform Engineering",
-        hero_desc: "I build resilient platforms and developer experiences that speed up teams. Passionate about technology and nature.",
-        btn_view_projects: "View projects",
+        headline: "Sr. DevSecOps & Software Engineer",
+        hero_desc: "14 years across banking, ERPs, real‑time and social apps. Backend engineer, frontend enthusiast and DevOps lover.",
+        btn_view_experience: "View experience",
+        btn_email: "Email",
         btn_linkedin: "LinkedIn",
         btn_github: "GitHub",
-        chip_k8s: "Kubernetes",
-        chip_java: "Java · Spring",
-        chip_ts: "TypeScript · Angular",
-        chip_cloud: "AWS · GCP",
-        chip_docker: "Docker",
-        chip_platform: "Platform Eng",
-        card_focus_title: "Current focus",
-        card_focus_value: "K8s · IaC · Observability",
-        card_interests_title: "Interests",
-        card_interests_value: "Mountains · Chess · Sci‑Fi",
         section_about_title: "About",
-        about_p1: "I'm a Tech Lead focused on cloud‑native platforms, Developer Experience and reliability. I like to combine solid engineering practices with clear communication so ideas become stable, operable products.",
-        about_ul_1: "I design scalable architectures, CI/CD pipelines, observability and platform standards.",
-        about_ul_2: "I lead quality and performance initiatives focused on user value.",
-        about_ul_3: "Constantly learning about investments; open to exchange ideas.",
+        about_intro: "I’m a distinguished software engineer with 14 years of experience. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.",
+        about_quote: "“Strive not to be a success, but rather to be of value.” — Albert Einstein",
         aside_loc: "Location",
         aside_loc_value: "Brussels Metropolitan Area (remote/global)",
         aside_langs: "Languages",
-        aside_langs_value: "PT · EN · IT (basic)",
+        aside_langs_value: "Portuguese, English, French",
         aside_avail: "Availability",
-        aside_avail_value: "OSS collaborations & light mentoring",
-        about_current: 'Currently Tech Lead at <a href="https://www.swissquote.com" target="_blank" rel="noopener">Swissquote</a>, Switzerland’s leader in digital banking.',
+        aside_avail_value: "Consulting & OSS collaborations",
         section_experience_title: "Experience",
-        exp1_meta: "2023 — Present · Tech Lead · Swissquote",
-        exp1_role: "Platform technical leadership",
-        exp1_desc: "Design and evolution of a Kubernetes platform (GitOps CI/CD), service standards, security and SRE. Partnering with product teams to speed up delivery.",
-        exp2_meta: "2020 — 2023 · Senior Software Engineer",
-        exp2_role: "Architecture & backend",
-        exp2_desc: "Resilient Java/Spring APIs, messaging, caching and observability practices. Collaborated in cloud migrations.",
-        exp3_meta: "2017 — 2020 · Full‑stack Engineer",
-        exp3_role: "Web apps & DX",
-        exp3_desc: "Angular/TypeScript apps with Node/Java backends. Continuous DX improvements and build/deploy automations.",
-        aside_results_title: "Highlights",
-        res1: "Reduced deploy lead time by >30% with GitOps standardization.",
-        res2: "Increased reliability with SLOs and symptom‑based alerts.",
-        res3: "Improved DX with internal templates and CLIs (best practices & security).",
-        chip_refs: "References available upon request",
+        expA_meta: "2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Belgium",
+        expA_role: "DevSecOps & CI/CD",
+        expA_bullets: "<ul class='muted'><li>Blueprints of CI/CD pipelines.</li><li>Release orchestration (driving a key KPI).</li><li>Standardization of CI/CD.</li><li>Security scans for several applications (static analysis).</li><li>DevOps coaching across squads.</li><li>Automation and tooling scripting.</li></ul>",
+        expB_meta: "2024 — 2025 · Sr. Software Engineer (Consultant) · Swissquote · Switzerland",
+        expB_role: "Data migration & database engineering",
+        expB_bullets: "<ul class='muted'><li>Created reports for the DBA squad to explain migration efforts.</li><li>Migrated a huge database with billions of financial transaction records to Oracle.</li><li>Improved database interactions by rewriting queries for optimal results.</li><li>Built a Java data loader to move billions of records seamlessly.</li><li>Applied denormalization and table partitioning to optimize performance.</li></ul>",
+        expC_meta: "2019 — 2024 · Sr. Software Engineer (Consultant) · Swift · Belgium",
+        expC_role: "Full‑stack engineering & platform evolution",
+        expC_bullets: "<ul class='muted'><li>Full‑stack engineer across multiple squads.</li><li>Implemented Coveo AI Search in Knowledge Centre Angular application.</li><li>Fixed security vulnerabilities and code smells across back‑office apps.</li><li>Upgraded Angular versions in more than 10 applications.</li><li>Wrote documentation/specifications with stakeholders for new features.</li><li>Upgraded Docker images to align with current technologies.</li><li>Interviewed candidates for technical and cultural fit.</li><li>Led migration from monolith to microservices in Identity Management app.</li><li>Delivered JSF → Angular migration, pivotal for company KPIs.</li><li>Acted as Scrum Master with agile coaches to improve agility and motivation.</li><li>Integrated Adobe Experience Cloud into the application flow.</li><li>Received nominations from colleagues: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player.</li></ul>",
+        expD_meta: "2018 — 2019 · Sr. Software Engineer & Dev. Lead · Eleven Sports · Portugal",
+        expD_role: "Real‑time microservices & team leadership",
+        expD_bullets: "<ul class='muted'><li>Designed and launched a cloud‑centric, scalable microservice backend using Vert.x to elevate the player experience.</li><li>Built a real‑time app with the Kafka ecosystem to connect football players and their fanbase (social‑network‑like).</li><li>Used Kubernetes and Google Cloud Platform to handle hundreds of thousands of interactions.</li><li>Led a passionate engineering team and cultivated a positive environment.</li></ul>",
+        aside_prev_title: "Previous experiences",
+        prev1: "Senior Java Developer · Wplex (Public Transport) · Brazil · 2015–2018",
+        prev2: "Java Developer · Metaway (Education) · Brazil · 2015",
+        prev3: "Java Developer · Citta Informatica (Government & Legal) · Brazil · 2010–2014",
+        prev4: "Junior Java Developer · Allcance (Industry) · Brazil · 2008–2009",
+        chip_linkedin: "Detailed roles and responsibilities available on my LinkedIn profile.",
         section_skills_title: "Skills",
-        skills_stack_title: "Primary stack",
-        skillbars_platform: "Platforms & SRE",
+        skills_hard_title: "Hard skills",
+        skills_bars_title: "Proficiency overview",
+        skillbars_platform: "Platforms & DevSecOps",
         skillbars_backend: "Back‑end (Java/Spring)",
         skillbars_frontend: "Front‑end (Angular/TS)",
         skills_note: "*Self‑assessed indicators for quick visualization.",
-        skills_cert_title: "Certifications / Study",
-        cert1: "Kubernetes, Cloud and Observability (ongoing).",
-        cert2: "Java & service architecture.",
-        cert3: "Security & platforms (IAM, policies, SBOM).",
-        chip_mentoring: "Always learning · Light mentoring available",
+        skills_soft_title: "Soft skills",
+        soft1: "Interpersonal",
+        soft2: "Team member",
+        soft3: "Collaborative",
+        soft4: "Creative thinker",
+        soft5: "Attention to detail",
+        soft6: "Problem‑solver",
+        soft7: "Time management",
+        soft8: "Authentic & approachable",
+        soft9: "Open & honest",
+        soft10: "Natural leader",
+        skills_lang_title: "Languages",
         edu_title: "Education",
-        edu1: "Universidade de Passo Fundo (UPF)",
+        edu1: "Specialization — Blockchain, Smart Contracts & Cloud Security · UPF · 2023",
+        edu2: "Specialization — Artificial Intelligence & Data Science · UPF · 2023",
+        edu3: "B.Sc. in Computer Science · UPF · 2015",
+        edu4: "Security+ (CompTIA) · 2015",
         section_projects_title: "Featured projects",
         proj1_title: "Infra as Code Starter",
         proj1_meta: "Blueprint · K8s · GitOps · Observability",
@@ -481,9 +545,14 @@
         proj3_meta: "CLI · Schematics · Storybook",
         proj3_desc: "DX tools: scaffolding, tests, lint and integrated UI docs.",
         btn_view_all_repos: "View all repositories",
+        section_reco_title: "Recommendations",
+        rec1_text: "“I had the chance to closely collaborate with Felipe in our squad. Felipe adapts very quickly to our day‑to‑day process. He finds improvements at different levels and shares ideas that are always relevant and helpful. He doesn’t hesitate to leave his comfort zone and try new technologies and tools. He’s respectful and always ready to help.”",
+        rec1_cite: "— Jérôme Vervier, Full‑stack Developer & Trainer (Swift)",
+        rec2_text: "“He is the go‑to man when it comes to Linux and microservices. We worked closely on microservices together at Swift — nice colleague to work with. I recommend him for IT development roles.”",
+        rec2_cite: "— Sadhana Italiya, Java Software Developer (Swift)",
+        rec3_text: "“I have had the pleasure to work with Felipe, probably the most skilled developer I have ever met. Enthusiastic about new technologies and making things work, but also a fun and relaxed teammate.”",
+        rec3_cite: "— Arnau Rovira, DevOps Engineer (Eleven Sports)",
         section_contact_title: "Contact",
-        contact_p: "Open to invitations for open‑source collaboration, technical review and investment chats.",
-        btn_email: "Send email",
         links_quick_title: "Quick links",
         link_experience: "Experience",
         link_skills: "Skills",
@@ -493,15 +562,15 @@
         footer_text: "Made with plain HTML/CSS/JS • Deployed on GitHub Pages",
         scramble: [
           "Felipe Sotille",
-          "Tech Lead · Cloud‑Native · Platform Engineering",
-          "Tech Lead @ Swissquote",
-          "Kubernetes · Java · Spring · TypeScript · AWS/GCP",
-          "I love technology and nature"
+          "Sr. DevSecOps & Software Engineer",
+          "Consultant — Swift, Swissquote",
+          "14+ years: Java, Spring, Angular, K8s",
+          "Banking · Real‑time · Social · ERP"
         ]
       },
       pt: {
         title: "Felipe Sotille — Portfólio / Currículo",
-        meta_desc: "Currículo interativo de Felipe Sotille — Tech Lead, Cloud‑Native, Platform Engineering.",
+        meta_desc: "Currículo interativo de Felipe Sotille — Sr. DevSecOps & Software Engineer.",
         nav_about: "Sobre",
         nav_experience: "Experiência",
         nav_skills: "Skills",
@@ -509,75 +578,83 @@
         nav_contact: "Contato",
         btn_download_pdf: "Baixar PDF",
         hero_pill: "Aberto a colaborações OSS",
-        headline: "Tech Lead · Cloud‑Native · Platform Engineering",
-        hero_desc: "Construo plataformas resilientes e experiências de desenvolvedor que aceleram times. Apaixonado por tecnologia e natureza.",
-        btn_view_projects: "Ver projetos",
+        headline: "Sr. DevSecOps & Software Engineer",
+        hero_desc: "14 anos entre banking, ERPs, apps em tempo real e sociais. Engenheiro de backend, entusiasta de frontend e apaixonado por DevOps.",
+        btn_view_experience: "Ver experiência",
+        btn_email: "E‑mail",
         btn_linkedin: "LinkedIn",
         btn_github: "GitHub",
-        chip_k8s: "Kubernetes",
-        chip_java: "Java · Spring",
-        chip_ts: "TypeScript · Angular",
-        chip_cloud: "AWS · GCP",
-        chip_docker: "Docker",
-        chip_platform: "Engenharia de Plataforma",
-        card_focus_title: "Foco atual",
-        card_focus_value: "K8s · IaC · Observabilidade",
-        card_interests_title: "Interesses",
-        card_interests_value: "Montanhas · Xadrez · Sci‑Fi",
         section_about_title: "Sobre",
-        about_p1: "Sou Tech Lead com foco em plataformas cloud‑native, Developer Experience e confiabilidade. Gosto de unir boas práticas de engenharia com comunicação clara, para que ideias virem produtos estáveis e operáveis.",
-        about_ul_1: "Desenho arquiteturas escaláveis, pipelines CI/CD, observabilidade e padrões de plataforma.",
-        about_ul_2: "Lidero iniciativas de qualidade e performance focadas em valor para o usuário.",
-        about_ul_3: "Aprendendo continuamente sobre investimentos; aberto a trocar ideias.",
+        about_intro: "Sou um engenheiro de software com 14 anos de experiência. Contribuí para catálogos de produtos, ERPs, aplicações em tempo real e sociais, e para o setor bancário. Desenvolvedor versátil: engenheiro de backend, entusiasta de frontend e apaixonado por DevOps. Sempre aberto a compartilhar conhecimento e ajudar.",
+        about_quote: "“Esforce‑se não para ser um sucesso, mas para ser valioso.” — Albert Einstein",
         aside_loc: "Local",
         aside_loc_value: "Área metropolitana de Bruxelas (remoto/global)",
         aside_langs: "Idiomas",
-        aside_langs_value: "PT · EN · IT (básico)",
+        aside_langs_value: "Português, Inglês, Francês",
         aside_avail: "Disponibilidade",
-        aside_avail_value: "Colaborações em OSS & mentoria leve",
-        about_current: 'Atualmente Tech Lead na <a href="https://www.swissquote.com" target="_blank" rel="noopener">Swissquote</a>, líder suíça em banking digital.',
+        aside_avail_value: "Consultoria & colaborações em OSS",
         section_experience_title: "Experiência",
-        exp1_meta: "2023 — Atual · Tech Lead · Swissquote",
-        exp1_role: "Liderança técnica de plataforma",
-        exp1_desc: "Desenho e evolução de plataforma Kubernetes (CI/CD com GitOps), padrões de serviços, segurança e SRE. Parceria com times de produto para acelerar entregas.",
-        exp2_meta: "2020 — 2023 · Senior Software Engineer",
-        exp2_role: "Arquitetura & backend",
-        exp2_desc: "APIs resilientes em Java/Spring, mensageria, caching e práticas de observabilidade. Colaborei em migrações para cloud.",
-        exp3_meta: "2017 — 2020 · Full‑stack Engineer",
-        exp3_role: "Web apps & DX",
-        exp3_desc: "Apps em Angular/TypeScript com backends Node/Java. Melhoria contínua de DX e automações de build/deploy.",
-        aside_results_title: "Resultados em destaque",
-        res1: "Reduziu lead time de deploy em >30% com padronização GitOps.",
-        res2: "Aumento de confiabilidade com SLOs e alertas orientados a sintomas.",
-        res3: "Melhora de DX com templates e CLIs internos (boas práticas & segurança).",
-        chip_refs: "Referências disponíveis sob pedido",
+        expA_meta: "2025 — Atual · Sr. DevSecOps Engineer (Consultor) · Swift · Bélgica",
+        expA_role: "DevSecOps & CI/CD",
+        expA_bullets: "<ul class='muted'><li>Blueprints de pipelines de CI/CD.</li><li>Orquestração de releases (impulsionando KPI chave).</li><li>Padronização de CI/CD.</li><li>Scans de segurança em várias aplicações (análise estática).</li><li>Coaching DevOps para diversos squads.</li><li>Automação e scripts de tooling.</li></ul>",
+        expB_meta: "2024 — 2025 · Sr. Software Engineer (Consultor) · Swissquote · Suíça",
+        expB_role: "Migração de dados & engenharia de banco de dados",
+        expB_bullets: "<ul class='muted'><li>Relatórios para o time de DBA explicando os esforços de migração.</li><li>Migração de um banco com bilhões de registros de transações financeiras para Oracle.</li><li>Melhoria nas interações com o banco reescrevendo queries para resultados ótimos.</li><li>Criação de loader em Java para mover bilhões de registros sem interrupções.</li><li>Aplicação de desnormalização e particionamento para otimizar performance.</li></ul>",
+        expC_meta: "2019 — 2024 · Sr. Software Engineer (Consultor) · Swift · Bélgica",
+        expC_role: "Engenharia full‑stack & evolução de plataforma",
+        expC_bullets: "<ul class='muted'><li>Atuação full‑stack em múltiplos squads.</li><li>Implementação do Coveo AI Search no app Angular do Knowledge Centre.</li><li>Correção de vulnerabilidades e code smells em apps de back‑office.</li><li>Upgrade de Angular em mais de 10 aplicações.</li><li>Documentação/especificações de novas features junto a stakeholders.</li><li>Upgrade de imagens Docker para tecnologias atuais.</li><li>Entrevistas técnicas e de fit cultural.</li><li>Liderança na migração de monólito para microserviços no app de Identity Management.</li><li>Entrega da migração JSF → Angular, crucial para KPIs.</li><li>Atuação como Scrum Master com agile coaches para aumentar a agilidade e motivação.</li><li>Integração do Adobe Experience Cloud no fluxo do app.</li><li>Indicações dos colegas: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player.</li></ul>",
+        expD_meta: "2018 — 2019 · Sr. Software Engineer & Dev. Leader · Eleven Sports · Portugal",
+        expD_role: "Microserviços em tempo real & liderança de time",
+        expD_bullets: "<ul class='muted'><li>Design e lançamento de backend escalável em microserviços com Vert.x.</li><li>App em tempo real com Kafka para ligação entre jogadores e fãs (estilo rede social).</li><li>Uso de Kubernetes e Google Cloud Platform para alto throughput.</li><li>Liderança de equipe e cultura positiva.</li></ul>",
+        aside_prev_title: "Experiências anteriores",
+        prev1: "Senior Java Developer · Wplex (Transporte Público) · Brasil · 2015–2018",
+        prev2: "Java Developer · Metaway (Educação) · Brasil · 2015",
+        prev3: "Java Developer · Citta Informatica (Governo & Jurídico) · Brasil · 2010–2014",
+        prev4: "Junior Java Developer · Allcance (Indústria) · Brasil · 2008–2009",
+        chip_linkedin: "Papéis e responsabilidades detalhados no meu LinkedIn.",
         section_skills_title: "Skills",
-        skills_stack_title: "Stack principal",
-        skillbars_platform: "Plataformas & SRE",
+        skills_hard_title: "Hard skills",
+        skills_bars_title: "Visão geral de proficiência",
+        skillbars_platform: "Plataformas & DevSecOps",
         skillbars_backend: "Back‑end (Java/Spring)",
         skillbars_frontend: "Front‑end (Angular/TS)",
         skills_note: "*Indicadores autoavaliados para visualização rápida.",
-        skills_cert_title: "Certificações / Estudos",
-        cert1: "Kubernetes, Cloud e Observabilidade (contínuo).",
-        cert2: "Java & arquitetura de serviços.",
-        cert3: "Segurança & plataformas (IAM, políticas, SBOM).",
-        chip_mentoring: "Sempre aprendendo · Mentoria leve disponível",
+        skills_soft_title: "Soft skills",
+        soft1: "Interpessoal",
+        soft2: "Trabalho em equipe",
+        soft3: "Colaborativo",
+        soft4: "Pensamento criativo",
+        soft5: "Atenção aos detalhes",
+        soft6: "Resolvedor de problemas",
+        soft7: "Gestão do tempo",
+        soft8: "Autêntico & acessível",
+        soft9: "Aberto & honesto",
+        soft10: "Liderança natural",
+        skills_lang_title: "Idiomas",
         edu_title: "Formação",
-        edu1: "Universidade de Passo Fundo (UPF)",
+        edu1: "Especialização — Blockchain, Smart Contracts & Cloud Security · UPF · 2023",
+        edu2: "Especialização — Inteligência Artificial & Data Science · UPF · 2023",
+        edu3: "Bacharel em Ciência da Computação · UPF · 2015",
+        edu4: "Security+ (CompTIA) · 2015",
         section_projects_title: "Projetos em destaque",
         proj1_title: "Infra as Code Starter",
-        proj1_meta: "Blueprint · K8s · GitOps · Observabilidade",
-        proj1_desc: "Template de plataforma com Helm, ArgoCD, Prometheus/Grafana e padrões de service mesh.",
+        proj1_meta: "Blueprint · K8s · GitOps · Observability",
+        proj1_desc: "Template de plataforma com Helm, ArgoCD, Prometheus/Grafana e patterns de service‑mesh.",
         proj2_title: "Java Service Kit",
         proj2_meta: "Spring Boot · Resiliência · Telemetria",
-        proj2_desc: "Kit com boas práticas: tracing, métricas, retries, circuit‑breaker e hardening.",
+        proj2_desc: "Kit de boas práticas: tracing, métricas, retries, circuit‑breaker e hardening.",
         proj3_title: "Angular + DX",
         proj3_meta: "CLI · Schematics · Storybook",
         proj3_desc: "Ferramentas de DX: scaffolding, testes, lint e UI docs integradas.",
         btn_view_all_repos: "Ver todos os repositórios",
+        section_reco_title: "Recomendações",
+        rec1_text: "“Tive a chance de colaborar de perto com o Felipe no nosso squad. Ele se adapta muito rápido ao dia a dia. Encontra melhorias em diferentes níveis e compartilha ideias sempre relevantes. Não hesita em sair da zona de conforto e experimentar novas tecnologias e ferramentas. Respeitoso e sempre pronto para ajudar.”",
+        rec1_cite: "— Jérôme Vervier, Full‑stack Developer & Trainer (Swift)",
+        rec2_text: "“Ele é a pessoa de referência quando se trata de Linux e microserviços. Trabalhamos juntos em microserviços na Swift — ótimo colega. Recomendo para vagas de desenvolvimento.”",
+        rec2_cite: "— Sadhana Italiya, Java Software Developer (Swift)",
+        rec3_text: "“Tive o prazer de trabalhar com o Felipe, provavelmente o desenvolvedor mais habilidoso que já conheci. Entusiasta de novas tecnologias e de fazer as coisas funcionarem, além de um colega divertido e tranquilo.”",
+        rec3_cite: "— Arnau Rovira, DevOps Engineer (Eleven Sports)",
         section_contact_title: "Contato",
-        contact_p: "Aberto a convites para colaboração em open source, revisão técnica e trocas sobre investimentos.",
-        btn_email: "Enviar e‑mail",
         links_quick_title: "Links rápidos",
         link_experience: "Experiência",
         link_skills: "Skills",
@@ -587,18 +664,17 @@
         footer_text: "Feito com HTML/CSS/JS puro • Deploy no GitHub Pages",
         scramble: [
           "Felipe Sotille",
-          "Tech Lead · Cloud‑Native · Platform Engineering",
-          "Tech Lead @ Swissquote",
-          "Kubernetes · Java · Spring · TypeScript · AWS/GCP",
-          "Amo tecnologia e natureza"
+          "Sr. DevSecOps & Software Engineer",
+          "Consultor — Swift, Swissquote",
+          "14+ anos: Java, Spring, Angular, K8s",
+          "Banking · Tempo real · Social · ERP"
         ]
       }
     };
 
-    // Language init
+    // Default language: EN (unless user saved a preference)
     const stored = localStorage.getItem('lang');
-    const browserLang = (navigator.language || 'en').toLowerCase().startsWith('pt') ? 'pt' : 'en';
-    let LANG = stored || browserLang;
+    let LANG = stored || 'en';
 
     function applyI18n(lang){
       document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
@@ -615,7 +691,7 @@
       setPhrases(I18N[lang].scramble);
     }
 
-    // Text Scramble (inspired by Julian Garnier demo)
+    // Text Scramble
     class TextScramble {
       constructor(el){ this.el = el; this.chars = '!<>-_\\\\/[]{}—=+*^?#________'; this.update = this.update.bind(this); }
       setText(newText){
@@ -712,50 +788,30 @@
       });
     });
 
-    // Orb builder (inspired by Julian Garnier's SVG sphere demo)
-    function buildOrb(){
-      const svg = $('.orb');
-      const group = $('.orb g');
-      if (!svg || !group) return;
-
-      const cx = 220, cy = 220;
-      const rings = 42;
-      for (let i = 0; i < rings; i++){
-        const r = 200 - i * 4.2;
-        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        c.setAttribute('cx', cx);
-        c.setAttribute('cy', cy);
-        c.setAttribute('r', r.toFixed(2));
-        // set a dash pattern: 35% visible, 65% gap — creates arc feeling
-        const len = 2 * Math.PI * r;
-        const vis = len * 0.35, gap = len - vis;
-        c.setAttribute('stroke-dasharray', vis.toFixed(2) + ' ' + gap.toFixed(2));
-        c.setAttribute('stroke-dashoffset', vis.toFixed(2));
-        group.appendChild(c);
-      }
-
-      if (prefersReduced) return; // no motion if reduced-motion
-
-      if (window.anime){
-        // stroke animation
-        window.anime({
-          targets: '.orb circle',
-          strokeDashoffset: [window.anime.setDashoffset, 0],
-          easing: 'easeInOutSine',
-          duration: 1800,
-          delay: (el, i) => i * 22,
-          direction: 'alternate',
-          loop: true
-        });
-        // slow rotation
-        window.anime({
-          targets: '.orb',
-          rotate: '1turn',
-          easing: 'linear',
-          duration: 22000,
-          loop: true
-        });
-      }
+    // Orb: duplicate latitude paths to create longitude set, then animate
+    function prepareSphere(){
+      const lat = document.querySelector('.sphere .lat');
+      const lon = document.querySelector('.sphere .lon');
+      if (lat && lon) lon.innerHTML = lat.innerHTML;
+    }
+    function animateSphere(){
+      if (prefersReduced || !window.anime) return;
+      window.anime({
+        targets: '.sphere path',
+        strokeDashoffset: [window.anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 1800,
+        delay: (el, i) => i * 24,
+        direction: 'alternate',
+        loop: true
+      });
+      window.anime({
+        targets: '.sphere',
+        rotate: '1turn',
+        easing: 'linear',
+        duration: 22000,
+        loop: true
+      });
     }
 
     // Key: replay
@@ -778,8 +834,8 @@
 
     // Initial render
     applyI18n(LANG);
-    // Build orb after DOM/i18n is ready
-    buildOrb();
+    prepareSphere();
+    animateSphere();
   </script>
 </body>
 </html>

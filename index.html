@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Felipe Sotille — Currículo</title>
-  <meta name="description" content="Currículo interativo de Felipe Sotille — Tech Lead, Cloud-Native, Platform Engineering.">
+  <title>Felipe Sotille — Portfolio / CV</title>
+  <meta name="description" content="Interactive CV of Felipe Sotille — Tech Lead, Cloud‑Native, Platform Engineering.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
@@ -64,16 +64,20 @@
       mix-blend-mode:screen;
     }
     .nav a{color:var(--text); opacity:.84; font-weight:600}
-    .links{display:flex; gap:18px; align-items:center}
+    .links{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
     .btn{
       display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px;
       background:linear-gradient(180deg, #12203b, #0f172a); border:1px solid var(--line);
       box-shadow: var(--shadow);
-      font-weight:600; color:#dbeafe;
+      font-weight:600; color:#dbeafe; cursor:pointer;
     }
     .btn:hover{transform:translateY(-1px)}
     .ghost{background:transparent; border-color:#223049; color:#cbd5e1}
+    .btn.sm{padding:6px 10px; border-radius:8px; font-size:13px}
     .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--line); border-radius:999px; background:rgba(2,6,23,.5)}
+    .lang-toggle{display:inline-flex; border:1px solid var(--line); border-radius:12px; overflow:hidden}
+    .lang-toggle button{background:transparent; border:0; color:#cbd5e1; padding:8px 12px; font-weight:700; cursor:pointer}
+    .lang-toggle button[aria-pressed="true"]{background:linear-gradient(180deg, #12203b, #0f172a); color:#e6f3ff}
     main{padding:18px 0 64px}
     .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:28px 0 12px}
     .headline{font-size: clamp(28px, 5vw, 58px); line-height:1.08; letter-spacing:.2px; font-weight:800; margin:0 0 6px}
@@ -135,7 +139,7 @@
     footer{margin:48px 0 16px; color:#91a0b8; font-size:14px; text-align:center}
     .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
     .reveal.visible{opacity:1; transform:none}
-    .pill{display:inline-flex; align-items:center; padding:6px 10px; gap:8px; border-radius:999px; border:1px solid var(--line); background:rgba(2,6,23,.5); font:600 12px/1 Inter}
+    .pill{display:inline-flex; align-items:center; padding:6px 10px; gap:8px; border-radius:999px; border:1px solid var(--line); background:rgba(2,6,23,.5); font-weight:600}
     /* Responsive */
     @media (max-width: 980px){ .hero{grid-template-columns: 1fr; text-align:center} .actions{justify-content:center} .avatar{width:min(360px, 75%)} .nav{padding:10px 16px} }
     @media (prefers-reduced-motion: reduce){
@@ -146,7 +150,7 @@
     @media print{
       :root{--text:#0b1220; --muted:#334155; --line:#cbd5e1}
       body{background:#fff; color:var(--text)}
-      header, .actions, .avatar, .links, .chip, .btn{display:none !important}
+      header, .actions, .avatar, .links, .chip, .btn, .lang-toggle{display:none !important}
       .card, .hero-card{box-shadow:none; border-color:#e2e8f0}
       a{color:#0b1220; text-decoration:underline}
     }
@@ -160,12 +164,16 @@
         <div>Felipe Sotille</div>
       </div>
       <div class="links">
-        <a href="#sobre">Sobre</a>
-        <a href="#experiencia">Experiência</a>
-        <a href="#skills">Skills</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-        <a class="btn ghost" href="#" onclick="window.print();return false;" title="Imprimir/Salvar PDF">Baixar PDF</a>
+        <a href="#sobre" data-i18n="nav_about">About</a>
+        <a href="#experiencia" data-i18n="nav_experience">Experience</a>
+        <a href="#skills" data-i18n="nav_skills">Skills</a>
+        <a href="#projetos" data-i18n="nav_projects">Projects</a>
+        <a href="#contato" data-i18n="nav_contact">Contact</a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="sm" data-lang="en" aria-pressed="true">EN</button>
+          <button class="sm" data-lang="pt">PT‑BR</button>
+        </div>
+        <button class="btn ghost sm" id="btn-pdf" data-i18n="btn_download_pdf" title="Download / Print PDF" onclick="window.print()">Download PDF</button>
       </div>
     </nav>
   </header>
@@ -174,95 +182,92 @@
     <!-- HERO -->
     <section class="hero reveal">
       <div>
-        <p class="pill" aria-label="Disponível para colaboração">
-          <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" fill="#22c55e"/></svg>
-          Aberto a colaborações OSS
-        </p>
-        <h1 class="headline">Tech Lead · Cloud‑Native · Platform Engineering</h1>
+        <p class="pill" aria-live="polite"><span aria-hidden="true">🟢</span> <span data-i18n="hero_pill">Open to OSS collaborations</span></p>
+        <h1 class="headline" data-i18n="headline">Tech Lead · Cloud‑Native · Platform Engineering</h1>
         <div class="scramble" id="scramble" aria-live="polite"></div>
-        <p class="muted">Construo plataformas resilientes e experiências de desenvolvedor que aceleram times. Apaixonado por tecnologia e natureza.</p>
+        <p class="muted" data-i18n="hero_desc">I build resilient platforms and developer experiences that speed up teams. Passionate about technology and nature.</p>
         <div class="actions">
-          <a class="btn" href="#projetos">Ver projetos</a>
-          <a class="btn ghost" href="https://linkedin.com/in/felipe-sotille/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="#projetos" data-i18n="btn_view_projects">View projects</a>
+          <a class="btn ghost" href="https://linkedin.com/in/felipe-sotille/" target="_blank" rel="noopener" data-i18n="btn_linkedin">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
         </div>
         <div class="stack" style="margin-top:12px">
-          <span class="chip">Kubernetes</span>
-          <span class="chip">Java · Spring</span>
-          <span class="chip">TypeScript · Angular</span>
-          <span class="chip">AWS · GCP</span>
-          <span class="chip">Docker</span>
-          <span class="chip">Platform Eng</span>
+          <span class="chip" data-i18n="chip_k8s">Kubernetes</span>
+          <span class="chip" data-i18n="chip_java">Java · Spring</span>
+          <span class="chip" data-i18n="chip_ts">TypeScript · Angular</span>
+          <span class="chip" data-i18n="chip_cloud">AWS · GCP</span>
+          <span class="chip" data-i18n="chip_docker">Docker</span>
+          <span class="chip" data-i18n="chip_platform">Platform Eng</span>
         </div>
       </div>
 
-      <div class="hero-card tilt" aria-label="Foto / Avatar">
+      <div class="hero-card tilt" aria-label="Photo / Avatar">
         <div class="avatar">
-          <!-- Substitua o caminho abaixo pelo seu avatar (ex.: ./assets/avatar.png) -->
-          <img src="./assets/avatar.png" alt="Avatar de Felipe Sotille" onload="this.nextElementSibling.style.display='none'">
+          <!-- Replace with your avatar file: ./assets/avatar.png -->
+          <img src="./assets/avatar.png" alt="Felipe Sotille avatar" onload="this.nextElementSibling.style.display='none'">
           <div class="fallback">FS</div>
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px">
           <div class="card">
-            <div class="tl-meta">Foco atual</div>
-            <div class="tl-role">K8s · IaC · Observabilidade</div>
+            <div class="tl-meta" data-i18n="card_focus_title">Current focus</div>
+            <div class="tl-role" data-i18n="card_focus_value">K8s · IaC · Observability</div>
           </div>
           <div class="card">
-            <div class="tl-meta">Interesses</div>
-            <div class="tl-role">Montanhas · Xadrez · Sci‑Fi</div>
+            <div class="tl-meta" data-i18n="card_interests_title">Interests</div>
+            <div class="tl-role" data-i18n="card_interests_value">Mountains · Chess · Sci‑Fi</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SOBRE -->
+    <!-- ABOUT -->
     <section id="sobre" class="reveal">
-      <h2 class="sec-title">Sobre</h2>
+      <h2 class="sec-title" data-i18n="section_about_title">About</h2>
       <div class="grid cols-2">
         <article class="card">
-          <p>Sou <strong>Tech Lead</strong> com foco em plataformas cloud‑native, Developer Experience e confiabilidade. Gosto de unir boas práticas de engenharia com uma comunicação clara, para que ideias virem produtos estáveis e fáceis de operar.</p>
+          <p data-i18n="about_p1">I'm a Tech Lead focused on cloud‑native platforms, Developer Experience and reliability. I like to combine solid engineering practices with clear communication so ideas become stable, operable products.</p>
           <ul class="muted">
-            <li>Atuo desenhando arquiteturas escaláveis, pipelines CI/CD, observabilidade e padrões de plataforma.</li>
-            <li>Costumo liderar iniciativas de qualidade e performance, sempre com foco em valor para o usuário.</li>
-            <li>Aprendendo continuamente sobre <strong>investimentos</strong>; aberto a trocar ideias.</li>
+            <li data-i18n="about_ul_1">I design scalable architectures, CI/CD pipelines, observability and platform standards.</li>
+            <li data-i18n="about_ul_2">I lead quality and performance initiatives focused on user value.</li>
+            <li data-i18n="about_ul_3">Constantly learning about investments; open to exchange ideas.</li>
           </ul>
         </article>
         <aside class="card">
           <div class="grid" style="gap:10px">
-            <div class="pill"><strong>Local</strong>: Bélgica (remoto/global)</div>
-            <div class="pill"><strong>Idiomas</strong>: PT · EN · IT (básico)</div>
-            <div class="pill"><strong>Disponibilidade</strong>: Colaborações em OSS & Mentoria leve</div>
+            <div class="pill"><strong data-i18n="aside_loc">Location</strong>: <span data-i18n="aside_loc_value">Belgium (remote/global)</span></div>
+            <div class="pill"><strong data-i18n="aside_langs">Languages</strong>: <span data-i18n="aside_langs_value">PT · EN · IT (basic)</span></div>
+            <div class="pill"><strong data-i18n="aside_avail">Availability</strong>: <span data-i18n="aside_avail_value">OSS collaborations & light mentoring</span></div>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- EXPERIÊNCIA -->
+    <!-- EXPERIENCE -->
     <section id="experiencia" class="reveal">
-      <h2 class="sec-title">Experiência</h2>
+      <h2 class="sec-title" data-i18n="section_experience_title">Experience</h2>
       <div class="grid cols-2">
         <article class="card">
           <div class="timeline">
             <div class="tl-item">
-              <div class="tl-meta">2023 — Atual · Tech Lead</div>
-              <div class="tl-role">Liderança técnica de plataforma</div>
-              <p class="muted">Desenho e evolução de plataforma Kubernetes (CI/CD com GitOps), padrões de serviços, segurança e SRE. Parceria com times de produto para acelerar entregas.</p>
+              <div class="tl-meta" data-i18n="exp1_meta">2023 — Present · Tech Lead</div>
+              <div class="tl-role" data-i18n="exp1_role">Platform technical leadership</div>
+              <p class="muted" data-i18n="exp1_desc">Design and evolution of a Kubernetes platform (GitOps CI/CD), service standards, security and SRE. Partnering with product teams to speed up delivery.</p>
               <div class="stack">
                 <span class="tag">Kubernetes</span><span class="tag">Helm</span><span class="tag">Argo CD</span><span class="tag">Grafana</span><span class="tag">Prometheus</span>
               </div>
             </div>
             <div class="tl-item">
-              <div class="tl-meta">2020 — 2023 · Senior Software Engineer</div>
-              <div class="tl-role">Arquitetura & backend</div>
-              <p class="muted">APIs resilientes em Java/Spring, mensageria, caching e práticas de observabilidade. Colaborei em migrações para cloud.</p>
+              <div class="tl-meta" data-i18n="exp2_meta">2020 — 2023 · Senior Software Engineer</div>
+              <div class="tl-role" data-i18n="exp2_role">Architecture & backend</div>
+              <p class="muted" data-i18n="exp2_desc">Resilient Java/Spring APIs, messaging, caching and observability practices. Collaborated in cloud migrations.</p>
               <div class="stack">
                 <span class="tag">Java</span><span class="tag">Spring</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span>
               </div>
             </div>
             <div class="tl-item">
-              <div class="tl-meta">2017 — 2020 · Full‑stack Engineer</div>
-              <div class="tl-role">Web apps & DX</div>
-              <p class="muted">Apps em Angular/TypeScript com backends Node/Java. Melhoria contínua de DX e automações de build/deploy.</p>
+              <div class="tl-meta" data-i18n="exp3_meta">2017 — 2020 · Full‑stack Engineer</div>
+              <div class="tl-role" data-i18n="exp3_role">Web apps & DX</div>
+              <p class="muted" data-i18n="exp3_desc">Angular/TypeScript apps with Node/Java backends. Continuous DX improvements and build/deploy automations.</p>
               <div class="stack">
                 <span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">Node.js</span>
               </div>
@@ -271,115 +276,330 @@
         </article>
 
         <aside class="card">
-          <h3 style="margin:0 0 10px">Resultados em destaque</h3>
+          <h3 style="margin:0 0 10px" data-i18n="aside_results_title">Highlights</h3>
           <ul class="muted">
-            <li>🧭 Reduziu <strong>lead time</strong> de deploy em &gt;30% com padronização GitOps.</li>
-            <li>📈 Aumento de <strong>confiabilidade</strong> com SLOs e alertas orientados a sintomas.</li>
-            <li>🧰 Melhorou <strong>DX</strong> com templates e CLIs internos (boas práticas & segurança). </li>
+            <li data-i18n="res1">Reduced deploy lead time by &gt;30% with GitOps standardization.</li>
+            <li data-i18n="res2">Increased reliability with SLOs and symptom‑based alerts.</li>
+            <li data-i18n="res3">Improved DX with internal templates and CLIs (best practices & security).</li>
           </ul>
-          <div class="chip">Referências disponíveis sob pedido</div>
+          <div class="chip" data-i18n="chip_refs">References available upon request</div>
         </aside>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="reveal">
-      <h2 class="sec-title">Skills</h2>
+      <h2 class="sec-title" data-i18n="section_skills_title">Skills</h2>
       <div class="grid cols-2">
         <article class="card">
-          <h3 style="margin:0 0 8px">Stack principal</h3>
+          <h3 style="margin:0 0 8px" data-i18n="skills_stack_title">Primary stack</h3>
           <div class="stack">
             <span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">GitHub Actions</span>
             <span class="tag">Java</span><span class="tag">Spring</span><span class="tag">TypeScript</span><span class="tag">Angular</span>
             <span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span>
           </div>
           <div style="margin-top:14px; display:grid; gap:10px">
-            <label>Plataformas & SRE</label>
+            <label data-i18n="skillbars_platform">Platforms & SRE</label>
             <div class="skillbar" data-skill="88"><i></i></div>
-            <label>Back‑end (Java/Spring)</label>
+            <label data-i18n="skillbars_backend">Back‑end (Java/Spring)</label>
             <div class="skillbar" data-skill="84"><i></i></div>
-            <label>Front‑end (Angular/TS)</label>
+            <label data-i18n="skillbars_frontend">Front‑end (Angular/TS)</label>
             <div class="skillbar" data-skill="72"><i></i></div>
           </div>
-          <p class="muted" style="margin-top:10px">*Indicadores autoavaliados para visualização rápida.</p>
+          <p class="muted" style="margin-top:10px" data-i18n="skills_note">*Self‑assessed indicators for quick visualization.</p>
         </article>
         <aside class="card">
-          <h3 style="margin:0 0 8px">Certificações / Estudos</h3>
+          <h3 style="margin:0 0 8px" data-i18n="skills_cert_title">Certifications / Study</h3>
           <ul class="muted">
-            <li>📚 Kubernetes, Cloud e Observabilidade (contínuo).</li>
-            <li>📚 Java & arquitetura de serviços.</li>
-            <li>📚 Segurança e plataformas (IAM, políticas, SBOM).</li>
+            <li data-i18n="cert1">Kubernetes, Cloud and Observability (ongoing).</li>
+            <li data-i18n="cert2">Java & service architecture.</li>
+            <li data-i18n="cert3">Security & platforms (IAM, policies, SBOM).</li>
           </ul>
-          <div class="chip">Sempre aprendendo · Mentoria leve disponível</div>
+          <div class="chip" data-i18n="chip_mentoring">Always learning · Light mentoring available</div>
         </aside>
       </div>
     </section>
 
-    <!-- PROJETOS -->
+    <!-- PROJECTS -->
     <section id="projetos" class="reveal">
-      <h2 class="sec-title">Projetos em destaque</h2>
+      <h2 class="sec-title" data-i18n="section_projects_title">Featured projects</h2>
       <div class="grid cols-3">
         <article class="card project tilt">
           <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
-            <div class="title">Infra as Code Starter</div>
-            <div class="meta">Blueprint · K8s · GitOps · Observabilidade</div>
-            <p class="muted">Template de plataforma com Helm, ArgoCD, Prometheus/Grafana e padrões de service mesh.</p>
+            <div class="title" data-i18n="proj1_title">Infra as Code Starter</div>
+            <div class="meta" data-i18n="proj1_meta">Blueprint · K8s · GitOps · Observability</div>
+            <p class="muted" data-i18n="proj1_desc">Platform template with Helm, ArgoCD, Prometheus/Grafana and service‑mesh patterns.</p>
           </a>
         </article>
         <article class="card project tilt">
           <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
-            <div class="title">Java Service Kit</div>
-            <div class="meta">Spring Boot · Resiliência · Telemetria</div>
-            <p class="muted">Kit com boas práticas: tracing, métricas, retries, circuit‑breaker e hardening.</p>
+            <div class="title" data-i18n="proj2_title">Java Service Kit</div>
+            <div class="meta" data-i18n="proj2_meta">Spring Boot · Resilience · Telemetry</div>
+            <p class="muted" data-i18n="proj2_desc">Best‑practices kit: tracing, metrics, retries, circuit‑breaker and hardening.</p>
           </a>
         </article>
         <article class="card project tilt">
           <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
-            <div class="title">Angular + DX</div>
-            <div class="meta">CLI · Schematics · Storybook</div>
-            <p class="muted">Ferramentas para melhorar DX: scaffolding, testes, lint e UI docs integradas.</p>
+            <div class="title" data-i18n="proj3_title">Angular + DX</div>
+            <div class="meta" data-i18n="proj3_meta">CLI · Schematics · Storybook</div>
+            <p class="muted" data-i18n="proj3_desc">DX tools: scaffolding, tests, lint and integrated UI docs.</p>
           </a>
         </article>
       </div>
-      <p style="margin-top:10px"><a class="btn ghost" href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">Ver todos os repositórios</a></p>
+      <p style="margin-top:10px"><a class="btn ghost" href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener" data-i18n="btn_view_all_repos">View all repositories</a></p>
     </section>
 
-    <!-- CONTATO -->
+    <!-- CONTACT -->
     <section id="contato" class="reveal">
-      <h2 class="sec-title">Contato</h2>
+      <h2 class="sec-title" data-i18n="section_contact_title">Contact</h2>
       <div class="grid cols-2 contact">
         <article class="card">
-          <p>Aberto a convites para colaboração em open source, revisão técnica e trocas sobre investimentos.</p>
+          <p data-i18n="contact_p">Open to invitations for open‑source collaboration, technical review and investment chats.</p>
           <div class="stack">
-            <a class="btn" href="mailto:felipe.sotille+cv@proton.me">Enviar e‑mail</a>
-            <a class="btn ghost" href="https://linkedin.com/in/felipe-sotille/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="mailto:felipe.sotille+cv@proton.me" data-i18n="btn_email">Send email</a>
+            <a class="btn ghost" href="https://linkedin.com/in/felipe-sotille/" target="_blank" rel="noopener" data-i18n="btn_linkedin">LinkedIn</a>
+            <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
           </div>
         </article>
         <aside class="card">
-          <h3 style="margin:0 0 10px">Links rápidos</h3>
+          <h3 style="margin:0 0 10px" data-i18n="links_quick_title">Quick links</h3>
           <div class="stack">
-            <a class="chip" href="#experiencia">Experiência</a>
-            <a class="chip" href="#skills">Skills</a>
-            <a class="chip" href="#projetos">Projetos</a>
-            <a class="chip" href="#" onclick="window.print();return false;">Baixar PDF</a>
+            <a class="chip" href="#experiencia" data-i18n="link_experience">Experience</a>
+            <a class="chip" href="#skills" data-i18n="link_skills">Skills</a>
+            <a class="chip" href="#projetos" data-i18n="link_projects">Projects</a>
+            <a class="chip" href="#" onclick="window.print();return false;" data-i18n="link_download_pdf">Download PDF</a>
           </div>
-          <p class="muted" style="margin-top:8px">Dica: pressione <span class="kbd">R</span> para reiniciar a animação do topo.</p>
+          <p class="muted" style="margin-top:8px" data-i18n="tip_replay">Tip: press <span class='kbd'>R</span> to replay the top animation.</p>
         </aside>
       </div>
     </section>
   </main>
 
   <footer class="wrap">
-    <div>© <span id="year"></span> Felipe Sotille • Feito com HTML/CSS/JS puro • Deploy no GitHub Pages</div>
+    <div>© <span id="year"></span> Felipe Sotille • <span data-i18n="footer_text">Made with plain HTML/CSS/JS • Deployed on GitHub Pages</span></div>
   </footer>
 
   <script>
-    // Utilitários simples
+    // Helpers
     const $ = (sel, el = document) => el.querySelector(sel);
     const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
 
-    // 1) Text Scramble (herói) — inspirado no efeito do CodePen
+    // i18n dictionary
+    const I18N = {
+      en: {
+        title: "Felipe Sotille — Portfolio / CV",
+        meta_desc: "Interactive CV of Felipe Sotille — Tech Lead, Cloud‑Native, Platform Engineering.",
+        nav_about: "About",
+        nav_experience: "Experience",
+        nav_skills: "Skills",
+        nav_projects: "Projects",
+        nav_contact: "Contact",
+        btn_download_pdf: "Download PDF",
+        hero_pill: "Open to OSS collaborations",
+        headline: "Tech Lead · Cloud‑Native · Platform Engineering",
+        hero_desc: "I build resilient platforms and developer experiences that speed up teams. Passionate about technology and nature.",
+        btn_view_projects: "View projects",
+        btn_linkedin: "LinkedIn",
+        btn_github: "GitHub",
+        chip_k8s: "Kubernetes",
+        chip_java: "Java · Spring",
+        chip_ts: "TypeScript · Angular",
+        chip_cloud: "AWS · GCP",
+        chip_docker: "Docker",
+        chip_platform: "Platform Eng",
+        card_focus_title: "Current focus",
+        card_focus_value: "K8s · IaC · Observability",
+        card_interests_title: "Interests",
+        card_interests_value: "Mountains · Chess · Sci‑Fi",
+        section_about_title: "About",
+        about_p1: "I'm a Tech Lead focused on cloud‑native platforms, Developer Experience and reliability. I like to combine solid engineering practices with clear communication so ideas become stable, operable products.",
+        about_ul_1: "I design scalable architectures, CI/CD pipelines, observability and platform standards.",
+        about_ul_2: "I lead quality and performance initiatives focused on user value.",
+        about_ul_3: "Constantly learning about investments; open to exchange ideas.",
+        aside_loc: "Location",
+        aside_loc_value: "Belgium (remote/global)",
+        aside_langs: "Languages",
+        aside_langs_value: "PT · EN · IT (basic)",
+        aside_avail: "Availability",
+        aside_avail_value: "OSS collaborations & light mentoring",
+        section_experience_title: "Experience",
+        exp1_meta: "2023 — Present · Tech Lead",
+        exp1_role: "Platform technical leadership",
+        exp1_desc: "Design and evolution of a Kubernetes platform (GitOps CI/CD), service standards, security and SRE. Partnering with product teams to speed up delivery.",
+        exp2_meta: "2020 — 2023 · Senior Software Engineer",
+        exp2_role: "Architecture & backend",
+        exp2_desc: "Resilient Java/Spring APIs, messaging, caching and observability practices. Collaborated in cloud migrations.",
+        exp3_meta: "2017 — 2020 · Full‑stack Engineer",
+        exp3_role: "Web apps & DX",
+        exp3_desc: "Angular/TypeScript apps with Node/Java backends. Continuous DX improvements and build/deploy automations.",
+        aside_results_title: "Highlights",
+        res1: "Reduced deploy lead time by >30% with GitOps standardization.",
+        res2: "Increased reliability with SLOs and symptom‑based alerts.",
+        res3: "Improved DX with internal templates and CLIs (best practices & security).",
+        chip_refs: "References available upon request",
+        section_skills_title: "Skills",
+        skills_stack_title: "Primary stack",
+        skillbars_platform: "Platforms & SRE",
+        skillbars_backend: "Back‑end (Java/Spring)",
+        skillbars_frontend: "Front‑end (Angular/TS)",
+        skills_note: "*Self‑assessed indicators for quick visualization.",
+        skills_cert_title: "Certifications / Study",
+        cert1: "Kubernetes, Cloud and Observability (ongoing).",
+        cert2: "Java & service architecture.",
+        cert3: "Security & platforms (IAM, policies, SBOM).",
+        chip_mentoring: "Always learning · Light mentoring available",
+        section_projects_title: "Featured projects",
+        proj1_title: "Infra as Code Starter",
+        proj1_meta: "Blueprint · K8s · GitOps · Observability",
+        proj1_desc: "Platform template with Helm, ArgoCD, Prometheus/Grafana and service‑mesh patterns.",
+        proj2_title: "Java Service Kit",
+        proj2_meta: "Spring Boot · Resilience · Telemetry",
+        proj2_desc: "Best‑practices kit: tracing, metrics, retries, circuit‑breaker and hardening.",
+        proj3_title: "Angular + DX",
+        proj3_meta: "CLI · Schematics · Storybook",
+        proj3_desc: "DX tools: scaffolding, tests, lint and integrated UI docs.",
+        btn_view_all_repos: "View all repositories",
+        section_contact_title: "Contact",
+        contact_p: "Open to invitations for open‑source collaboration, technical review and investment chats.",
+        btn_email: "Send email",
+        links_quick_title: "Quick links",
+        link_experience: "Experience",
+        link_skills: "Skills",
+        link_projects: "Projects",
+        link_download_pdf: "Download PDF",
+        tip_replay: "Tip: press <span class='kbd'>R</span> to replay the top animation.",
+        footer_text: "Made with plain HTML/CSS/JS • Deployed on GitHub Pages",
+        scramble: [
+          "Felipe Sotille",
+          "Tech Lead · Cloud‑Native · Platform Engineering",
+          "Kubernetes · Java · Spring · TypeScript · AWS/GCP",
+          "I love technology and nature",
+          "Open‑source collaborator"
+        ]
+      },
+      pt: {
+        title: "Felipe Sotille — Portfólio / Currículo",
+        meta_desc: "Currículo interativo de Felipe Sotille — Tech Lead, Cloud‑Native, Platform Engineering.",
+        nav_about: "Sobre",
+        nav_experience: "Experiência",
+        nav_skills: "Skills",
+        nav_projects: "Projetos",
+        nav_contact: "Contato",
+        btn_download_pdf: "Baixar PDF",
+        hero_pill: "Aberto a colaborações OSS",
+        headline: "Tech Lead · Cloud‑Native · Platform Engineering",
+        hero_desc: "Construo plataformas resilientes e experiências de desenvolvedor que aceleram times. Apaixonado por tecnologia e natureza.",
+        btn_view_projects: "Ver projetos",
+        btn_linkedin: "LinkedIn",
+        btn_github: "GitHub",
+        chip_k8s: "Kubernetes",
+        chip_java: "Java · Spring",
+        chip_ts: "TypeScript · Angular",
+        chip_cloud: "AWS · GCP",
+        chip_docker: "Docker",
+        chip_platform: "Engenharia de Plataforma",
+        card_focus_title: "Foco atual",
+        card_focus_value: "K8s · IaC · Observabilidade",
+        card_interests_title: "Interesses",
+        card_interests_value: "Montanhas · Xadrez · Sci‑Fi",
+        section_about_title: "Sobre",
+        about_p1: "Sou Tech Lead com foco em plataformas cloud‑native, Developer Experience e confiabilidade. Gosto de unir boas práticas de engenharia com comunicação clara, para que ideias virem produtos estáveis e operáveis.",
+        about_ul_1: "Desenho arquiteturas escaláveis, pipelines CI/CD, observabilidade e padrões de plataforma.",
+        about_ul_2: "Lidero iniciativas de qualidade e performance focadas em valor para o usuário.",
+        about_ul_3: "Aprendendo continuamente sobre investimentos; aberto a trocar ideias.",
+        aside_loc: "Local",
+        aside_loc_value: "Bélgica (remoto/global)",
+        aside_langs: "Idiomas",
+        aside_langs_value: "PT · EN · IT (básico)",
+        aside_avail: "Disponibilidade",
+        aside_avail_value: "Colaborações em OSS & mentoria leve",
+        section_experience_title: "Experiência",
+        exp1_meta: "2023 — Atual · Tech Lead",
+        exp1_role: "Liderança técnica de plataforma",
+        exp1_desc: "Desenho e evolução de plataforma Kubernetes (CI/CD com GitOps), padrões de serviços, segurança e SRE. Parceria com times de produto para acelerar entregas.",
+        exp2_meta: "2020 — 2023 · Senior Software Engineer",
+        exp2_role: "Arquitetura & backend",
+        exp2_desc: "APIs resilientes em Java/Spring, mensageria, caching e práticas de observabilidade. Colaborei em migrações para cloud.",
+        exp3_meta: "2017 — 2020 · Full‑stack Engineer",
+        exp3_role: "Web apps & DX",
+        exp3_desc: "Apps em Angular/TypeScript com backends Node/Java. Melhoria contínua de DX e automações de build/deploy.",
+        aside_results_title: "Resultados em destaque",
+        res1: "Reduziu lead time de deploy em >30% com padronização GitOps.",
+        res2: "Aumento de confiabilidade com SLOs e alertas orientados a sintomas.",
+        res3: "Melhora de DX com templates e CLIs internos (boas práticas & segurança).",
+        chip_refs: "Referências disponíveis sob pedido",
+        section_skills_title: "Skills",
+        skills_stack_title: "Stack principal",
+        skillbars_platform: "Plataformas & SRE",
+        skillbars_backend: "Back‑end (Java/Spring)",
+        skillbars_frontend: "Front‑end (Angular/TS)",
+        skills_note: "*Indicadores autoavaliados para visualização rápida.",
+        skills_cert_title: "Certificações / Estudos",
+        cert1: "Kubernetes, Cloud e Observabilidade (contínuo).",
+        cert2: "Java & arquitetura de serviços.",
+        cert3: "Segurança & plataformas (IAM, políticas, SBOM).",
+        chip_mentoring: "Sempre aprendendo · Mentoria leve disponível",
+        section_projects_title: "Projetos em destaque",
+        proj1_title: "Infra as Code Starter",
+        proj1_meta: "Blueprint · K8s · GitOps · Observabilidade",
+        proj1_desc: "Template de plataforma com Helm, ArgoCD, Prometheus/Grafana e padrões de service mesh.",
+        proj2_title: "Java Service Kit",
+        proj2_meta: "Spring Boot · Resiliência · Telemetria",
+        proj2_desc: "Kit com boas práticas: tracing, métricas, retries, circuit‑breaker e hardening.",
+        proj3_title: "Angular + DX",
+        proj3_meta: "CLI · Schematics · Storybook",
+        proj3_desc: "Ferramentas de DX: scaffolding, testes, lint e UI docs integradas.",
+        btn_view_all_repos: "Ver todos os repositórios",
+        section_contact_title: "Contato",
+        contact_p: "Aberto a convites para colaboração em open source, revisão técnica e trocas sobre investimentos.",
+        btn_email: "Enviar e‑mail",
+        links_quick_title: "Links rápidos",
+        link_experience: "Experiência",
+        link_skills: "Skills",
+        link_projects: "Projetos",
+        link_download_pdf: "Baixar PDF",
+        tip_replay: "Dica: pressione <span class='kbd'>R</span> para reiniciar a animação do topo.",
+        footer_text: "Feito com HTML/CSS/JS puro • Deploy no GitHub Pages",
+        scramble: [
+          "Felipe Sotille",
+          "Tech Lead · Cloud‑Native · Platform Engineering",
+          "Kubernetes · Java · Spring · TypeScript · AWS/GCP",
+          "Amo tecnologia e natureza",
+          "Colaborador de open‑source"
+        ]
+      }
+    };
+
+    // Language init
+    const stored = localStorage.getItem('lang');
+    const browserLang = (navigator.language || 'en').toLowerCase().startsWith('pt') ? 'pt' : 'en';
+    let LANG = stored || browserLang;
+
+    function applyI18n(lang){
+      // update document language & head
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+      document.title = I18N[lang].title;
+      const meta = document.querySelector('meta[name=description]'); if (meta) meta.setAttribute('content', I18N[lang].meta_desc);
+
+      // swap labels
+      $$("[data-i18n]").forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (I18N[lang][key] !== undefined){
+          // if the string contains HTML tags, prefer innerHTML
+          const v = I18N[lang][key];
+          if (/<[a-z][\s\S]*>/i.test(v)) el.innerHTML = v;
+          else el.textContent = v;
+        }
+      });
+
+      // toggle pressed state
+      $$('.lang-toggle [data-lang]').forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)));
+
+      // restart scramble with current language
+      setPhrases(I18N[lang].scramble);
+    }
+
+    // Text Scramble
     class TextScramble {
       constructor(el){ this.el = el; this.chars = '!<>-_\\/[]{}—=+*^?#________'; this.update = this.update.bind(this); }
       setText(newText){
@@ -413,25 +633,28 @@
       }
       randomChar(){ return this.chars[Math.floor(Math.random() * this.chars.length)]; }
     }
-    const phrases = [
-      "Felipe Sotille",
-      "Tech Lead · Cloud‑Native · Platform Engineering",
-      "Kubernetes · Java · Spring · TypeScript · AWS/GCP",
-      "Amo tecnologia e natureza",
-      "Open‑source collaborator"
-    ];
+
     const scrambleEl = document.getElementById('scramble');
     const fx = new TextScramble(scrambleEl);
-    let counter = 0;
-    function cycle(){
-      fx.setText(phrases[counter]).then(() => setTimeout(cycle, 1400));
+    let counter = 0, phrases = I18N[LANG].scramble;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let timeoutId;
+
+    function setPhrases(arr){
+      phrases = arr;
+      counter = 0;
+      if (prefersReduced) scrambleEl.textContent = phrases[0];
+      else next();
+    }
+
+    function next(){
+      fx.setText(phrases[counter]).then(() => {
+        timeoutId = setTimeout(next, 1400);
+      });
       counter = (counter + 1) % phrases.length;
     }
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced) scrambleEl.textContent = phrases[0]; else cycle();
-    addEventListener('keydown', (e)=> e.key.toLowerCase()==='r' && cycle());
 
-    // 2) Reveal on scroll
+    // Reveal on scroll
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting){
@@ -442,7 +665,7 @@
     },{threshold:.12});
     $$('.reveal').forEach(el => io.observe(el));
 
-    // 3) Skill bars animate
+    // Skill bars animate
     const io2 = new IntersectionObserver((entries)=>{
       entries.forEach(entry => {
         if (entry.isIntersecting){
@@ -454,7 +677,7 @@
     },{threshold:.4});
     $$('.skillbar').forEach(el => io2.observe(el));
 
-    // 4) Tilt effect para cartões
+    // Tilt effect
     const tilts = $$('.tilt');
     tilts.forEach(card => {
       let rAF;
@@ -474,8 +697,26 @@
       });
     });
 
-    // Ano no rodapé
+    // Key: replay
+    addEventListener('keydown', (e) => (e.key.toLowerCase() === 'r') && next());
+
+    // Language switch
+    $$('.lang-toggle [data-lang]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        if (LANG === lang) return;
+        LANG = lang;
+        localStorage.setItem('lang', LANG);
+        clearTimeout(timeoutId);
+        applyI18n(LANG);
+      });
+    });
+
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Initial render
+    applyI18n(LANG);
   </script>
 </body>
 </html>

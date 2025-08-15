@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Felipe Sotille — Portfolio / CV</title>
-  <meta name="description" content="Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer.">
+  <meta name="description" content="Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer with ≈17 years 7 months of experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
@@ -19,17 +19,30 @@
       --accent:#38bdf8;
       --accent-2:#22d3ee;
       --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --radius: 14px;
+      --maxw: 1120px;
+      --card-grad: linear-gradient(180deg, rgba(9,15,28,.85), rgba(8,13,25,.7));
+      --hero-grad: linear-gradient(180deg, rgba(10,18,35,.8), rgba(8,14,28,.6));
+      --bg-grad: radial-gradient(900px 600px at 50% -10%, #172032 0%, #0b1020 60%, #060913 100%), linear-gradient(180deg, var(--bg-1), var(--bg-0));
+      --btn-bg: linear-gradient(180deg, #12203b, #0f172a);
+      --chip-bg: rgba(2,6,23,.5);
     }
+    /* Light theme overrides */
     [data-theme="light"]{
-      --bg-0:#f8fafc;
-      --bg-1:#ffffff;
-      --surface:#f1f5f9;
+      --bg-0:#f6f8fb;
+      --bg-1:#eef2f8;
+      --surface:#ffffff;
       --text:#0b1220;
       --muted:#475569;
       --line:#cbd5e1;
-      --accent:#2563eb;
-      --accent-2:#06b6d4;
-      --shadow: 0 10px 30px rgba(2,6,23,.08);
+      --accent:#0ea5e9;
+      --accent-2:#60a5fa;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --card-grad: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
+      --hero-grad: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
+      --bg-grad: radial-gradient(900px 600px at 50% -10%, #eaf2ff 0%, #f4f7fb 60%, #eef2f8 100%), linear-gradient(180deg, var(--bg-1), var(--bg-0));
+      --btn-bg: linear-gradient(180deg, #f1f5f9, #e2e8f0);
+      --chip-bg: rgba(241,245,249,.8);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -37,65 +50,75 @@
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(900px 600px at 50% -10%, rgba(23,32,50,.6) 0%, var(--bg-1) 60%, var(--bg-0) 100%) fixed,
-        linear-gradient(180deg, var(--bg-1), var(--bg-0));
+      background: var(--bg-grad) fixed;
       line-height:1.55;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      transition: background .3s ease, color .3s ease;
+      transition: background .3s ease, color .2s ease;
     }
     a{color:var(--accent); text-decoration:none}
     a:hover{opacity:.9}
-    .wrap{max-width:1120px; margin:auto; padding:24px}
-    header{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px);
+    .wrap{max-width:var(--maxw); margin:auto; padding:24px}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
       background: linear-gradient(180deg, rgba(16,24,40,.75), rgba(16,24,40,.35));
       border-bottom:1px solid var(--line);
     }
     [data-theme="light"] header{
-      background: linear-gradient(180deg, rgba(241,245,249,.8), rgba(241,245,249,.5));
+      background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
     }
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:1120px; margin:0 auto}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:var(--maxw); margin:0 auto}
     .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
-    .brand .logo{ width:38px; height:38px; border-radius:50%;
+    .brand .logo{
+      width:38px; height:38px; border-radius:50%;
       background: conic-gradient(from 210deg at 50% 50%, #38bdf8, #22d3ee, #818cf8, #38bdf8);
-      box-shadow: 0 0 0 2px rgba(56,189,248,.2), 0 8px 24px rgba(2,8,23,.25) inset; position:relative; overflow:hidden; display:grid; place-items:center;
+      box-shadow: 0 0 0 2px rgba(56,189,248,.2), 0 8px 24px rgba(2,8,23,.55) inset;
+      position:relative; display:grid; place-items:center; overflow:hidden;
     }
-    .brand .logo::after{ content:"FS"; font:700 14px/1 JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:#0b1020; background:rgba(255,255,255,.96);
-      width:30px; height:30px; border-radius:50%; display:grid; place-items:center; transform:rotate(-12deg); mix-blend-mode:screen;
+    .brand .logo::after{
+      content:"FS"; font:700 14px/1 JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color:#0b1020; background:rgba(255,255,255,.96);
+      width:30px; height:30px; border-radius:50%; display:grid; place-items:center;
+      transform:rotate(-12deg);
+      mix-blend-mode:screen;
     }
+    .nav a{color:var(--text); opacity:.84; font-weight:600}
     .links{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
-    .btn{ display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px;
-      background:linear-gradient(180deg, rgba(18,32,59,.9), rgba(15,23,42,.9)); border:1px solid var(--line); box-shadow: var(--shadow);
-      font-weight:600; color:#dbeafe; cursor:pointer; transition: transform .15s ease, background .3s ease;
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px;
+      background:var(--btn-bg); border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      font-weight:600; color:var(--text); cursor:pointer;
     }
-    [data-theme="light"] .btn{ color:#0b1220; background:linear-gradient(180deg, #e2e8f0, #e5e7eb) }
     .btn:hover{transform:translateY(-1px)}
-    .ghost{background:transparent; border-color:var(--line); color:inherit}
+    .ghost{background:transparent}
     .btn.sm{padding:6px 10px; border-radius:8px; font-size:13px}
-    .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--line); border-radius:999px; background:rgba(2,6,23,.3)}
-    [data-theme="light"] .chip{ background:rgba(15,23,42,.05) }
-    .lang-toggle{display:inline-flex; border:1px solid var(--line); border-radius:12px; overflow:hidden}
-    .lang-toggle button{background:transparent; border:0; color:inherit; padding:8px 12px; font-weight:700; cursor:pointer}
-    .lang-toggle button[aria-pressed="true"]{background:linear-gradient(180deg, rgba(18,32,59,.9), rgba(15,23,42,.9)); color:#e6f3ff}
-    [data-theme="light"] .lang-toggle button[aria-pressed="true"]{background:linear-gradient(180deg, #e2e8f0, #e5e7eb); color:#0b1220}
+    .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--line); border-radius:999px; background:var(--chip-bg)}
+    .lang-toggle, .theme-toggle{display:inline-flex; border:1px solid var(--line); border-radius:12px; overflow:hidden}
+    .lang-toggle button, .theme-toggle button{background:transparent; border:0; color:var(--text); padding:8px 12px; font-weight:700; cursor:pointer}
+    .lang-toggle button[aria-pressed="true"]{background:var(--btn-bg)}
     main{padding:18px 0 64px}
     .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:28px 0 12px}
     .headline{font-size: clamp(28px, 5vw, 56px); line-height:1.08; letter-spacing:.2px; font-weight:800; margin:0 0 6px}
-    .scramble{font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; font-weight:300; font-size: clamp(16px, 2.4vw, 20px); color:var(--muted); min-height:1.6em}
+    .scramble{font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight:300; font-size: clamp(16px, 2.4vw, 20px); color:var(--muted); min-height:1.6em}
     .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
-    .hero-card{ position:relative; border-radius:14px; background:linear-gradient(180deg, rgba(10,18,35,.8), rgba(8,14,28,.6)); border:1px solid var(--line);
-      padding:22px; box-shadow: var(--shadow); transform-style:preserve-3d; will-change:transform;
+    .hero-card{
+      position:relative; border-radius:var(--radius);
+      background:var(--hero-grad);
+      border:1px solid var(--line);
+      padding:22px; box-shadow: var(--shadow);
+      transform-style:preserve-3d; will-change:transform;
     }
-    [data-theme="light"] .hero-card{ background:linear-gradient(180deg, #f8fafc, #eef2f7) }
     /* Orb container */
-    .orb-wrap{ width:min(380px, 90%); aspect-ratio:1/1; border-radius:24px; margin:0 auto;
-      background: radial-gradient(200px 140px at 30% 20%, rgba(56,189,248,.18), transparent),
-                  radial-gradient(200px 160px at 70% 80%, rgba(129,140,248,.12), transparent),
+    .orb-wrap{
+      width:min(380px, 90%); aspect-ratio:1/1; border-radius:24px; margin:0 auto;
+      background: radial-gradient(200px 140px at 30% 20%, rgba(56,189,248,.22), transparent),
+                  radial-gradient(200px 160px at 70% 80%, rgba(129,140,248,.16), transparent),
                   var(--surface);
       display:grid; place-items:center; border:1px solid var(--line); position:relative; overflow:hidden;
     }
-    .sphere{width:86%; height:86%; filter: drop-shadow(0 16px 28px rgba(0,0,0,.35));}
+    .sphere{width:86%; height:86%; filter: drop-shadow(0 16px 28px rgba(0,0,0,.2));}
     .sphere path{fill:none; stroke:url(#sphereGradient); stroke-linecap:round; stroke-width:1.25}
     .sphere .disc{fill:url(#sphereGradient); opacity:.08}
     section{margin-top:42px}
@@ -103,49 +126,53 @@
     .grid{display:grid; gap:16px}
     .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
     .grid.cols-2{grid-template-columns: repeat(2, 1fr)}
-    .card{ background:linear-gradient(180deg, rgba(9,15,28,.85), rgba(8,13,25,.7)); border:1px solid var(--line); border-radius:16px; padding:18px; box-shadow:var(--shadow);
-      transform: translate3d(0,6px,0); transition: transform .2s ease, border-color .2s ease, background .3s ease; will-change: transform;
+    .card{
+      background:var(--card-grad);
+      border:1px solid var(--line); border-radius:16px; padding:18px 18px; box-shadow:var(--shadow);
+      transform: translate3d(0,6px,0);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      will-change: transform;
     }
-    [data-theme="light"] .card{ background:linear-gradient(180deg, #ffffff, #f4f6f9) }
-    .card:hover{transform: translate3d(0,0,0); border-color:rgba(47,67,107,.7)}
+    .card:hover{transform: translate3d(0,0,0); border-color:#2f436b}
     .muted{color:var(--muted)}
     .kbd{border:1px solid var(--line); padding:2px 6px; border-radius:6px; background:var(--surface); font-family: "JetBrains Mono", monospace}
     ul{padding-left:20px; margin:10px 0}
     li{margin:6px 0}
     .timeline{position:relative; padding-left:26px}
     .timeline::before{content:""; position:absolute; left:8px; top:4px; bottom:4px; width:2px; background:linear-gradient(#1f2a44,#22304b)}
+    [data-theme="light"] .timeline::before{background:linear-gradient(#cbd5e1,#94a3b8)}
     .tl-item{position:relative; margin:0 0 18px}
     .tl-item::before{content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border:2px solid #2f436b; background:var(--surface); border-radius:50%}
     .tl-meta{font:600 12px/1.6 Inter, system-ui; color:var(--muted); letter-spacing:.3px}
     .tl-role{font-weight:700; letter-spacing:.2px}
     .stack{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
     .tag{padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:var(--surface); font:600 12px/1 Inter}
+    .skillbar{height:10px; background:var(--surface); border:1px solid var(--line); border-radius:999px; overflow:hidden}
+    .skillbar > i{display:block; height:100%; width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); transition:width 1.2s ease}
+    .project a{color:var(--text)}
+    .project .title{font-weight:700}
+    .project .meta{font:600 12px/1.6 Inter; color:var(--muted)}
+    .contact{display:grid; gap:12px}
+    footer{margin:48px 0 16px; color:var(--muted); font-size:14px; text-align:center}
+    .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
+    .reveal.visible{opacity:1; transform:none}
+    .pill{display:inline-flex; align-items:center; padding:6px 10px; gap:8px; border-radius:999px; border:1px solid var(--line); background:var(--chip-bg); font-weight:600}
     .two-col{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
     .kv{display:grid; grid-template-columns: 1fr auto; gap:8px 12px; align-items:center}
     .stars{letter-spacing:2px}
     blockquote{margin:0; padding:0; border-left:3px solid #2f436b; padding-left:12px}
     cite{display:block; color:var(--muted); font-style:normal; margin-top:6px}
-    footer{margin:48px 0 16px; color:var(--muted); font-size:14px; text-align:center}
-    .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
-    .reveal.visible{opacity:1; transform:none}
-    .mode-toggle{display:inline-flex; border:1px solid var(--line); border-radius:12px; overflow:hidden}
-    .mode-toggle button{background:transparent; border:0; color:inherit; padding:8px 12px; font-weight:700; cursor:pointer}
-    .mode-toggle button[aria-pressed="true"]{background:linear-gradient(180deg, rgba(18,32,59,.9), rgba(15,23,42,.9)); color:#e6f3ff}
-    [data-theme="light"] .mode-toggle button[aria-pressed="true"]{background:linear-gradient(180deg, #e2e8f0, #e5e7eb); color:#0b1220}
-    @media (max-width: 980px){
-      .hero{grid-template-columns: 1fr; text-align:center}
-      .actions{justify-content:center}
-      .nav{padding:10px 16px}
-      .two-col{grid-template-columns:1fr}
-    }
+    /* Responsive */
+    @media (max-width: 980px){ .hero{grid-template-columns: 1fr; text-align:center} .actions{justify-content:center} .nav{padding:10px 16px} .two-col{grid-template-columns:1fr} }
     @media (prefers-reduced-motion: reduce){
       *{scroll-behavior:auto !important}
       .reveal{transition:none}
       .card,.hero-card{transform:none}
     }
     @media print{
-      body{background:#fff; color:#0b1220}
-      header, .actions, .links, .chip, .btn, .lang-toggle, .mode-toggle{display:none !important}
+      :root{--text:#0b1220; --muted:#334155; --line:#cbd5e1}
+      body{background:#fff; color:var(--text)}
+      header, .actions, .links, .chip, .btn, .lang-toggle, .theme-toggle{display:none !important}
       .card, .hero-card{box-shadow:none; border-color:#e2e8f0}
       a{color:#0b1220; text-decoration:underline}
     }
@@ -168,9 +195,10 @@
           <button class="sm" data-lang="en" aria-pressed="true">EN</button>
           <button class="sm" data-lang="pt">PT‑BR</button>
         </div>
-        <div class="mode-toggle" role="group" aria-label="Theme">
-          <button class="sm" data-theme="light" title="Light">☀️</button>
-          <button class="sm" data-theme="dark" aria-pressed="true" title="Dark">🌙</button>
+        <div class="theme-toggle" role="group" aria-label="Theme">
+          <button class="sm" id="theme-dark" title="Dark">🌙</button>
+          <button class="sm" id="theme-light" title="Light">☀️</button>
+          <button class="sm" id="theme-auto" title="Auto">🖥️</button>
         </div>
         <button class="btn ghost sm" id="btn-pdf" data-i18n="btn_download_pdf" title="Download / Print PDF" onclick="window.print()">Download PDF</button>
       </div>
@@ -184,7 +212,7 @@
         <p class="pill" aria-live="polite"><span aria-hidden="true">🟢</span> <span data-i18n="hero_pill">Open to OSS collaborations</span></p>
         <h1 class="headline" data-i18n="headline">Sr. DevSecOps & Software Engineer</h1>
         <div class="scramble" id="scramble" aria-live="polite"></div>
-        <p class="muted"><strong data-i18n="xp_label">Total experience</strong>: <span data-i18n="xp_value_en">18 yrs 4 mos (≈18.3 years)</span></p>
+        <p class="muted" data-i18n="hero_desc">17+ years across banking, ERPs, real‑time and social apps. Backend engineer, frontend enthusiast and DevOps lover.</p>
         <div class="actions">
           <a class="btn" href="#experience" data-i18n="btn_view_experience">View experience</a>
           <a class="btn ghost" href="mailto:fsotille@gmail.com" data-i18n="btn_email">Email</a>
@@ -192,6 +220,7 @@
           <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
         </div>
         <div class="stack" style="margin-top:12px">
+          <span class="chip">≈17 years 7 months</span>
           <span class="chip">Java · Spring</span>
           <span class="chip">Angular · TypeScript</span>
           <span class="chip">Kubernetes · Docker</span>
@@ -245,7 +274,7 @@
           </div>
           <div class="card">
             <div class="tl-meta" data-i18n="card_interests_title">Interests</div>
-            <div class="tl-role" data-i18n="card_interests_value">Music · Technology · AI · Mountains · Chess · Sci‑Fi</div>
+            <div class="tl-role" data-i18n="card_interests_value">Mountains · Chess · Music · Technology · AI · Sci‑Fi</div>
           </div>
         </div>
       </div>
@@ -256,7 +285,7 @@
       <h2 class="sec-title" data-i18n="section_about_title">About</h2>
       <div class="grid cols-2">
         <article class="card">
-          <p data-i18n="about_intro">I’m a distinguished software engineer with 18+ years of experience. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.</p>
+          <p data-i18n="about_intro">I’m a distinguished software engineer with ≈17 years 7 months in the industry. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.</p>
           <p class="muted" data-i18n="about_quote">“Strive not to be a success, but rather to be of value.” — Albert Einstein</p>
         </article>
         <aside class="card">
@@ -276,92 +305,37 @@
         <article class="card">
           <div class="timeline">
             <div class="tl-item">
-              <div class="tl-meta">Jan 2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Belgium · Brussels Area</div>
-              <div class="tl-role">DevSecOps & CI/CD</div>
-              <ul class="muted" id="expA_bullets"></ul>
+              <div class="tl-meta" data-i18n="expA_meta">2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Belgium</div>
+              <div class="tl-role" data-i18n="expA_role">DevSecOps & CI/CD</div>
+              <ul class="muted" data-i18n-list="expA_bullets"></ul>
             </div>
             <div class="tl-item">
-              <div class="tl-meta">Jul 2024 — Dec 2024 · Senior Java Consultant (Freelance) · Swissquote · Geneva Metropolitan Area · Hybrid</div>
-              <div class="tl-role">Data migration & database engineering</div>
-              <ul class="muted" id="expB_bullets"></ul>
+              <div class="tl-meta" data-i18n="expB_meta">2024 — 2025 · Sr. Software Engineer (Consultant) · Swissquote · Switzerland</div>
+              <div class="tl-role" data-i18n="expB_role">Data migration & database engineering</div>
+              <ul class="muted" data-i18n-list="expB_bullets"></ul>
             </div>
             <div class="tl-item">
-              <div class="tl-meta">Jul 2019 — Jun 2024 · Sr. Software Engineer (Consultant) · Swift · Brussels Area, Belgium</div>
-              <div class="tl-role">Full‑stack engineering & platform evolution</div>
-              <ul class="muted" id="expC_bullets"></ul>
+              <div class="tl-meta" data-i18n="expC_meta">2019 — 2024 · Sr. Software Engineer (Consultant) · Swift · Belgium</div>
+              <div class="tl-role" data-i18n="expC_role">Full‑stack engineering & platform evolution</div>
+              <ul class="muted" data-i18n-list="expC_bullets"></ul>
             </div>
             <div class="tl-item">
-              <div class="tl-meta">Jun 2018 — Jun 2019 · Lead Software & DevOps Engineer · MyCujoo (An Eleven Company) · Lisbon Area, Portugal</div>
-              <div class="tl-role">Real‑time microservices & team leadership</div>
-              <ul class="muted" id="expD_bullets"></ul>
+              <div class="tl-meta" data-i18n="expD_meta">2018 — 2019 · Sr. Software Engineer & Dev. Lead · Eleven Sports · Portugal</div>
+              <div class="tl-role" data-i18n="expD_role">Real‑time microservices & team leadership</div>
+              <ul class="muted" data-i18n-list="expD_bullets"></ul>
             </div>
           </div>
         </article>
 
-        <!-- RIGHT COLUMN: previous experiences with details -->
         <aside class="card">
-          <h3 style="margin:0 0 10px">Earlier roles (details)</h3>
-          <div class="tl-item">
-            <div class="tl-meta">Oct 2015 — Mar 2018 · Senior Java Developer · WPLEX Software · Florianópolis Area, Brazil</div>
-            <ul class="muted">
-              <li>Built and evolved real‑time urban transport features; delivered citizen‑facing monitoring apps.</li>
-              <li>Optimized SQL for performance; increased unit test coverage.</li>
-              <li>Frontend in ReactJS consuming backend endpoints; REST APIs.</li>
-              <li>Customer features & reports; Java architecture design.</li>
-            </ul>
-            <div class="stack">
-              <span class="tag">Spring (MVC, Boot, Security, Web)</span>
-              <span class="tag">Java 8/EE</span><span class="tag">ReactJS</span><span class="tag">REST</span>
-              <span class="tag">Jira/Confluence/Bitbucket</span><span class="tag">JSF</span><span class="tag">TDD</span>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-meta">Mar 2015 — Aug 2015 · Software Developer · Metaway · Bento Gonçalves Area, Brazil</div>
-            <ul class="muted">
-              <li>Client database conversions; improvements to data modeling.</li>
-              <li>Added indexes to speed up queries; built features & reports.</li>
-              <li>Introduced Liquibase for DB management; maintained client relationships.</li>
-            </ul>
-            <div class="stack">
-              <span class="tag">Java 7</span><span class="tag">SCRUM</span><span class="tag">RichFaces</span>
-              <span class="tag">REST</span><span class="tag">SQL/JPA</span><span class="tag">Liquibase</span>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-meta">Apr 2014 — Jan 2015 · Network & Security Analyst · CyberSec · Marau Area, Brazil</div>
-            <ul class="muted">
-              <li>Security hardening, server/network administration and virtualization.</li>
-              <li>CompTIA Security+ earned; on‑prem improvements and best practices.</li>
-            </ul>
-            <div class="stack">
-              <span class="tag">Hyper‑V/Citrix/VMWare</span><span class="tag">Unix/Windows Admin</span>
-              <span class="tag">Security hardening</span><span class="tag">Cisco routers</span>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-meta">Oct 2009 — Mar 2014 · Software Developer · Città Inteligência em Gestão Pública · Marau Area, Brazil</div>
-            <ul class="muted">
-              <li>Government systems; UI in Adobe Flex; testing and delivery.</li>
-              <li>Modularized parts of a monolithic system; automated client updates.</li>
-              <li>Maintained client relationships.</li>
-            </ul>
-            <div class="stack">
-              <span class="tag">Spring MVC/Security/Web</span><span class="tag">Java 6</span>
-              <span class="tag">JSF (RichFaces/PrimeFaces)</span><span class="tag">Jasper/iReport</span>
-              <span class="tag">SVN</span><span class="tag">SQL/JPA</span>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-meta">Jan 2007 — Sep 2009 · Delphi Developer / IT Support Analyst · Holma Software · Marau Area, Brazil</div>
-            <ul class="muted">
-              <li>IT support (DB admin, client support); promoted to Delphi developer.</li>
-              <li>Built reports, fixed bugs, trained customers; on‑site installs and validation.</li>
-              <li>Improved infrastructure to reduce customer update time.</li>
-            </ul>
-            <div class="stack">
-              <span class="tag">Delphi (Object Pascal)</span><span class="tag">Firebird SQL</span>
-            </div>
-          </div>
+          <h3 style="margin:0 0 10px" data-i18n="aside_prev_title">Previous experiences</h3>
+          <ul class="muted">
+            <li data-i18n="prev1">Senior Java Developer · Wplex (Public Transport) · Brazil · 2015–2018</li>
+            <li data-i18n="prev2">Java Developer · Metaway (Education) · Brazil · 2015</li>
+            <li data-i18n="prev3">Java Developer · Citta Informatica (Government & Legal) · Brazil · 2010–2014</li>
+            <li data-i18n="prev4">Junior Java Developer · Allcance (Industry) · Brazil · 2008–2009</li>
+          </ul>
+          <div class="chip" data-i18n="chip_linkedin">Detailed roles and responsibilities available on my LinkedIn profile.</div>
         </aside>
       </div>
     </section>
@@ -517,9 +491,9 @@
     const $ = (sel, el = document) => el.querySelector(sel);
     const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
 
-    // i18n dictionary
-    const I18N = {{
-      en: {{
+    // i18n dictionary (EN default) with list arrays
+    const I18N = {
+      en: {
         title: "Felipe Sotille — Portfolio / CV",
         meta_desc: "Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer.",
         nav_about: "About",
@@ -530,14 +504,13 @@
         btn_download_pdf: "Download PDF",
         hero_pill: "Open to OSS collaborations",
         headline: "Sr. DevSecOps & Software Engineer",
+        hero_desc: "17+ years across banking, ERPs, real‑time and social apps. Backend engineer, frontend enthusiast and DevOps lover.",
         btn_view_experience: "View experience",
         btn_email: "Email",
         btn_linkedin: "LinkedIn",
         btn_github: "GitHub",
-        xp_label: "Total experience",
-        xp_value_en: "18 yrs 4 mos (≈18.3 years)",
         section_about_title: "About",
-        about_intro: "I’m a distinguished software engineer with 18+ years of experience. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.",
+        about_intro: "I’m a distinguished software engineer with ≈17 years 7 months in the industry. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.",
         about_quote: "“Strive not to be a success, but rather to be of value.” — Albert Einstein",
         aside_loc: "Location",
         aside_loc_value: "Brussels Metropolitan Area (remote/global)",
@@ -546,6 +519,8 @@
         aside_avail: "Availability",
         aside_avail_value: "Consulting & OSS collaborations",
         section_experience_title: "Experience",
+        expA_meta: "2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Belgium",
+        expA_role: "DevSecOps & CI/CD",
         expA_bullets: [
           "Blueprints of CI/CD pipelines.",
           "Release orchestration (driving a key KPI).",
@@ -554,6 +529,8 @@
           "DevOps coaching across squads.",
           "Automation and tooling scripting."
         ],
+        expB_meta: "2024 — 2025 · Sr. Software Engineer (Consultant) · Swissquote · Switzerland",
+        expB_role: "Data migration & database engineering",
         expB_bullets: [
           "Created reports for the DBA squad to explain migration efforts.",
           "Migrated a huge database with billions of financial transaction records to Oracle.",
@@ -561,6 +538,8 @@
           "Built a Java data loader to move billions of records seamlessly.",
           "Applied denormalization and table partitioning to optimize performance."
         ],
+        expC_meta: "2019 — 2024 · Sr. Software Engineer (Consultant) · Swift · Belgium",
+        expC_role: "Full‑stack engineering & platform evolution",
         expC_bullets: [
           "Full‑stack engineer across multiple squads.",
           "Implemented Coveo AI Search in Knowledge Centre Angular application.",
@@ -575,12 +554,20 @@
           "Integrated Adobe Experience Cloud into the application flow.",
           "Received nominations: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player."
         ],
+        expD_meta: "2018 — 2019 · Sr. Software Engineer & Dev. Lead · Eleven Sports · Portugal",
+        expD_role: "Real‑time microservices & team leadership",
         expD_bullets: [
-          "Designed and launched a cloud‑centric, scalable Vert.x microservice backend for high throughput.",
-          "Built a real‑time app with the Kafka ecosystem connecting players and fans (social‑like).",
+          "Designed and launched a cloud‑centric, scalable microservice backend using Vert.x to elevate the player experience.",
+          "Built a real‑time app with the Kafka ecosystem to connect football players and their fanbase (social‑network‑like).",
           "Used Kubernetes and Google Cloud Platform to handle hundreds of thousands of interactions.",
-          "Led the Player Experience engineering team; promoted a positive culture."
+          "Led a passionate engineering team and cultivated a positive environment."
         ],
+        aside_prev_title: "Previous experiences",
+        prev1: "Senior Java Developer · Wplex (Public Transport) · Brazil · 2015–2018",
+        prev2: "Java Developer · Metaway (Education) · Brazil · 2015",
+        prev3: "Java Developer · Citta Informatica (Government & Legal) · Brazil · 2010–2014",
+        prev4: "Junior Java Developer · Allcance (Industry) · Brazil · 2008–2009",
+        chip_linkedin: "Detailed roles and responsibilities available on my LinkedIn profile.",
         section_skills_title: "Skills",
         skills_hard_title: "Hard skills",
         skills_bars_title: "Proficiency overview",
@@ -635,15 +622,11 @@
           "Felipe Sotille",
           "Sr. DevSecOps & Software Engineer",
           "Consultant — Swift, Swissquote",
-          "18+ years (since 2007)",
+          "17+ years: Java, Spring, Angular, K8s",
           "Banking · Real‑time · Social · ERP"
-        ],
-        card_focus_title: "Current focus",
-        card_focus_value: "CI/CD, DevSecOps, Observability",
-        card_interests_title: "Interests",
-        card_interests_value: "Music · Technology · AI · Mountains · Chess · Sci‑Fi"
-      }},
-      pt: {{
+        ]
+      },
+      pt: {
         title: "Felipe Sotille — Portfólio / Currículo",
         meta_desc: "Currículo interativo de Felipe Sotille — Sr. DevSecOps & Software Engineer.",
         nav_about: "Sobre",
@@ -654,14 +637,13 @@
         btn_download_pdf: "Baixar PDF",
         hero_pill: "Aberto a colaborações OSS",
         headline: "Sr. DevSecOps & Software Engineer",
+        hero_desc: "17+ years entre banking, ERPs, apps em tempo real e sociais. Engenheiro de backend, entusiasta de frontend e apaixonado por DevOps.",
         btn_view_experience: "Ver experiência",
         btn_email: "E‑mail",
         btn_linkedin: "LinkedIn",
         btn_github: "GitHub",
-        xp_label: "Experiência total",
-        xp_value_en: "18 anos e 4 meses (≈18.3 anos)",
         section_about_title: "Sobre",
-        about_intro: "Sou um engenheiro de software com 18+ anos de experiência. Contribuí para catálogos de produtos, ERPs, aplicações em tempo real e sociais, e para o setor bancário. Desenvolvedor versátil: backend, entusiasta de frontend e apaixonado por DevOps. Sempre aberto a compartilhar conhecimento e ajudar.",
+        about_intro: "Sou um engenheiro de software com ≈17 years 7 months de atuação. Contribuí para catálogos de produtos, ERPs, aplicações em tempo real e sociais, e para o setor bancário. Desenvolvedor versátil: engenheiro de backend, entusiasta de frontend e apaixonado por DevOps. Sempre aberto a compartilhar conhecimento e ajudar.",
         about_quote: "“Esforce‑se não para ser um sucesso, mas para ser valioso.” — Albert Einstein",
         aside_loc: "Local",
         aside_loc_value: "Área metropolitana de Bruxelas (remoto/global)",
@@ -670,41 +652,55 @@
         aside_avail: "Disponibilidade",
         aside_avail_value: "Consultoria & colaborações em OSS",
         section_experience_title: "Experiência",
+        expA_meta: "2025 — Atual · Sr. DevSecOps Engineer (Consultor) · Swift · Bélgica",
+        expA_role: "DevSecOps & CI/CD",
         expA_bullets: [
           "Blueprints de pipelines de CI/CD.",
           "Orquestração de releases (impulsionando KPI chave).",
           "Padronização de CI/CD.",
-          "Scans de segurança (análise estática) em várias aplicações.",
+          "Scans de segurança em várias aplicações (análise estática).",
           "Coaching DevOps para diversos squads.",
           "Automação e scripts de tooling."
         ],
+        expB_meta: "2024 — 2025 · Sr. Software Engineer (Consultor) · Swissquote · Suíça",
+        expB_role: "Migração de dados & engenharia de banco de dados",
         expB_bullets: [
-          "Relatórios para o time de DBA explicando esforços de migração.",
-          "Migração de um banco com bilhões de registros financeiros para Oracle.",
-          "Reescrita de queries para melhor performance.",
-          "Loader em Java para mover bilhões de registros sem interrupções.",
-          "Desnormalização e particionamento para otimizar desempenho."
+          "Relatórios para o time de DBA explicando os esforços de migração.",
+          "Migração de um banco com bilhões de registros de transações financeiras para Oracle.",
+          "Melhoria nas interações com o banco reescrevendo queries para resultados ótimos.",
+          "Criação de loader em Java para mover bilhões de registros sem interrupções.",
+          "Aplicação de desnormalização e particionamento para otimizar performance."
         ],
+        expC_meta: "2019 — 2024 · Sr. Software Engineer (Consultor) · Swift · Bélgica",
+        expC_role: "Engenharia full‑stack & evolução de plataforma",
         expC_bullets: [
-          "Engenharia full‑stack em múltiplos squads.",
+          "Atuação full‑stack em múltiplos squads.",
           "Implementação do Coveo AI Search no app Angular do Knowledge Centre.",
           "Correção de vulnerabilidades e code smells em apps de back‑office.",
           "Upgrade de Angular em mais de 10 aplicações.",
-          "Documentação/especificações com stakeholders para novas features.",
+          "Documentação/especificações de novas features com stakeholders.",
           "Upgrade de imagens Docker para tecnologias atuais.",
-          "Entrevistas de candidatos (fit técnico e cultural).",
-          "Migração de monólito para microserviços no app de Identity Management.",
+          "Entrevistas de candidatos para fit técnico e cultural.",
+          "Liderança na migração de monólito para microserviços no app de Identity Management.",
           "Entrega da migração JSF → Angular, crucial para KPIs.",
-          "Atuação como Scrum Master com agile coaches para melhorar agilidade e motivação.",
+          "Atuação como Scrum Master com agile coaches para aumentar agilidade e motivação.",
           "Integração do Adobe Experience Cloud no fluxo do app.",
           "Indicações: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player."
         ],
+        expD_meta: "2018 — 2019 · Sr. Software Engineer & Dev. Leader · Eleven Sports · Portugal",
+        expD_role: "Microserviços em tempo real & liderança de time",
         expD_bullets: [
-          "Backend escalável em microserviços com Vert.x para alto throughput.",
-          "App em tempo real com Kafka conectando jogadores e fãs (estilo rede social).",
-          "Uso de Kubernetes e Google Cloud Platform para centenas de milhares de interações.",
-          "Liderança do time de Player Experience; cultura positiva."
+          "Design e lançamento de backend escalável em microserviços com Vert.x.",
+          "App em tempo real com Kafka para conectar jogadores e fãs (estilo rede social).",
+          "Uso de Kubernetes e Google Cloud Platform para alto throughput.",
+          "Liderança de equipe e cultura positiva."
         ],
+        aside_prev_title: "Experiências anteriores",
+        prev1: "Senior Java Developer · Wplex (Transporte Público) · Brasil · 2015–2018",
+        prev2: "Java Developer · Metaway (Educação) · Brasil · 2015",
+        prev3: "Java Developer · Citta Informatica (Governo & Jurídico) · Brasil · 2010–2014",
+        prev4: "Junior Java Developer · Allcance (Indústria) · Brasil · 2008–2009",
+        chip_linkedin: "Papéis e responsabilidades detalhados no meu LinkedIn.",
         section_skills_title: "Skills",
         skills_hard_title: "Hard skills",
         skills_bars_title: "Visão geral de proficiência",
@@ -718,7 +714,7 @@
         soft3: "Colaborativo",
         soft4: "Pensamento criativo",
         soft5: "Atenção aos detalhes",
-        soft6: "Resolutivo",
+        soft6: "Resolvedor de problemas",
         soft7: "Gestão do tempo",
         soft8: "Autêntico & acessível",
         soft9: "Aberto & honesto",
@@ -741,9 +737,9 @@
         proj3_desc: "Ferramentas de DX: scaffolding, testes, lint e UI docs integradas.",
         btn_view_all_repos: "Ver todos os repositórios",
         section_reco_title: "Recomendações",
-        rec1_text: "“Tive a chance de colaborar de perto com o Felipe. Ele se adapta muito rápido ao dia a dia. Encontra melhorias em diferentes níveis e compartilha ideias sempre relevantes. Não hesita em sair da zona de conforto e experimentar novas tecnologias e ferramentas. Respeitoso e sempre pronto para ajudar.”",
+        rec1_text: "“Tive a chance de colaborar de perto com o Felipe no nosso squad. Ele se adapta muito rápido ao dia a dia. Encontra melhorias em diferentes níveis e compartilha ideias sempre relevantes. Não hesita em sair da zona de conforto e experimentar novas tecnologias e ferramentas. Respeitoso e sempre pronto para ajudar.”",
         rec1_cite: "— Jérôme Vervier, Full‑stack Developer & Trainer (Swift)",
-        rec2_text: "“Ele é a referência em Linux e microserviços. Trabalhamos juntos em microserviços na Swift — ótimo colega. Recomendo para vagas de desenvolvimento.”",
+        rec2_text: "“Ele é a pessoa de referência quando se trata de Linux e microserviços. Trabalhamos juntos em microserviços na Swift — ótimo colega. Recomendo para vagas de desenvolvimento.”",
         rec2_cite: "— Sadhana Italiya, Java Software Developer (Swift)",
         rec3_text: "“Tive o prazer de trabalhar com o Felipe, provavelmente o desenvolvedor mais habilidoso que já conheci. Entusiasta de novas tecnologias e de fazer as coisas funcionarem, além de um colega divertido e tranquilo.”",
         rec3_cite: "— Arnau Rovira, DevOps Engineer (Eleven Sports)",
@@ -759,36 +755,15 @@
           "Felipe Sotille",
           "Sr. DevSecOps & Software Engineer",
           "Consultor — Swift, Swissquote",
-          "18+ anos (desde 2007)",
+          "17+ years: Java, Spring, Angular, K8s",
           "Banking · Tempo real · Social · ERP"
-        ],
-        card_focus_title: "Foco atual",
-        card_focus_value: "CI/CD, DevSecOps, Observabilidade",
-        card_interests_title: "Interesses",
-        card_interests_value: "Música · Tecnologia · IA · Montanhas · Xadrez · Sci‑Fi"
-      }}
-    }};
+        ]
+      }
+    };
 
     // Default language: EN (unless user saved a preference)
     const storedLang = localStorage.getItem('lang');
     let LANG = storedLang || 'en';
-
-    // Theme handling
-    const PREF_KEY = 'theme';
-    function setTheme(theme){
-      if (theme === 'auto'){
-        document.documentElement.setAttribute('data-theme', matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', theme);
-      }
-    }
-    function initTheme(){
-      const saved = localStorage.getItem(PREF_KEY);
-      if (saved){ setTheme(saved); }
-      else { setTheme('auto'); }
-      const current = document.documentElement.getAttribute('data-theme');
-      $$('.mode-toggle [data-theme]').forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.theme === current)));
-    }
 
     function applyI18n(lang){
       document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
@@ -801,20 +776,11 @@
           if (/<[a-z][\s\S]*>/i.test(v)) el.innerHTML = v; else el.textContent = v;
         }
       });
-      // Lists
-      const lists = [
-        ['expA_bullets', '#expA_bullets'],
-        ['expB_bullets', '#expB_bullets'],
-        ['expC_bullets', '#expC_bullets'],
-        ['expD_bullets', '#expD_bullets'],
-      ];
-      lists.forEach(([k, sel]) => {
-        const ul = document.querySelector(sel); if (!ul) return;
-        ul.innerHTML = '';
-        const items = (I18N[lang][k] || []);
-        items.forEach(text => {
-          const li = document.createElement('li'); li.textContent = text; ul.appendChild(li);
-        });
+      // Render lists
+      $$("[data-i18n-list]").forEach(el => {
+        const key = el.getAttribute('data-i18n-list');
+        const arr = I18N[lang][key] || [];
+        el.innerHTML = arr.map(item => `<li>${item}</li>`).join("");
       });
       $$('.lang-toggle [data-lang]').forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)));
       setPhrases(I18N[lang].scramble);
@@ -822,7 +788,7 @@
 
     // Text Scramble
     class TextScramble {
-      constructor(el){ this.el = el; this.chars = '!<>-_/[]{}—=+*^?#________'; this.update = this.update.bind(this); }
+      constructor(el){ this.el = el; this.chars = '!<>-_\\/[]{}—=+*^?#________'; this.update = this.update.bind(this); }
       setText(newText){
         const oldText = this.el.innerText || "";
         const length = Math.max(oldText.length, newText.length);
@@ -943,9 +909,6 @@
       });
     }
 
-    // Key: replay
-    addEventListener('keydown', (e) => (e.key.toLowerCase() === 'r') && next());
-
     // Language switch
     $$('.lang-toggle [data-lang]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -958,35 +921,34 @@
       });
     });
 
-    // Theme toggle
-    $$('.mode-toggle [data-theme]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const theme = btn.dataset.theme;
-        localStorage.setItem('theme', theme);
-        setTheme(theme);
-        const current = document.documentElement.getAttribute('data-theme');
-        $$('.mode-toggle [data-theme]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.theme === current)));
-      });
+    // THEME: dark/light/auto with persistence
+    function setTheme(mode){
+      if (mode === 'auto'){
+        document.documentElement.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', mode);
+      }
+      localStorage.setItem('theme', mode);
+    }
+    function initTheme(){
+      const stored = localStorage.getItem('theme') || 'auto';
+      setTheme(stored);
+    }
+    $('#theme-dark').addEventListener('click', () => setTheme('dark'));
+    $('#theme-light').addEventListener('click', () => setTheme('light'));
+    $('#theme-auto').addEventListener('click', () => setTheme('auto'));
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if ((localStorage.getItem('theme') || 'auto') === 'auto') setTheme('auto');
     });
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Initial render
-    function init() {
-      // Initialize theme (auto follows system on first load)
-      if (!localStorage.getItem('theme')) {
-        setTheme('auto');
-      } else {
-        setTheme(localStorage.getItem('theme'));
-      }
-      const current = document.documentElement.getAttribute('data-theme');
-      $$('.mode-toggle [data-theme]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.theme === current)));
-      applyI18n(LANG);
-      prepareSphere();
-      animateSphere();
-    }
-    init();
+    initTheme();
+    applyI18n(LANG);
+    prepareSphere();
+    animateSphere();
   </script>
 </body>
 </html>

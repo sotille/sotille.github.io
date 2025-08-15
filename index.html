@@ -8,6 +8,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Felipe Sotille — Portfolio / CV">
+    <meta property="og:description" content="Sr. DevSecOps & Software Engineer — CI/CD, DevSecOps, Java/Spring, K8s, Angular.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sotille.github.io/">
+    <meta property="og:image" content="https://sotille.github.io/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Felipe Sotille — Portfolio / CV">
+    <meta name="twitter:description" content="DevSecOps, CI/CD, Java/Spring, K8s, Angular.">
+    <meta name="twitter:image" content="https://sotille.github.io/assets/og-image.png">
+
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"Person",
+        "name":"Felipe Sotille",
+        "jobTitle":"Sr. DevSecOps & Software Engineer",
+        "url":"https://sotille.github.io/",
+        "image":"https://sotille.github.io/assets/og-image.png",
+        "email":"mailto:fsotille@gmail.com",
+        "telephone":"+32456250429",
+        "sameAs":[
+            "https://github.com/sotille",
+            "https://www.linkedin.com/in/Felipe-Sotille/"
+        ]
+    }
+    </script>
+
   <style>
     :root{
       --bg-0:#070b14;
@@ -176,9 +203,28 @@
       .card, .hero-card{box-shadow:none; border-color:#e2e8f0}
       a{color:#0b1220; text-decoration:underline}
     }
+    .skip-link{
+        position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+        left:16px; top:12px; width:auto; height:auto; padding:8px 12px;
+        background:var(--btn-bg); color:var(--text); border:1px solid var(--line);
+        border-radius:8px; z-index:1000;
+    }
+    :focus-visible{
+        outline:2px solid var(--accent); outline-offset:3px; border-radius:6px;
+    }
+    @media print{
+        section{ break-inside: avoid; page-break-inside: avoid }
+        #projects .card{ break-inside: avoid }
+    }
+    .scramble .dud{ opacity:.45 }
+    section{ content-visibility:auto; contain-intrinsic-size: 600px }
+
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <nav class="nav">
       <div class="brand">
@@ -205,7 +251,7 @@
     </nav>
   </header>
 
-  <main class="wrap">
+  <main class="wrap" id="main">
     <!-- HERO -->
     <section class="hero reveal">
       <div>
@@ -220,7 +266,7 @@
           <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
         </div>
         <div class="stack" style="margin-top:12px">
-          <span class="chip">≈18 years 4 months</span>
+          <span class="chip" id="exp-chip">≈18 years</span>
           <span class="chip">Java · Spring</span>
           <span class="chip">Angular · TypeScript</span>
           <span class="chip">Kubernetes · Docker</span>
@@ -500,6 +546,8 @@
             <a class="btn" href="mailto:fsotille@gmail.com" data-i18n="btn_email">Send email</a>
             <a class="btn ghost" href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener" data-i18n="btn_linkedin">LinkedIn</a>
             <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
+            <button class="btn ghost" id="copy-email" type="button">Copy email</button>
+            <button class="btn ghost" id="btn-vcard" type="button">Download vCard</button>
           </div>
         </article>
         <aside class="card">
@@ -547,8 +595,7 @@
         btn_linkedin: "LinkedIn",
         btn_github: "GitHub",
         section_about_title: "About",
-        about_intro: "I’m a distinguished software engineer with ≈18 years 4 months in the industry. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.",
-        about_quote: "“Strive not to be a success, but rather to be of value.” — Albert Einstein",
+        about_intro: "I’m a distinguished software engineer with {EXP} in the industry. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.",        about_quote: "“Strive not to be a success, but rather to be of value.” — Albert Einstein",
         aside_loc: "Location",
         aside_loc_value: "Brussels Metropolitan Area (remote/global)",
         aside_langs: "Languages",
@@ -720,8 +767,7 @@
         btn_linkedin: "LinkedIn",
         btn_github: "GitHub",
         section_about_title: "Sobre",
-        about_intro: "Sou um engenheiro de software com ≈18 anos e 4 meses de atuação. Contribuí para catálogos de produtos, ERPs, aplicações em tempo real e sociais, e para o setor bancário. Desenvolvedor versátil: engenheiro de backend, entusiasta de frontend e apaixonado por DevOps. Sempre aberto a compartilhar conhecimento e ajudar.",
-        about_quote: "“Esforce‑se não para ser um sucesso, mas para ser valioso.” — Albert Einstein",
+        about_intro: "Sou um engenheiro de software com {EXP} de atuação. Contribuí para catálogos de produtos, ERPs, aplicações em tempo real e sociais, e para o setor bancário. Desenvolvedor versátil: engenheiro de backend, entusiasta de frontend e apaixonado por DevOps. Sempre aberto a compartilhar conhecimento e ajudar.",        about_quote: "“Esforce‑se não para ser um sucesso, mas para ser valioso.” — Albert Einstein",
         aside_loc: "Local",
         aside_loc_value: "Área metropolitana de Bruxelas (remoto/global)",
         aside_langs: "Idiomas",
@@ -882,6 +928,65 @@
     const storedLang = localStorage.getItem('lang');
     let LANG = storedLang || 'en';
 
+    // --- Unified career timeline to compute unique months (no double counting)
+    const ROLES = [
+    { start: '2007-01-01', end: '2009-09-30' }, // Holma
+    { start: '2009-10-01', end: '2014-03-31' }, // Città
+    { start: '2014-04-01', end: '2015-01-31' }, // CyberSec
+    { start: '2015-03-01', end: '2015-08-31' }, // Metaway
+    { start: '2015-10-01', end: '2018-03-31' }, // WPLEX
+    { start: '2018-06-01', end: '2019-06-30' }, // MyCujoo/Eleven
+    { start: '2019-07-01', end: '2024-06-30' }, // SWIFT (1ª fase)
+    { start: '2024-07-01', end: '2024-12-31' }, // Swissquote
+    { start: '2025-01-02', end: null }          // SWIFT (2ª fase, presente)
+    ];
+
+    function toMonthIndex(d){ return d.getFullYear()*12 + d.getMonth(); } // Jan=0
+    function unionMonths(roles){
+    const set = new Set();
+    roles.forEach(r=>{
+        const s = new Date(r.start);
+        const e = r.end ? new Date(r.end) : new Date();
+        let a = toMonthIndex(new Date(s.getFullYear(), s.getMonth(), 1));
+        let b = toMonthIndex(new Date(e.getFullYear(), e.getMonth(), 1));
+        for (let m=a; m<=b; m++) set.add(m);
+    });
+    return set.size; // unique months across the whole career
+    }
+    function formatExpLabel(lang, years, months){
+    return lang === 'pt'
+        ? `≈${years} anos e ${months} meses`
+        : `≈${years} years ${months} months`;
+    }
+    function computeExperience(){
+    const totalMonths = unionMonths(ROLES);
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+    return { totalMonths, years, months };
+    }
+    function injectExperience(){
+    const { years, months } = computeExperience();
+    const label = formatExpLabel(LANG, years, months);
+
+    // HERO chip
+    const chip = document.getElementById('exp-chip');
+    if (chip) chip.textContent = label;
+
+    // ABOUT paragraph (uses placeholder {EXP} in the i18n string)
+    const about = document.querySelector('[data-i18n="about_intro"]');
+    if (about){
+        const tpl = I18N[LANG].about_intro;
+        about.textContent = tpl.replace('{EXP}', label);
+    }
+
+    // Meta description also gets the updated figure (EN baseline)
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content',
+        `Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer with ${formatExpLabel('en', years, months)} of experience.`
+    );
+    }
+
+
     function applyI18n(lang){
       document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
       document.title = I18N[lang].title;
@@ -1006,25 +1111,68 @@
       const lon = document.querySelector('.sphere .lon');
       if (lat && lon) lon.innerHTML = lat.innerHTML;
     }
+    
+    let _animePaths, _animeSpin;
+
     function animateSphere(){
-      if (prefersReduced || !window.anime) return;
-      window.anime({
-        targets: '.sphere path',
-        strokeDashoffset: [window.anime.setDashoffset, 0],
-        easing: 'easeInOutSine',
-        duration: 1800,
-        delay: (el, i) => i * 24,
-        direction: 'alternate',
-        loop: true
-      });
-      window.anime({
-        targets: '.sphere',
-        rotate: '1turn',
-        easing: 'linear',
-        duration: 22000,
-        loop: true
-      });
+        if (prefersReduced || !window.anime) return;
+        _animePaths = window.anime({
+            targets: '.sphere path',
+            strokeDashoffset: [window.anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 1800,
+            delay: (el, i) => i * 24,
+            direction: 'alternate',
+            loop: true,
+            autoplay: false
+        });
+        _animeSpin = window.anime({
+            targets: '.sphere',
+            rotate: '1turn',
+            easing: 'linear',
+            duration: 22000,
+            loop: true,
+            autoplay: false
+        });
+
+        const orb = document.querySelector('.orb-wrap');
+        if (!orb) return;
+
+        const orbIO = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{
+            if (e.isIntersecting){ _animePaths.play(); _animeSpin.play(); }
+            else { _animePaths.pause(); _animeSpin.pause(); }
+            });
+        },{threshold:0.1});
+        orbIO.observe(orb);
+
+        // Also pause when tab is hidden
+        document.addEventListener('visibilitychange', ()=>{
+            const playing = document.visibilityState === 'visible';
+            [_animePaths, _animeSpin].forEach(a => a && (playing ? a.play() : a.pause()));
+        });
     }
+
+    // Tilt: run only on precise pointers (saves CPU on touch devices)
+    if (window.matchMedia('(pointer: fine)').matches){
+        const tilts = $$('.tilt');
+        tilts.forEach(card => {
+            let rAF;
+            card.addEventListener('mousemove', (e) => {
+            const b = card.getBoundingClientRect();
+            const x = (e.clientX - b.left) / b.width;
+            const y = (e.clientY - b.top) / b.height;
+            const rx = (y - .5) * -8;
+            const ry = (x - .5) * 10;
+            cancelAnimationFrame(rAF);
+            rAF = requestAnimationFrame(()=>{
+                card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+            });
+            });
+            card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+        });
+    }
+
 
     // Language switch
     $$('.lang-toggle [data-lang]').forEach(btn => {
@@ -1035,6 +1183,7 @@
         localStorage.setItem('lang', LANG);
         clearTimeout(timeoutId);
         applyI18n(LANG);
+        injectExperience();
       });
     });
 
@@ -1061,9 +1210,47 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+// Copy email
+const copyBtn = document.getElementById('copy-email');
+if (copyBtn){
+  copyBtn.addEventListener('click', async ()=>{
+    try{
+      await navigator.clipboard.writeText('fsotille@gmail.com');
+      copyBtn.textContent = LANG==='pt' ? 'Copiado!' : 'Copied!';
+      setTimeout(()=> copyBtn.textContent = LANG==='pt' ? 'Copiar e‑mail' : 'Copy email', 1200);
+    }catch(e){ console.warn(e); }
+  });
+}
+
+    // vCard download
+    const vcardBtn = document.getElementById('btn-vcard');
+    if (vcardBtn){
+        const vcf =
+        `BEGIN:VCARD
+        VERSION:3.0
+        N:Sotille;Felipe;;;
+        FN:Felipe Sotille
+        TITLE:Sr. DevSecOps & Software Engineer
+        EMAIL;TYPE=INTERNET,PREF:fsotille@gmail.com
+        TEL;TYPE=CELL:+32456250429
+        URL:https://linkedin.com/in/Felipe-Sotille/
+        URL:https://github.com/sotille
+        END:VCARD`;
+        vcardBtn.addEventListener('click', ()=>{
+            const blob = new Blob([vcf], {type:'text/vcard'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = 'Felipe_Sotille.vcf';
+            document.body.appendChild(a); a.click(); a.remove();
+            URL.revokeObjectURL(url);
+        });
+    }
+
+
     // Initial render
     initTheme();
     applyI18n(LANG);
+    injectExperience();
     prepareSphere();
     animateSphere();
   </script>

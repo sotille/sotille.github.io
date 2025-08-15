@@ -170,7 +170,7 @@
     [data-theme="light"] .timeline::before{background:linear-gradient(#cbd5e1,#94a3b8)}
     .tl-item{position:relative; margin:0 0 18px}
     .tl-item::before{content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border:2px solid #2f436b; background:var(--surface); border-radius:50%}
-    .tl-meta{font:600 12px/1.6 Inter, system-ui; color:var(--muted); letter-spacing:.3px}
+    .tl-meta{font:600 12px/1.6 Inter, system-ui; color:var(--muted); letter-spacing:.3px; padding-left: 20px;}
     .tl-role{font-weight:700; letter-spacing:.2px}
     .stack{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
     .tag{padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:var(--surface); font:600 12px/1 Inter}
@@ -1210,41 +1210,96 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-// Copy email
+// Copy email (mantém igual)
 const copyBtn = document.getElementById('copy-email');
 if (copyBtn){
   copyBtn.addEventListener('click', async ()=>{
     try{
       await navigator.clipboard.writeText('fsotille@gmail.com');
-      copyBtn.textContent = LANG==='pt' ? 'Copiado!' : 'Copied!';
-      setTimeout(()=> copyBtn.textContent = LANG==='pt' ? 'Copiar e‑mail' : 'Copy email', 1200);
+      copyBtn.textContent = (LANG==='pt' ? 'Copiado!' : 'Copied!');
+      setTimeout(()=> copyBtn.textContent = (LANG==='pt' ? 'Copiar e‑mail' : 'Copy email'), 1200);
     }catch(e){ console.warn(e); }
   });
 }
 
-    // vCard download
-    const vcardBtn = document.getElementById('btn-vcard');
-    if (vcardBtn){
-        const vcf =
-        `BEGIN:VCARD
-        VERSION:3.0
-        N:Sotille;Felipe;;;
-        FN:Felipe Sotille
-        TITLE:Sr. DevSecOps & Software Engineer
-        EMAIL;TYPE=INTERNET,PREF:fsotille@gmail.com
-        TEL;TYPE=CELL:+32456250429
-        URL:https://linkedin.com/in/Felipe-Sotille/
-        URL:https://github.com/sotille
-        END:VCARD`;
-        vcardBtn.addEventListener('click', ()=>{
-            const blob = new Blob([vcf], {type:'text/vcard'});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url; a.download = 'Felipe_Sotille.vcf';
-            document.body.appendChild(a); a.click(); a.remove();
-            URL.revokeObjectURL(url);
-        });
-    }
+// vCard 3.0 (compatível com Gmail/Outlook/Apple) — CRLF + tipos clássicos
+const vcardBtn = document.getElementById('btn-vcard');
+if (vcardBtn){
+  function buildVCardV3(){
+    const CRLF = '\r\n';
+    const ts = new Date().toISOString()
+      .replace(/[-:]/g,'')       // 2025-08-15T12:34:56.789Z -> 20250815T123456.789Z
+      .replace(/\.\d{3}Z$/,'Z'); // remove milissegundos -> 20250815T123456Z
+
+    const lines = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'N:Sotille;Felipe;;;',
+      'FN:Felipe Sotille',
+      'ORG:Independent Consultant',
+      'TITLE:Sr. DevSecOps & Software Engineer',
+      'EMAIL;TYPE=INTERNET;TYPE=WORK;TYPE=PREF:fsotille@gmail.com',
+      'TEL;TYPE=CELL;TYPE=WORK;TYPE=VOICE:+32456250429',
+      // URLs sem TYPE custom para compatibilidade ampla
+      'URL:https://linkedin.com/in/Felipe-Sotille/',
+      'URL:https://github.com/sotille',
+      'NOTE:Open to OSS collaborations',
+      'UID:felipe-sotille-vcard',
+      `REV:${ts}`,
+      'END:VCARD'
+    ];
+    // CRLF obrigatório para alguns importadores
+    return lines.join(CRLF) + CRLF;
+  }
+
+  vcardBtn.addEventListener('click', ()=>{
+    const data = buildVCardV3();
+    // text/x-vcard melhora compatibilidade em Windows/Outlook
+    const blob = new Blob([data], { type: 'text/x-vcard;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Felipe_Sotille.vcf';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+
+  function buildVCardV4(){
+  const CRLF = '\r\n';
+  const lines = [
+    'BEGIN:VCARD',
+    'VERSION:4.0',
+    'N:Sotille;Felipe;;;',
+    'FN:Felipe Sotille',
+    'ORG:Independent Consultant',
+    'TITLE:Sr. DevSecOps & Software Engineer',
+    'EMAIL;type=work;pref=1:fsotille@gmail.com',
+    'TEL;type=cell,work;value=uri:tel:+32456250429',
+    'URL:https://linkedin.com/in/Felipe-Sotille/',
+    'URL:https://github.com/sotille',
+    'NOTE:Open to OSS collaborations',
+    'END:VCARD'
+  ];
+  return lines.join(CRLF) + CRLF;
+}
+
+if (vcardBtn){
+  vcardBtn.addEventListener('click', (e)=>{
+    const data = e.shiftKey ? buildVCardV4() : buildVCardV3();
+    const blob = new Blob([data], { type: 'text/x-vcard;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = e.shiftKey ? 'Felipe_Sotille_v4.vcf' : 'Felipe_Sotille.vcf';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+  });
+}
+
+}
+
 
 
     // Initial render

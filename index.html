@@ -1,45 +1,385 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Felipe Sotille — Text Scramble</title>
-
-  <!-- Optional mono font (remove if you prefer system monospace) -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Felipe Sotille — Currículo</title>
+  <meta name="description" content="Currículo interativo de Felipe Sotille — Tech Lead, Cloud-Native, Platform Engineering.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b1020; --text:#eaf2ff; --muted:#94a3b8; --accent:#38bdf8;
+      --bg-0:#070b14;
+      --bg-1:#0b1020;
+      --bg-2:#101828;
+      --surface:#121a2b;
+      --text:#e2e8f0;
+      --muted:#94a3b8;
+      --line:#22304b;
+      --accent:#38bdf8;
+      --accent-2:#22d3ee;
+      --ok:#22c55e;
+      --warn:#f59e0b;
+      --bad:#ef4444;
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --radius: 14px;
+      --maxw: 1120px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-      background: radial-gradient(1200px 900px at 50% 20%, #172032 0%, #0b1020 60%, #060914 100%) fixed;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
       color:var(--text);
-      display:grid; place-items:center;
+      background:
+        radial-gradient(900px 600px at 50% -10%, #172032 0%, #0b1020 60%, #060913 100%) fixed,
+        linear-gradient(180deg, var(--bg-1), var(--bg-0));
+      line-height:1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .container{display:grid; gap:16px; place-items:center; padding:24px; text-align:center}
-    .text{font-weight:100; font-size:clamp(20px,3.4vw,42px); line-height:1.3; letter-spacing:.02em}
-    .dud{color:var(--muted)}
-    .sub{font-size:clamp(12px,1.8vw,16px); color:var(--muted)}
     a{color:var(--accent); text-decoration:none}
-    a:focus-visible{outline:2px solid var(--accent); outline-offset:4px; border-radius:4px}
-    @media (prefers-reduced-motion: reduce){ .dud{display:none} }
+    a:hover{opacity:.9}
+    .wrap{max-width:var(--maxw); margin:auto; padding:24px}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(16,24,40,.75), rgba(16,24,40,.35));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:var(--maxw); margin:0 auto}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
+    .brand .logo{
+      width:38px; height:38px; border-radius:50%;
+      background: conic-gradient(from 210deg at 50% 50%, #38bdf8, #22d3ee, #818cf8, #38bdf8);
+      box-shadow: 0 0 0 2px rgba(56,189,248,.2), 0 8px 24px rgba(2,8,23,.55) inset;
+      position:relative; display:grid; place-items:center; overflow:hidden;
+    }
+    .brand .logo::after{
+      content:"FS"; font:700 14px/1 JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color:#0b1020; background:rgba(255,255,255,.96);
+      width:30px; height:30px; border-radius:50%; display:grid; place-items:center;
+      transform:rotate(-12deg);
+      mix-blend-mode:screen;
+    }
+    .nav a{color:var(--text); opacity:.84; font-weight:600}
+    .links{display:flex; gap:18px; align-items:center}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px;
+      background:linear-gradient(180deg, #12203b, #0f172a); border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      font-weight:600; color:#dbeafe;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .ghost{background:transparent; border-color:#223049; color:#cbd5e1}
+    .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--line); border-radius:999px; background:rgba(2,6,23,.5)}
+    main{padding:18px 0 64px}
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:28px 0 12px}
+    .headline{font-size: clamp(28px, 5vw, 58px); line-height:1.08; letter-spacing:.2px; font-weight:800; margin:0 0 6px}
+    .scramble{font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight:300; font-size: clamp(16px, 2.4vw, 20px); color:#cbd5e1; min-height:1.6em}
+    .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
+    .hero-card{
+      position:relative; border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(10,18,35,.8), rgba(8,14,28,.6));
+      border:1px solid var(--line);
+      padding:22px; box-shadow: var(--shadow);
+      transform-style:preserve-3d; will-change:transform;
+    }
+    .avatar{
+      width:min(380px, 90%); aspect-ratio:1/1; border-radius:24px; margin:0 auto;
+      background: radial-gradient(200px 140px at 30% 20%, rgba(56,189,248,.28), transparent),
+                  radial-gradient(200px 160px at 70% 80%, rgba(129,140,248,.22), transparent),
+                  #0b1220;
+      display:grid; place-items:center; border:1px solid var(--line); position:relative; overflow:hidden;
+    }
+    .avatar img{width:82%; height:82%; object-fit:cover; border-radius:20px; filter: drop-shadow(0 16px 28px rgba(0,0,0,.5));}
+    .avatar .fallback{
+      position:absolute; inset:0; display:grid; place-items:center; font:800 72px/1 "JetBrains Mono", monospace; color:#0b1020;
+      background: conic-gradient(from 180deg, #38bdf8, #22d3ee, #818cf8, #38bdf8);
+      -webkit-mask: radial-gradient(circle at 50% 50%, rgba(0,0,0,.92) 50%, rgba(0,0,0,.2) 100%);
+              mask: radial-gradient(circle at 50% 50%, rgba(0,0,0,.92) 50%, rgba(0,0,0,.2) 100%);
+      border-radius:20px;
+    }
+    section{margin-top:42px}
+    .sec-title{font-weight:800; font-size: clamp(18px, 2.4vw, 24px); margin:0 0 12px; letter-spacing:.4px}
+    .grid{display:grid; gap:16px}
+    .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
+    .grid.cols-2{grid-template-columns: repeat(2, 1fr)}
+    .card{
+      background:linear-gradient(180deg, rgba(9,15,28,.85), rgba(8,13,25,.7));
+      border:1px solid var(--line); border-radius:16px; padding:18px 18px; box-shadow:var(--shadow);
+      transform: translate3d(0,6px,0);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      will-change: transform;
+    }
+    .card:hover{transform: translate3d(0,0,0); border-color:#2f436b}
+    .muted{color:var(--muted)}
+    .kbd{border:1px solid var(--line); padding:2px 6px; border-radius:6px; background:#0b1220; font-family: "JetBrains Mono", monospace}
+    ul{padding-left:20px; margin:10px 0}
+    li{margin:6px 0}
+    .timeline{position:relative; padding-left:26px}
+    .timeline::before{content:""; position:absolute; left:8px; top:4px; bottom:4px; width:2px; background:linear-gradient(#1f2a44,#22304b)}
+    .tl-item{position:relative; margin:0 0 18px}
+    .tl-item::before{content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border:2px solid #2f436b; background:#0b1220; border-radius:50%}
+    .tl-meta{font:600 12px/1.6 Inter, system-ui; color:#a8b3c7; letter-spacing:.3px}
+    .tl-role{font-weight:700; letter-spacing:.2px}
+    .stack{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
+    .tag{padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:#0b1220; font:600 12px/1 Inter}
+    .skillbar{height:10px; background:#0f172a; border:1px solid var(--line); border-radius:999px; overflow:hidden}
+    .skillbar > i{display:block; height:100%; width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); transition:width 1.2s ease}
+    .project a{color:var(--text)}
+    .project .title{font-weight:700}
+    .project .meta{font:600 12px/1.6 Inter; color:#9fb0c7}
+    .contact{display:grid; gap:12px}
+    footer{margin:48px 0 16px; color:#91a0b8; font-size:14px; text-align:center}
+    .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
+    .reveal.visible{opacity:1; transform:none}
+    .pill{display:inline-flex; align-items:center; padding:6px 10px; gap:8px; border-radius:999px; border:1px solid var(--line); background:rgba(2,6,23,.5); font:600 12px/1 Inter}
+    /* Responsive */
+    @media (max-width: 980px){ .hero{grid-template-columns: 1fr; text-align:center} .actions{justify-content:center} .avatar{width:min(360px, 75%)} .nav{padding:10px 16px} }
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto !important}
+      .reveal{transition:none}
+      .card,.hero-card{transform:none}
+    }
+    @media print{
+      :root{--text:#0b1220; --muted:#334155; --line:#cbd5e1}
+      body{background:#fff; color:var(--text)}
+      header, .actions, .avatar, .links, .chip, .btn{display:none !important}
+      .card, .hero-card{box-shadow:none; border-color:#e2e8f0}
+      a{color:#0b1220; text-decoration:underline}
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="text" aria-live="polite"></div>
-    <div class="sub">Press <kbd>R</kbd> to replay • <a href="https://github.com/sotille" rel="noopener">github.com/sotille</a></div>
-  </div>
+  <header>
+    <nav class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>Felipe Sotille</div>
+      </div>
+      <div class="links">
+        <a href="#sobre">Sobre</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#skills">Skills</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+        <a class="btn ghost" href="#" onclick="window.print();return false;" title="Imprimir/Salvar PDF">Baixar PDF</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero reveal">
+      <div>
+        <p class="pill" aria-label="Disponível para colaboração">
+          <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" fill="#22c55e"/></svg>
+          Aberto a colaborações OSS
+        </p>
+        <h1 class="headline">Tech Lead · Cloud‑Native · Platform Engineering</h1>
+        <div class="scramble" id="scramble" aria-live="polite"></div>
+        <p class="muted">Construo plataformas resilientes e experiências de desenvolvedor que aceleram times. Apaixonado por tecnologia e natureza.</p>
+        <div class="actions">
+          <a class="btn" href="#projetos">Ver projetos</a>
+          <a class="btn ghost" href="https://linkedin.com/in/felipe-sotille/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="stack" style="margin-top:12px">
+          <span class="chip">Kubernetes</span>
+          <span class="chip">Java · Spring</span>
+          <span class="chip">TypeScript · Angular</span>
+          <span class="chip">AWS · GCP</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Platform Eng</span>
+        </div>
+      </div>
+
+      <div class="hero-card tilt" aria-label="Foto / Avatar">
+        <div class="avatar">
+          <!-- Substitua o caminho abaixo pelo seu avatar (ex.: ./assets/avatar.png) -->
+          <img src="./assets/avatar.png" alt="Avatar de Felipe Sotille" onload="this.nextElementSibling.style.display='none'">
+          <div class="fallback">FS</div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px">
+          <div class="card">
+            <div class="tl-meta">Foco atual</div>
+            <div class="tl-role">K8s · IaC · Observabilidade</div>
+          </div>
+          <div class="card">
+            <div class="tl-meta">Interesses</div>
+            <div class="tl-role">Montanhas · Xadrez · Sci‑Fi</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="reveal">
+      <h2 class="sec-title">Sobre</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <p>Sou <strong>Tech Lead</strong> com foco em plataformas cloud‑native, Developer Experience e confiabilidade. Gosto de unir boas práticas de engenharia com uma comunicação clara, para que ideias virem produtos estáveis e fáceis de operar.</p>
+          <ul class="muted">
+            <li>Atuo desenhando arquiteturas escaláveis, pipelines CI/CD, observabilidade e padrões de plataforma.</li>
+            <li>Costumo liderar iniciativas de qualidade e performance, sempre com foco em valor para o usuário.</li>
+            <li>Aprendendo continuamente sobre <strong>investimentos</strong>; aberto a trocar ideias.</li>
+          </ul>
+        </article>
+        <aside class="card">
+          <div class="grid" style="gap:10px">
+            <div class="pill"><strong>Local</strong>: Bélgica (remoto/global)</div>
+            <div class="pill"><strong>Idiomas</strong>: PT · EN · IT (básico)</div>
+            <div class="pill"><strong>Disponibilidade</strong>: Colaborações em OSS & Mentoria leve</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia" class="reveal">
+      <h2 class="sec-title">Experiência</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-meta">2023 — Atual · Tech Lead</div>
+              <div class="tl-role">Liderança técnica de plataforma</div>
+              <p class="muted">Desenho e evolução de plataforma Kubernetes (CI/CD com GitOps), padrões de serviços, segurança e SRE. Parceria com times de produto para acelerar entregas.</p>
+              <div class="stack">
+                <span class="tag">Kubernetes</span><span class="tag">Helm</span><span class="tag">Argo CD</span><span class="tag">Grafana</span><span class="tag">Prometheus</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-meta">2020 — 2023 · Senior Software Engineer</div>
+              <div class="tl-role">Arquitetura & backend</div>
+              <p class="muted">APIs resilientes em Java/Spring, mensageria, caching e práticas de observabilidade. Colaborei em migrações para cloud.</p>
+              <div class="stack">
+                <span class="tag">Java</span><span class="tag">Spring</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-meta">2017 — 2020 · Full‑stack Engineer</div>
+              <div class="tl-role">Web apps & DX</div>
+              <p class="muted">Apps em Angular/TypeScript com backends Node/Java. Melhoria contínua de DX e automações de build/deploy.</p>
+              <div class="stack">
+                <span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">Node.js</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="card">
+          <h3 style="margin:0 0 10px">Resultados em destaque</h3>
+          <ul class="muted">
+            <li>🧭 Reduziu <strong>lead time</strong> de deploy em &gt;30% com padronização GitOps.</li>
+            <li>📈 Aumento de <strong>confiabilidade</strong> com SLOs e alertas orientados a sintomas.</li>
+            <li>🧰 Melhorou <strong>DX</strong> com templates e CLIs internos (boas práticas & segurança). </li>
+          </ul>
+          <div class="chip">Referências disponíveis sob pedido</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <h2 class="sec-title">Skills</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3 style="margin:0 0 8px">Stack principal</h3>
+          <div class="stack">
+            <span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">GitHub Actions</span>
+            <span class="tag">Java</span><span class="tag">Spring</span><span class="tag">TypeScript</span><span class="tag">Angular</span>
+            <span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span>
+          </div>
+          <div style="margin-top:14px; display:grid; gap:10px">
+            <label>Plataformas & SRE</label>
+            <div class="skillbar" data-skill="88"><i></i></div>
+            <label>Back‑end (Java/Spring)</label>
+            <div class="skillbar" data-skill="84"><i></i></div>
+            <label>Front‑end (Angular/TS)</label>
+            <div class="skillbar" data-skill="72"><i></i></div>
+          </div>
+          <p class="muted" style="margin-top:10px">*Indicadores autoavaliados para visualização rápida.</p>
+        </article>
+        <aside class="card">
+          <h3 style="margin:0 0 8px">Certificações / Estudos</h3>
+          <ul class="muted">
+            <li>📚 Kubernetes, Cloud e Observabilidade (contínuo).</li>
+            <li>📚 Java & arquitetura de serviços.</li>
+            <li>📚 Segurança e plataformas (IAM, políticas, SBOM).</li>
+          </ul>
+          <div class="chip">Sempre aprendendo · Mentoria leve disponível</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="reveal">
+      <h2 class="sec-title">Projetos em destaque</h2>
+      <div class="grid cols-3">
+        <article class="card project tilt">
+          <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
+            <div class="title">Infra as Code Starter</div>
+            <div class="meta">Blueprint · K8s · GitOps · Observabilidade</div>
+            <p class="muted">Template de plataforma com Helm, ArgoCD, Prometheus/Grafana e padrões de service mesh.</p>
+          </a>
+        </article>
+        <article class="card project tilt">
+          <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
+            <div class="title">Java Service Kit</div>
+            <div class="meta">Spring Boot · Resiliência · Telemetria</div>
+            <p class="muted">Kit com boas práticas: tracing, métricas, retries, circuit‑breaker e hardening.</p>
+          </a>
+        </article>
+        <article class="card project tilt">
+          <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
+            <div class="title">Angular + DX</div>
+            <div class="meta">CLI · Schematics · Storybook</div>
+            <p class="muted">Ferramentas para melhorar DX: scaffolding, testes, lint e UI docs integradas.</p>
+          </a>
+        </article>
+      </div>
+      <p style="margin-top:10px"><a class="btn ghost" href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">Ver todos os repositórios</a></p>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="reveal">
+      <h2 class="sec-title">Contato</h2>
+      <div class="grid cols-2 contact">
+        <article class="card">
+          <p>Aberto a convites para colaboração em open source, revisão técnica e trocas sobre investimentos.</p>
+          <div class="stack">
+            <a class="btn" href="mailto:felipe.sotille+cv@proton.me">Enviar e‑mail</a>
+            <a class="btn ghost" href="https://linkedin.com/in/felipe-sotille/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+        <aside class="card">
+          <h3 style="margin:0 0 10px">Links rápidos</h3>
+          <div class="stack">
+            <a class="chip" href="#experiencia">Experiência</a>
+            <a class="chip" href="#skills">Skills</a>
+            <a class="chip" href="#projetos">Projetos</a>
+            <a class="chip" href="#" onclick="window.print();return false;">Baixar PDF</a>
+          </div>
+          <p class="muted" style="margin-top:8px">Dica: pressione <span class="kbd">R</span> para reiniciar a animação do topo.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div>© <span id="year"></span> Felipe Sotille • Feito com HTML/CSS/JS puro • Deploy no GitHub Pages</div>
+  </footer>
 
   <script>
-    // Based on the “Scramble text” pattern from the referenced CodePen. :contentReference[oaicite:2]{index=2}
+    // Utilitários simples
+    const $ = (sel, el = document) => el.querySelector(sel);
+    const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
+
+    // 1) Text Scramble (herói) — inspirado no efeito do CodePen
     class TextScramble {
       constructor(el){ this.el = el; this.chars = '!<>-_\\/[]{}—=+*^?#________'; this.update = this.update.bind(this); }
       setText(newText){
@@ -50,7 +390,7 @@
         for (let i = 0; i < length; i++){
           const from = oldText[i] || '';
           const to   = newText[i] || '';
-          const start = Math.floor(Math.random() * 40);
+          const start = Math.floor(Math.random() * 30);
           const end   = start + Math.floor(Math.random() * 40);
           this.queue.push({ from, to, start, end });
         }
@@ -73,28 +413,69 @@
       }
       randomChar(){ return this.chars[Math.floor(Math.random() * this.chars.length)]; }
     }
-
     const phrases = [
       "Felipe Sotille",
       "Tech Lead · Cloud‑Native · Platform Engineering",
-      "Kubernetes · Java · Spring · TypeScript · AWS",
-      "Open‑source collaborator",
-      "Mountains · Nature · Chess · Sci‑Fi"
+      "Kubernetes · Java · Spring · TypeScript · AWS/GCP",
+      "Amo tecnologia e natureza",
+      "Open‑source collaborator"
     ];
-
-    const el = document.querySelector('.text');
-    const fx = new TextScramble(el);
+    const scrambleEl = document.getElementById('scramble');
+    const fx = new TextScramble(scrambleEl);
     let counter = 0;
-    function next(){
-      fx.setText(phrases[counter]).then(() => setTimeout(next, 1200));
+    function cycle(){
+      fx.setText(phrases[counter]).then(() => setTimeout(cycle, 1400));
       counter = (counter + 1) % phrases.length;
     }
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) scrambleEl.textContent = phrases[0]; else cycle();
+    addEventListener('keydown', (e)=> e.key.toLowerCase()==='r' && cycle());
 
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) el.textContent = phrases[0]; else next();
+    // 2) Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12});
+    $$('.reveal').forEach(el => io.observe(el));
 
-    // Replay with "R"
-    addEventListener('keydown', (e) => (e.key.toLowerCase() === 'r') && next());
+    // 3) Skill bars animate
+    const io2 = new IntersectionObserver((entries)=>{
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          const i = $('i', entry.target);
+          i.style.width = entry.target.dataset.skill + '%';
+          io2.unobserve(entry.target);
+        }
+      });
+    },{threshold:.4});
+    $$('.skillbar').forEach(el => io2.observe(el));
+
+    // 4) Tilt effect para cartões
+    const tilts = $$('.tilt');
+    tilts.forEach(card => {
+      let rAF;
+      card.addEventListener('mousemove', (e) => {
+        const b = card.getBoundingClientRect();
+        const x = (e.clientX - b.left) / b.width;
+        const y = (e.clientY - b.top) / b.height;
+        const rx = (y - .5) * -8;
+        const ry = (x - .5) * 10;
+        cancelAnimationFrame(rAF);
+        rAF = requestAnimationFrame(()=>{
+          card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // Ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

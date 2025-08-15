@@ -1224,7 +1224,33 @@ if (copyBtn){
 
 // vCard 3.0 (compatível com Gmail/Outlook/Apple) — CRLF + tipos clássicos
 const vcardBtn = document.getElementById('btn-vcard');
-if (vcardBtn){
+
+    if (vcardBtn){
+        vcardBtn.addEventListener('click', (e)=>{
+            const data = e.shiftKey ? buildVCardV4() : buildVCardV3();
+            const blob = new Blob([data], { type: 'text/x-vcard;charset=utf-8' });
+            const url  = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = e.shiftKey ? 'Felipe_Sotille_v4.vcf' : 'Felipe_Sotille.vcf';
+            document.body.appendChild(a); a.click(); a.remove();
+            URL.revokeObjectURL(url);
+        }); 
+    }
+  vcardBtn.addEventListener('click', ()=>{
+    const data = buildVCardV3();
+    // text/x-vcard melhora compatibilidade em Windows/Outlook
+    const blob = new Blob([data], { type: 'text/x-vcard;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Felipe_Sotille.vcf';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+
   function buildVCardV3(){
     const CRLF = '\r\n';
     const ts = new Date().toISOString()
@@ -1252,56 +1278,24 @@ if (vcardBtn){
     return lines.join(CRLF) + CRLF;
   }
 
-  vcardBtn.addEventListener('click', ()=>{
-    const data = buildVCardV3();
-    // text/x-vcard melhora compatibilidade em Windows/Outlook
-    const blob = new Blob([data], { type: 'text/x-vcard;charset=utf-8' });
-    const url  = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Felipe_Sotille.vcf';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-  });
-
   function buildVCardV4(){
-  const CRLF = '\r\n';
-  const lines = [
-    'BEGIN:VCARD',
-    'VERSION:4.0',
-    'N:Sotille;Felipe;;;',
-    'FN:Felipe Sotille',
-    'ORG:Independent Consultant',
-    'TITLE:Sr. DevSecOps & Software Engineer',
-    'EMAIL;type=work;pref=1:fsotille@gmail.com',
-    'TEL;type=cell,work;value=uri:tel:+32456250429',
-    'URL:https://linkedin.com/in/Felipe-Sotille/',
-    'URL:https://github.com/sotille',
-    'NOTE:Open to OSS collaborations',
-    'END:VCARD'
-  ];
-  return lines.join(CRLF) + CRLF;
-}
-
-if (vcardBtn){
-  vcardBtn.addEventListener('click', (e)=>{
-    const data = e.shiftKey ? buildVCardV4() : buildVCardV3();
-    const blob = new Blob([data], { type: 'text/x-vcard;charset=utf-8' });
-    const url  = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = e.shiftKey ? 'Felipe_Sotille_v4.vcf' : 'Felipe_Sotille.vcf';
-    document.body.appendChild(a); a.click(); a.remove();
-    URL.revokeObjectURL(url);
-  });
-}
-
-}
-
-
-
+    const CRLF = '\r\n';
+    const lines = [
+        'BEGIN:VCARD',
+        'VERSION:4.0',
+        'N:Sotille;Felipe;;;',
+        'FN:Felipe Sotille',
+        'ORG:Independent Consultant',
+        'TITLE:Sr. DevSecOps & Software Engineer',
+        'EMAIL;type=work;pref=1:fsotille@gmail.com',
+        'TEL;type=cell,work;value=uri:tel:+32456250429',
+        'URL:https://linkedin.com/in/Felipe-Sotille/',
+        'URL:https://github.com/sotille',
+        'NOTE:Open to OSS collaborations',
+        'END:VCARD'
+        ];
+        return lines.join(CRLF) + CRLF;
+    }
     // Initial render
     initTheme();
     applyI18n(LANG);

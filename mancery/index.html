@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mancery — The First Living Tarot. Beauty, Truth, Clarity.</title>
+<meta name="theme-color" content="#0f0b1f" />
+<!-- === SEO base (será atualizado dinamicamente) === -->
+<link id="canonicalLink" rel="canonical" href="" />
+<link id="altDefault" rel="alternate" hreflang="x-default" href="" />
+<link id="altPT" rel="alternate" hreflang="pt" href="" />
+<link id="altEN" rel="alternate" hreflang="en" href="" />
+<link id="altES" rel="alternate" hreflang="es" href="" />
+<link id="altFR" rel="alternate" hreflang="fr" href="" />
+
+<meta id="metaDescription" name="description" content="" />
+<meta id="metaKeywords" name="keywords" content="tarot, tarô, ai tarot, cartas, carta do dia, tiragem, grimório, grimoire, living tarot, mancery" />
+<meta id="metaRobots" name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+<meta id="metaGooglebot" name="googlebot" content="index,follow" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Mancery" />
+<meta id="ogTitle" property="og:title" content="" />
+<meta id="ogDescription" property="og:description" content="" />
+<meta id="ogUrl" property="og:url" content="" />
+<meta id="ogImage" property="og:image" content="" />
+<meta id="ogImgW" property="og:image:width" content="1200" />
+<meta id="ogImgH" property="og:image:height" content="630" />
+<meta id="ogLocale" property="og:locale" content="" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta id="twTitle" name="twitter:title" content="" />
+<meta id="twDesc" name="twitter:description" content="" />
+<meta id="twImg" name="twitter:image" content="" />
+
+<!-- JSON-LD será preenchido pelo JS -->
+<script type="application/ld+json" id="ld-bundle">{}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Fraunces (display) + Plus Jakarta Sans (texto) -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..800&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+<!-- Performance: pré-conexão e preloads de imagens principais -->
+<link rel="preconnect" href="https://commons.wikimedia.org" />
+<link rel="preconnect" href="https://upload.wikimedia.org" />
+<link rel="preload" as="image" href="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/RWS%20Tarot%2017%20Star.jpg&width=1200" />
+<link rel="preload" as="image" href="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Carina%20Nebula%20in%20visible%20light%20(captured%20by%20the%20Hubble%20Space%20Telescope).jpg&width=1600" />
+
+<style>
+  :root{
+    --bg:#0b0914; --bg-2:#120e22; --fg:#e8e6ff; --muted:#bdb9e6;
+    --brand:#f4d17a; --brand-2:#caa85b; --accent:#7a8ee6;
+    --card:#151127; --stroke:rgba(255,255,255,.08);
+    --radius:18px; --maxw:1160px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    --headerH: 72px;
+
+    /* Tipografia */
+    --font-sans: "Plus Jakarta Sans", Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    --font-display: "Fraunces", "Playfair Display", Georgia, "Times New Roman", serif;
+
+    /* Espaçamento & tipografia fluida */
+    --space-1: clamp(8px, 1.2vw, 14px);
+    --space-2: clamp(12px, 1.8vw, 20px);
+    --space-3: clamp(18px, 2.6vw, 28px);
+    --space-4: clamp(24px, 3.6vw, 42px);
+    --space-5: clamp(32px, 5.0vw, 64px);
+    --section-min: calc(100svh - var(--headerH));
+    color-scheme: dark; /* ajuda auto UI de inputs/scrollbars no dark */
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  html{
+    scroll-behavior:smooth;
+    scroll-padding-top: calc(var(--headerH) + env(safe-area-inset-top));
+  }
+  body{
+    margin:0; color:var(--fg);
+    background:
+      radial-gradient(1200px 800px at 10% 0%, #1a1534 0%, transparent 60%),
+      radial-gradient(1400px 900px at 90% 10%, #1a1230 0%, transparent 60%),
+      linear-gradient(180deg, var(--bg), var(--bg-2));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height:1.6; overflow-x:hidden;
+  }
+  body[data-calm="true"] #constellation{opacity:.15}
+
+  .grain:before{
+    content:""; position:fixed; inset:-2px; pointer-events:none; z-index:0;
+    background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2"/></filter><rect width="100" height="100" filter="url(%23n)" opacity=".03"/></svg>');
+    mix-blend-mode:soft-light;
+  }
+  #constellation{position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.45}
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky; top:0; z-index:80;
+    backdrop-filter:saturate(140%) blur(14px);
+    background: linear-gradient(180deg, rgba(10,7,19,.78), rgba(10,7,19,.58));
+    border-bottom:1px solid var(--stroke);
+    transition: transform .38s ease, background .3s ease, box-shadow .3s ease;
+  }
+  header.scrolled{ box-shadow: 0 12px 30px rgba(0,0,0,.22) }
+  header.nav-hidden{ transform: translateY(-100%); }
+
+  .nav{max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:10px 20px; position:relative; }
+  .brand{display:flex; gap:12px; align-items:center; font-weight:700; letter-spacing:.4px; text-decoration:none; color:var(--fg)}
+  .brand .mark{width:36px; height:36px; border-radius:50%; background:
+    radial-gradient(circle at 35% 35%, #fff 0%, var(--brand) 15%, rgba(244,209,122,.5) 35%, transparent 38%),
+    conic-gradient(from 0deg, rgba(244,209,122,.9), rgba(202,168,91,.9), rgba(244,209,122,.9));
+    box-shadow:0 0 20px rgba(244,209,122,.3) inset, 0 8px 40px rgba(244,209,122,.12)}
+  .brand-name{font-family:var(--font-display); font-weight:700; letter-spacing:.3px}
+
+  .menu-wrap{display:flex; align-items:center; gap:16px}
+  .menu{position:relative; display:flex; gap:22px; align-items:center}
+  .menu a{
+    position:relative; color:var(--fg); text-decoration:none; opacity:.9; padding:10px 4px;
+    transition: color .2s ease, letter-spacing .2s ease, filter .2s ease;
+  }
+  /* Hover sofisticado: brilho suave + sublinhado gradiente */
+  .menu a::after{
+    content:""; position:absolute; left:12%; right:12%; bottom:4px; height:2px; border-radius:2px;
+    background: linear-gradient(90deg, var(--brand), var(--accent));
+    transform: scaleX(0); transform-origin: 50% 50%; transition: transform .25s ease;
+    opacity:.9;
+  }
+  .menu a:hover{ color:#fff; letter-spacing:.2px; filter: drop-shadow(0 0 8px rgba(244,209,122,.25)); }
+  .menu a:hover::after{ transform: scaleX(1); }
+
+  .menu a[aria-current="true"]{opacity:1}
+  .nav-indicator{
+    position:absolute; bottom:6px; height:2px; border-radius:2px;
+    background: linear-gradient(90deg, var(--brand), var(--accent));
+    transition: transform .35s ease, width .35s ease, opacity .35s ease;
+    opacity:.9; left:0; width:0; pointer-events:none;
+  }
+  select.lang{appearance:none; background:rgba(255,255,255,.07); border:1px solid var(--stroke); color:var(--fg); border-radius:10px; padding:8px 12px}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px; border-radius:999px; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-primary{background:linear-gradient(180deg, var(--brand), var(--brand-2)); color:#201a07; box-shadow:0 8px 30px rgba(244,209,122,.25); position:relative; overflow:hidden}
+  .btn-outline{border-color:var(--stroke); color:var(--fg); background:rgba(255,255,255,.02)}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary:after{content:""; position:absolute; inset:0; background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,.45) 30%, transparent 60%); transform:translateX(-120%);}
+  .btn-primary:hover:after{animation: shimmer 1.2s ease}
+  @keyframes shimmer{to{transform:translateX(120%)}}
+
+  /* Estado de loading para ações (ex.: waiting list) */
+  .btn.loading{ opacity:.85; pointer-events:none; }
+  .btn.loading::before{
+    content:""; width:14px; height:14px; border-radius:50%; border:2px solid rgba(255,255,255,.5); border-top-color: transparent; display:inline-block; animation: spin .7s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* Focus ring acessível/uniforme */
+  a:focus-visible, .btn:focus-visible, select:focus-visible, input:focus-visible{
+    outline:none; box-shadow:0 0 0 2px rgba(244,209,122,.55), 0 0 0 5px rgba(122,142,230,.28);
+    border-color:rgba(244,209,122,.45);
+  }
+
+  /* ===== Menu mobile ===== */
+  .nav-toggle{
+    display:none; border:1px solid var(--stroke); background:rgba(255,255,255,.06);
+    width:40px; height:40px; border-radius:10px; place-items:center; cursor:pointer;
+  }
+  .nav-toggle span{display:block; width:18px; height:2px; background:#fff; position:relative}
+  .nav-toggle span::before, .nav-toggle span::after{content:""; position:absolute; left:0; width:18px; height:2px; background:#fff; transition:.2s}
+  .nav-toggle span::before{top:-6px} .nav-toggle span::after{top:6px}
+  .menu-sheet{display:none; position:fixed; inset:calc(var(--headerH) + env(safe-area-inset-top)) 12px 12px 12px; z-index:79;
+    border:1px solid var(--stroke); border-radius:16px; background:linear-gradient(180deg, rgba(18,14,34,.96), rgba(18,14,34,.92)); backdrop-filter: blur(16px);
+    padding:12px; box-shadow: var(--shadow);
+  }
+  .menu-sheet.open{display:block}
+  .menu-sheet a{
+    display:block; padding:12px; border-radius:10px; border:1px solid transparent; transition:background .2s ease, border-color .2s ease;
+  }
+  .menu-sheet a:hover{ background:rgba(255,255,255,.08); border-color:rgba(244,209,122,.35); }
+
+  @media (max-width: 960px){
+    .menu{display:none}
+    .nav-toggle{display:grid}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative; max-width:var(--maxw); margin:0 auto; padding:86px 20px 56px;
+    display:grid; grid-template-columns: 1.1fr 1fr; gap:40px; align-items:center; z-index:1;
+    min-height: var(--section-min);
+    scroll-margin-top: calc(var(--headerH) + env(safe-area-inset-top));
+  }
+  .hero::before{ content: none !important; } /* sem overlay extra */
+
+  .hero-content{position:relative; z-index:2; max-width:26ch;}
+  h1{
+    font-family: var(--font-display); font-weight:700; font-size: clamp(40px, 6vw, 66px); line-height:1.05; margin:0 0 var(--space-2);
+    font-optical-sizing:auto; font-variation-settings: "SOFT" 100, "WONK" 0;
+    letter-spacing:.1px;
+  }
+  /* Headline: nunca quebra palavra no meio */
+  .hero h1{ text-wrap: balance; overflow-wrap: normal; word-break: normal; hyphens: none; }
+  .hero h1 .word{ display:inline-block; white-space:nowrap; } 
+  .hero h1 .char{ display:inline-block; }
+
+  .char{display:inline-block}
+  .lead{font-size: clamp(16px, 2.2vw, 20px); color:var(--muted); margin:0 0 var(--space-3)}
+  .cta{display:flex; gap:14px; flex-wrap:wrap}
+
+  /* “Device” decorativo — atrás do texto */
+  .hero-visual{position:relative}
+  .device{
+    position:absolute; right:-8%; top:-276px; width:min(380px, 42vw);
+    aspect-ratio: 11/19; border-radius:42px; padding:18px;
+    background: radial-gradient(120px 120px at 80% 20%, rgba(244,209,122,.2), transparent 60%), linear-gradient(180deg, #1b1530, #0e0b1b);
+    border:1px solid var(--stroke); box-shadow: var(--shadow);
+    overflow:visible; z-index:0; pointer-events:none; transform: rotate(-2deg);
+  }
+  .device .screen{
+    height:100%; border-radius:28px; background:
+      radial-gradient(120px 160px at 25% 20%, rgba(122,142,230,.25), transparent 60%),
+      radial-gradient(200px 200px at 70% 80%, rgba(244,209,122,.18), transparent 60%),
+      linear-gradient(180deg, #0f0b1f, #100d25);
+    border:1px solid var(--stroke); position:relative; overflow:hidden;
+  }
+  .screen .stars{position:absolute; inset:0; opacity:.6}
+  .screen .card{
+    position:absolute; left:50%; top:52%; transform:translate(-50%,-50%) rotate(-6deg);
+    width:70%; aspect-ratio: 2/3; border-radius:16px; border:1px solid rgba(244,209,122,.35);
+    box-shadow:0 12px 60px rgba(244,209,122,.12), inset 0 0 0 1px rgba(255,255,255,.05);
+    background-size:cover; background-position:center;
+    background-image:url('https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/RWS%20Tarot%2017%20Star.jpg&width=800');
+  }
+  .screen .app-shot{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.3; mix-blend-mode:screen; pointer-events:none;}
+
+  /* Orbes de luz */
+  .orb{position:absolute; width:180px; height:180px; border-radius:50%; filter:blur(14px); opacity:.55; pointer-events:none; z-index:1}
+  .orb.gold{background:radial-gradient(circle at 40% 40%, rgba(255,255,255,.9), var(--brand) 25%, rgba(244,209,122,.55) 50%, transparent 60%); mix-blend-mode:screen; top:-30px; right:-10px}
+  .orb.blue{background:radial-gradient(circle at 40% 40%, rgba(255,255,255,.8), rgba(122,142,230,.8) 25%, rgba(122,142,230,.35) 55%, transparent 65%); mix-blend-mode:screen; bottom:-10px; left:-30px}
+
+  /* ===== SEÇÕES ===== */
+  .section{
+    max-width:var(--maxw); margin:0 auto;
+    min-height: var(--section-min);
+    display:grid; align-content:center;
+    gap: var(--space-3);
+    padding: clamp(40px, 8svh, 100px) 20px;
+    position:relative; z-index:1; scroll-margin-top: calc(var(--headerH) + env(safe-area-inset-top));
+  }
+  .section h2{
+    font-family:var(--font-display); font-size: clamp(30px, 3.8vw, 42px); line-height:1.15; margin:0;
+    font-optical-sizing:auto; font-variation-settings: "SOFT" 100, "WONK" 0;
+    letter-spacing:.2px;
+  }
+  .section p.section-lead{color:var(--muted); margin:0}
+
+  /* Cards + microinterações */
+  .features{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border:1px solid var(--stroke); border-radius:var(--radius); padding:22px; box-shadow: var(--shadow);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    will-change: transform;
+  }
+  .card:hover{
+    transform: translateY(-4px);
+    box-shadow:0 16px 40px rgba(0,0,0,.38);
+    border-color: rgba(244,209,122,.28);
+  }
+  .card h3{ margin:12px 0 8px; font-size:20px; font-family:var(--font-display); letter-spacing:.2px; }
+  .icon{width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; border:1px solid var(--stroke); background:rgba(255,255,255,.02)}
+  .muted{color:var(--muted)}
+
+  .how{display:grid; grid-template-columns: 1fr 1fr; gap:24px}
+  .step{display:flex; gap:14px; align-items:flex-start}
+  .badge{width:32px; height:32px; border-radius:999px; display:grid; place-items:center; background:linear-gradient(180deg, var(--brand), var(--brand-2)); color:#201a07; font-weight:700}
+
+  /* Pricing grid */
+  .pricing{display:grid; grid-template-columns: repeat(2, 1fr); gap:18px}
+  .price .top{display:flex; align-items:baseline; gap:6px}
+  .price .value{font-size:38px; font-weight:800}
+  .price ul{margin:14px 0 0; padding:0 0 0 18px}
+
+  /* === PATCH: Alternador de cobrança (Mensal/Anual) === */
+  .billing-toggle{ display:flex; gap:10px; align-items:center; margin-bottom:12px; flex-wrap:wrap; }
+  .billing-toggle .seg{ display:inline-flex; border:1px solid var(--stroke); border-radius:999px; padding:4px; background:rgba(255,255,255,.03); }
+  .billing-toggle button{ border:0; background:transparent; color:var(--muted); padding:8px 12px; border-radius:999px; cursor:pointer; font-weight:700; }
+  .billing-toggle button.active{ color:#201a07; background: linear-gradient(180deg, var(--brand), var(--brand-2)); }
+  .billing-note{ font-size:12px; color:var(--muted); margin-left:auto; }
+
+  .testimonials{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  .testimonial .who{display:flex; align-items:center; gap:12px}
+  .avatar{width:40px; height:40px; border-radius:50%; background:linear-gradient(180deg, #2b2348,#1b1734); border:1px solid var(--stroke)}
+
+  .faq details{background:rgba(255,255,255,.02); border:1px solid var(--stroke); border-radius:var(--radius); padding:16px 18px; margin-bottom:10px}
+  .faq summary{cursor:pointer; font-weight:600}
+
+  .cta-bar{position:sticky; bottom:0; z-index:40; border-top:1px solid var(--stroke); background:linear-gradient(180deg, rgba(16,12,32,.6), rgba(16,12,32,.85)); backdrop-filter:saturate(120%) blur(8px);}
+  .cta-inner{max-width:var(--maxw); margin:0 auto; padding:12px 20px; display:flex; gap:14px; align-items:center; justify-content:space-between}
+
+  /* Footer */
+  footer{border-top:1px solid var(--stroke); margin-top:30px}
+  .foot{max-width:var(--maxw); margin:0 auto; padding:32px 20px; display:grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap:22px; color:var(--muted)}
+  .foot h4{margin:0 0 10px; color:var(--fg); font-size:14px; letter-spacing:.3px}
+  .foot a{color:var(--muted); text-decoration:none}
+  .foot a:hover{color:var(--fg)}
+  .foot .brand-line{display:flex; gap:12px; align-items:center}
+  .social{display:flex; gap:10px}
+  .social .iconlink{width:36px; height:36px; display:grid; place-items:center; border:1px solid var(--stroke); border-radius:10px; background:rgba(255,255,255,.03)}
+  .foot-bottom{max-width:var(--maxw); margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--stroke); color:var(--muted)}
+
+  /* Visually hidden util */
+  .sr-only{ position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+  /* Skip link (a11y) */
+  .skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+  .skip-link:focus{
+    left:12px; top:12px; width:auto; height:auto; padding:10px 12px;
+    background:rgba(255,255,255,.08); border:1px solid var(--stroke); border-radius:10px; z-index:1000;
+    outline: none; color: var(--fg); text-decoration: none;
+  }
+
+  /* Scroll-driven animations (fallback em JS) */
+  @keyframes fadeSlide { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @supports (animation-timeline: view()) {
+    .hero, .section { animation: fadeSlide linear both; animation-timeline: view(); animation-range: entry 15% cover 35%; }
+  }
+
+  /* Responsivo */
+  @media (max-width: 1100px){
+    .device{ right:-14%; width:min(420px, 46vw) }
+  }
+  @media (max-width: 960px){
+    .hero{ grid-template-columns: 1fr; padding-top:64px }
+    .device{ right:-22vw; top:10px; width:70vw; opacity:.22; transform: rotate(-4deg); }
+    .features, .testimonials{grid-template-columns:1fr 1fr}
+    .how{grid-template-columns:1fr}
+    .foot{grid-template-columns: 1fr 1fr; gap:18px}
+    .foot-bottom{flex-direction:column; gap:12px}
+    .hero-content{ max-width:none; }
+  }
+  @media (max-width:640px){
+    .features, .testimonials{grid-template-columns:1fr}
+    .foot{grid-template-columns: 1fr}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important}
+    #constellation{display:none}
+  }
+
+  /* Debug */
+  #debug-info{position:fixed; left:12px; bottom:12px; z-index:9999; padding:8px 10px; font:12px/1.3 var(--font-sans); border:1px solid var(--stroke); border-radius:10px; background:rgba(255,255,255,.06); color:var(--muted); display:none}
+  #debug-info b{color:var(--fg)}
+
+  /* ===== Modal Waiting List ===== */
+  .modal{
+    position:fixed; inset:0; display:none; place-items:center; z-index:90;
+    background: rgba(10,7,19,.45);
+    backdrop-filter: blur(10px) saturate(120%);
+  }
+  .modal.open{ display:grid !important; animation: wlFade .18s ease-out both; }
+  .modal .box{
+    width:min(520px, 92vw); border-radius:16px;
+    border:1px solid var(--stroke);
+    background: linear-gradient(180deg, rgba(18,14,34,.98), rgba(18,14,34,.94));
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    padding:20px;
+    transform-origin: 50% 46%;
+    opacity:0; transform: translateY(10px) scale(.98);
+    animation: wlPop .25s ease-out .06s both;
+  }
+  .modal .row{ display:grid; grid-template-columns:1fr; gap:10px; margin:12px 0 8px }
+  .modal input{
+    width:100%; padding:12px 14px; border-radius:12px;
+    border:1px solid var(--stroke); background:rgba(255,255,255,.04); color:var(--fg);
+  }
+  .modal .actions{ display:flex; justify-content:flex-end; gap:10px; margin-top:10px }
+  .modal .ok{ color:#bfe8b8 }
+  .modal .err{ color:#ffbdbd }
+  @keyframes wlFade{ from{opacity:0} to{opacity:1} }
+  @keyframes wlPop{ to{opacity:1; transform: none} }
+
+  /* === SUPER APPEAL PATCH (Look & Feel Director) === */
+
+  /* Page subtle fade-in */
+  body{opacity:0;animation:pageFade .45s ease-out forwards}
+  @keyframes pageFade{to{opacity:1}}
+
+  /* Remover o glint do título (definitivo) */
+  .hero h1::after{ animation: none !important; content: none !important; display: none !important; }
+
+  /* Realce estático "ouro editorial" no 1º termo do título (sem animação) */
+  #hero-title { position: relative; }
+  #hero-title .word:first-child { color: var(--fg); }
+  @supports (-webkit-background-clip: text) {
+    #hero-title .word:first-child{
+      background-image: linear-gradient(180deg, #ffffff 0%, var(--brand) 60%, var(--brand-2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 10px rgba(244,209,122,.12));
+    }
+  }
+  /* Sub-linha fixa e discreta */
+  .hero h1::before{
+    content:"";
+    position:absolute;
+    left:2px; bottom:-10px;
+    width: clamp(120px, 32%, 260px);
+    height: 2px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--brand), var(--accent));
+    opacity: .45;
+  }
+
+  /* Skeleton shimmer (genérico, útil em futuras imagens dinâmicas) */
+  .skeleton{position:relative;background:#141127}
+  .skeleton::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,255,255,.12),rgba(255,255,255,.05));
+    transform:translateX(-100%);
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .skeleton::before{animation:shimmer 1.6s infinite}
+    @keyframes shimmer{to{transform:translateX(100%)}}
+  }
+
+  /* Scroll progress (topo) */
+  #scrollProgress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--brand),var(--accent));z-index:100;box-shadow:0 0 10px rgba(244,209,122,.35)}
+
+  /* CTA pulse (gentil) */
+  @media (prefers-reduced-motion:no-preference){
+    .btn-primary.attention{animation:pulse 3.5s ease-in-out infinite 6s}
+    @keyframes pulse{0%,100%{box-shadow:0 8px 30px rgba(244,209,122,.25)}50%{box-shadow:0 12px 46px rgba(244,209,122,.42)}}
+  }
+  body[data-calm="true"] .btn-primary.attention{animation:none !important}
+
+  /* Ripple ink */
+  .btn{position:relative;overflow:hidden}
+  .ripple-ink{position:absolute;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);background:rgba(255,255,255,.35);width:14px;height:14px;opacity:.9}
+
+  /* FAB voltar ao topo */
+  .fab-top{
+    position:fixed;right:18px;bottom:20px;width:44px;height:44px;border-radius:999px;display:grid;place-items:center;
+    border:1px solid var(--stroke);background:rgba(255,255,255,.07);color:var(--fg);cursor:pointer;z-index:60;
+    opacity:0;transform:translateY(10px);transition:.25s ease
+  }
+  .fab-top.show{opacity:1;transform:none}
+
+  /* Selo Premium (mais popular) */
+  .price{position:relative}
+  .badge-pop{
+    position:absolute;top:12px;right:12px;font-size:12px;font-weight:800;padding:6px 10px;border-radius:999px;
+    background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#201a07;box-shadow:0 8px 24px rgba(244,209,122,.28)
+  }
+</style>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+<!-- anime.js + fallback -->
+<script id="anime-cdn" src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" defer></script>
+</head>
+<body class="grain">
+<div id="scrollProgress" aria-hidden="true"></div>
+<a href="#top" class="skip-link">Pular para o conteúdo</a>
+<canvas id="constellation" aria-hidden="true"></canvas>
+
+<header id="siteHeader">
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="#top" aria-label="Mancery — início">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="brand-name">Mancery</span>
+    </a>
+
+    <div class="menu-wrap">
+      <div class="menu" id="mainMenu">
+        <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+        <a id="nav-recursos" href="#recursos">Recursos</a>
+        <a id="nav-como" href="#como-funciona">Como funciona</a>
+        <a id="nav-precos" href="#precos">Planos</a>
+        <a id="nav-faq" href="#faq">FAQ</a>
+        <a class="btn btn-outline" id="nav-assinante" data-role="subscriber-link" href="#assinante">Área do Assinante</a>
+        <select class="lang" id="langSelect" aria-label="Idioma">
+          <option value="pt">🇵🇹/🇧🇷 PT</option>
+          <option value="en">🇬🇧 EN</option>
+          <option value="es">🇪🇸 ES</option>
+          <option value="fr">🇫🇷 FR</option>
+        </select>
+      </div>
+
+      <button id="navToggle" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuSheet">
+        <span></span>
+      </button>
+      <div id="menuSheet" class="menu-sheet" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
+        <h2 id="menuTitle" style="margin:6px 8px 10px">Menu</h2>
+        <a href="#recursos">Recursos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#precos">Planos</a>
+        <a href="#faq">FAQ</a>
+        <a data-role="subscriber-link" href="#assinante" class="btn btn-primary" style="margin-top:8px">Área do Assinante</a>
+        <div style="margin-top:12px; display:flex; gap:8px; align-items:center">
+          <label for="langSelectSheet">Idioma</label>
+          <select class="lang" id="langSelectSheet" aria-label="Idioma no menu">
+            <option value="pt">PT</option><option value="en">EN</option><option value="es">ES</option><option value="fr">FR</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 id="hero-title">Mancery — Tarot com IA. Beleza, ritual e clareza.</h1>
+      <p class="lead" id="hero-lead">Desperte o simbólico: Carta do Dia, tiragens guiadas com IA, Grimório Vivo e insights semanais — tudo em um ambiente calmo e contemplativo.</p>
+      <div class="cta">
+        <a class="btn btn-primary" id="cta-start" href="#precos">Começar agora</a>
+        <button class="btn btn-outline" id="openWaitlistTop" type="button">Waiting List</button>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="device" data-parallax="-0.05">
+        <div class="screen">
+          <img class="app-shot" id="appShot" src="https://picsum.photos/800/1600?random=42" alt="Mock temporário do aplicativo" loading="lazy" />
+          <div class="stars" id="stars"></div>
+          <div class="card" id="hero-card" title="A Estrela — Rider–Waite"></div>
+        </div>
+      </div>
+      <div class="orb gold"></div>
+      <div class="orb blue"></div>
+      <div class="runes" id="runes" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Recursos -->
+  <section id="recursos" class="section reveal" data-anim="up">
+    <h2 id="recursos-title">Um oráculo que respeita o mistério — e o seu tempo</h2>
+    <p class="section-lead" id="recursos-lead">Profundidade com leveza: interface serena, palavras que acolhem, estética que inspira presença.</p>
+    <div class="features">
+      <div class="card feature reveal" data-anim="up" data-tilt>
+        <span class="icon">🔮</span>
+        <h3 id="feat-1-title">Carta do Dia</h3>
+        <p class="muted" id="feat-1-desc">Seu pequeno rito matinal. Uma carta, um convite ao significado — com um texto que não apressa.</p>
+      </div>
+      <div class="card feature reveal" data-anim="up" data-tilt>
+        <span class="icon">🤖</span>
+        <h3 id="feat-2-title">Tiragens com IA</h3>
+        <p class="muted" id="feat-2-desc">Leituras diretas que honram a tradição e a sua intuição — sem jargão.</p>
+      </div>
+      <div class="card feature reveal" data-anim="up" data-tilt>
+        <span class="icon">📜</span>
+        <h3 id="feat-3-title">Grimório Vivo</h3>
+        <p class="muted" id="feat-3-desc">Um diário mágico para registrar percepções, sonhos e sincronicidades — e perceber padrões.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section id="como-funciona" class="section reveal" data-anim="up">
+    <h2 id="how-title">Como funciona</h2>
+    <p class="section-lead" id="how-lead">Entre, revele, reflita — o sagrado no ritmo do seu dia.</p>
+    <div class="how">
+      <div class="card step" data-tilt><div class="badge">1</div><div><h3 id="how-1-title">Escolha seu ritual</h3><p class="muted" id="how-1-desc">Carta do Dia ou tiragem guiada com foco no seu tema.</p></div></div>
+      <div class="card step" data-tilt><div class="badge">2</div><div><h3 id="how-2-title">Receba a leitura</h3><p class="muted" id="how-2-desc">Interpretações claras, com indicações práticas e cuidado de linguagem.</p></div></div>
+      <div class="card step" data-tilt><div class="badge">3</div><div><h3 id="how-3-title">Integre no seu tempo</h3><p class="muted" id="how-3-desc">Anote no Grimório, salve insights, acompanhe ciclos.</p></div></div>
+      <div class="card step" data-tilt><div class="badge">4</div><div><h3 id="how-4-title">Retorne quando quiser</h3><p class="muted" id="how-4-desc">Constância é carinho: sem pressa, sem pressão.</p></div></div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section id="depoimentos" class="section reveal" data-anim="up">
+    <h2 id="testi-title">Quem experimentou, sente a diferença</h2>
+    <p class="section-lead" id="testi-lead">Relatos de quem transformou o cotidiano em ritual.</p>
+    <div class="testimonials">
+      <div class="card testimonial" data-tilt><div class="who"><div class="avatar"></div><div><strong>Clara</strong><div class="muted">Terapeuta</div></div></div><p id="t1">O tom é respeitoso e bonito. A Carta do Dia virou meu pequeno ritual de café.</p></div>
+      <div class="card testimonial" data-tilt><div class="who"><div class="avatar"></div><div><strong>Levi</strong><div class="muted">Designer</div></div></div><p id="t2">Estética impecável. Tiragens com IA soam humanas e coerentes.</p></div>
+      <div class="card testimonial" data-tilt><div class="who"><div class="avatar"></div><div><strong>Helena</strong><div class="muted">Estudante</div></div></div><p id="t3">Simples de usar, sem perder profundidade.</p></div>
+    </div>
+  </section>
+
+  <!-- Planos -->
+  <section id="precos" class="section reveal" data-anim="fade">
+    <h2 id="pricing-title">Escolha seu caminho</h2>
+    <p class="section-lead" id="pricing-lead">Comece no gratuito. Assine quando fizer sentido para você.</p>
+
+    <!-- === PATCH: Alternador Mensal/Anual === -->
+    <div class="billing-toggle" id="billingToggle" aria-label="Alternar cobrança">
+      <div class="seg" role="tablist" aria-label="Período de cobrança">
+        <button role="tab" aria-selected="true" id="billMonthly">Mensal</button>
+        <button role="tab" aria-selected="false" id="billYearly">Anual (2 meses grátis)</button>
+      </div>
+      <div class="billing-note" id="billingNote">Economize ~16%</div>
+    </div>
+
+    <div class="pricing">
+      <div class="card price" data-tilt>
+        <div class="badge-pop" id="pricing-badge">Mais popular</div>
+        <h3 id="p-free-title">Gratuito</h3>
+        <div class="top"><div class="value" id="p-free-price">R$ 0</div><div class="muted" id="p-free-period">/mês</div></div>
+        <ul id="p-free-feats"><li>Carta do Dia</li><li>Histórico básico</li><li>Estética editorial</li><li>1 baralho clássico</li></ul>
+        <div style="margin-top:16px"><a class="btn btn-outline" id="p-free-cta" href="#top">Começar</a></div>
+      </div>
+      <div class="card price" style="border-color: rgba(244,209,122,.5)" data-tilt>
+        <h3 id="p-pro-title">Premium</h3>
+        <div class="top"><div class="value" id="p-pro-price">R$ —</div><div class="muted" id="p-pro-period">/mês</div></div>
+        <ul id="p-pro-feats"><li>Tiragens com IA (3/semana)</li><li>Grimório & Templo Pessoal</li><li>Insights semanais</li><li>Estatísticas de ciclos</li><li>Biblioteca de baralhos</li></ul>
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn-primary" data-role="subscriber-link" id="p-pro-cta" href="#assinante">Assinar</a>
+          <button class="btn btn-outline" id="openWaitlistPlans" type="button">Waiting List</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assinante -->
+  <section id="assinante" class="section reveal" data-anim="up">
+    <h2 id="sub-title">Área do Assinante</h2>
+    <p class="section-lead" id="sub-lead">Se você já é assinante, acesse por aqui.</p>
+    <div class="card" style="display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap" data-tilt>
+      <div>
+        <h3 style="margin:0 0 8px" id="sub-cta-title">Entrar no Portal Mancery</h3>
+        <p class="muted" style="margin:0" id="sub-cta-desc">Você será redirecionado(a) ao nosso portal seguro.</p>
+      </div>
+      <a id="subscriberLink" class="btn btn-primary" data-role="subscriber-link" href="#" rel="nofollow noopener">Acessar Área do Assinante</a>
+    </div>
+    <p class="muted" style="margin-top:8px; font-size:13px">Obs.: URL configurável no código (SUBSCRIBER_URL).</p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section faq reveal" data-anim="fade">
+    <h2 id="faq-title">Perguntas frequentes</h2>
+    <details><summary id="q1">Preciso entender de tarot para usar?</summary><p id="a1">Não. Conteúdo acolhedor para iniciantes e iniciados.</p></details>
+    <details><summary id="q2">As leituras com IA substituem o estudo?</summary><p id="a2">Não — apoiam sua prática e ampliam o olhar.</p></details>
+    <details><summary id="q3">Posso usar sem assinatura?</summary><p id="a3">Sim: a essência está no plano gratuito.</p></details>
+    <details><summary id="q4">Como funciona a privacidade?</summary><p id="a4">Registros sob seus cuidados. Criptografia em trânsito e boas práticas modernas.</p></details>
+  </section>
+
+  <!-- Testes (dev) -->
+  <section id="tests" class="section" style="min-height:initial;">
+    <details>
+      <summary>🧪 Testes de sanidade (dev)</summary>
+      <ul id="test-list" style="margin-top:10px"></ul>
+    </details>
+  </section>
+</main>
+
+<!-- CTA fixa -->
+<div class="cta-bar" role="region" aria-label="Barra de chamada para ação">
+  <div class="cta-inner">
+    <div style="display:flex; gap:10px; align-items:center">
+      <span class="icon" aria-hidden="true">✨</span>
+      <span id="cta-bar-text">Pronto para começar? Revele sua Carta do Dia.</span>
+    </div>
+    <div style="display:flex; gap:10px; align-items:center">
+      <a class="btn btn-outline" id="cta-bar-left" href="#top">Carta do Dia</a>
+      <a class="btn btn-primary" data-role="subscriber-link" id="cta-bar-right" href="#assinante">Assine</a>
+    </div>
+  </div>
+</div>
+
+<!-- Rodapé -->
+<footer>
+  <div class="foot">
+    <div>
+      <div class="brand-line">
+        <span class="mark" aria-hidden="true"></span>
+        <div>
+          <div class="brand-name">Mancery</div>
+          <small id="foot-tagline" class="muted">Tarot com IA, ritual e beleza</small>
+        </div>
+      </div>
+      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+        <label for="calmToggle">🕊️ <span id="calm-label">Modo Calmo</span></label>
+        <input type="checkbox" id="calmToggle" />
+        <button class="btn btn-outline" id="openWaitlistFooter" type="button">Waiting List</button>
+      </div>
+    </div>
+    <div>
+      <h4 id="foot-col1">Produto</h4>
+      <div id="footer-links">
+        <div><a href="#recursos" id="fl-1">Recursos</a></div>
+        <div><a href="#como-funciona" id="fl-2">Como funciona</a></div>
+        <div><a href="#precos" id="fl-3">Planos</a></div>
+        <div><a href="#faq" id="fl-4">FAQ</a></div>
+      </div>
+    </div>
+    <div>
+      <h4 id="foot-col2">Empresa</h4>
+      <div><a href="#" id="fl-5">Sobre</a></div>
+      <div><a href="#" id="fl-6">Carreiras</a></div>
+      <div><a href="#" id="fl-7">Contato</a></div>
+    </div>
+    <div>
+      <h4 id="foot-col3">Legal</h4>
+      <div><a href="#" id="fl-8">Privacidade</a></div>
+      <div><a href="#" id="fl-9">Termos</a></div>
+      <div><a href="#" id="fl-10">Segurança</a></div>
+      <div class="social" style="margin-top:8px">
+        <a class="iconlink" href="#" aria-label="Instagram">⌁</a>
+        <a class="iconlink" href="#" aria-label="X/Twitter">𝕏</a>
+        <a class="iconlink" href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© <span id="year"></span> Mancery</div>
+    <div id="foot-bottom-right" class="muted">Feito com cuidado — sem pressa.</div>
+  </div>
+</footer>
+
+<!-- Modal Waiting List -->
+<div class="modal" id="waitlistModal" role="dialog" aria-modal="true" aria-labelledby="wl-title" aria-hidden="true" style="display:none">
+  <div class="box">
+    <h3 id="wl-title">Entre na Waiting List</h3>
+    <p id="wl-desc" class="muted" style="margin:0 0 8px">Avise seu email e te chamamos assim que liberarmos.</p>
+    <div class="row">
+      <input id="wl-name" type="text" placeholder="Seu nome" />
+      <input id="wl-email" type="email" placeholder="Seu e-mail" />
+    </div>
+    <div id="wl-msg" class="muted" style="min-height:18px" aria-live="polite" role="status"></div>
+    <div class="actions">
+      <button class="btn btn-outline" id="wl-cancel" type="button">Cancelar</button>
+      <button class="btn btn-primary" id="wl-submit" type="button">Quero entrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Debug -->
+<div id="debug-info"></div>
+
+<script defer>
+  // ===== CONFIG =====
+  const SUBSCRIBER_URL = "/assinante"; // troque pela sua URL final
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const params = new URLSearchParams(location.search);
+  const DEBUG = params.get('debug') === '1';
+  const diagEl = document.getElementById('debug-info');
+  function debug(msg){ if(!DEBUG) return; diagEl.style.display='block'; const t=new Date().toLocaleTimeString(); diagEl.innerHTML+=`<div><b>[${t}]</b> ${msg}</div>`; }
+
+  // Textos SEO por idioma (title fixo e descriptions localizadas)
+  const SEO_TITLE = 'Mancery — The First Living Tarot. Beauty, Truth, Clarity.';
+  const SEO_COPY = {
+    pt: { htmlLang: 'pt-BR', ogLocale: 'pt_BR', desc: 'Mancery é o primeiro Tarot Vivo: Carta do Dia, tiragens guiadas por IA, Grimório Vivo e Modo Calmo. App multilíngue (PT/EN/ES/FR). Plano gratuito e Premium.' },
+    en: { htmlLang: 'en', ogLocale: 'en_US', desc: 'Mancery is the first Living Tarot: Card of the Day, AI‑guided spreads, Living Grimoire and Calm Mode. Multilingual (EN/PT/ES/FR). Free and Premium.' },
+    es: { htmlLang: 'es', ogLocale: 'es_ES', desc: 'Mancery es el primer Tarot Vivo: Carta del Día, tiradas guiadas con IA, Grimorio Vivo y Modo Calmo. Multilingüe (ES/EN/PT/FR). Gratis y Premium.' },
+    fr: { htmlLang: 'fr', ogLocale: 'fr_FR', desc: 'Mancery est le premier Tarot Vivant : Carte du Jour, tirages guidés par IA, Grimoire Vivant et Mode Calme. Multilingue (FR/EN/PT/ES). Gratuit et Premium.' }
+  };
+
+  // Utils head
+  function upsertHead(tag, attrs){
+    let el = attrs.id ? document.getElementById(attrs.id) : null;
+    if(!el){ el = document.createElement(tag); if(attrs.id) el.id = attrs.id; document.head.appendChild(el); }
+    for (const [k,v] of Object.entries(attrs)){
+      if(k==='id') continue;
+      if(k==='textContent') el.textContent = v; else el.setAttribute(k, v);
+    }
+    return el;
+  }
+
+  function updateSEO(lang){
+    const cfg = SEO_COPY[lang] || SEO_COPY.pt;
+    const base = location.origin + location.pathname;
+    const canonical = lang === 'pt' ? base : `${base}?hl=${lang}`;
+    const OG_IMAGE = (typeof W === 'function') ? W('RWS Tarot 17 Star.jpg', 1200) : 'https://picsum.photos/1200/630?random=17';
+
+    document.documentElement.setAttribute('lang', cfg.htmlLang);
+    document.title = SEO_TITLE;
+
+    upsertHead('link', { id:'canonicalLink', rel:'canonical', href: canonical });
+    upsertHead('link', { id:'altDefault', rel:'alternate', hreflang:'x-default', href: base });
+    upsertHead('link', { id:'altPT', rel:'alternate', hreflang:'pt', href: base });
+    upsertHead('link', { id:'altEN', rel:'alternate', hreflang:'en', href: `${base}?hl=en` });
+    upsertHead('link', { id:'altES', rel:'alternate', hreflang:'es', href: `${base}?hl=es` });
+    upsertHead('link', { id:'altFR', rel:'alternate', hreflang:'fr', href: `${base}?hl=fr` });
+
+    upsertHead('meta', { id:'metaDescription', name:'description', content: cfg.desc });
+    upsertHead('meta', { id:'metaRobots', name:'robots', content:'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' });
+    upsertHead('meta', { id:'metaGooglebot', name:'googlebot', content:'index,follow' });
+    upsertHead('meta', { id:'metaKeywords', name:'keywords', content:'tarot, tarô, ai tarot, cartas, carta do dia, tiragem, grimório, grimoire, living tarot, mancery' });
+
+    upsertHead('meta', { id:'ogTitle', property:'og:title', content: SEO_TITLE });
+    upsertHead('meta', { id:'ogDescription', property:'og:description', content: cfg.desc });
+    upsertHead('meta', { id:'ogUrl', property:'og:url', content: canonical });
+    upsertHead('meta', { id:'ogImage', property:'og:image', content: OG_IMAGE });
+    upsertHead('meta', { id:'ogLocale', property:'og:locale', content: cfg.ogLocale });
+
+    upsertHead('meta', { id:'twTitle', name:'twitter:title', content: SEO_TITLE });
+    upsertHead('meta', { id:'twDesc', name:'twitter:description', content: cfg.desc });
+    upsertHead('meta', { id:'twImg', name:'twitter:image', content: OG_IMAGE });
+
+    const t = (I18N[lang] || I18N.pt);
+    const ld = [
+      {"@context":"https://schema.org","@type":"Organization","name":"Mancery","url": base,"logo": base.replace(/\/$/, '') + "/logo.png","sameAs":["https://instagram.com/mancery","https://x.com/mancery","https://youtube.com/@mancery"]},
+      {"@context":"https://schema.org","@type":"WebSite","name":"Mancery","url": base,"inLanguage": cfg.htmlLang,"potentialAction":{"@type":"SearchAction","target": base + "?q={query}","query-input":"required name=query"}},
+      {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mancery","applicationCategory":"LifestyleApplication","operatingSystem":"Web","url": base,"description": cfg.desc,"image": OG_IMAGE,"offers":[
+        {"@type":"Offer","price":"0","priceCurrency":"BRL","availability":"https://schema.org/InStock","category":"Free"},
+        {"@type":"Offer","price":"29.90","priceCurrency":"BRL","availability":"https://schema.org/InStock","name":"Premium"},
+        {"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","category":"Free"},
+        {"@type":"Offer","price":"9.99","priceCurrency":"USD","availability":"https://schema.org/InStock","name":"Premium"},
+        {"@type":"Offer","price":"0","priceCurrency":"EUR","availability":"https://schema.org/InStock","category":"Free"},
+        {"@type":"Offer","price":"9.99","priceCurrency":"EUR","availability":"https://schema.org/InStock","name":"Premium"}]},
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name": t.faq.q1,"acceptedAnswer":{"@type":"Answer","text": t.faq.a1}},
+        {"@type":"Question","name": t.faq.q2,"acceptedAnswer":{"@type":"Answer","text": t.faq.a2}},
+        {"@type":"Question","name": t.faq.q3,"acceptedAnswer":{"@type":"Answer","text": t.faq.a3}},
+        {"@type":"Question","name": t.faq.q4,"acceptedAnswer":{"@type":"Answer","text": t.faq.a4}}
+      ]}
+    ];
+    upsertHead('script', { id:'ld-bundle', type:'application/ld+json', textContent: JSON.stringify(ld) });
+  }
+
+  // Util para imagens (Wikimedia)
+  const W = (file, w=1600) => `https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/${encodeURIComponent(file)}&width=${w}`;
+
+  const state = { animeLoaded:false, calm:false, animeRefs:[], parallaxEls:[], parallaxBase:[], starfieldOn:true };
+  function ensureAnime(){
+    return new Promise((resolve) => {
+      function done(){ state.animeLoaded = typeof window.anime === 'function'; resolve(window.anime); }
+      if (typeof window.anime === 'function') return done();
+      const primary = document.getElementById('anime-cdn');
+      function loadFallback(){
+        if (typeof window.anime === 'function') return done();
+        const alt = ['https://unpkg.com/animejs@3.2.1/lib/anime.min.js','https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js'];
+        (function next(i=0){
+          if (i>=alt.length){ resolve(undefined); return; }
+          const s = document.createElement('script'); s.src = alt[i]; s.defer = true;
+          s.onload = () => { if (typeof window.anime === 'function') done(); else next(i+1); };
+          s.onerror = () => next(i+1);
+          document.head.appendChild(s);
+        })();
+      }
+      if (primary){
+        primary.addEventListener('load', done, { once:true });
+        primary.addEventListener('error', loadFallback, { once:true });
+        setTimeout(()=>{ if (typeof window.anime !== 'function') loadFallback(); }, 1500);
+      } else { loadFallback(); }
+    });
+  }
+  const isMotionOn = () => !prefersReduced && !state.calm;
+
+  const WAITLIST_ENDPOINT = '/api/waitlist';
+
+  const PRICING = {
+    pt: { locale: 'pt-BR', currency: 'BRL', free: 0,   pro: 29.90 },
+    en: { locale: 'en-US', currency: 'USD', free: 0,   pro: 9.99  },
+    es: { locale: 'es-ES', currency: 'EUR', free: 0,   pro: 9.99  },
+    fr: { locale: 'fr-FR', currency: 'EUR', free: 0,   pro: 9.99  },
+  };
+
+  function formatPrice(locale, currency, amount, noCentsIfZero = true){
+    const opts = { style: 'currency', currency };
+    if (noCentsIfZero && amount === 0){
+      opts.minimumFractionDigits = 0; opts.maximumFractionDigits = 0;
+    }
+    return new Intl.NumberFormat(locale, opts).format(amount);
+  }
+
+  // Billing state (monthly/yearly)
+  let currentLang = 'pt';
+  let billing = localStorage.getItem('mancery:billing') || 'monthly'; // 'monthly' | 'yearly'
+  const YEARLY_FACTOR = 10; // 2 meses grátis (12 - 2)
+
+  function applyPricing(lang){
+    const cfg = PRICING[lang] || PRICING.pt;
+    const freeEl = document.getElementById('p-free-price');
+    const proEl  = document.getElementById('p-pro-price');
+    if (billing === 'monthly'){
+      if (freeEl) freeEl.textContent = formatPrice(cfg.locale, cfg.currency, cfg.free, true);
+      if (proEl)  proEl.textContent  = formatPrice(cfg.locale, cfg.currency, cfg.pro,  false);
+    } else {
+      const total = cfg.pro * YEARLY_FACTOR;
+      if (freeEl) freeEl.textContent = formatPrice(cfg.locale, cfg.currency, cfg.free, true);
+      if (proEl)  proEl.textContent  = formatPrice(cfg.locale, cfg.currency, total, false);
+    }
+  }
+
+  // ===== Header / Scroll spy / Hide-on-scroll =====
+  function setupHeader(anime){
+    const header = document.getElementById('siteHeader');
+    const menu = document.getElementById('mainMenu');
+    const indicator = document.getElementById('navIndicator');
+    function setHeaderH(){ document.documentElement.style.setProperty('--headerH', header.offsetHeight + 'px'); }
+    setHeaderH(); window.addEventListener('resize', setHeaderH, {passive:true});
+
+    let lastY = window.scrollY;
+    window.addEventListener('scroll', ()=>{
+      const y = window.scrollY;
+      header.classList.toggle('scrolled', y>8);
+      if (y > lastY && y > header.offsetHeight + 20) header.classList.add('nav-hidden');
+      else header.classList.remove('nav-hidden');
+      lastY = y;
+    }, {passive:true});
+
+    const links = Array.from(menu.querySelectorAll('a[href^="#"]:not(.btn)'));
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    function moveIndicator(el){
+      const r = el.getBoundingClientRect();
+      const mr = menu.getBoundingClientRect();
+      const w = r.width, x = r.left - mr.left;
+      indicator.style.width = w + 'px';
+      indicator.style.transform = `translateX(${x}px)`;
+      if (anime && isMotionOn()){
+        anime({ targets: indicator, opacity:[0.4, 1], duration: 250, easing:'easeOutQuad' });
+      }
+    }
+
+    let currentActive = links[0] || null;
+    function setActive(a){
+      links.forEach(l => l.setAttribute('aria-current', String(l===a)));
+      currentActive = a || currentActive;
+      moveIndicator(currentActive || a);
+    }
+
+    // Hover: indicador acompanha; volta ao ativo ao sair
+    links.forEach(a => {
+      a.addEventListener('mouseenter', ()=> moveIndicator(a));
+      a.addEventListener('mouseleave', ()=> currentActive && moveIndicator(currentActive));
+    });
+
+    if ('IntersectionObserver' in window){
+      const io = new IntersectionObserver((entries)=>{
+        const vis = entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio - a.intersectionRatio);
+        if (vis[0]){
+          const id = '#'+vis[0].target.id;
+          const a = links.find(l => l.getAttribute('href')===id);
+          if (a) setActive(a);
+        }
+      }, { threshold:[0.4, 0.6, 0.8] });
+      sections.forEach(s => s && io.observe(s));
+    }
+
+    // Clique
+    links.forEach(a => a.addEventListener('click', (e)=>{
+      const id = a.getAttribute('href'); if(!id || id==='#') return;
+      const el = document.querySelector(id); if(!el) return;
+      e.preventDefault(); el.scrollIntoView({ behavior:'smooth', block:'start' });
+      setActive(a);
+    }));
+  }
+
+  // ===== Menu mobile =====
+  function setupMobileMenu(){
+    const btn = document.getElementById('navToggle');
+    const sheet = document.getElementById('menuSheet');
+    const langTop = document.getElementById('langSelect');
+    const langSheet = document.getElementById('langSelectSheet');
+    function open(){ sheet.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    function close(){ sheet.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+    btn.addEventListener('click', ()=> sheet.classList.contains('open') ? close() : open());
+    sheet.addEventListener('click', (e)=>{ if(e.target===sheet) close(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+    langSheet.addEventListener('change', ()=>{ langTop.value = langSheet.value; langTop.dispatchEvent(new Event('change')); close(); });
+    langSheet.value = langTop.value;
+  }
+
+  // ===== Constellations =====
+  function setupConstellations(){
+    const c = document.getElementById('constellation'); if(!c) return;
+    const dpr = Math.min(window.devicePixelRatio||1, 2);
+    function size(){ c.width=innerWidth*dpr; c.height=innerHeight*dpr; c.style.width=innerWidth+'px'; c.style.height=innerHeight+'px'; }
+    size(); addEventListener('resize', size, {passive:true});
+    const ctx = c.getContext('2d');
+
+    const mem = navigator.deviceMemory || 4;
+    const N=(mem <= 2 ? 40 : 70), pts=[];
+    for(let i=0;i<N;i++){
+      pts.push({ x:Math.random()*c.width, y:Math.random()*c.height, vx:(Math.random()-.5)*.25, vy:(Math.random()-.5)*.25, r:(Math.random()*1.6+0.6)*dpr });
+    }
+    function tick(){
+      if(!state.starfieldOn || state.calm || prefersReduced){ requestAnimationFrame(tick); return; }
+      ctx.clearRect(0,0,c.width,c.height);
+      for(const p of pts){
+        p.x+=p.vx; p.y+=p.vy;
+        if(p.x<0||p.x>c.width) p.vx*=-1;
+        if(p.y<0||p.y>c.height) p.vy*=-1;
+        ctx.beginPath(); ctx.fillStyle='rgba(255,255,255,.75)'; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+      }
+      for(let i=0;i<N;i++) for(let j=i+1;j<N;j++){
+        const a=pts[i], b=pts[j]; const dx=a.x-b.x, dy=a.y-b.y, d=Math.hypot(dx,dy);
+        if(d<120*dpr){ ctx.beginPath(); ctx.strokeStyle='rgba(244,209,122,'+(1-d/(120*dpr))*0.25+')'; ctx.lineWidth=0.6*dpr; ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
+      }
+      requestAnimationFrame(tick);
+    } tick();
+
+    document.addEventListener('visibilitychange', ()=>{ state.starfieldOn = !document.hidden; });
+  }
+
+  // ===== Parallax =====
+  function setupParallax(){
+    state.parallaxEls = Array.from(document.querySelectorAll('[data-parallax]'));
+    state.parallaxBase = state.parallaxEls.map(el => el.getBoundingClientRect().top + window.scrollY);
+    function update(){
+      if(!isMotionOn()) return;
+      const sc = window.scrollY;
+      state.parallaxEls.forEach((el, i)=>{
+        const speed = parseFloat(el.getAttribute('data-parallax')) || 0.08;
+        const offset = (sc - state.parallaxBase[i]) * speed;
+        el.style.transform = `translateY(${offset.toFixed(2)}px)`; 
+      });
+    }
+    update();
+    window.addEventListener('scroll', ()=>{ if(isMotionOn()) requestAnimationFrame(update); }, { passive:true });
+    window.addEventListener('resize', ()=>{ state.parallaxBase = state.parallaxEls.map(el => el.getBoundingClientRect().top + window.scrollY); if(isMotionOn()) requestAnimationFrame(update); }, { passive:true });
+  }
+
+  function pointerSparkles(anime){
+    if (!anime) return; let last = 0;
+    document.addEventListener('pointermove', (e)=>{
+      if(!isMotionOn()) return;
+      const now = performance.now(); if (now - last < 40) return; last = now;
+      const s = document.createElement('span');
+      Object.assign(s.style,{position:'fixed',left:(e.clientX-4)+'px',top:(e.clientY-4)+'px',width:'8px',height:'8px',borderRadius:'50%',pointerEvents:'none',zIndex:55,background:'radial-gradient(circle, rgba(255,255,255,.9), rgba(244,209,122,.8), transparent 70%)'});
+      document.body.appendChild(s);
+      const inst = anime({ targets:s, translateY:[0, -20], translateX:[0, (Math.random()-0.5)*16], scale:[.9, 1.6], opacity:[1,0], easing:'easeOutQuad', duration:600, complete: ()=> s.remove() });
+      state.animeRefs.push(inst);
+    });
+  }
+
+  function setupReveal(anime){
+    const list = document.querySelectorAll('.reveal, .feature, .testimonial, .price, .step');
+    if (!('IntersectionObserver' in window)) { list.forEach(el => el.style.opacity = 1); return; }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          const el = e.target; io.unobserve(el);
+          if (!isMotionOn() || !anime) { el.style.opacity = 1; return; }
+          const anim = el.dataset.anim || 'up';
+          const opts = { targets: el, opacity:[0,1], duration:700, easing:'easeOutQuad' };
+          if(anim==='up') opts.translateY = [20,0];
+          if(anim==='fade') opts.opacity = [0,1];
+          if(anim==='scale'){ opts.scale=[.96,1]; opts.duration=500; }
+          const inst = anime(opts); state.animeRefs.push(inst);
+        }
+      })
+    }, { threshold: .14 });
+    list.forEach(el=>io.observe(el));
+  }
+
+  // ===== I18N — 4 idiomas =====
+  const I18N = {
+    pt: {
+      nav:{recursos:'Recursos',como:'Como funciona',planos:'Planos',faq:'FAQ',assinante:'Área do Assinante'},
+      hero:{title:'Mancery — Primeiro Tarot Vivo. Beleza, verdade e clareza.',
+            lead:'Desperte o simbólico: Carta do Dia, tiragens guiadas com IA, Grimório Vivo e insights semanais — tudo em um ambiente calmo e contemplativo.',
+            ctaStart:'Começar agora'},
+      rec:{title:'Um oráculo que respeita o mistério — e o seu tempo',
+           lead:'Profundidade com leveza: interface serena, palavras que acolhem, estética que inspira presença.',
+           f1:['Carta do Dia','Seu pequeno rito matinal. Uma carta, um convite ao significado — com um texto que não apressa.'],
+           f2:['Tiragens com IA','Leituras diretas que honram a tradição e a sua intuição — sem jargão.'],
+           f3:['Grimório Vivo','Um diário mágico para registrar percepções, sonhos e sincronicidades — e perceber padrões.']},
+      how:{title:'Como funciona', lead:'Entre, revele, reflita — o sagrado no ritmo do seu dia.',
+           s1:['Escolha seu ritual','Carta do Dia ou tiragem guiada com foco no seu tema.'],
+           s2:['Receba a leitura','Interpretações claras, com indicações práticas e cuidado de linguagem.'],
+           s3:['Integre no seu tempo','Anote no Grimório, salve insights, acompanhe ciclos.'],
+           s4:['Retorne quando quiser','Constância é carinho: sem pressa, sem pressão.']},
+      testi:{title:'Quem experimentou, sente a diferença', lead:'Relatos de quem transformou o cotidiano em ritual.'},
+      pricing:{title:'Escolha seu caminho', lead:'Comece no gratuito. Assine quando fizer sentido para você.',
+        free:['Gratuito','R$ 0','/mês',['Carta do Dia','Histórico básico','Estética editorial','1 baralho clássico'],'Começar'],
+        pro:['Premium','R$ —','/mês',['Tiragens com IA (3/semana)','Grimório & Templo Pessoal','Insights semanais','Estatísticas de ciclos','Biblioteca de baralhos'],'Assinar']},
+      billing:{monthly:'Mensal', yearly:'Anual (2 meses grátis)', perYear:'/ano', save:'Economize ~16%'},
+      sub:{title:'Área do Assinante', lead:'Se você já é assinante, acesse por aqui.',
+           ctaTitle:'Entrar no Portal Mancery', ctaDesc:'Você será redirecionado(a) ao nosso portal seguro.'},
+      faq:{title:'Perguntas frequentes',
+           q1:'Preciso entender de tarot para usar?', a1:'Não. Conteúdo acolhedor para iniciantes e iniciados.',
+           q2:'As leituras com IA substituem o estudo?', a2:'Não — apoiam sua prática e ampliam o olhar.',
+           q3:'Posso usar sem assinatura?', a3:'Sim: a essência está no plano gratuito.',
+           q4:'Como funciona a privacidade?', a4:'Registros sob seus cuidados. Criptografia em trânsito e boas práticas modernas.'},
+      ctaBar:{text:'Pronto para começar? Revele sua Carta do Dia.', left:'Carta do Dia', right:'Assine'},
+      foot:{tagline:'Tarot com IA, ritual e beleza', calm:'Modo Calmo', col1:'Produto', col2:'Empresa', col3:'Legal',
+            links:['Recursos','Como funciona','Planos','FAQ','Sobre','Carreiras','Contato','Privacidade','Termos','Segurança'],
+            bottom:'Feito com cuidado — sem pressa.'},
+      waitlist:{title:'Entre na Waiting List', desc:'Avise seu email e te chamamos assim que liberarmos.', ok:'Quero entrar', cancel:'Cancelar', okMsg:'Tudo certo! Você entrou na lista. (local)', errMsg:'Informe um e-mail válido.'}
+    },
+    en: {
+      nav:{recursos:'Features',como:'How it works',planos:'Pricing',faq:'FAQ',assinante:'Subscriber Area'},
+      hero:{title:'Mancery — The Living Tarot. Beauty, Truth, Clarity.',
+            lead:'Awaken the symbolic: Card of the Day, AI‑guided spreads, Living Grimoire, and weekly insights — in a calm, contemplative space.',
+            ctaStart:'Get started'},
+      rec:{title:'An oracle that honors the mystery — and your time',
+           lead:'Depth with softness: serene interface, warm language, editorial aesthetics.',
+           f1:['Card of the Day','A gentle morning ritual. One card, one intention — with unhurried writing.'],
+           f2:['AI Spreads','Clear readings that respect tradition and your intuition — without jargon.'],
+           f3:['Living Grimoire','A magical journal to record insights, dreams, and synchronicities — and notice patterns.']},
+      how:{title:'How it works', lead:'Enter, reveal, reflect — the sacred at your daily pace.',
+           s1:['Choose your ritual','Card of the Day or a guided spread tailored to your theme.'],
+           s2:['Receive the reading','Clear interpretations with gentle, practical guidance.'],
+           s3:['Integrate in your time','Write in the Grimoire, save insights, track cycles.'],
+           s4:['Return whenever','Consistency is care: no rush, no pressure.']},
+      testi:{title:'People feel the difference', lead:'Stories from those who turned routine into ritual.'},
+      pricing:{title:'Choose your path', lead:'Start for free. Upgrade when it feels right.',
+        free:['Free','$ 0','/month',['Card of the Day','Basic history','Editorial styling','1 classic deck'],'Start'],
+        pro:['Premium','$ —','/month',['AI spreads (3/week)','Grimoire & Personal Temple','Weekly insights','Cycle stats','Deck library'],'Subscribe']},
+      billing:{monthly:'Monthly', yearly:'Yearly (2 months free)', perYear:'/year', save:'Save ~16%'},
+      sub:{title:'Subscriber Area', lead:'Already subscribed? Access here.', ctaTitle:'Enter Mancery Portal', ctaDesc:'Weʼll take you to our secure portal.'},
+      faq:{title:'Frequently asked questions',
+           q1:'Do I need to know tarot?', a1:'No. Welcoming for beginners and adepts.',
+           q2:'Does AI replace study?', a2:'No — it supports your practice.',
+           q3:'Can I use it for free?', a3:'Yes: the essence is in the free plan.',
+           q4:'How about privacy?', a4:'Your records, your choice. Transport encryption and modern practices.'},
+      ctaBar:{text:'Ready to begin? Reveal your Card of the Day.', left:'Card of the Day', right:'Subscribe'},
+      foot:{tagline:'Tarot with AI, ritual and beauty', calm:'Calm Mode', col1:'Product', col2:'Company', col3:'Legal',
+            links:['Features','How it works','Pricing','FAQ','About','Careers','Contact','Privacy','Terms','Security'],
+            bottom:'Made with care — no rush.'},
+      waitlist:{title:'Join the Waiting List', desc:'Leave your email — weʼll notify you.', ok:'Join', cancel:'Cancel', okMsg:'All set! Youʼre on the list. (local)', errMsg:'Enter a valid email.'}
+    },
+    es: {
+      nav:{recursos:'Funciones',como:'Cómo funciona',planos:'Planes',faq:'FAQ',assinante:'Área de Suscriptor'},
+      hero:{title:'Mancery — Tarot Vivo. Belleza, verdad y claridad.',
+            lead:'Despierta lo simbólico: Carta del Día, tiradas guiadas con IA, Grimorio Vivo e ideas semanales — en un espacio sereno y contemplativo.',
+            ctaStart:'Comenzar'},
+      rec:{title:'Un oráculo que respeta el misterio — y tu tiempo',
+           lead:'Profundidad con suavidad: interfaz serena, lenguaje cálido y estética editorial.',
+           f1:['Carta del Día','Tu pequeño rito matinal. Una carta, una intención — sin prisas.'],
+           f2:['Tiradas con IA','Lecturas claras que honran la tradición y tu intuición — sin jerga.'],
+           f3:['Grimorio Vivo','Un diario mágico para registrar percepciones, sueños y sincronicidades — y ver patrones.']},
+      how:{title:'Cómo funciona', lead:'Entrar, revelar, reflexionar — lo sagrado al ritmo del día.',
+           s1:['Elige tu ritual','Carta del Día o tirada guiada enfocada en tu tema.'],
+           s2:['Recibe la lectura','Interpretaciones claras con guía práctica y amable.'],
+           s3:['Integra a tu ritmo','Escribe en el Grimorio, guarda ideas, sigue ciclos.'],
+           s4:['Vuelve cuando quieras','La constancia es cuidado: sin prisa, sin presión.']},
+      testi:{title:'Se siente la diferencia', lead:'Relatos de quienes volvieron ritual su rutina.'},
+      pricing:{title:'Elige tu camino', lead:'Empieza gratis. Suscríbete cuando sea el momento.',
+        free:['Gratis','$ 0','/mes',['Carta del Día','Historial básico','Estética editorial','1 mazo clásico'],'Empezar'],
+        pro:['Premium','$ —','/mes',['Tiradas con IA (3/semana)','Grimorio y Templo Personal','Ideas semanales','Estadísticas de ciclos','Biblioteca de mazos'],'Suscribirse']},
+      billing:{monthly:'Mensual', yearly:'Anual (2 meses gratis)', perYear:'/año', save:'Ahorra ~16%'},
+      sub:{title:'Área de Suscriptor', lead:'Si ya estás suscrito, entra aquí.', ctaTitle:'Entrar al Portal Mancery', ctaDesc:'Te llevaremos a nuestro portal seguro.'},
+      faq:{title:'Preguntas frecuentes',
+           q1:'¿Necesito saber tarot?', a1:'No. Apto para principiantes y avanzados.',
+           q2:'¿La IA sustituye el estudio?', a2:'No — acompaña tu práctica.',
+           q3:'¿Puedo usarlo gratis?', a3:'Sí: la esencia está en el plan gratuito.',
+           q4:'¿Privacidad?', a4:'Tus registros, tu elección. Cifrado en tránsito y prácticas modernas.'},
+      ctaBar:{text:'¿Listo para empezar? Revela tu Carta del Día.', left:'Carta del Día', right:'Suscribirse'},
+      foot:{tagline:'Tarot con IA, ritual y belleza', calm:'Modo Calmo', col1:'Producto', col2:'Empresa', col3:'Legal',
+            links:['Funciones','Cómo funciona','Planes','FAQ','Acerca de','Empleos','Contacto','Privacidad','Términos','Seguridad'],
+            bottom:'Hecho con cuidado — sin prisa.'},
+      waitlist:{title:'Únete a la Waiting List', desc:'Déjanos tu email — te avisamos.', ok:'Unirme', cancel:'Cancelar', okMsg:'¡Listo! Te agregamos. (local)', errMsg:'Ingresa un email válido.'}
+    },
+    fr: {
+      nav:{recursos:'Fonctionnalités',como:'Comment ça marche',planos:'Tarifs',faq:'FAQ',assinante:'Espace Abonné'},
+      hero:{title:'Mancery — Tarot Vivant. Beauté, verité et clarté.',
+            lead:'Éveillez le symbole : Carte du Jour, tirages guidés par IA, Grimoire Vivant et insights hebdomadaires — dans un espace calme et contemplatif.',
+            ctaStart:'Commencer'},
+      rec:{title:'Un oracle qui honore le mystère — et votre temps',
+           lead:'Profondeur avec douceur : interface sereine, langage chaleureux, esthétique éditoriale.',
+           f1:['Carte du Jour','Votre petit rite du matin. Une carte, une intention — sans se presser.'],
+           f2:['Tirages IA','Lectures claires qui respectent la tradition et votre intuition — sans jargon.'],
+           f3:['Grimoire Vivant','Un journal magique pour noter idées, rêves et synchronicités — et voir les motifs.']},
+      how:{title:'Comment ça marche', lead:'Entrer, révéler, réfléchir — le sacré au rythme du quotidien.',
+           s1:['Choisissez votre rituel','Carte du Jour ou tirage guidé selon votre thème.'],
+           s2:['Recevez la lecture','Interprétations claires avec conseils pratiques, dans une langue douce.'],
+           s3:['Intégrez à votre rythme','Notez dans le Grimoire, suivez vos cycles.'],
+           s4:['Revenez quand vous voulez','La constance est un soin : sans hâte, sans pression.']},
+      testi:{title:'La différence se ressent', lead:'Récits de celles et ceux qui ont fait du quotidien un rituel.'},
+      pricing:{title:'Choisissez votre voie', lead:'Commencez gratuitement. Abonnez‑vous quand c’est le moment.',
+        free:['Gratuit','€ 0','/mois',['Carte du Jour','Historique basique','Design éditorial','1 jeu classique'],'Commencer'],
+        pro:['Premium','€ —','/mois',['Tirages IA (3/sem.)','Grimoire & Temple Personnel','Insights hebdo','Statistiques de cycles','Bibliothèque de jeux'],'S’abonner']},
+      billing:{monthly:'Mensuel', yearly:'Annuel (2 mois offerts)', perYear:'/an', save:'Économisez ~16 %'},
+      sub:{title:'Espace Abonné', lead:'Déjà abonné ? Accédez ici.', ctaTitle:'Entrer dans le Portail Mancery', ctaDesc:'Redirection vers le portail sécurisé.'},
+      faq:{title:'Questions fréquentes',
+           q1:'Faut‑il connaître le tarot ?', a1:'Non. Accueillant pour débutants et avancés.',
+           q2:'L’IA remplace‑t‑elle l’étude ?', a2:'Non — elle soutient votre pratique.',
+           q3:'Puis‑je l’utiliser gratuitement ?', a3:'Oui : l’essentiel est dans le plan gratuit.',
+           q4:'Vie privée ?', a4:'Vos notes, votre choix. Chiffrement en transit et pratiques modernes.'},
+      ctaBar:{text:'Prêt à commencer ? Révélez votre Carte du Jour.', left:'Carte du Jour', right:'S’abonner'},
+      foot:{tagline:'Tarot avec IA, rituel et beauté', calm:'Mode Calme', col1:'Produit', col2:'Entreprise', col3:'Juridique',
+            links:['Fonctionnalités','Comment ça marche','Tarifs','FAQ','À propos','Carrières','Contact','Confidentialité','Conditions','Sécurité'],
+            bottom:'Fait avec soin — sans hâte.'},
+      waitlist:{title:'Rejoindre la Waiting List', desc:'Laissez votre email — nous vous préviendrons.', ok:'Rejoindre', cancel:'Annuler', okMsg:'Parfait ! Ajouté. (local)', errMsg:'Entrez un email valide.'}
+    }
+  };
+
+  function splitToSpans(el){
+    if(!el) return;
+    if (el.querySelector('.char') || el.querySelector('.word')) return;
+    const txt = el.textContent;
+    el.textContent = '';
+    const frag = document.createDocumentFragment();
+    const tokens = txt.split(/(\s+)/);
+    for (const token of tokens){
+      if (/^\s+$/.test(token)){
+        frag.appendChild(document.createTextNode(token));
+      } else {
+        const w = document.createElement('span');
+        w.className = 'word';
+        for (const ch of token){
+          const s = document.createElement('span');
+          s.className = 'char';
+          s.textContent = ch;
+          w.appendChild(s);
+        }
+        frag.appendChild(w);
+      }
+    }
+    el.appendChild(frag);
+  }
+
+  function applyI18n(lang='pt'){
+    currentLang = lang;
+    const t = I18N[lang] || I18N.pt;
+
+    // Menu (sem carrossel)
+    ['nav-recursos','nav-como','nav-precos','nav-faq','nav-assinante'].forEach((id,i)=>{
+      const map = [t.nav.recursos,t.nav.como,t.nav.planos,t.nav.faq,t.nav.assinante];
+      const el=document.getElementById(id); if(el) el.textContent=map[i];
+    });
+
+    const title = document.getElementById('hero-title'); title.textContent = t.hero.title; splitToSpans(title);
+    document.getElementById('hero-lead').textContent = t.hero.lead;
+    document.getElementById('cta-start').textContent = t.hero.ctaStart;
+
+    document.getElementById('recursos-title').textContent = t.rec.title;
+    document.getElementById('recursos-lead').textContent = t.rec.lead;
+    document.getElementById('feat-1-title').textContent = t.rec.f1[0]; document.getElementById('feat-1-desc').textContent = t.rec.f1[1];
+    document.getElementById('feat-2-title').textContent = t.rec.f2[0]; document.getElementById('feat-2-desc').textContent = t.rec.f2[1];
+    document.getElementById('feat-3-title').textContent = t.rec.f3[0]; document.getElementById('feat-3-desc').textContent = t.rec.f3[1];
+
+    document.getElementById('how-title').textContent = t.how.title; document.getElementById('how-lead').textContent = t.how.lead;
+    document.getElementById('how-1-title').textContent = t.how.s1[0]; document.getElementById('how-1-desc').textContent = t.how.s1[1];
+    document.getElementById('how-2-title').textContent = t.how.s2[0]; document.getElementById('how-2-desc').textContent = t.how.s2[1];
+    document.getElementById('how-3-title').textContent = t.how.s3[0]; document.getElementById('how-3-desc').textContent = t.how.s3[1];
+    document.getElementById('how-4-title').textContent = t.how.s4[0]; document.getElementById('how-4-desc').textContent = t.how.s4[1];
+
+    document.getElementById('pricing-title').textContent = t.pricing.title; document.getElementById('pricing-lead').textContent = t.pricing.lead;
+    document.getElementById('p-free-title').textContent = t.pricing.free[0]; document.getElementById('p-free-price').textContent = t.pricing.free[1];
+    document.getElementById('p-free-period').textContent = t.pricing.free[2]; document.getElementById('p-free-feats').innerHTML = t.pricing.free[3].map(i=>`<li>${i}</li>`).join('');
+    document.getElementById('p-free-cta').textContent = t.pricing.free[4];
+    document.getElementById('p-pro-title').textContent = t.pricing.pro[0]; document.getElementById('p-pro-price').textContent = t.pricing.pro[1];
+    document.getElementById('p-pro-period').textContent = t.pricing.pro[2]; document.getElementById('p-pro-feats').innerHTML = t.pricing.pro[3].map(i=>`<li>${i}</li>`).join('');
+    document.getElementById('p-pro-cta').textContent = t.pricing.pro[4];
+
+    // Alternador de cobrança (texto)
+    const bm = document.getElementById('billMonthly'), by = document.getElementById('billYearly'), bn = document.getElementById('billingNote');
+    if (bm && by && bn){ bm.textContent = t.billing.monthly; by.textContent = t.billing.yearly; bn.textContent = t.billing.save; }
+
+    // Assinante
+    document.getElementById('sub-title').textContent = t.sub.title; document.getElementById('sub-lead').textContent = t.sub.lead;
+    document.getElementById('sub-cta-title').textContent = t.sub.ctaTitle; document.getElementById('sub-cta-desc').textContent = t.sub.ctaDesc;
+
+    // FAQ
+    document.getElementById('faq-title').textContent = t.faq.title;
+    document.getElementById('q1').textContent = t.faq.q1; document.getElementById('a1').textContent = t.faq.a1;
+    document.getElementById('q2').textContent = t.faq.q2; document.getElementById('a2').textContent = t.faq.a2;
+    document.getElementById('q3').textContent = t.faq.q3; document.getElementById('a3').textContent = t.faq.a3;
+    document.getElementById('q4').textContent = t.faq.q4; document.getElementById('a4').textContent = t.faq.a4;
+
+    // CTA bar e Footer
+    document.getElementById('cta-bar-text').textContent = t.ctaBar.text;
+    document.getElementById('cta-bar-left').textContent = t.ctaBar.left;
+    document.getElementById('cta-bar-right').textContent = t.ctaBar.right;
+    document.getElementById('foot-tagline').textContent = t.foot.tagline;
+    document.getElementById('calm-label').textContent = t.foot.calm;
+    document.getElementById('foot-col1').textContent = t.foot.col1;
+    document.getElementById('foot-col2').textContent = t.foot.col2;
+    document.getElementById('foot-col3').textContent = t.foot.col3;
+    const L = t.foot.links, ids=['fl-1','fl-2','fl-3','fl-4','fl-5','fl-6','fl-7','fl-8','fl-9','fl-10']; ids.forEach((id,i)=>{ const el=document.getElementById(id); if(el) el.textContent = L[i]; });
+
+    // Preços conforme idioma + billing atual
+    applyPricing(lang);
+    const periodElFree = document.getElementById('p-free-period');
+    const periodElPro  = document.getElementById('p-pro-period');
+    if (billing === 'yearly'){ periodElFree.textContent = t.billing.perYear; periodElPro.textContent = t.billing.perYear; }
+
+    localStorage.setItem('mancery:lang', lang);
+  }
+
+  function setupAnchors(){
+    document.querySelectorAll('[data-role="subscriber-link"]').forEach(a => a.setAttribute('href', SUBSCRIBER_URL));
+    const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+  }
+
+  function setupCalmMode(){
+    const key='mancery:calm'; const saved = localStorage.getItem(key); state.calm = saved === 'true';
+    document.body.dataset.calm = state.calm ? 'true' : 'false';
+    const toggle = document.getElementById('calmToggle');
+    if (toggle){
+      toggle.checked = state.calm;
+      toggle.addEventListener('change', ()=>{
+        state.calm = toggle.checked;
+        document.body.dataset.calm = state.calm ? 'true' : 'false';
+        localStorage.setItem(key, state.calm ? 'true' : 'false');
+        // pausa/retoma animações e controla starfield
+        state.starfieldOn = !state.calm;
+        if (window.anime){
+          state.animeRefs.forEach(inst=>{
+            if (!inst) return;
+            if (state.calm && inst.pause) inst.pause();
+            if (!state.calm && inst.play) inst.play();
+          });
+        }
+      });
+    }
+  }
+
+  // Tilt 3D suave para cards (respeita reduce motion)
+  function setupTilt(){
+    if (prefersReduced) return;
+    const els = document.querySelectorAll('[data-tilt]');
+    els.forEach(el=>{
+      let raf=0;
+      function reset(){ el.style.transform=''; }
+      el.addEventListener('pointermove', (e)=>{
+        if(!isMotionOn()) return;
+        cancelAnimationFrame(raf);
+        raf=requestAnimationFrame(()=>{
+          const r = el.getBoundingClientRect();
+          const x = (e.clientX - r.left)/r.width;
+          const y = (e.clientY - r.top)/r.height;
+          const rx = (0.5 - y)*6;   // tilt X
+          const ry = (x - 0.5)*8;   // tilt Y
+          el.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+        });
+      });
+      el.addEventListener('pointerleave', reset);
+    });
+  }
+
+  // Botões magnéticos leves
+  function setupMagnet(){
+    if (prefersReduced) return;
+    const btns = document.querySelectorAll('.btn-primary');
+    btns.forEach(btn=>{
+      let raf=0;
+      btn.addEventListener('pointermove', (e)=>{
+        if(!isMotionOn()) return;
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(()=>{
+          const r = btn.getBoundingClientRect();
+          const x = ((e.clientX - r.left)/r.width - .5) * 6;
+          const y = ((e.clientY - r.top)/r.height - .5) * 6;
+          btn.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      });
+      btn.addEventListener('pointerleave', ()=>{ btn.style.transform=''; });
+    });
+  }
+
+  // Alternador Mensal/Anual
+  function setupBillingToggle(lang){
+    const t = (I18N[lang] || I18N.pt);
+    const bm = document.getElementById('billMonthly');
+    const by = document.getElementById('billYearly');
+    const periodElFree = document.getElementById('p-free-period');
+    const periodElPro  = document.getElementById('p-pro-period');
+    const setActive=()=>{
+      bm.classList.toggle('active', billing==='monthly');
+      by.classList.toggle('active', billing==='yearly');
+      bm.setAttribute('aria-selected', String(billing==='monthly'));
+      by.setAttribute('aria-selected', String(billing==='yearly'));
+    };
+    const update = ()=>{
+      applyPricing(currentLang);
+      if (billing==='yearly'){ periodElFree.textContent = t.billing.perYear; periodElPro.textContent = t.billing.perYear; }
+      else { periodElFree.textContent = I18N[currentLang].pricing.free[2]; periodElPro.textContent = I18N[currentLang].pricing.pro[2]; }
+      setActive();
+    };
+    if (bm && by){
+      bm.onclick = ()=>{ billing='monthly'; localStorage.setItem('mancery:billing','monthly'); update(); };
+      by.onclick = ()=>{ billing='yearly';  localStorage.setItem('mancery:billing','yearly');  update(); };
+      update();
+    }
+  }
+
+  function setupWaitlist(){
+    const modal = document.getElementById('waitlistModal');
+    const msg = document.getElementById('wl-msg');
+    const nameEl = document.getElementById('wl-name');
+    const emailEl = document.getElementById('wl-email');
+    const submitBtn = document.getElementById('wl-submit');
+    let openerBtn = null;
+
+    function trapFocus(container){
+      const fsel = 'a,button,input,select,textarea,[tabindex]:not([tabindex="-1"])';
+      let focusables = Array.from(container.querySelectorAll(fsel)).filter(el => !el.disabled && el.offsetParent !== null);
+      function onKey(e){
+        if(e.key!=='Tab') return;
+        focusables = Array.from(container.querySelectorAll(fsel)).filter(el => !el.disabled && el.offsetParent !== null);
+        const first = focusables[0], last = focusables[focusables.length-1];
+        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+      container.addEventListener('keydown', onKey);
+      return ()=> container.removeEventListener('keydown', onKey);
+    }
+
+    let untrap = null;
+
+    function open(e){
+      openerBtn = e?.currentTarget || openerBtn;
+      msg.textContent = '';
+      msg.className = 'muted';
+      modal.classList.add('open');
+      modal.style.display = 'grid';
+      modal.setAttribute('aria-hidden','false');
+      untrap = trapFocus(modal);
+      setTimeout(()=> nameEl && nameEl.focus(), 60);
+      if (window.anime && isMotionOn()){
+        anime({ targets: '#waitlistModal .box', scale:[.98,1], opacity:[0,1], translateY:[10,0], easing:'easeOutQuad', duration:220 });
+      }
+    }
+
+    function close(){
+      modal.classList.remove('open');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+      untrap && untrap();
+      openerBtn?.focus();
+    }
+
+    document.getElementById('openWaitlistTop').onclick    = open;
+    document.getElementById('openWaitlistFooter').onclick = open;
+    document.getElementById('openWaitlistPlans').onclick  = open;
+    document.getElementById('wl-cancel').onclick = close;
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) close(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && modal.classList.contains('open')) close(); });
+
+    async function doPost(payload){
+      const res = await fetch(WAITLIST_ENDPOINT, { method: 'POST', headers: { 'Content-Type':'application/json' }, body: JSON.stringify(payload) });
+      if (!res.ok) throw new Error('HTTP '+res.status);
+      return true;
+    }
+
+    async function submit(){
+      const lang = localStorage.getItem('mancery:lang')||'pt';
+      const t = (I18N[lang]||I18N.pt).waitlist;
+      const name=(nameEl.value||'').trim();
+      const email=(emailEl.value||'').trim();
+      const valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if(!valid){ msg.textContent = t.errMsg; msg.className='muted err'; emailEl.focus(); return; }
+
+      const payload = { name, email, lang, ts: Date.now() };
+      const prev = submitBtn.textContent;
+      submitBtn.classList.add('loading'); submitBtn.disabled = true; submitBtn.textContent = prev;
+      try{
+        await doPost(payload);
+        msg.textContent = t.okMsg;
+        msg.className = 'muted ok';
+        setTimeout(close, 1200);
+      }catch(e){
+        const key='mancery:waitlist';
+        const arr=JSON.parse(localStorage.getItem(key)||'[]');
+        arr.push(payload); localStorage.setItem(key, JSON.stringify(arr));
+        msg.textContent = t.okMsg + ' (offline/local)';
+        msg.className = 'muted ok';
+        setTimeout(close, 1400);
+      } finally {
+        submitBtn.classList.remove('loading'); submitBtn.disabled = false; submitBtn.textContent = prev;
+      }
+    }
+
+    submitBtn.onclick = submit;
+    [nameEl, emailEl].forEach(el => el.addEventListener('keydown', e => { if(e.key==='Enter') submit(); }));
+  }
+
+  // Mensagens que vendem (rotator) — por idioma
+  const ROTATOR = {
+    pt: ['Comece de graça.', 'Sem pressa, no seu ritmo.', 'Leituras que acolhem.', 'Estética que inspira presença.'],
+    en: ['Start free.', 'No rush, at your pace.', 'Readings that care.', 'Aesthetic that invites presence.'],
+    es: ['Empieza gratis.', 'Sin prisa, a tu ritmo.', 'Lecturas que acogen.', 'Estética que invita a la presencia.'],
+    fr: ['Commencez gratuit.', 'Sans hâte, à votre rythme.', 'Lectures bienveillantes.', 'Esthétique qui invite à la présence.']
+  };
+
+  function setupRotator(lang){
+    const phrases = ROTATOR[lang] || ROTATOR.pt;
+    const host = document.querySelector('.hero-content');
+    if (!host || document.getElementById('hero-rotator')) return;
+    const div = document.createElement('div'); div.className='micro-rotator'; div.id='hero-rotator';
+    const caret = document.createElement('span'); caret.className='caret'; caret.textContent='|';
+    div.textContent = phrases[0] + ' '; div.appendChild(caret);
+    host.appendChild(div);
+    if (!isMotionOn()) return;
+    let i = 0;
+    setInterval(()=>{
+      if (!isMotionOn()) return;
+      if (window.anime){
+        anime({ targets: div, opacity:[1,0], duration:220, easing:'easeOutQuad', complete:()=>{
+          i=(i+1)%phrases.length; div.textContent = phrases[i] + ' '; div.appendChild(caret);
+          anime({ targets: div, opacity:[0,1], duration:220, easing:'easeOutQuad' });
+        }});
+      } else {
+        i=(i+1)%phrases.length; div.textContent = phrases[i] + ' '; div.appendChild(caret);
+      }
+    }, 3200);
+  }
+
+  function setupRunes(){
+    const box = document.getElementById('runes'); if(!box) return;
+    const chars = ['✦','☾','☉','♃','♄','☿','♇','♁','♆','♈'];
+    for (let ring=0; ring<2; ring++){
+      const ringEl = document.createElement('div'); ringEl.className = 'runes' + (isMotionOn() ? ' spin' : '');
+      ringEl.style.zIndex = 1; box.appendChild(ringEl);
+      for (let i=0;i<chars.length;i++){
+        const r = document.createElement('div'); r.className='r'; r.textContent=chars[(i+ring)%chars.length];
+        const ang = (360/chars.length)*i + (ring*18);
+        const rad = ring===0 ? 120 : 160;
+        r.style.transform = `translate(-50%,-50%) rotate(${ang}deg) translate(${rad}px) rotate(${-ang}deg)`;
+        ringEl.appendChild(r);
+      }
+      if (isMotionOn()) ringEl.style.animationDuration = (ring===0 ? 26 : 34) + 's';
+    }
+  }
+
+  function setupHeroFlip(){
+    const card = document.getElementById('hero-card'); if(!card) return;
+    if (!card.querySelector('.back')){
+      const back = document.createElement('div'); back.className='back';
+      back.innerHTML = '<div style="max-width:22ch"><strong>A Estrela</strong><br>Uma respiração longa. Confia: há direção, mesmo no escuro.</div>';
+      card.appendChild(back);
+    }
+    card.setAttribute('role','button'); card.setAttribute('tabindex','0'); card.setAttribute('aria-pressed','false');
+    const toggle = ()=>{ if(!isMotionOn()) return; const on = card.classList.toggle('flipped'); card.setAttribute('aria-pressed', String(on)); };
+    card.addEventListener('click', toggle);
+    card.addEventListener('keypress', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); }});
+    card.addEventListener('mouseenter', ()=>{ if (matchMedia('(hover:hover)').matches) toggle(); });
+    card.addEventListener('mouseleave', ()=>{ if (card.classList.contains('flipped')) toggle(); });
+  }
+
+  function setupScrollProgress(){
+    const bar = document.getElementById('scrollProgress'); if(!bar) return;
+    const update = ()=>{
+      const sh = document.documentElement.scrollHeight - innerHeight;
+      const p = sh>0 ? (scrollY / sh)*100 : 0;
+      bar.style.width = p.toFixed(2)+'%';
+    };
+    update();
+    addEventListener('scroll', update, {passive:true});
+    addEventListener('resize', update, {passive:true});
+  }
+
+  function setupRipple(){
+    const els = document.querySelectorAll('.btn');
+    els.forEach(btn=>{
+      btn.addEventListener('pointerdown', (e)=>{
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - r.left, y = e.clientY - r.top;
+        const ink = document.createElement('span'); ink.className='ripple-ink';
+        ink.style.left = x+'px'; ink.style.top = y+'px';
+        btn.appendChild(ink);
+        const maxD = Math.hypot(r.width, r.height);
+        if (window.anime && isMotionOn()){
+          anime({targets:ink, scale: maxD/7, opacity:[.9,0], easing:'easeOutQuad', duration:600, complete:()=>ink.remove()});
+        } else {
+          ink.remove();
+        }
+        if (navigator.vibrate) try{ navigator.vibrate(8);}catch(_){}
+      });
+    });
+  }
+
+  function setupFABTop(){
+    const fab = document.getElementById('fabTop'); if(!fab) return;
+    const showHide = ()=>{
+      const on = scrollY > innerHeight * 0.9;
+      fab.classList.toggle('show', on);
+    };
+    showHide();
+    addEventListener('scroll', showHide, {passive:true});
+    fab.addEventListener('click', ()=> scrollTo({ top:0, behavior:'smooth' }));
+  }
+
+  // Badge "Mais popular" com i18n
+  function applyPopularBadge(lang){
+    const t = { pt:'Mais popular', en:'Most popular', es:'El más popular', fr:'Le plus populaire' }[lang] || 'Most popular';
+    const b = document.getElementById('pricing-badge'); if (b) b.textContent = t;
+  }
+
+  // Pequena melhoria no céu: meteoros ocasionais
+  function enhanceConstellationsWithMeteors(){
+    const c = document.getElementById('constellation'); if(!c) return;
+    const ctx = c.getContext('2d'); const dpr = Math.min(devicePixelRatio||1,2);
+    let last=0, meteor=null;
+    function drawMeteor(){
+      if(!meteor) return;
+      meteor.x += meteor.vx; meteor.y += meteor.vy; meteor.life -= 0.015;
+      ctx.save(); ctx.globalAlpha = Math.max(0, meteor.life);
+      ctx.strokeStyle = 'rgba(244,209,122,.45)'; ctx.lineWidth = 1.2*dpr;
+      ctx.beginPath(); ctx.moveTo(meteor.x, meteor.y);
+      ctx.lineTo(meteor.x - meteor.vx*8, meteor.y - meteor.vy*8);
+      ctx.stroke(); ctx.restore();
+      if (meteor.life<=0 || meteor.x<0 || meteor.y>c.height) meteor=null;
+    }
+    function tick(){
+      if (!isMotionOn()){ requestAnimationFrame(tick); return; }
+      const now = performance.now();
+      if (!meteor && now - last > 2800 + Math.random()*2400){
+        last = now;
+        meteor = { x: c.width * (0.6+Math.random()*0.35), y: c.height*(0.05+Math.random()*0.2), vx: -2.2*dpr, vy: 1.2*dpr, life:1 };
+      }
+      drawMeteor();
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+
+  async function init(){
+    setupCalmMode();
+    setupAnchors();
+    setupConstellations();
+
+    const anime = await ensureAnime();
+    setupHeader(anime);
+    setupMobileMenu();
+
+    const urlLang = params.get('hl');
+    const savedLang = localStorage.getItem('mancery:lang') || (navigator.language||'pt').slice(0,2);
+    const startLang = I18N[urlLang] ? urlLang : (I18N[savedLang] ? savedLang : 'pt');
+    const langTop=document.getElementById('langSelect'); const langSheet=document.getElementById('langSelectSheet');
+    langTop.value = startLang; if (langSheet) langSheet.value = startLang;
+    applyI18n(startLang);
+    applyPopularBadge(startLang);
+    document.getElementById('cta-start')?.classList.add('attention');
+    updateSEO(startLang);
+    setupBillingToggle(startLang);
+    setupRotator(startLang);
+    setupRunes();
+    setupHeroFlip();
+    setupScrollProgress();
+    setupRipple();
+    setupFABTop();
+    enhanceConstellationsWithMeteors();
+    langTop.addEventListener('change', ()=>{ applyI18n(langTop.value); if(langSheet) langSheet.value = langTop.value; updateSEO(langTop.value); setupBillingToggle(langTop.value);applyPopularBadge(langTop.value);});
+
+    if (anime && !prefersReduced){
+      const tl = anime.timeline({ easing:'easeOutQuad' })
+        .add({ targets:'#hero-title .char', translateY:[20,0], opacity:[0,1], delay:anime.stagger(15), duration:600 })
+        .add({ targets:'.device', translateY:[20,0], opacity:[0.8,1], duration:700 }, '-=300');
+      state.animeRefs.push(tl);
+      state.animeRefs.push(anime({ targets:'#hero-card', rotate:[-6, -2, -4, -3], translateY:[-6, 6], direction:'alternate', easing:'easeInOutSine', duration:5200, loop:true }));
+      state.animeRefs.push(anime({ targets:'.orb.gold', translateX:[10,-10], translateY:[-6,8], scale:[.98,1.04], direction:'alternate', easing:'easeInOutSine', duration:6000, loop:true }));
+      state.animeRefs.push(anime({ targets:'.orb.blue', translateX:[-8,12], translateY:[6,-6], scale:[1.04,.98], direction:'alternate', easing:'easeInOutSine', duration:5600, loop:true }));
+    }
+
+    const stars = document.getElementById('stars');
+    if (stars && anime && !prefersReduced){
+      for(let i=0;i<36;i++){
+        const s = document.createElement('span'); const size=Math.random()*2+0.8;
+        Object.assign(s.style,{position:'absolute',width:size+'px',height:size+'px',borderRadius:'50%',background:'rgba(255,255,255,'+(0.6*Math.random()+0.2)+')',left:(Math.random()*100)+'%',top:(Math.random()*100)+'%'});
+        stars.appendChild(s);
+        const inst = anime({ targets:s, opacity:[0.2,0.9,0.2], duration: 1500 + Math.random()*1500, delay: Math.random()*1500, loop:true, easing:'easeInOutSine' });
+        state.animeRefs.push(inst);
+      }
+    }
+
+    setupParallax();
+    setupReveal(anime);
+    if (!prefersReduced) { pointerSparkles(anime); setupTilt(); setupMagnet(); }
+
+    const calmToggle = document.getElementById('calmToggle');
+    calmToggle.addEventListener('change', ()=>{
+      // já tratado dentro de setupCalmMode (pausa anime + controla starfield)
+    });
+
+    setupWaitlist();
+
+    // ===== Testes (dev) =====
+    const tests=[]; const add=(n,p,i='')=>tests.push({n,p,i});
+    add('Anime.js carregado', typeof window.anime === 'function', state.animeLoaded ? 'ok' : 'fallback/indisp.');
+    const header = document.getElementById('siteHeader'); const hero = document.querySelector('.hero');
+    add('Hero full-screen', Math.abs((hero.getBoundingClientRect().height + header.offsetHeight) - window.innerHeight) < 48, `${Math.round(hero.getBoundingClientRect().height + header.offsetHeight)}px vs ${window.innerHeight}px`);
+    const secs = Array.from(document.querySelectorAll('.section'));
+    const expectedMin = Math.max(320, window.innerHeight - header.offsetHeight - 8);
+    add('Seções “quase full screen”', secs.every(s => s.getBoundingClientRect().height >= expectedMin - 40), `min≥${expectedMin}px`);
+    setTimeout(()=>{
+      const tr = getComputedStyle(document.getElementById('hero-card')).transform;
+      add('Hero-card animando', tr && tr !== 'none', tr ? 'transform ativo' : 'none');
+      renderTests();
+    }, 900);
+    add('Orbes presentes', document.querySelectorAll('.orb').length === 2, document.querySelectorAll('.orb').length+' orb(s)');
+    const subs = Array.from(document.querySelectorAll('[data-role="subscriber-link"]'));
+    add('Links assinante', subs.length>0 && subs.every(a => (a.getAttribute('href')||'').indexOf(SUBSCRIBER_URL)===0), `${subs.length} link(s)`);
+    add('Sem parallax nas seções', document.querySelectorAll('.parallax-bg').length === 0, 'ok');
+    add('SEO/title atualizado', document.title.includes('First Living Tarot'), document.title);
+    add('Canonical presente', !!(document.getElementById('canonicalLink')||{}).href, (document.getElementById('canonicalLink')||{}).href || '');
+    add('OG e Twitter ok', !!document.getElementById('ogTitle') && !!document.getElementById('twTitle'), 'tags presentes');
+
+    add('Moeda correta no preço Premium', (()=>{
+      const txt = (document.getElementById('p-pro-price')||{}).textContent || '';
+      const curr = (PRICING[currentLang]||PRICING.pt).currency;
+      const sym = new Intl.NumberFormat((PRICING[currentLang]||PRICING.pt).locale,{style:'currency',currency:curr}).formatToParts(0).find(p=>p.type==='currency').value;
+      return txt.includes(sym);
+    })(), (document.getElementById('p-pro-price')||{}).textContent || '');
+
+    add('Waiting List pronta', (()=>{
+      const m=document.getElementById('waitlistModal');
+      return !!(m && document.getElementById('wl-name') && document.getElementById('wl-email') && document.getElementById('wl-submit'));
+    })(), 'estrutura ok');
+
+    function renderTests(){
+      const ul=document.getElementById('test-list'); if(!ul) return;
+      ul.innerHTML='';
+      tests.forEach(t=>{ const li=document.createElement('li'); li.className=t.p?'pass':'fail'; li.textContent=`${t.p?'✓':'✗'} ${t.n}${t.i?' — '+t.i:''}`; ul.appendChild(li); });
+    }
+    renderTests();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+</script>
+
+<noscript>
+  <div style="max-width:1160px;margin:16px auto;padding:12px 20px;border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#ffb4b4;">
+    ⚠️ JavaScript desabilitado: animações foram desativadas, mas o conteúdo segue disponível.
+  </div>
+</noscript>
+<button id="fabTop" class="fab-top" type="button" aria-label="Voltar ao topo">↑</button>
+</body>
+</html>

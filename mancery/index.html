@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mancery — The Living Tarot. Beauty, Truth, clarity.</title>
+<title>Mancery — The Living Tarot. Beauty, Truth, Clarity.</title>
 <meta name="theme-color" content="#0f0b1f" />
 <!-- === SEO base (será atualizado dinamicamente) === -->
 <link id="canonicalLink" rel="canonical" href="" />
@@ -196,22 +196,17 @@
     min-height: var(--section-min);
     scroll-margin-top: calc(var(--headerH) + env(safe-area-inset-top));
   }
-  .hero::before{
-    content:""; position:absolute; inset:-20px -20px 0 -20px; z-index:-1; opacity:.18; border-radius:24px;
-    background-image:url('https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Carina%20Nebula%20in%20visible%20light%20(captured%20by%20the%20Hubble%20Space%20Telescope).jpg&width=1600');
-    background-size:cover; background-position:center;
-    filter:contrast(1.05) saturate(1.05) brightness(.9);
-    mask-image: radial-gradient(1200px 600px at 20% 10%, rgba(0,0,0,.9), transparent 70%);
-  }
-  .hero-content{position:relative; z-index:2; max-width:26ch;} /* largura ideal p/ balançar linhas */
+  .hero::before{ content: none !important; } /* sem overlay extra */
+
+  .hero-content{position:relative; z-index:2; max-width:26ch;}
   h1{
     font-family: var(--font-display); font-weight:700; font-size: clamp(40px, 6vw, 66px); line-height:1.05; margin:0 0 var(--space-2);
     font-optical-sizing:auto; font-variation-settings: "SOFT" 100, "WONK" 0;
     letter-spacing:.1px;
   }
-  /* === FIX headline nunca quebrar no meio da palavra === */
+  /* Headline: nunca quebra palavra no meio */
   .hero h1{ text-wrap: balance; overflow-wrap: normal; word-break: normal; hyphens: none; }
-  .hero h1 .word{ display:inline-block; white-space:nowrap; } /* cada palavra indivisível */
+  .hero h1 .word{ display:inline-block; white-space:nowrap; } 
   .hero h1 .char{ display:inline-block; }
 
   .char{display:inline-block}
@@ -391,135 +386,205 @@
   @keyframes wlFade{ from{opacity:0} to{opacity:1} }
   @keyframes wlPop{ to{opacity:1; transform: none} }
 
-  /* === OVERRIDE: seções 100% transparentes === */
-  .section{ background: transparent !important; }
-  .section::before, .section::after{ content:none !important; display:none !important; }
-
   /* === SUPER APPEAL PATCH (Look & Feel Director) === */
 
-/* Page subtle fade-in */
-body{opacity:0;animation:pageFade .45s ease-out forwards}
-@keyframes pageFade{to{opacity:1}}
+  /* Page subtle fade-in */
+  body{opacity:0;animation:pageFade .45s ease-out forwards}
+  @keyframes pageFade{to{opacity:1}}
 
-/* Hero: glint sweep sobre o título */
-.hero h1{position:relative}
-.hero h1::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(75deg,transparent 0%,rgba(255,255,255,.25) 45%,rgba(244,209,122,.35) 50%,transparent 55%);
-  transform:translateX(-120%);
-}
-@media (prefers-reduced-motion:no-preference){
-  .hero h1::after{animation:glint 3.8s ease-out infinite 1.2s}
-  @keyframes glint{60%{transform:translateX(140%)}100%{transform:translateX(140%)}}
-}
-body[data-calm="true"] .hero h1::after{animation:none !important}
+  /* Remover o glint do título (definitivo) */
+  .hero h1::after{ animation: none !important; content: none !important; display: none !important; }
 
-/* Rotator (promessas curtas) */
-.micro-rotator{margin-top:8px;font-size:14px;letter-spacing:.4px;color:var(--muted);opacity:.92}
-.micro-rotator .caret{display:inline-block;width:10px}
-@media (prefers-reduced-motion:no-preference){
-  .micro-rotator .caret{animation:blink 1s steps(1,end) infinite}
-  @keyframes blink{50%{opacity:0}}
-}
+  /* Realce estático "ouro editorial" no 1º termo do título (sem animação) */
+  #hero-title { position: relative; }
+  #hero-title .word:first-child { color: var(--fg); }
+  @supports (-webkit-background-clip: text) {
+    #hero-title .word:first-child{
+      background-image: linear-gradient(180deg, #ffffff 0%, var(--brand) 60%, var(--brand-2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 10px rgba(244,209,122,.12));
+    }
+  }
+  /* Sub-linha fixa e discreta */
+  .hero h1::before{
+    content:"";
+    position:absolute;
+    left:2px; bottom:-10px;
+    width: clamp(120px, 32%, 260px);
+    height: 2px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--brand), var(--accent));
+    opacity: .45;
+  }
 
-/* Runes em órbita */
-.runes{position:absolute;inset:0;pointer-events:none;z-index:1}
-.runes .r{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:14px;opacity:.7;filter:drop-shadow(0 2px 10px rgba(244,209,122,.25))}
-@media (prefers-reduced-motion:no-preference){
-  .runes.spin{animation:spin 24s linear infinite;transform-origin:50% 50%}
-  @keyframes spin{to{transform:rotate(360deg)}}
-}
+  /* Skeleton shimmer (genérico, útil em futuras imagens dinâmicas) */
+  .skeleton{position:relative;background:#141127}
+  .skeleton::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,255,255,.12),rgba(255,255,255,.05));
+    transform:translateX(-100%);
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .skeleton::before{animation:shimmer 1.6s infinite}
+    @keyframes shimmer{to{transform:translateX(100%)}}
+  }
 
-/* Hero card flip (preview de leitura) */
-.screen .card{transform-style:preserve-3d;perspective:1200px;cursor:pointer;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.screen .card .back{
-  position:absolute;inset:0;border-radius:16px;backface-visibility:hidden;transform:rotateY(180deg);
-  display:grid;place-items:center;padding:14px;background:linear-gradient(180deg,#17132d,#0f0b1f);color:var(--muted);text-align:center;
-}
-.screen .card.flipped{transform:translate(-50%,-50%) rotateY(180deg) rotate(-6deg)}
-body[data-calm="true"] .screen .card{transition:none}
+  /* Scroll progress (topo) */
+  #scrollProgress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--brand),var(--accent));z-index:100;box-shadow:0 0 10px rgba(244,209,122,.35)}
 
-/* Carousel: Ken Burns no slide ativo */
-@keyframes kenburns{0%{transform:scale(1.05) translate(0,0)}100%{transform:scale(1.12) translate(1.2%,-1.2%)}}
-.slide img.ken{animation:kenburns 8s ease-in-out forwards}
-body[data-calm="true"] .slide img.ken{animation:none !important}
+  /* CTA pulse (gentil) */
+  @media (prefers-reduced-motion:no-preference){
+    .btn-primary.attention{animation:pulse 3.5s ease-in-out infinite 6s}
+    @keyframes pulse{0%,100%{box-shadow:0 8px 30px rgba(244,209,122,.25)}50%{box-shadow:0 12px 46px rgba(244,209,122,.42)}}
+  }
+  body[data-calm="true"] .btn-primary.attention{animation:none !important}
 
-/* Skeleton shimmer para imagens */
-.skeleton{position:relative;background:#141127}
-.skeleton::before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,255,255,.12),rgba(255,255,255,.05));
-  transform:translateX(-100%);
-}
-@media (prefers-reduced-motion:no-preference){
-  .skeleton::before{animation:shimmer 1.6s infinite}
-  @keyframes shimmer{to{transform:translateX(100%)}}
-}
+  /* Ripple ink */
+  .btn{position:relative;overflow:hidden}
+  .ripple-ink{position:absolute;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);background:rgba(255,255,255,.35);width:14px;height:14px;opacity:.9}
 
-/* Scroll progress (topo) */
-#scrollProgress{position:fixed;left:0;top:0;height:3px;width:0%;background:linear-gradient(90deg,var(--brand),var(--accent));z-index:100;box-shadow:0 0 10px rgba(244,209,122,.35)}
+  /* FAB voltar ao topo */
+  .fab-top{
+    position:fixed;right:18px;bottom:20px;width:44px;height:44px;border-radius:999px;display:grid;place-items:center;
+    border:1px solid var(--stroke);background:rgba(255,255,255,.07);color:var(--fg);cursor:pointer;z-index:60;
+    opacity:0;transform:translateY(10px);transition:.25s ease
+  }
+  .fab-top.show{opacity:1;transform:none}
 
-/* CTA pulse (gentil) */
-@media (prefers-reduced-motion:no-preference){
-  .btn-primary.attention{animation:pulse 3.5s ease-in-out infinite 6s}
-  @keyframes pulse{0%,100%{box-shadow:0 8px 30px rgba(244,209,122,.25)}50%{box-shadow:0 12px 46px rgba(244,209,122,.42)}}
-}
-body[data-calm="true"] .btn-primary.attention{animation:none !important}
+  /* Selo Premium (mais popular) */
+  .price{position:relative}
+  .badge-pop{
+    position:absolute;top:12px;right:12px;font-size:12px;font-weight:800;padding:6px 10px;border-radius:999px;
+    background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#201a07;box-shadow:0 8px 24px rgba(244,209,122,.28)
+  }
 
-/* Ripple ink */
-.btn{position:relative;overflow:hidden}
-.ripple-ink{position:absolute;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);background:rgba(255,255,255,.35);width:14px;height:14px;opacity:.9}
+  /* Runes in orbit — robust version */
+#runes{ position:absolute; inset:0; pointer-events:none; z-index:1; }
 
-/* FAB voltar ao topo */
-.fab-top{
-  position:fixed;right:18px;bottom:20px;width:44px;height:44px;border-radius:999px;display:grid;place-items:center;
-  border:1px solid var(--stroke);background:rgba(255,255,255,.07);color:var(--fg);cursor:pointer;z-index:60;
-  opacity:0;transform:translateY(10px);transition:.25s ease
-}
-.fab-top.show{opacity:1;transform:none}
-
-/* Selo Premium (mais popular) */
-.price{position:relative}
-.badge-pop{
-  position:absolute;top:12px;right:12px;font-size:12px;font-weight:800;padding:6px 10px;border-radius:999px;
-  background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#201a07;box-shadow:0 8px 24px rgba(244,209,122,.28)
-}
-.hero::before{ content: none !important; }
-
-/* === Remover o glint do título (definitivo) === */
-.hero h1::after{
-  animation: none !important;
-  content: none !important;
-  display: none !important;
+/* Each rotating ring (separate class from the container) */
+.runes-ring{
+  position:absolute; inset:0;
+  transform-origin:50% 50%;
+  animation: runesSpin var(--runes-speed, 26s) linear infinite;
 }
 
-/* === Realce estático "ouro editorial" no 1º termo do título (sem animação) ===
-   Observação: seu JS já envolve o título em .word/.char; usamos a 1ª .word. */
-#hero-title { position: relative; }
+/* Individual glyphs positioned on the ring */
+.runes-ring .glyph{
+  position:absolute;
+  left:50%; top:50%;
+  transform: translate(-50%,-50%);
+  font-size:14px;
+  opacity:.7;
+  filter: drop-shadow(0 2px 10px rgba(244,209,122,.25));
+}
 
-/* Fallback: mantém cor normal, nada de animação */
-#hero-title .word:first-child { color: var(--fg); }
+@keyframes runesSpin{
+  to{ transform: rotate(360deg); }
+}
 
-/* Se o browser suportar background-clip:text, aplicamos um gradiente nobre */
-@supports (-webkit-background-clip: text) {
+/* Respect user/system settings */
+@media (prefers-reduced-motion: reduce){
+  .runes-ring{ animation: none; }
+}
+
+/* Pause ring spin when Calm Mode is on */
+body[data-calm="true"] .runes-ring{
+  animation-play-state: paused;
+}
+
+/* ====================== */
+/* POLIMENTO MENU MOBILE  */
+/* ====================== */
+@media (max-width: 960px){
+  .nav{ padding: 8px 14px; }
+  .brand{ gap:10px; flex:0 0 auto; }
+  .brand .mark{ width:32px; height:32px; }
+  .brand-name{
+    display:inline-block; white-space:nowrap; font-size:18px; letter-spacing:.2px;
+    color:var(--fg); flex-shrink:0;
+  }
+
+  /* Sheet com a mesma linguagem visual */
+  .menu-sheet{
+    display:none;
+    position:fixed;
+    inset: calc(var(--headerH) + env(safe-area-inset-top)) 12px 12px 12px;
+    padding:10px;
+    border-radius:18px;
+    background:linear-gradient(180deg, rgba(18,14,34,.96), rgba(18,14,34,.92));
+    border:1px solid var(--stroke);
+    box-shadow: var(--shadow);
+  }
+  .menu-sheet.open{ display:block; animation: sheetIn .18s ease both; }
+  @keyframes sheetIn{ from{ opacity:0; transform: translateY(-6px) } to{ opacity:1; transform:none } }
+
+  .menu-sheet h2{
+    margin:4px 8px 10px;
+    font: 700 12px/1 var(--font-sans);
+    letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
+  }
+  .menu-sheet a{
+    display:block; text-align:center; font-weight:700; font-size:18px;
+    padding:14px 10px; margin:4px 2px; border-radius:12px;
+    background:rgba(255,255,255,.02);
+    border:1px solid transparent; transition:background .2s ease, border-color .2s ease;
+  }
+  .menu-sheet a:hover{ background:rgba(255,255,255,.06); border-color:rgba(244,209,122,.28); }
+  .menu-sheet .btn-primary{ width:100%; }
+
+  /* Linha do idioma centralizada */
+  #menuSheet > div:last-child{
+    display:flex !important; justify-content:center; align-items:center; gap:8px; margin-top:6px;
+  }
+
+  /* Travar scroll quando o menu abre */
+  body.menu-open{ overflow:hidden; }
+
+  /* Hamburger → X */
+  .nav-toggle{ width:44px; height:44px; border-radius:12px; }
+  .nav-toggle span,
+  .nav-toggle span::before,
+  .nav-toggle span::after{
+    transition: transform .22s ease, opacity .22s ease;
+  }
+  .nav-toggle[aria-expanded="true"] span{ background:transparent }
+  .nav-toggle[aria-expanded="true"] span::before{ transform: translateY(6px) rotate(45deg) }
+  .nav-toggle[aria-expanded="true"] span::after{ transform: translateY(-6px) rotate(-45deg) }
+}
+
+/* ========================================= */
+/* RECURSOS — ÍCONES MAIORES E CENTRALIZADOS */
+/* ========================================= */
+.features .feature{ text-align:center; }
+.features .feature .icon{
+  width:64px; height:64px; font-size:28px; margin:4px auto 10px;
+  display:grid; place-items:center; border-radius:14px;
+  border:1px solid var(--stroke);
+  background:
+    radial-gradient(40% 40% at 35% 35%, rgba(255,255,255,.85), rgba(244,209,122,.45) 40%, transparent 72%),
+    rgba(255,255,255,.02);
+  filter: drop-shadow(0 6px 22px rgba(244,209,122,.12));
+}
+@media (max-width:640px){
+  .features .feature .icon{ width:72px; height:72px; font-size:32px; }
+}
+
+/* ================================================== */
+/* FIX: "Mancery" sumindo no mobile (título do herói) */
+/* — em telas menores, preferir cor sólida ao gradiente */
+/* ================================================== */
+@media (max-width: 960px){
   #hero-title .word:first-child{
-    background-image: linear-gradient(180deg, #ffffff 0%, var(--brand) 60%, var(--brand-2) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 10px rgba(244,209,122,.12)); /* sutil, sem “brilhar” */
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    color: var(--brand) !important;       /* ouro sólido: sempre visível */
+    text-shadow: 0 1px 0 rgba(0,0,0,.25);  /* leve reforço de contraste */
+    filter: none !important;
   }
 }
+/* (extra) compat: garantir vendor prefix do clip de texto */
+#hero-title .word:first-child{ background-clip:text; -webkit-background-clip:text; }
 
-/* Sub-linha fixa e discreta (ajuda a ancorar o olhar, sem movimento) */
-.hero h1::before{
-  content:"";
-  position:absolute;
-  left:2px; bottom:-10px;
-  width: clamp(120px, 32%, 260px);
-  height: 2px; border-radius: 2px;
-  background: linear-gradient(90deg, var(--brand), var(--accent));
-  opacity: .45;
-}
 
 </style>
 
@@ -810,7 +875,7 @@ body[data-calm="true"] .btn-primary.attention{animation:none !important}
   function debug(msg){ if(!DEBUG) return; diagEl.style.display='block'; const t=new Date().toLocaleTimeString(); diagEl.innerHTML+=`<div><b>[${t}]</b> ${msg}</div>`; }
 
   // Textos SEO por idioma (title fixo e descriptions localizadas)
-  const SEO_TITLE = 'Mancery — The Living Tarot. Beauty, Truth, clarity.';
+  const SEO_TITLE = 'Mancery — The Living Tarot. Beauty, Truth, Clarity.';
   const SEO_COPY = {
     pt: { htmlLang: 'pt-BR', ogLocale: 'pt_BR', desc: 'Mancery é o primeiro Tarot Vivo: Carta do Dia, tiragens guiadas por IA, Grimório Vivo e Modo Calmo. App multilíngue (PT/EN/ES/FR). Plano gratuito e Premium.' },
     en: { htmlLang: 'en', ogLocale: 'en_US', desc: 'Mancery is the first Living Tarot: Card of the Day, AI‑guided spreads, Living Grimoire and Calm Mode. Multilingual (EN/PT/ES/FR). Free and Premium.' },
@@ -881,20 +946,8 @@ body[data-calm="true"] .btn-primary.attention{animation:none !important}
     upsertHead('script', { id:'ld-bundle', type:'application/ld+json', textContent: JSON.stringify(ld) });
   }
 
+  // Util para imagens (Wikimedia)
   const W = (file, w=1600) => `https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/${encodeURIComponent(file)}&width=${w}`;
-
-  const CAROUSEL_IMAGES = [
-    { src: W('RWS Tarot 17 Star.jpg', 2000), cap: 'The Star — Rider–Waite (Wikimedia)' },
-    { src: W('RWS Tarot 18 Moon.jpg', 2000), cap: 'The Moon — Rider–Waite (Wikimedia)' },
-    { src: W('FullMoon2010.jpg', 2000), cap: 'Full Moon (Wikimedia)' },
-    { src: W('Last full moon of 2010 (5275865725) (2).jpg', 2000), cap: 'Last full moon of 2010 (Wikimedia)' },
-    { src: W('Smoke of Incense sticks.jpg', 2000), cap: 'Incense smoke (Wikimedia)' },
-    { src: W('Smoke from Incense sticks.jpg', 2000), cap: 'Incense smoke (Wikimedia)' },
-    { src: W('Menthol Crystals close up.jpg', 2000), cap: 'Crystals (Wikimedia)' },
-    { src: W('Close-up of glass crystal with many facets causing dispersion spectrum from light.jpeg', 2000), cap: 'Crystal facets (Wikimedia)' },
-    { src: W('Tarot card reading 2010.jpg', 2000), cap: 'Tarot reading (Wikimedia)' },
-    { src: W('Night sky at Paranal (img 2524-cc).jpg', 2000), cap: 'Star trails (Wikimedia)' }
-  ];
 
   const state = { animeLoaded:false, calm:false, animeRefs:[], parallaxEls:[], parallaxBase:[], starfieldOn:true };
   function ensureAnime(){
@@ -1024,19 +1077,36 @@ body[data-calm="true"] .btn-primary.attention{animation:none !important}
   }
 
   // ===== Menu mobile =====
-  function setupMobileMenu(){
-    const btn = document.getElementById('navToggle');
-    const sheet = document.getElementById('menuSheet');
-    const langTop = document.getElementById('langSelect');
-    const langSheet = document.getElementById('langSelectSheet');
-    function open(){ sheet.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
-    function close(){ sheet.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
-    btn.addEventListener('click', ()=> sheet.classList.contains('open') ? close() : open());
-    sheet.addEventListener('click', (e)=>{ if(e.target===sheet) close(); });
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
-    langSheet.addEventListener('change', ()=>{ langTop.value = langSheet.value; langTop.dispatchEvent(new Event('change')); close(); });
-    langSheet.value = langTop.value;
+function setupMobileMenu(){
+  const btn = document.getElementById('navToggle');
+  const sheet = document.getElementById('menuSheet');
+  const langTop = document.getElementById('langSelect');
+  const langSheet = document.getElementById('langSelectSheet');
+
+  function open(){ sheet.classList.add('open'); btn.setAttribute('aria-expanded','true'); document.body.classList.add('menu-open'); }
+  function close(){ sheet.classList.remove('open'); btn.setAttribute('aria-expanded','false'); document.body.classList.remove('menu-open'); }
+
+  btn.addEventListener('click', ()=> sheet.classList.contains('open') ? close() : open());
+  sheet.addEventListener('click', (e)=>{ if(e.target===sheet) close(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+
+  langSheet.addEventListener('change', ()=>{
+    langTop.value = langSheet.value;
+    langTop.dispatchEvent(new Event('change'));
+    close();
+  });
+  langSheet.value = langTop.value;
+}
+
+// Garante que o selo "Mais popular" esteja no plano Pago (2º card)
+function ensureBadgeOnPro(){
+  const proCard = document.querySelector('#precos .pricing .price:nth-child(2)');
+  const badge = document.getElementById('pricing-badge');
+  if (proCard && badge && badge.parentElement !== proCard){
+    proCard.appendChild(badge);
   }
+}
+
 
   // ===== Constellations =====
   function setupConstellations(){
@@ -1124,16 +1194,15 @@ body[data-calm="true"] .btn-primary.attention{animation:none !important}
   // ===== I18N — 4 idiomas =====
   const I18N = {
     pt: {
-      nav:{recursos:'Recursos',carrossel:'Carrossel',como:'Como funciona',planos:'Planos',faq:'FAQ',assinante:'Área do Assinante'},
+      nav:{recursos:'Recursos',como:'Como funciona',planos:'Planos',faq:'FAQ',assinante:'Área do Assinante'},
       hero:{title:'Mancery — Primeiro Tarot Vivo. Beleza, verdade e clareza.',
             lead:'Desperte o simbólico: Carta do Dia, tiragens guiadas com IA, Grimório Vivo e insights semanais — tudo em um ambiente calmo e contemplativo.',
-            ctaStart:'Começar agora', ctaCarousel:'Ver carrossel'},
+            ctaStart:'Começar agora'},
       rec:{title:'Um oráculo que respeita o mistério — e o seu tempo',
            lead:'Profundidade com leveza: interface serena, palavras que acolhem, estética que inspira presença.',
            f1:['Carta do Dia','Seu pequeno rito matinal. Uma carta, um convite ao significado — com um texto que não apressa.'],
            f2:['Tiragens com IA','Leituras diretas que honram a tradição e a sua intuição — sem jargão.'],
            f3:['Grimório Vivo','Um diário mágico para registrar percepções, sonhos e sincronicidades — e perceber padrões.']},
-      car:{title:'Carrossel Místico', lead:'Cartas, lua, incenso, cristais — imagens temporárias para sentir o clima.'},
       how:{title:'Como funciona', lead:'Entre, revele, reflita — o sagrado no ritmo do seu dia.',
            s1:['Escolha seu ritual','Carta do Dia ou tiragem guiada com foco no seu tema.'],
            s2:['Receba a leitura','Interpretações claras, com indicações práticas e cuidado de linguagem.'],
@@ -1158,16 +1227,15 @@ body[data-calm="true"] .btn-primary.attention{animation:none !important}
       waitlist:{title:'Entre na Waiting List', desc:'Avise seu email e te chamamos assim que liberarmos.', ok:'Quero entrar', cancel:'Cancelar', okMsg:'Tudo certo! Você entrou na lista. (local)', errMsg:'Informe um e-mail válido.'}
     },
     en: {
-      nav:{recursos:'Features',carrossel:'Carousel',como:'How it works',planos:'Pricing',faq:'FAQ',assinante:'Subscriber Area'},
+      nav:{recursos:'Features',como:'How it works',planos:'Pricing',faq:'FAQ',assinante:'Subscriber Area'},
       hero:{title:'Mancery — The Living Tarot. Beauty, Truth, Clarity.',
             lead:'Awaken the symbolic: Card of the Day, AI‑guided spreads, Living Grimoire, and weekly insights — in a calm, contemplative space.',
-            ctaStart:'Get started', ctaCarousel:'See carousel'},
+            ctaStart:'Get started'},
       rec:{title:'An oracle that honors the mystery — and your time',
            lead:'Depth with softness: serene interface, warm language, editorial aesthetics.',
            f1:['Card of the Day','A gentle morning ritual. One card, one intention — with unhurried writing.'],
            f2:['AI Spreads','Clear readings that respect tradition and your intuition — without jargon.'],
            f3:['Living Grimoire','A magical journal to record insights, dreams, and synchronicities — and notice patterns.']},
-      car:{title:'Mystic Carousel', lead:'Cards, moon, incense, crystals — temporary images to set the mood.'},
       how:{title:'How it works', lead:'Enter, reveal, reflect — the sacred at your daily pace.',
            s1:['Choose your ritual','Card of the Day or a guided spread tailored to your theme.'],
            s2:['Receive the reading','Clear interpretations with gentle, practical guidance.'],
@@ -1191,16 +1259,15 @@ body[data-calm="true"] .btn-primary.attention{animation:none !important}
       waitlist:{title:'Join the Waiting List', desc:'Leave your email — weʼll notify you.', ok:'Join', cancel:'Cancel', okMsg:'All set! Youʼre on the list. (local)', errMsg:'Enter a valid email.'}
     },
     es: {
-      nav:{recursos:'Funciones',carrossel:'Carrusel',como:'Cómo funciona',planos:'Planes',faq:'FAQ',assinante:'Área de Suscriptor'},
+      nav:{recursos:'Funciones',como:'Cómo funciona',planos:'Planes',faq:'FAQ',assinante:'Área de Suscriptor'},
       hero:{title:'Mancery — Tarot Vivo. Belleza, verdad y claridad.',
             lead:'Despierta lo simbólico: Carta del Día, tiradas guiadas con IA, Grimorio Vivo e ideas semanales — en un espacio sereno y contemplativo.',
-            ctaStart:'Comenzar', ctaCarousel:'Ver carrusel'},
+            ctaStart:'Comenzar'},
       rec:{title:'Un oráculo que respeta el misterio — y tu tiempo',
            lead:'Profundidad con suavidad: interfaz serena, lenguaje cálido y estética editorial.',
            f1:['Carta del Día','Tu pequeño rito matinal. Una carta, una intención — sin prisas.'],
            f2:['Tiradas con IA','Lecturas claras que honran la tradición y tu intuición — sin jerga.'],
            f3:['Grimorio Vivo','Un diario mágico para registrar percepciones, sueños y sincronicidades — y ver patrones.']},
-      car:{title:'Carrusel Místico', lead:'Cartas, luna, incienso y cristales — imágenes temporales para el ambiente.'},
       how:{title:'Cómo funciona', lead:'Entrar, revelar, reflexionar — lo sagrado al ritmo del día.',
            s1:['Elige tu ritual','Carta del Día o tirada guiada enfocada en tu tema.'],
            s2:['Recibe la lectura','Interpretaciones claras con guía práctica y amable.'],
@@ -1224,16 +1291,15 @@ body[data-calm="true"] .btn-primary.attention{animation:none !important}
       waitlist:{title:'Únete a la Waiting List', desc:'Déjanos tu email — te avisamos.', ok:'Unirme', cancel:'Cancelar', okMsg:'¡Listo! Te agregamos. (local)', errMsg:'Ingresa un email válido.'}
     },
     fr: {
-      nav:{recursos:'Fonctionnalités',carrossel:'Carrousel',como:'Comment ça marche',planos:'Tarifs',faq:'FAQ',assinante:'Espace Abonné'},
+      nav:{recursos:'Fonctionnalités',como:'Comment ça marche',planos:'Tarifs',faq:'FAQ',assinante:'Espace Abonné'},
       hero:{title:'Mancery — Tarot Vivant. Beauté, verité et clarté.',
             lead:'Éveillez le symbole : Carte du Jour, tirages guidés par IA, Grimoire Vivant et insights hebdomadaires — dans un espace calme et contemplatif.',
-            ctaStart:'Commencer', ctaCarousel:'Voir le carrousel'},
+            ctaStart:'Commencer'},
       rec:{title:'Un oracle qui honore le mystère — et votre temps',
            lead:'Profondeur avec douceur : interface sereine, langage chaleureux, esthétique éditoriale.',
            f1:['Carte du Jour','Votre petit rite du matin. Une carte, une intention — sans se presser.'],
            f2:['Tirages IA','Lectures claires qui respectent la tradition et votre intuition — sans jargon.'],
            f3:['Grimoire Vivant','Un journal magique pour noter idées, rêves et synchronicités — et voir les motifs.']},
-      car:{title:'Carrousel Mystique', lead:'Cartes, lune, encens, cristaux — images temporaires pour l’ambiance.'},
       how:{title:'Comment ça marche', lead:'Entrer, révéler, réfléchir — le sacré au rythme du quotidien.',
            s1:['Choisissez votre rituel','Carte du Jour ou tirage guidé selon votre thème.'],
            s2:['Recevez la lecture','Interprétations claires avec conseils pratiques, dans une langue douce.'],
@@ -1260,13 +1326,10 @@ body[data-calm="true"] .btn-primary.attention{animation:none !important}
 
   function splitToSpans(el){
     if(!el) return;
-    // Se já foi processado, não refaz
     if (el.querySelector('.char') || el.querySelector('.word')) return;
-
     const txt = el.textContent;
     el.textContent = '';
     const frag = document.createDocumentFragment();
-
     const tokens = txt.split(/(\s+)/);
     for (const token of tokens){
       if (/^\s+$/.test(token)){
@@ -1290,8 +1353,10 @@ body[data-calm="true"] .btn-primary.attention{animation:none !important}
     currentLang = lang;
     const t = I18N[lang] || I18N.pt;
 
-    ['nav-recursos','nav-carrossel','nav-como','nav-precos','nav-faq','nav-assinante'].forEach((id,i)=>{
-      const map = [t.nav.recursos,t.nav.carrossel,t.nav.como,t.nav.planos,t.nav.faq,t.nav.assinante]; const el=document.getElementById(id); if(el) el.textContent=map[i];
+    // Menu (sem carrossel)
+    ['nav-recursos','nav-como','nav-precos','nav-faq','nav-assinante'].forEach((id,i)=>{
+      const map = [t.nav.recursos,t.nav.como,t.nav.planos,t.nav.faq,t.nav.assinante];
+      const el=document.getElementById(id); if(el) el.textContent=map[i];
     });
 
     const title = document.getElementById('hero-title'); title.textContent = t.hero.title; splitToSpans(title);
@@ -1362,7 +1427,23 @@ body[data-calm="true"] .btn-primary.attention{animation:none !important}
     const key='mancery:calm'; const saved = localStorage.getItem(key); state.calm = saved === 'true';
     document.body.dataset.calm = state.calm ? 'true' : 'false';
     const toggle = document.getElementById('calmToggle');
-    if (toggle){ toggle.checked = state.calm; toggle.addEventListener('change', ()=>{ state.calm = toggle.checked; document.body.dataset.calm = state.calm ? 'true' : 'false'; localStorage.setItem(key, state.calm ? 'true' : 'false'); }); }
+    if (toggle){
+      toggle.checked = state.calm;
+      toggle.addEventListener('change', ()=>{
+        state.calm = toggle.checked;
+        document.body.dataset.calm = state.calm ? 'true' : 'false';
+        localStorage.setItem(key, state.calm ? 'true' : 'false');
+        // pausa/retoma animações e controla starfield
+        state.starfieldOn = !state.calm;
+        if (window.anime){
+          state.animeRefs.forEach(inst=>{
+            if (!inst) return;
+            if (state.calm && inst.pause) inst.pause();
+            if (!state.calm && inst.play) inst.play();
+          });
+        }
+      });
+    }
   }
 
   // Tilt 3D suave para cards (respeita reduce motion)
@@ -1526,148 +1607,163 @@ body[data-calm="true"] .btn-primary.attention{animation:none !important}
   }
 
   // Mensagens que vendem (rotator) — por idioma
-const ROTATOR = {
-  pt: ['Comece de graça.', 'Sem pressa, no seu ritmo.', 'Leituras que acolhem.', 'Estética que inspira presença.'],
-  en: ['Start free.', 'No rush, at your pace.', 'Readings that care.', 'Aesthetic that invites presence.'],
-  es: ['Empieza gratis.', 'Sin prisa, a tu ritmo.', 'Lecturas que acogen.', 'Estética que invita a la presencia.'],
-  fr: ['Commencez gratuit.', 'Sans hâte, à votre rythme.', 'Lectures bienveillantes.', 'Esthétique qui invite à la présence.']
-};
+  const ROTATOR = {
+    pt: ['Comece de graça.', 'Sem pressa, no seu ritmo.', 'Leituras que acolhem.', 'Estética que inspira presença.'],
+    en: ['Start free.', 'No rush, at your pace.', 'Readings that care.', 'Aesthetic that invites presence.'],
+    es: ['Empieza gratis.', 'Sin prisa, a tu ritmo.', 'Lecturas que acogen.', 'Estética que invita a la presencia.'],
+    fr: ['Commencez gratuit.', 'Sans hâte, à votre rythme.', 'Lectures bienveillantes.', 'Esthétique qui invite à la présence.']
+  };
 
-function setupRotator(lang){
-  const phrases = ROTATOR[lang] || ROTATOR.pt;
-  const host = document.querySelector('.hero-content');
-  if (!host || document.getElementById('hero-rotator')) return;
-  const div = document.createElement('div'); div.className='micro-rotator'; div.id='hero-rotator';
-  const caret = document.createElement('span'); caret.className='caret'; caret.textContent='|';
-  div.textContent = phrases[0] + ' '; div.appendChild(caret);
-  host.appendChild(div);
-  if (!isMotionOn()) return;
-  let i = 0;
-  setInterval(()=>{
+  function setupRotator(lang){
+    const phrases = ROTATOR[lang] || ROTATOR.pt;
+    const host = document.querySelector('.hero-content');
+    if (!host || document.getElementById('hero-rotator')) return;
+    const div = document.createElement('div'); div.className='micro-rotator'; div.id='hero-rotator';
+    const caret = document.createElement('span'); caret.className='caret'; caret.textContent='|';
+    div.textContent = phrases[0] + ' '; div.appendChild(caret);
+    host.appendChild(div);
     if (!isMotionOn()) return;
-    if (window.anime){
-      anime({ targets: div, opacity:[1,0], duration:220, easing:'easeOutQuad', complete:()=>{
+    let i = 0;
+    setInterval(()=>{
+      if (!isMotionOn()) return;
+      if (window.anime){
+        anime({ targets: div, opacity:[1,0], duration:220, easing:'easeOutQuad', complete:()=>{
+          i=(i+1)%phrases.length; div.textContent = phrases[i] + ' '; div.appendChild(caret);
+          anime({ targets: div, opacity:[0,1], duration:220, easing:'easeOutQuad' });
+        }});
+      } else {
         i=(i+1)%phrases.length; div.textContent = phrases[i] + ' '; div.appendChild(caret);
-        anime({ targets: div, opacity:[0,1], duration:220, easing:'easeOutQuad' });
-      }});
-    } else {
-      i=(i+1)%phrases.length; div.textContent = phrases[i] + ' '; div.appendChild(caret);
-    }
-  }, 3200);
-}
+      }
+    }, 3200);
+  }
 
 function setupRunes(){
-  const box = document.getElementById('runes'); if(!box) return;
+  const box = document.getElementById('runes');
+  if (!box) return;
+
+  // Rebuild safely (in case of re-init)
+  box.innerHTML = '';
+
   const chars = ['✦','☾','☉','♃','♄','☿','♇','♁','♆','♈'];
-  // cria círculos concêntricos
-  for (let ring=0; ring<2; ring++){
-    const ringEl = document.createElement('div'); ringEl.className = 'runes' + (isMotionOn() ? ' spin' : '');
-    ringEl.style.zIndex = 1; box.appendChild(ringEl);
-    for (let i=0;i<chars.length;i++){
-      const r = document.createElement('div'); r.className='r'; r.textContent=chars[(i+ring)%chars.length];
-      const ang = (360/chars.length)*i + (ring*18);
-      const rad = ring===0 ? 120 : 160;
-      r.style.transform = `translate(-50%,-50%) rotate(${ang}deg) translate(${rad}px) rotate(${-ang}deg)`;
-      ringEl.appendChild(r);
+
+  for (let ring = 0; ring < 2; ring++){
+    const ringEl = document.createElement('div');
+    ringEl.className = 'runes-ring';
+
+    // Different gentle speeds per ring
+    ringEl.style.setProperty('--runes-speed', ring === 0 ? '26s' : '34s');
+
+    for (let i = 0; i < chars.length; i++){
+      const glyph = document.createElement('div');
+      glyph.className = 'glyph';
+      glyph.textContent = chars[(i + ring) % chars.length];
+
+      const ang = (360 / chars.length) * i + (ring * 18);
+      const rad = ring === 0 ? 120 : 160;
+
+      // Place glyph on the ring; keep upright with counter-rotation
+      glyph.style.transform =
+        `translate(-50%,-50%) rotate(${ang}deg) translate(${rad}px) rotate(${-ang}deg)`;
+
+      ringEl.appendChild(glyph);
     }
-    // velocidades diferentes
-    if (isMotionOn()) ringEl.style.animationDuration = (ring===0 ? 26 : 34) + 's';
+
+    box.appendChild(ringEl);
   }
 }
 
-function setupHeroFlip(){
-  const card = document.getElementById('hero-card'); if(!card) return;
-  if (!card.querySelector('.back')){
-    const back = document.createElement('div'); back.className='back';
-    back.innerHTML = '<div style="max-width:22ch"><strong>A Estrela</strong><br>Uma respiração longa. Confia: há direção, mesmo no escuro.</div>';
-    card.appendChild(back);
+
+  function setupHeroFlip(){
+    const card = document.getElementById('hero-card'); if(!card) return;
+    if (!card.querySelector('.back')){
+      const back = document.createElement('div'); back.className='back';
+      back.innerHTML = '<div style="max-width:22ch"><strong>A Estrela</strong><br>Uma respiração longa. Confia: há direção, mesmo no escuro.</div>';
+      card.appendChild(back);
+    }
+    card.setAttribute('role','button'); card.setAttribute('tabindex','0'); card.setAttribute('aria-pressed','false');
+    const toggle = ()=>{ if(!isMotionOn()) return; const on = card.classList.toggle('flipped'); card.setAttribute('aria-pressed', String(on)); };
+    card.addEventListener('click', toggle);
+    card.addEventListener('keypress', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); }});
+    card.addEventListener('mouseenter', ()=>{ if (matchMedia('(hover:hover)').matches) toggle(); });
+    card.addEventListener('mouseleave', ()=>{ if (card.classList.contains('flipped')) toggle(); });
   }
-  card.setAttribute('role','button'); card.setAttribute('tabindex','0'); card.setAttribute('aria-pressed','false');
-  const toggle = ()=>{ if(!isMotionOn()) return; const on = card.classList.toggle('flipped'); card.setAttribute('aria-pressed', String(on)); };
-  card.addEventListener('click', toggle);
-  card.addEventListener('keypress', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); }});
-  // hover desktop
-  card.addEventListener('mouseenter', ()=>{ if (matchMedia('(hover:hover)').matches) toggle(); });
-  card.addEventListener('mouseleave', ()=>{ if (card.classList.contains('flipped')) toggle(); });
-}
 
-function setupScrollProgress(){
-  const bar = document.getElementById('scrollProgress'); if(!bar) return;
-  const update = ()=>{
-    const sh = document.documentElement.scrollHeight - innerHeight;
-    const p = sh>0 ? (scrollY / sh)*100 : 0;
-    bar.style.width = p.toFixed(2)+'%';
-  };
-  update();
-  addEventListener('scroll', update, {passive:true});
-  addEventListener('resize', update, {passive:true});
-}
+  function setupScrollProgress(){
+    const bar = document.getElementById('scrollProgress'); if(!bar) return;
+    const update = ()=>{
+      const sh = document.documentElement.scrollHeight - innerHeight;
+      const p = sh>0 ? (scrollY / sh)*100 : 0;
+      bar.style.width = p.toFixed(2)+'%';
+    };
+    update();
+    addEventListener('scroll', update, {passive:true});
+    addEventListener('resize', update, {passive:true});
+  }
 
-function setupRipple(){
-  const els = document.querySelectorAll('.btn');
-  els.forEach(btn=>{
-    btn.addEventListener('pointerdown', (e)=>{
-      const r = btn.getBoundingClientRect();
-      const x = e.clientX - r.left, y = e.clientY - r.top;
-      const ink = document.createElement('span'); ink.className='ripple-ink';
-      ink.style.left = x+'px'; ink.style.top = y+'px';
-      btn.appendChild(ink);
-      const maxD = Math.hypot(r.width, r.height);
-      if (window.anime && isMotionOn()){
-        anime({targets:ink, scale: maxD/7, opacity:[.9,0], easing:'easeOutQuad', duration:600, complete:()=>ink.remove()});
-      } else {
-        ink.remove();
-      }
-      // feedback tátil leve em mobile
-      if (navigator.vibrate) try{ navigator.vibrate(8);}catch(_){}
+  function setupRipple(){
+    const els = document.querySelectorAll('.btn');
+    els.forEach(btn=>{
+      btn.addEventListener('pointerdown', (e)=>{
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - r.left, y = e.clientY - r.top;
+        const ink = document.createElement('span'); ink.className='ripple-ink';
+        ink.style.left = x+'px'; ink.style.top = y+'px';
+        btn.appendChild(ink);
+        const maxD = Math.hypot(r.width, r.height);
+        if (window.anime && isMotionOn()){
+          anime({targets:ink, scale: maxD/7, opacity:[.9,0], easing:'easeOutQuad', duration:600, complete:()=>ink.remove()});
+        } else {
+          ink.remove();
+        }
+        if (navigator.vibrate) try{ navigator.vibrate(8);}catch(_){}
+      });
     });
-  });
-}
-
-function setupFABTop(){
-  const fab = document.getElementById('fabTop'); if(!fab) return;
-  const showHide = ()=>{
-    const on = scrollY > innerHeight * 0.9;
-    fab.classList.toggle('show', on);
-  };
-  showHide();
-  addEventListener('scroll', showHide, {passive:true});
-  fab.addEventListener('click', ()=> scrollTo({ top:0, behavior:'smooth' }));
-}
-
-// Badge "Mais popular" com i18n
-function applyPopularBadge(lang){
-  const t = { pt:'Mais popular', en:'Most popular', es:'El más popular', fr:'Le plus populaire' }[lang] || 'Most popular';
-  const b = document.getElementById('pricing-badge'); if (b) b.textContent = t;
-}
-
-// Pequena melhoria no céu: "estrelas cadentes" leves (opcional)
-function enhanceConstellationsWithMeteors(){
-  const c = document.getElementById('constellation'); if(!c) return;
-  const ctx = c.getContext('2d'); const dpr = Math.min(devicePixelRatio||1,2);
-  let last=0, meteor=null;
-  function drawMeteor(){
-    if(!meteor) return;
-    meteor.x += meteor.vx; meteor.y += meteor.vy; meteor.life -= 0.015;
-    ctx.save(); ctx.globalAlpha = Math.max(0, meteor.life);
-    ctx.strokeStyle = 'rgba(244,209,122,.45)'; ctx.lineWidth = 1.2*dpr;
-    ctx.beginPath(); ctx.moveTo(meteor.x, meteor.y);
-    ctx.lineTo(meteor.x - meteor.vx*8, meteor.y - meteor.vy*8);
-    ctx.stroke(); ctx.restore();
-    if (meteor.life<=0 || meteor.x<0 || meteor.y>c.height) meteor=null;
   }
-  function tick(){
-    if (!isMotionOn()){ requestAnimationFrame(tick); return; }
-    const now = performance.now();
-    if (!meteor && now - last > 2800 + Math.random()*2400){
-      last = now;
-      meteor = { x: c.width * (0.6+Math.random()*0.35), y: c.height*(0.05+Math.random()*0.2), vx: -2.2*dpr, vy: 1.2*dpr, life:1 };
+
+  function setupFABTop(){
+    const fab = document.getElementById('fabTop'); if(!fab) return;
+    const showHide = ()=>{
+      const on = scrollY > innerHeight * 0.9;
+      fab.classList.toggle('show', on);
+    };
+    showHide();
+    addEventListener('scroll', showHide, {passive:true});
+    fab.addEventListener('click', ()=> scrollTo({ top:0, behavior:'smooth' }));
+  }
+
+  // Badge "Mais popular" com i18n
+  function applyPopularBadge(lang){
+    const t = { pt:'Mais popular', en:'Most popular', es:'El más popular', fr:'Le plus populaire' }[lang] || 'Most popular';
+    const b = document.getElementById('pricing-badge'); if (b) b.textContent = t;
+  }
+
+  // Pequena melhoria no céu: meteoros ocasionais
+  function enhanceConstellationsWithMeteors(){
+    const c = document.getElementById('constellation'); if(!c) return;
+    const ctx = c.getContext('2d'); const dpr = Math.min(devicePixelRatio||1,2);
+    let last=0, meteor=null;
+    function drawMeteor(){
+      if(!meteor) return;
+      meteor.x += meteor.vx; meteor.y += meteor.vy; meteor.life -= 0.015;
+      ctx.save(); ctx.globalAlpha = Math.max(0, meteor.life);
+      ctx.strokeStyle = 'rgba(244,209,122,.45)'; ctx.lineWidth = 1.2*dpr;
+      ctx.beginPath(); ctx.moveTo(meteor.x, meteor.y);
+      ctx.lineTo(meteor.x - meteor.vx*8, meteor.y - meteor.vy*8);
+      ctx.stroke(); ctx.restore();
+      if (meteor.life<=0 || meteor.x<0 || meteor.y>c.height) meteor=null;
     }
-    drawMeteor();
-    requestAnimationFrame(tick);
+    function tick(){
+      if (!isMotionOn()){ requestAnimationFrame(tick); return; }
+      const now = performance.now();
+      if (!meteor && now - last > 2800 + Math.random()*2400){
+        last = now;
+        meteor = { x: c.width * (0.6+Math.random()*0.35), y: c.height*(0.05+Math.random()*0.2), vx: -2.2*dpr, vy: 1.2*dpr, life:1 };
+      }
+      drawMeteor();
+      requestAnimationFrame(tick);
+    }
+    tick();
   }
-  tick();
-}
 
   async function init(){
     setupCalmMode();
@@ -1685,7 +1781,7 @@ function enhanceConstellationsWithMeteors(){
     langTop.value = startLang; if (langSheet) langSheet.value = startLang;
     applyI18n(startLang);
     applyPopularBadge(startLang);
-    // destaca 1 CTA com "pulse"
+    ensureBadgeOnPro(); // <- novo: move o selo para o plano Premium
     document.getElementById('cta-start')?.classList.add('attention');
     updateSEO(startLang);
     setupBillingToggle(startLang);
@@ -1725,8 +1821,7 @@ function enhanceConstellationsWithMeteors(){
 
     const calmToggle = document.getElementById('calmToggle');
     calmToggle.addEventListener('change', ()=>{
-      if (state.calm){ carouselCtrl && carouselCtrl.stopAuto(); state.starfieldOn = false; }
-      else { carouselCtrl && carouselCtrl.startAuto(); state.starfieldOn = true; }
+      // já tratado dentro de setupCalmMode (pausa anime + controla starfield)
     });
 
     setupWaitlist();

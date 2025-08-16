@@ -49,6 +49,9 @@
 <link rel="preconnect" href="https://upload.wikimedia.org" />
 <link rel="preload" as="image" href="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/RWS%20Tarot%2017%20Star.jpg&width=1200" />
 <link rel="preload" as="image" href="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Carina%20Nebula%20in%20visible%20light%20(captured%20by%20the%20Hubble%20Space%20Telescope).jpg&width=1600" />
+<link rel="preload" as="image" href="assets/p1.png">
+<link rel="preload" as="image" href="assets/p2.png">
+<link rel="preload" as="image" href="assets/p3.png">
 
 <style>
   :root{
@@ -537,6 +540,8 @@ body[data-calm="true"] .runes-ring{
     display:flex !important; justify-content:center; align-items:center; gap:8px; margin-top:6px;
   }
 
+  .section::before{ content: none !important; } /* sem overlay extra */
+
   /* Travar scroll quando o menu abre */
   body.menu-open{ overflow:hidden; }
 
@@ -585,6 +590,14 @@ body[data-calm="true"] .runes-ring{
 /* (extra) compat: garantir vendor prefix do clip de texto */
 #hero-title .word:first-child{ background-clip:text; -webkit-background-clip:text; }
 
+.avatar{
+  width:40px; height:40px; border-radius:50%;
+  border:1px solid var(--stroke);
+  background:linear-gradient(180deg, #2b2348,#1b1734); /* fallback */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 </style>
 
@@ -1191,6 +1204,24 @@ function ensureBadgeOnPro(){
     list.forEach(el=>io.observe(el));
   }
 
+  function setupTestimonialAvatars(){
+    const AVATAR_SRC = ['assets/p1.png','assets/p2.png','assets/p3.png'];
+    const avatars = document.querySelectorAll('.testimonials .avatar');
+
+    avatars.forEach((el, i) => {
+      const src = AVATAR_SRC[i % AVATAR_SRC.length];
+
+      // Acessibilidade: avatar é decorativo (nome/cargo já estão no DOM)
+      el.setAttribute('aria-hidden', 'true');
+
+      // Carrega de forma segura; se falhar, mantemos o fallback do CSS
+      const img = new Image();
+      img.onload = () => { el.style.backgroundImage = `url('${src}')`; };
+      img.src = src;
+    });
+  }
+
+
   // ===== I18N — 4 idiomas =====
   const I18N = {
     pt: {
@@ -1224,7 +1255,23 @@ function ensureBadgeOnPro(){
       foot:{tagline:'Tarot com IA, ritual e beleza', calm:'Modo Calmo', col1:'Produto', col2:'Empresa', col3:'Legal',
             links:['Recursos','Como funciona','Planos','FAQ','Sobre','Carreiras','Contato','Privacidade','Termos','Segurança'],
             bottom:'Feito com cuidado — sem pressa.'},
-      waitlist:{title:'Entre na Waiting List', desc:'Avise seu email e te chamamos assim que liberarmos.', ok:'Quero entrar', cancel:'Cancelar', okMsg:'Tudo certo! Você entrou na lista. (local)', errMsg:'Informe um e-mail válido.'}
+      waitlist:{title:'Entre na Waiting List', desc:'Avise seu email e te chamamos assim que liberarmos.', ok:'Quero entrar', cancel:'Cancelar', okMsg:'Tudo certo! Você entrou na lista. (local)', errMsg:'Informe um e-mail válido.'},
+      testi:{
+        title:'Quem experimentou, sente a diferença',
+        lead:'Relatos de quem transformou o cotidiano em ritual.',
+        cards:[
+          { name:'Clara',  role:'Terapeuta', roleKey:'therapist', quote:'O tom é respeitoso e bonito. A Carta do Dia virou meu pequeno ritual de café.' },
+          { name:'Levi',   role:'Designer',  roleKey:'designer',  quote:'Estética impecável. Tiragens com IA soam humanas e coerentes.' },
+          { name:'Helena', role:'Estudante', roleKey:'student',   quote:'Simples de usar, sem perder profundidade.' }
+        ]
+      },
+      sub:{
+        title:'Área do Assinante',
+        lead:'Se você já é assinante, acesse por aqui.',
+        ctaTitle:'Entrar no Portal Mancery',
+        ctaDesc:'Você será redirecionado(a) ao nosso portal seguro.',
+        ctaBtn:'Acessar Área do Assinante'
+      }
     },
     en: {
       nav:{recursos:'Features',como:'How it works',planos:'Pricing',faq:'FAQ',assinante:'Subscriber Area'},
@@ -1256,7 +1303,23 @@ function ensureBadgeOnPro(){
       foot:{tagline:'Tarot with AI, ritual and beauty', calm:'Calm Mode', col1:'Product', col2:'Company', col3:'Legal',
             links:['Features','How it works','Pricing','FAQ','About','Careers','Contact','Privacy','Terms','Security'],
             bottom:'Made with care — no rush.'},
-      waitlist:{title:'Join the Waiting List', desc:'Leave your email — weʼll notify you.', ok:'Join', cancel:'Cancel', okMsg:'All set! Youʼre on the list. (local)', errMsg:'Enter a valid email.'}
+      waitlist:{title:'Join the Waiting List', desc:'Leave your email — weʼll notify you.', ok:'Join', cancel:'Cancel', okMsg:'All set! Youʼre on the list. (local)', errMsg:'Enter a valid email.'},
+      testi:{
+        title:'People feel the difference',
+        lead:'Stories from those who turned routine into ritual.',
+        cards:[
+          { name:'Clara',  role:'Therapist', roleKey:'therapist', quote:'The tone is respectful and beautiful. Card of the Day became my little coffee ritual.' },
+          { name:'Levi',   role:'Designer',  roleKey:'designer',  quote:'Impeccable aesthetics. The AI spreads feel human and coherent.' },
+          { name:'Helena', role:'Student',   roleKey:'student',   quote:'Simple to use without losing depth.' }
+        ]
+      },
+      sub:{
+        title:'Subscriber Area',
+        lead:'Already subscribed? Access here.',
+        ctaTitle:'Enter Mancery Portal',
+        ctaDesc:'Weʼll take you to our secure portal.',
+        ctaBtn:'Access Subscriber Area'
+      }
     },
     es: {
       nav:{recursos:'Funciones',como:'Cómo funciona',planos:'Planes',faq:'FAQ',assinante:'Área de Suscriptor'},
@@ -1288,7 +1351,23 @@ function ensureBadgeOnPro(){
       foot:{tagline:'Tarot con IA, ritual y belleza', calm:'Modo Calmo', col1:'Producto', col2:'Empresa', col3:'Legal',
             links:['Funciones','Cómo funciona','Planes','FAQ','Acerca de','Empleos','Contacto','Privacidad','Términos','Seguridad'],
             bottom:'Hecho con cuidado — sin prisa.'},
-      waitlist:{title:'Únete a la Waiting List', desc:'Déjanos tu email — te avisamos.', ok:'Unirme', cancel:'Cancelar', okMsg:'¡Listo! Te agregamos. (local)', errMsg:'Ingresa un email válido.'}
+      waitlist:{title:'Únete a la Waiting List', desc:'Déjanos tu email — te avisamos.', ok:'Unirme', cancel:'Cancelar', okMsg:'¡Listo! Te agregamos. (local)', errMsg:'Ingresa un email válido.'},
+      testi:{
+        title:'Se siente la diferencia',
+        lead:'Relatos de quienes volvieron ritual su rutina.',
+        cards:[
+          { name:'Clara',  role:'Terapeuta',  roleKey:'therapist', quote:'El tono es respetuoso y bonito. La Carta del Día se volvió mi pequeño ritual de café.' },
+          { name:'Levi',   role:'Diseñador',  roleKey:'designer',  quote:'Estética impecable. Las tiradas con IA se sienten humanas y coherentes.' },
+          { name:'Helena', role:'Estudiante', roleKey:'student',   quote:'Fácil de usar, sin perder profundidad.' }
+        ]
+      },
+      sub:{
+        title:'Área de Suscriptor',
+        lead:'Si ya estás suscrito, entra aquí.',
+        ctaTitle:'Entrar al Portal Mancery',
+        ctaDesc:'Te llevaremos a nuestro portal seguro.',
+        ctaBtn:'Acceder al Área de Suscriptor'
+      }
     },
     fr: {
       nav:{recursos:'Fonctionnalités',como:'Comment ça marche',planos:'Tarifs',faq:'FAQ',assinante:'Espace Abonné'},
@@ -1320,7 +1399,23 @@ function ensureBadgeOnPro(){
       foot:{tagline:'Tarot avec IA, rituel et beauté', calm:'Mode Calme', col1:'Produit', col2:'Entreprise', col3:'Juridique',
             links:['Fonctionnalités','Comment ça marche','Tarifs','FAQ','À propos','Carrières','Contact','Confidentialité','Conditions','Sécurité'],
             bottom:'Fait avec soin — sans hâte.'},
-      waitlist:{title:'Rejoindre la Waiting List', desc:'Laissez votre email — nous vous préviendrons.', ok:'Rejoindre', cancel:'Annuler', okMsg:'Parfait ! Ajouté. (local)', errMsg:'Entrez un email valide.'}
+      waitlist:{title:'Rejoindre la Waiting List', desc:'Laissez votre email — nous vous préviendrons.', ok:'Rejoindre', cancel:'Annuler', okMsg:'Parfait ! Ajouté. (local)', errMsg:'Entrez un email valide.'},
+      testi:{
+        title:'La différence se ressent',
+        lead:'Récits de celles et ceux qui ont fait du quotidien un rituel.',
+        cards:[
+          { name:'Clara',  role:'Thérapeute', roleKey:'therapist', quote:'Le ton est respectueux et beau. La Carte du Jour est devenue mon petit rituel café.' },
+          { name:'Levi',   role:'Designer',   roleKey:'designer',  quote:'Esthétique impeccable. Les tirages IA paraissent humains et cohérents.' },
+          { name:'Helena', role:'Étudiante',  roleKey:'student',   quote:'Simple à utiliser, sans perdre en profondeur.' }
+        ]
+      },
+      sub:{
+        title:'Espace Abonné',
+        lead:'Déjà abonné ? Accédez ici.',
+        ctaTitle:'Entrer dans le Portail Mancery',
+        ctaDesc:'Redirection vers le portail sécurisé.',
+        ctaBtn:'Accéder à l’Espace Abonné'
+      }
     }
   };
 
@@ -1388,8 +1483,38 @@ function ensureBadgeOnPro(){
     if (bm && by && bn){ bm.textContent = t.billing.monthly; by.textContent = t.billing.yearly; bn.textContent = t.billing.save; }
 
     // Assinante
-    document.getElementById('sub-title').textContent = t.sub.title; document.getElementById('sub-lead').textContent = t.sub.lead;
-    document.getElementById('sub-cta-title').textContent = t.sub.ctaTitle; document.getElementById('sub-cta-desc').textContent = t.sub.ctaDesc;
+    document.getElementById('sub-title').textContent = t.sub.title; 
+    document.getElementById('sub-lead').textContent = t.sub.lead;
+    document.getElementById('sub-cta-title').textContent = t.sub.ctaTitle; 
+    document.getElementById('sub-cta-desc').textContent = t.sub.ctaDesc;
+
+    // Botão "Acessar Área do Assinante" (seção Assinante)
+    const subBtn = document.getElementById('subscriberLink');
+    if (subBtn) subBtn.textContent = t.sub.ctaBtn || t.nav.assinante;
+
+    // Link "Área do Assinante" dentro do menu mobile (sheet)
+    const sheetSub = document.querySelector('#menuSheet [data-role="subscriber-link"]');
+    if (sheetSub) sheetSub.textContent = t.nav.assinante;
+
+
+    document.getElementById('testi-title').textContent = t.testi.title;
+    document.getElementById('testi-lead').textContent  = t.testi.lead;
+
+    // Depoimentos — nomes, cargos e falas
+    if (t.testi && Array.isArray(t.testi.cards)){
+      const cards = document.querySelectorAll('.testimonials .card.testimonial');
+      cards.forEach((card, i)=>{
+        const cfg = t.testi.cards[i];
+        if (!cfg) return;
+        const nameEl  = card.querySelector('.who strong');
+        const roleEl  = card.querySelector('.who .muted');
+        const quoteEl = card.querySelector('p');
+        if (nameEl)  nameEl.textContent  = cfg.name;
+        if (roleEl)  roleEl.textContent  = cfg.role;
+        if (quoteEl) quoteEl.textContent = cfg.quote;
+      });
+    }
+
 
     // FAQ
     document.getElementById('faq-title').textContent = t.faq.title;
@@ -1791,8 +1916,10 @@ function setupRunes(){
     setupScrollProgress();
     setupRipple();
     setupFABTop();
+    setupTestimonialAvatars();
+
     enhanceConstellationsWithMeteors();
-    langTop.addEventListener('change', ()=>{ applyI18n(langTop.value); if(langSheet) langSheet.value = langTop.value; updateSEO(langTop.value); setupBillingToggle(langTop.value);applyPopularBadge(langTop.value);});
+    langTop.addEventListener('change', ()=>{ applyI18n(langTop.value); if(langSheet) langSheet.value = langTop.value; updateSEO(langTop.value); setupBillingToggle(langTop.value);applyPopularBadge(langTop.value);setupTestimonialAvatars();});
 
     if (anime && !prefersReduced){
       const tl = anime.timeline({ easing:'easeOutQuad' })

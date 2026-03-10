@@ -2,12 +2,12 @@
   "items": [
     {
       "id": "2026-03-10",
-      "date": "2026-03-10T20:02:44.170Z",
-      "title": "What comes after agents? AI employees",
-      "link": "https://www.ycombinator.com/launches/Pf7-beyond-agents-the-era-of-ai-employees",
+      "date": "2026-03-10T21:44:36.000Z",
+      "title": "Miguel: An AI agent that modifies its own source code, sandboxed in Docker",
+      "link": "https://github.com/soulfir/miguel",
       "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
       "bullets": [
-        "Destaque: What comes after agents? AI employees",
+        "Destaque: Miguel: An AI agent that modifies its own source code, sandboxed in Docker",
         "Update de framework: langchain-ai/langchain lançou langchain==1.2.11.",
         "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
         "Resumo ultracurto para operação diária de baixo custo."

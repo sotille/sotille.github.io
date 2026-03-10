@@ -2,13 +2,13 @@
   "items": [
     {
       "id": "2026-03-10",
-      "date": "2026-03-10T19:15:42.007Z",
-      "title": "You Hired the AI to Write the Tests. Of Course They Pass",
-      "link": "https://www.claudecodecamp.com/p/i-m-building-agents-that-run-while-i-sleep",
+      "date": "2026-03-10T20:02:44.170Z",
+      "title": "What comes after agents? AI employees",
+      "link": "https://www.ycombinator.com/launches/Pf7-beyond-agents-the-era-of-ai-employees",
       "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
       "bullets": [
-        "Destaque: You Hired the AI to Write the Tests. Of Course They Pass",
-        "Update de framework: langchain-ai/langchain lançou langchain-openai==1.1.11.",
+        "Destaque: What comes after agents? AI employees",
+        "Update de framework: langchain-ai/langchain lançou langchain==1.2.11.",
         "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
         "Resumo ultracurto para operação diária de baixo custo."
       ]

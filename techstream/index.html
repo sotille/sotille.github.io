@@ -7,7 +7,7 @@
   <meta name="description" content="Curadoria diária de notícias relevantes de IA e tecnologia. Atualizado automaticamente." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
@@ -26,14 +26,48 @@
     </div>
   </header>
 
+  <!-- Live ticker strip -->
+  <div class="ticker-wrap" id="ticker-wrap" aria-hidden="true">
+    <div class="ticker-live-tag">
+      <span class="ticker-dot"></span>LIVE
+    </div>
+    <div class="ticker-scroll-area">
+      <div class="ticker-track" id="ticker-track">
+        <span class="ticker-item">Carregando notícias…</span>
+      </div>
+    </div>
+  </div>
+
   <div class="hero">
     <div class="hero-inner">
-      <div class="hero-eyebrow">
-        <span class="live-dot"></span>
-        Atualizado diariamente
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="live-dot"></span>
+          Monitoramento global · Atualizado diariamente
+        </div>
+        <h1 class="hero-title">Notícias de <span class="gradient-text">IA &amp; Tecnologia</span></h1>
+        <p class="hero-sub">Curadoria diária de tendências, lançamentos e destaques do mundo tech — sem ruído, só o que importa.</p>
       </div>
-      <h1 class="hero-title">Notícias de <span class="gradient-text">IA &amp; Tecnologia</span></h1>
-      <p class="hero-sub">Curadoria diária de tendências, lançamentos e destaques do mundo tech — sem ruído, só o que importa.</p>
+
+      <!-- Radar animation -->
+      <div class="hero-radar-wrap" aria-hidden="true">
+        <div class="radar-disk">
+          <div class="radar-hline"></div>
+          <div class="radar-vline"></div>
+          <div class="radar-circle rc-50"></div>
+          <div class="radar-circle rc-75"></div>
+          <div class="radar-sweep"></div>
+          <div class="radar-pulse rp1"></div>
+          <div class="radar-pulse rp2"></div>
+          <div class="radar-pulse rp3"></div>
+          <div class="radar-blip rb1"></div>
+          <div class="radar-blip rb2"></div>
+          <div class="radar-blip rb3"></div>
+          <div class="radar-blip rb4"></div>
+          <div class="radar-center"></div>
+        </div>
+        <p class="radar-label">Global Monitoring · Active</p>
+      </div>
     </div>
   </div>
 

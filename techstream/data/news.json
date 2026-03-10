@@ -17,6 +17,7 @@
       "id": "2026-03-10-a",
       "date": "2026-03-10T18:40:00.000Z",
       "title": "Meta acquires AI agent social network Moltbook",
+      "title_en": "Meta acquires AI agent social network Moltbook",
       "link": "https://www.theguardian.com/technology/2026/mar/10/meta-acquires-moltbook-ai-agent-social-network",
       "sourceSummary": "Hacker News + The Guardian",
       "bullets": [
@@ -24,12 +25,19 @@
         "Moltbook tinha 4M de usuários e foco em interações entre agentes autônomos.",
         "Movimento consolida tendência: grandes techs absorvendo startups de AI agents.",
         "Impacto prático: stack e arquitetura Moltbook provavelmente integrarão Meta AI."
+      ],
+      "bullets_en": [
+        "Meta acquires Moltbook for undisclosed amount, expanding its AI agent stack.",
+        "Moltbook had 4M users focused on interactions between autonomous agents.",
+        "Move reinforces trend: big tech absorbing AI agent startups.",
+        "Practical impact: Moltbook's stack and architecture will likely integrate into Meta AI."
       ]
     },
     {
       "id": "2026-03-10-b",
       "date": "2026-03-10T09:15:00.000Z",
       "title": "Google lança Gemini 2.5 Pro com janela de contexto de 2M de tokens",
+      "title_en": "Google launches Gemini 2.5 Pro with 2M token context window",
       "link": "https://blog.google/technology/ai/gemini-2-5-pro",
       "sourceSummary": "Google Blog + The Verge",
       "bullets": [
@@ -37,12 +45,19 @@
         "Janela de contexto de 2M tokens permite análise de codebases inteiras em uma chamada.",
         "Disponível via API imediatamente; acesso consumer previsto para 2 semanas.",
         "Capacidades multimodais estendidas para compreensão de vídeo em tempo real."
+      ],
+      "bullets_en": [
+        "Gemini 2.5 Pro outperforms GPT-4o by 15% on logical reasoning benchmarks.",
+        "2M token context window enables analysis of entire codebases in a single call.",
+        "Available via API immediately; consumer access expected in 2 weeks.",
+        "Extended multimodal capabilities for real-time video comprehension."
       ]
     },
     {
       "id": "2026-03-09-a",
       "date": "2026-03-09T14:30:00.000Z",
       "title": "Kubernetes 1.32 traz suporte nativo a sidecar containers e autoscaling preditivo",
+      "title_en": "Kubernetes 1.32 brings native sidecar containers and predictive autoscaling",
       "link": "https://kubernetes.io/blog/2026/03/09/kubernetes-1-32-release",
       "sourceSummary": "CNCF Blog + GitHub Releases",
       "bullets": [
@@ -50,12 +65,19 @@
         "HPA v2 ganha autoscaling preditivo baseado em padrões históricos de carga.",
         "Networking baseado em eBPF agora padrão para novos clusters.",
         "Breaking change: PodSecurityPolicy completamente removido — migrar para PSA."
+      ],
+      "bullets_en": [
+        "Native sidecar containers reach stable in K8s 1.32, simplifying service mesh.",
+        "HPA v2 gains predictive autoscaling based on historical load patterns.",
+        "eBPF-based networking is now the default for new clusters.",
+        "Breaking change: PodSecurityPolicy fully removed — migrate to PSA."
       ]
     },
     {
       "id": "2026-03-09-b",
       "date": "2026-03-09T08:00:00.000Z",
       "title": "Vulnerabilidade crítica descoberta em pacote npm com 12M de downloads/semana",
+      "title_en": "Critical vulnerability found in npm package with 12M weekly downloads",
       "link": "https://socket.dev/blog/2026/03/critical-npm-supply-chain",
       "sourceSummary": "Socket.dev + HN",
       "bullets": [
@@ -63,12 +85,19 @@
         "Versões 3.1.4–3.1.6 contêm código que exfiltra variáveis de ambiente.",
         "Ação imediata: fixar versão para 3.1.3 ou >= 3.2.0 e rotacionar secrets.",
         "Incidente reforça necessidade de lockfiles estritos e auditoria de dependências."
+      ],
+      "bullets_en": [
+        "Package `react-hooks-utils` compromised by supply chain attack for 48 hours.",
+        "Versions 3.1.4–3.1.6 contain code that exfiltrates environment variables.",
+        "Immediate action: pin to 3.1.3 or >= 3.2.0 and rotate all secrets.",
+        "Incident reinforces the need for strict lockfiles and dependency auditing."
       ]
     },
     {
       "id": "2026-03-08-a",
       "date": "2026-03-08T11:00:00.000Z",
       "title": "Anthropic lança Claude 4 Opus com agentes autônomos para engenharia de software",
+      "title_en": "Anthropic launches Claude 4 Opus with autonomous agents for software engineering",
       "link": "https://anthropic.com/news/claude-4-opus",
       "sourceSummary": "Anthropic + TechCrunch",
       "bullets": [
@@ -76,6 +105,12 @@
         "Loops agênticos nativos permitem tarefas multistep de engenharia sem supervisão.",
         "Janela de contexto estendida para 400K tokens com precisão de retrieval superior.",
         "Novo framework de segurança previne uso indevido de agentes em ambientes sensíveis."
+      ],
+      "bullets_en": [
+        "Claude 4 Opus reaches 99.2% on SWE-bench Verified — new state of the art.",
+        "Native agentic loops enable multi-step engineering tasks without supervision.",
+        "Extended context window to 400K tokens with superior retrieval precision.",
+        "New safety framework prevents misuse of agents in sensitive environments."
       ]
     }
   ]

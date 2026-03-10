@@ -22,7 +22,10 @@
         </div>
         <span class="logo-text">TechStream</span>
       </a>
-      <span class="header-badge">Daily AI &amp; Tech</span>
+      <div class="header-right">
+        <button id="lang-btn" class="lang-btn" aria-label="Switch to English">EN</button>
+        <span class="header-badge">Daily AI &amp; Tech</span>
+      </div>
     </div>
   </header>
 
@@ -33,7 +36,7 @@
     </div>
     <div class="ticker-scroll-area">
       <div class="ticker-track" id="ticker-track">
-        <span class="ticker-item">Carregando notícias…</span>
+        <span class="ticker-item" data-i18n="ticker.loading">Carregando notícias…</span>
       </div>
     </div>
   </div>
@@ -43,10 +46,12 @@
       <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="live-dot"></span>
-          Monitoramento global · Atualizado diariamente
+          <span data-i18n="eyebrow">Monitoramento global · Atualizado diariamente</span>
         </div>
-        <h1 class="hero-title">Notícias de <span class="gradient-text">IA &amp; Tecnologia</span></h1>
-        <p class="hero-sub">Curadoria diária de tendências, lançamentos e destaques do mundo tech — sem ruído, só o que importa.</p>
+        <h1 class="hero-title">
+          <span data-i18n="title.prefix">Notícias de </span><span class="gradient-text" data-i18n="title.hl">IA &amp; Tecnologia</span>
+        </h1>
+        <p class="hero-sub" data-i18n="hero.sub">Curadoria diária de tendências, lançamentos e destaques do mundo tech — sem ruído, só o que importa.</p>
       </div>
 
       <!-- Radar animation -->
@@ -66,14 +71,14 @@
           <div class="radar-blip rb4"></div>
           <div class="radar-center"></div>
         </div>
-        <p class="radar-label">Global Monitoring · Active</p>
+        <p class="radar-label" data-i18n="radar.label">Monitoramento Global · Ativo</p>
       </div>
     </div>
   </div>
 
   <main>
     <div class="section-header">
-      <span class="section-title">Últimas notícias</span>
+      <span class="section-title" data-i18n="section.title">Últimas notícias</span>
       <div class="section-line"></div>
       <span class="section-count" id="news-count"></span>
     </div>
@@ -90,7 +95,7 @@
         </div>
         <span class="footer-logo-text">TechStream</span>
       </div>
-      <span class="footer-text">Atualizado automaticamente 1× ao dia · Curadoria de IA &amp; Tech</span>
+      <span class="footer-text" data-i18n="footer.text">Atualizado automaticamente 1× ao dia · Curadoria de IA &amp; Tech</span>
     </div>
   </footer>
 

@@ -102,6 +102,12 @@ header {
   background-clip: text;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .header-badge {
   font-size: 0.68rem;
   font-weight: 600;
@@ -112,6 +118,28 @@ header {
   border: 1px solid var(--border-bright);
   padding: 5px 12px;
   border-radius: 20px;
+  font-family: var(--mono);
+}
+
+.lang-btn {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-family: var(--mono);
+  cursor: pointer;
+  transition: background .18s, color .18s;
+  line-height: 1;
+}
+
+.lang-btn:hover {
+  background: var(--accent);
+  color: #fff;
 }
 
 /* ─── Ticker strip ───────────────────────────────────────────── */

@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "id": "2026-03-10",
+      "date": "2026-03-10T18:31:26.064Z",
+      "title": "Meta acquires AI agent social network Moltbook",
+      "link": "https://www.theguardian.com/technology/2026/mar/10/meta-acquires-moltbook-ai-agent-social-network",
+      "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
+      "bullets": [
+        "Destaque: Meta acquires AI agent social network Moltbook",
+        "Update de framework: langchain-ai/langchain lançou langchain-openai==1.1.11.",
+        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
+        "Resumo ultracurto para operação diária de baixo custo."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+body{font-family:Inter,system-ui,Arial,sans-serif;max-width:900px;margin:0 auto;padding:24px;background:#0b1020;color:#e8ecff}
+header{margin-bottom:24px}
+h1{margin:0;font-size:2rem}
+p{color:#b8c0e0}
+#news-list{display:grid;gap:14px}
+.card{background:#131a33;border:1px solid #2a3566;border-radius:12px;padding:14px}
+.card h3{margin:0 0 8px}
+.meta{font-size:.85rem;color:#95a2d6}
+a{color:#7ab6ff}
+ul{margin:8px 0 0 18px}

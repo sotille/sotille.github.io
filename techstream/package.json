@@ -1,0 +1,8 @@
+{
+  "name": "techstream-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "publish:daily": "node ./scripts/publish.mjs"
+  }
+}

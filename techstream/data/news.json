@@ -1,6 +1,19 @@
 {
   "items": [
     {
+      "id": "2026-03-11",
+      "date": "2026-03-11T06:57:34.012Z",
+      "title": "OWASP Top Agents and AI Vulnerabilities",
+      "link": "https://blog.alexewerlof.com/p/owasp-top-10-ai-llm-agents",
+      "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
+      "bullets": [
+        "Destaque: OWASP Top Agents and AI Vulnerabilities",
+        "Update de framework: langchain-ai/langchain lançou langchain==1.2.11.",
+        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
+        "Resumo ultracurto para operação diária de baixo custo."
+      ]
+    },
+    {
       "id": "2026-03-10",
       "date": "2026-03-10T21:44:36.000Z",
       "title": "Miguel: An AI agent that modifies its own source code, sandboxed in Docker",

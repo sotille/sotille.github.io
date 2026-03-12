@@ -1,6 +1,19 @@
 {
   "items": [
     {
+      "id": "2026-03-12",
+      "date": "2026-03-12T06:00:08.759Z",
+      "title": "Show HN: An open-source AI Quant Agent trading live with my own $1000",
+      "link": "https://github.com/chenjy16/OpenPilot",
+      "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
+      "bullets": [
+        "Destaque: Show HN: An open-source AI Quant Agent trading live with my own $1000",
+        "Update de framework: langchain-ai/langchain lançou langchain==1.2.12.",
+        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
+        "Resumo ultracurto para operação diária de baixo custo."
+      ]
+    },
+    {
       "id": "2026-03-11",
       "date": "2026-03-11T06:57:34.012Z",
       "title": "OWASP Top Agents and AI Vulnerabilities",

@@ -1,6 +1,19 @@
 {
   "items": [
     {
+      "id": "2026-03-16",
+      "date": "2026-03-16T06:00:03.885Z",
+      "title": "What Is an Agent Harness?",
+      "link": "https://parallel.ai/articles/what-is-an-agent-harness",
+      "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
+      "bullets": [
+        "Destaque: What Is an Agent Harness?",
+        "Update de framework: langchain-ai/langchain lançou langchain-anthropic==1.3.5.",
+        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
+        "Resumo ultracurto para operação diária de baixo custo."
+      ]
+    },
+    {
       "id": "2026-03-15",
       "date": "2026-03-15T06:00:06.495Z",
       "title": "Nvidia Is Planning to Launch an Open-Source AI Agent Platform",

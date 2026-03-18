@@ -1,6 +1,19 @@
 {
   "items": [
     {
+      "id": "2026-03-18",
+      "date": "2026-03-18T06:00:02.924Z",
+      "title": "Show HN: N0x – LLM inference, agents, RAG, Python exec in browser, no back end",
+      "link": "https://n0xth.vercel.app/",
+      "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
+      "bullets": [
+        "Destaque: Show HN: N0x – LLM inference, agents, RAG, Python exec in browser, no back end",
+        "Update de framework: langchain-ai/langchain lançou langchain-anthropic==1.4.0.",
+        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
+        "Resumo ultracurto para operação diária de baixo custo."
+      ]
+    },
+    {
       "id": "2026-03-16",
       "date": "2026-03-16T06:00:03.885Z",
       "title": "What Is an Agent Harness?",

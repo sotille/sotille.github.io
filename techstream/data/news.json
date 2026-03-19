@@ -1,6 +1,19 @@
 {
   "items": [
     {
+      "id": "2026-03-19",
+      "date": "2026-03-19T06:00:02.958Z",
+      "title": "Meta Confronts Rogue AI Agents After Data Exposure",
+      "link": "https://www.findarticles.com/meta-confronts-rogue-ai-agents-after-data-exposure/",
+      "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
+      "bullets": [
+        "Destaque: Meta Confronts Rogue AI Agents After Data Exposure",
+        "Update de framework: langchain-ai/langchain lançou langchain-core==1.2.20.",
+        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
+        "Resumo ultracurto para operação diária de baixo custo."
+      ]
+    },
+    {
       "id": "2026-03-18",
       "date": "2026-03-18T06:00:02.924Z",
       "title": "Show HN: N0x – LLM inference, agents, RAG, Python exec in browser, no back end",

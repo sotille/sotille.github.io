@@ -91,6 +91,38 @@
     </div>
   </div>
 
+  <!-- ── Newsletter ────────────────────────────────────────────
+       Replace YOUR_PUB_ID with your Beehiiv publication ID.
+       Find it at: beehiiv.com → Settings → Publication → ID
+  ─────────────────────────────────────────────────────────── -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="newsletter-left">
+        <div class="newsletter-eyebrow">
+          <span class="newsletter-eyebrow-dot"></span>
+          <span data-i18n="newsletter.eyebrow">Newsletter</span>
+        </div>
+        <h2 class="newsletter-title" data-i18n="newsletter.title">Receba no seu email</h2>
+        <p class="newsletter-sub" data-i18n="newsletter.sub">Curadoria diária de IA &amp; Tech direto na sua caixa de entrada, sem ruído.</p>
+      </div>
+      <div class="newsletter-right">
+        <form class="newsletter-form" id="newsletter-form" data-pub-id="YOUR_PUB_ID">
+          <input
+            class="newsletter-input"
+            type="email"
+            name="email"
+            data-i18n-placeholder="newsletter.placeholder"
+            placeholder="seu@email.com"
+            required
+            autocomplete="email"
+          />
+          <button class="newsletter-btn" type="submit" data-i18n="newsletter.btn">Inscrever</button>
+        </form>
+        <p class="newsletter-msg" id="newsletter-msg" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
   <main>
     <div class="section-header">
       <span class="section-title" data-i18n="section.title">Últimas notícias</span>

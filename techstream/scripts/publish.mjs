@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import Anthropic from '@anthropic-ai/sdk';
 
 const root = process.cwd();
 const dataFile = path.join(root, 'data/news.json');
+const anthropic = new Anthropic();
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = 10_000) {
   const controller = new AbortController();
@@ -55,28 +57,66 @@ async function fetchGitHubRelease() {
   return null;
 }
 
+async function generateBullets(hn, release) {
+  const context = [
+    hn      ? `Main story: "${hn.title}" (${hn.points} HN points) — ${hn.link}` : null,
+    release ? `Framework release: ${release.repo} released ${release.name}`      : null,
+  ].filter(Boolean).join('\n');
+
+  const response = await anthropic.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 512,
+    messages: [{
+      role: 'user',
+      content: `You are a senior tech news editor writing for experienced developers.
+
+Based on these headlines, write exactly 3 bullet points in Brazilian Portuguese and 3 in English.
+
+Headlines:
+${context}
+
+Rules:
+- Each bullet is one sentence, max 110 characters
+- First bullet: what the story actually is (no title repetition)
+- Second bullet: why it matters technically or architecturally
+- Third bullet: concrete practical impact for developers
+- Tone: direct, sharp, zero filler words
+- Do NOT start bullets with "Destaque:", "Highlight:", or the title verbatim
+
+Respond ONLY with valid JSON, no markdown:
+{"bullets":["pt1","pt2","pt3"],"bullets_en":["en1","en2","en3"]}`
+    }]
+  });
+
+  try {
+    return JSON.parse(response.content[0].text.trim());
+  } catch {
+    return null;
+  }
+}
+
 async function main() {
   const [hn, release] = await Promise.all([fetchHN(), fetchGitHubRelease()]);
 
-  const bullets = [];
-  const bullets_en = [];
-
-  if (hn) {
-    const pts    = hn.points ? ` (${hn.points} pontos no HN)` : '';
-    const pts_en = hn.points ? ` (${hn.points} points on HN)` : '';
-    bullets.push(`Destaque: ${hn.title}${pts}.`);
-    bullets_en.push(`Highlight: ${hn.title}${pts_en}.`);
-  } else {
-    bullets.push('Sem destaque forte em HN para AI Agents nas últimas horas.');
-    bullets_en.push('No strong AI Agents highlight on HN in the last few hours.');
+  // Try Claude-generated bullets; fall back to simple ones if API fails
+  let bullets, bullets_en;
+  try {
+    const generated = await generateBullets(hn, release);
+    bullets    = generated?.bullets;
+    bullets_en = generated?.bullets_en;
+  } catch (err) {
+    console.warn('Claude API error, using fallback bullets:', err.message);
   }
 
-  if (release) {
-    bullets.push(`Release: ${release.repo} lançou ${release.name}.`);
-    bullets_en.push(`Release: ${release.repo} released ${release.name}.`);
-  } else {
-    bullets.push('Sem update relevante de framework nas fontes monitoradas.');
-    bullets_en.push('No relevant framework update from monitored sources.');
+  if (!bullets || bullets.length < 2) {
+    bullets = [
+      hn      ? `Destaque: ${hn.title}.`                              : 'Sem destaque forte em HN para AI Agents nas últimas horas.',
+      release ? `Release: ${release.repo} lançou ${release.name}.`   : 'Sem update relevante de framework nas fontes monitoradas.',
+    ];
+    bullets_en = [
+      hn      ? `Highlight: ${hn.title}.`                            : 'No strong AI Agents highlight on HN in the last few hours.',
+      release ? `Release: ${release.repo} released ${release.name}.` : 'No relevant framework update from monitored sources.',
+    ];
   }
 
   const now = new Date();
@@ -86,11 +126,11 @@ async function main() {
   ].filter(Boolean).join(' + ') || 'Curadoria automática';
 
   const item = {
-    id: now.toISOString().slice(0, 10),
-    date: now.toISOString(),
-    title: hn?.title || 'Sem novidades relevantes hoje.',
-    title_en: hn?.title || 'No relevant news today.',
-    link: hn?.link || (release?.link ?? 'https://news.ycombinator.com/'),
+    id:            now.toISOString().slice(0, 10),
+    date:          now.toISOString(),
+    title:         hn?.title    || 'Sem novidades relevantes hoje.',
+    title_en:      hn?.title    || 'No relevant news today.',
+    link:          hn?.link     || (release?.link ?? 'https://news.ycombinator.com/'),
     sourceSummary,
     bullets,
     bullets_en,

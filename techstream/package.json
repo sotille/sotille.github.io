@@ -4,5 +4,8 @@
   "type": "module",
   "scripts": {
     "publish:daily": "node ./scripts/publish.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
   }
 }

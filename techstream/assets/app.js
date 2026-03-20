@@ -25,6 +25,13 @@ const TRANSLATIONS = {
     'lang.aria':          'Switch to English',
     'page.title':         'TechStream — Notícias de IA e Tecnologia',
     'meta.desc':          'Curadoria diária de notícias relevantes de IA e tecnologia. Atualizado automaticamente.',
+    'newsletter.eyebrow': 'Newsletter',
+    'newsletter.title':   'Receba no seu email',
+    'newsletter.sub':     'Curadoria diária de IA & Tech direto na sua caixa de entrada, sem ruído.',
+    'newsletter.placeholder': 'seu@email.com',
+    'newsletter.btn':     'Inscrever',
+    'newsletter.success': '✓ Inscrito! Verifique seu email.',
+    'newsletter.error':   'Erro ao inscrever. Tente novamente.',
   },
   en: {
     eyebrow:              'Global Monitoring · Updated daily',
@@ -51,6 +58,13 @@ const TRANSLATIONS = {
     'lang.aria':          'Mudar para Português',
     'page.title':         'TechStream — AI & Technology News',
     'meta.desc':          'Daily curation of relevant AI and technology news. Automatically updated.',
+    'newsletter.eyebrow': 'Newsletter',
+    'newsletter.title':   'Get it in your inbox',
+    'newsletter.sub':     'Daily AI & Tech curation delivered straight to your inbox, no noise.',
+    'newsletter.placeholder': 'your@email.com',
+    'newsletter.btn':     'Subscribe',
+    'newsletter.success': '✓ Subscribed! Check your email.',
+    'newsletter.error':   'Error subscribing. Please try again.',
   },
 };
 
@@ -68,9 +82,11 @@ function applyTranslations() {
   if (metaDesc) metaDesc.content = t('meta.desc');
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    // title.prefix: allow empty string (EN has no prefix)
-    el.textContent = t(key);
+    el.textContent = t(el.dataset.i18n);
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    el.placeholder = t(el.dataset.i18nPlaceholder);
   });
 
   const btn = document.getElementById('lang-btn');
@@ -90,6 +106,83 @@ function setLang(lang) {
 /* ── Icons ───────────────────────────────────────────────────── */
 const EXTERNAL_ICON = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
 const BOLT_ICON    = `<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
+
+/* ── Category detection & icons ──────────────────────────────── */
+const CATEGORY_PATTERNS = {
+  security: /security|vulnerab|cve|attack|breach|owasp|exploit|malware|hack|rogue|exposure/i,
+  infra:    /kubernetes|k8s|docker|container|helm|devops|ci[\s/]cd|deploy|infra|ebpf|server/i,
+  release:  /release|launch|v\d+\.\d+|npm|open.?source|lançou|released|platform/i,
+  ai:       /\bai\b|agent|llm|gpt|claude|gemini|anthropic|openai|langchain|llama|rag|copilot|neural|mcp/i,
+};
+
+const CATEGORY_META = {
+  ai: {
+    label:    'AI & Agents',
+    cls:      'cat--ai',
+    icon: `<svg class="cat-svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <circle cx="8" cy="8" r="2" fill="currentColor"/>
+      <circle class="cn1" cx="8" cy="2"  r="1.2" fill="currentColor"/>
+      <circle class="cn2" cx="14" cy="8" r="1.2" fill="currentColor"/>
+      <circle class="cn3" cx="8" cy="14" r="1.2" fill="currentColor"/>
+      <circle class="cn4" cx="2" cy="8"  r="1.2" fill="currentColor"/>
+      <line x1="8" y1="8" x2="8"  y2="2"  stroke="currentColor" stroke-width=".7" opacity=".35"/>
+      <line x1="8" y1="8" x2="14" y2="8"  stroke="currentColor" stroke-width=".7" opacity=".35"/>
+      <line x1="8" y1="8" x2="8"  y2="14" stroke="currentColor" stroke-width=".7" opacity=".35"/>
+      <line x1="8" y1="8" x2="2"  y2="8"  stroke="currentColor" stroke-width=".7" opacity=".35"/>
+    </svg>`,
+  },
+  security: {
+    label:    'Security',
+    cls:      'cat--security',
+    icon: `<svg class="cat-svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path class="sh-fill" d="M8 1.5L2.5 4v3.5C2.5 10.8 5 13.5 8 14.5c3-1 5.5-3.7 5.5-7V4L8 1.5z" fill="currentColor" opacity=".15"/>
+      <path d="M8 1.5L2.5 4v3.5C2.5 10.8 5 13.5 8 14.5c3-1 5.5-3.7 5.5-7V4L8 1.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+      <path d="M5.5 8l1.7 1.7L10.5 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  },
+  infra: {
+    label:    'Infra & DevOps',
+    cls:      'cat--infra',
+    icon: `<svg class="cat-svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <rect x="2" y="2"   width="12" height="3.5" rx="1" stroke="currentColor" stroke-width="1.1"/>
+      <rect x="2" y="6.5" width="12" height="3.5" rx="1" stroke="currentColor" stroke-width="1.1"/>
+      <rect x="2" y="11"  width="12" height="2.5" rx="1" stroke="currentColor" stroke-width="1.1"/>
+      <circle class="bk1" cx="11.5" cy="3.75"  r="1" fill="currentColor"/>
+      <circle class="bk2" cx="11.5" cy="8.25"  r="1" fill="currentColor"/>
+    </svg>`,
+  },
+  release: {
+    label:    'Release',
+    cls:      'cat--release',
+    icon: `<svg class="cat-svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path class="rk-body" d="M8 1.5c0 0-3.5 3.5-3.5 7.5l3.5 3.5 3.5-3.5C11.5 5 8 1.5 8 1.5z" fill="currentColor" opacity=".18"/>
+      <path d="M8 1.5c0 0-3.5 3.5-3.5 7.5l3.5 3.5 3.5-3.5C11.5 5 8 1.5 8 1.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+      <circle cx="8" cy="8" r="1.5" fill="currentColor"/>
+      <path d="M5 12.5l-1.5 1.5M11 12.5l1.5 1.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".5"/>
+    </svg>`,
+  },
+  tech: {
+    label:    'Tech',
+    cls:      'cat--tech',
+    icon: `<svg class="cat-svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+      <polygon class="bolt" points="9 1 4 9 8 9 7 15 12 7 8 7 9 1"/>
+    </svg>`,
+  },
+};
+
+function detectCategory(item) {
+  const text = (item.title || '') + ' ' + (item.title_en || '') + ' ' + (item.bullets || []).join(' ');
+  for (const [cat, pattern] of Object.entries(CATEGORY_PATTERNS)) {
+    if (pattern.test(text)) return cat;
+  }
+  return 'tech';
+}
+
+function categoryBadge(item) {
+  const cat  = detectCategory(item);
+  const meta = CATEGORY_META[cat];
+  return `<span class="cat-badge ${meta.cls}">${meta.icon}${meta.label}</span>`;
+}
 
 /* ── Date helpers ────────────────────────────────────────────── */
 function formatDate(iso) {
@@ -133,7 +226,10 @@ function renderFeaturedCard(item) {
   return `
     <article class="card card--featured">
       <div class="featured-header">
-        <span class="featured-badge">${BOLT_ICON} ${t('featured.badge')}</span>
+        <div class="featured-header-left">
+          <span class="featured-badge">${BOLT_ICON} ${t('featured.badge')}</span>
+          ${categoryBadge(item)}
+        </div>
         <div class="card-meta" style="margin:0">
           <span class="card-date">${formatDate(item.date)}</span>
           <span class="card-sep">·</span>
@@ -162,6 +258,7 @@ function renderCompactCard(item, idx) {
           <span class="card-sep">·</span>
           <span class="card-ago">${timeAgo(item.date)}</span>
           ${sourceMeta(item)}
+          ${categoryBadge(item)}
         </div>
         <h3 class="card-title">${itemTitle(item)}</h3>
         <ul class="card-bullets">${bullets}</ul>
@@ -292,6 +389,46 @@ async function loadNews() {
   }
 }
 
+/* ── Newsletter ──────────────────────────────────────────────── */
+function initNewsletter() {
+  const form = document.getElementById('newsletter-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn   = form.querySelector('.newsletter-btn');
+    const input = form.querySelector('.newsletter-input');
+    const msg   = document.getElementById('newsletter-msg');
+
+    btn.disabled   = true;
+    btn.textContent = '…';
+
+    // If pub_id is placeholder, show friendly message
+    const pubId = form.dataset.pubId || '';
+    if (!pubId || pubId === 'YOUR_PUB_ID') {
+      if (msg) { msg.textContent = '📬 Newsletter em breve!'; msg.className = 'newsletter-msg newsletter-msg--success'; }
+      btn.disabled   = false;
+      btn.textContent = t('newsletter.btn');
+      return;
+    }
+
+    try {
+      await fetch('https://www.beehiiv.com/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ email: input.value, publication_id: pubId }),
+      });
+      if (msg) { msg.textContent = t('newsletter.success'); msg.className = 'newsletter-msg newsletter-msg--success'; }
+      input.value = '';
+    } catch {
+      if (msg) { msg.textContent = t('newsletter.error'); msg.className = 'newsletter-msg newsletter-msg--error'; }
+    } finally {
+      btn.disabled    = false;
+      btn.textContent = t('newsletter.btn');
+    }
+  });
+}
+
 /* ── Boot ────────────────────────────────────────────────────── */
 applyTranslations();
 
@@ -300,3 +437,4 @@ document.getElementById('lang-btn')?.addEventListener('click', () => {
 });
 
 loadNews();
+initNewsletter();

@@ -30,8 +30,14 @@ const TRANSLATIONS = {
     'newsletter.sub':     'Curadoria diária de IA & Tech direto na sua caixa de entrada, sem ruído.',
     'newsletter.placeholder': 'seu@email.com',
     'newsletter.btn':     'Inscrever',
-    'newsletter.success': '✓ Inscrito! Verifique seu email.',
-    'newsletter.error':   'Erro ao inscrever. Tente novamente.',
+    'newsletter.success':    '✓ Inscrito! Verifique seu email.',
+    'newsletter.error':      'Erro ao inscrever. Tente novamente.',
+    'search.placeholder':    'Buscar notícias…',
+    'search.empty.title':    'Nenhuma notícia encontrada.',
+    'search.empty.sub':      'Tente outro termo de busca.',
+    'more.btn':              'Ver mais {n} notícias',
+    'share.label':           'Compartilhar',
+    'share.copied':          'Link copiado!',
   },
   en: {
     eyebrow:              'Global Monitoring · Updated daily',
@@ -63,8 +69,14 @@ const TRANSLATIONS = {
     'newsletter.sub':     'Daily AI & Tech curation delivered straight to your inbox, no noise.',
     'newsletter.placeholder': 'your@email.com',
     'newsletter.btn':     'Subscribe',
-    'newsletter.success': '✓ Subscribed! Check your email.',
-    'newsletter.error':   'Error subscribing. Please try again.',
+    'newsletter.success':    '✓ Subscribed! Check your email.',
+    'newsletter.error':      'Error subscribing. Please try again.',
+    'search.placeholder':    'Search news…',
+    'search.empty.title':    'No news found.',
+    'search.empty.sub':      'Try a different search term.',
+    'more.btn':              'Show {n} more',
+    'share.label':           'Share',
+    'share.copied':          'Link copied!',
   },
 };
 
@@ -100,12 +112,13 @@ function setLang(lang) {
   currentLang = lang;
   localStorage.setItem('ts-lang', lang);
   applyTranslations();
-  if (_newsSorted) renderNews(_newsSorted);
+  if (_newsSorted) renderNews(_filtered ?? _newsSorted);
 }
 
 /* ── Icons ───────────────────────────────────────────────────── */
 const EXTERNAL_ICON = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
 const BOLT_ICON    = `<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
+const SHARE_ICON   = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>`;
 
 /* ── Category detection & icons ──────────────────────────────── */
 const CATEGORY_PATTERNS = {
@@ -239,9 +252,15 @@ function renderFeaturedCard(item) {
       </div>
       <h3 class="card-title">${itemTitle(item)}</h3>
       <ul class="card-bullets">${bullets}</ul>
-      <a class="card-link" href="${item.link}" target="_blank" rel="noopener noreferrer">
-        ${t('card.source')} ${EXTERNAL_ICON}
-      </a>
+      <div class="card-actions">
+        <a class="card-link" href="${item.link}" target="_blank" rel="noopener noreferrer">
+          ${t('card.source')} ${EXTERNAL_ICON}
+        </a>
+        <button class="card-share" aria-label="${t('share.label')}"
+                data-url="${item.link}" data-title="${itemTitle(item).replace(/"/g, '&quot;')}">
+          ${SHARE_ICON}
+        </button>
+      </div>
     </article>`;
 }
 
@@ -262,9 +281,15 @@ function renderCompactCard(item, idx) {
         </div>
         <h3 class="card-title">${itemTitle(item)}</h3>
         <ul class="card-bullets">${bullets}</ul>
-        <a class="card-link" href="${item.link}" target="_blank" rel="noopener noreferrer">
-          ${t('card.source')} ${EXTERNAL_ICON}
-        </a>
+        <div class="card-actions">
+          <a class="card-link" href="${item.link}" target="_blank" rel="noopener noreferrer">
+            ${t('card.source')} ${EXTERNAL_ICON}
+          </a>
+          <button class="card-share" aria-label="${t('share.label')}"
+                  data-url="${item.link}" data-title="${itemTitle(item).replace(/"/g, '&quot;')}">
+            ${SHARE_ICON}
+          </button>
+        </div>
       </div>
     </article>`;
 }
@@ -338,22 +363,49 @@ function animateCards() {
   });
 }
 
-/* ── Render (called on load + lang switch) ───────────────────── */
-let _newsSorted = null;
+/* ── Pagination & filter state ───────────────────────────────── */
+const PAGE_SIZE    = 5;
+let _newsSorted    = null;
+let _filtered      = null;
+let _visibleCount  = PAGE_SIZE;
 
+/* ── Render (called on load + lang switch + filter + more) ───── */
 function renderNews(sorted) {
   const list  = document.getElementById('news-list');
   const count = document.getElementById('news-count');
+  if (!sorted || sorted.length === 0) {
+    list.innerHTML = `
+      <div class="state-box">
+        <div class="state-icon state-icon--empty">🔍</div>
+        <p class="state-title">${t('search.empty.title')}</p>
+        <p class="state-sub">${t('search.empty.sub')}</p>
+      </div>`;
+    if (count) count.textContent = '';
+    return;
+  }
 
   const [featured, ...rest] = sorted;
+  const visible   = rest.slice(0, _visibleCount);
+  const remaining = rest.length - visible.length;
+
   let html = renderFeaturedCard(featured);
-  if (rest.length > 0) {
-    html += `<div class="secondary-grid">${rest.map(renderCompactCard).join('')}</div>`;
+  if (visible.length > 0) {
+    html += `<div class="secondary-grid">${visible.map(renderCompactCard).join('')}</div>`;
+  }
+  if (remaining > 0) {
+    html += `<div class="more-wrap">
+      <button class="more-btn" id="more-btn">${t('more.btn', { n: remaining })}</button>
+    </div>`;
   }
   list.innerHTML = html;
 
   const n = sorted.length;
   if (count) count.textContent = n === 1 ? t('count.one', { n }) : t('count.other', { n });
+
+  document.getElementById('more-btn')?.addEventListener('click', () => {
+    _visibleCount += PAGE_SIZE;
+    renderNews(_filtered ?? _newsSorted);
+  });
 
   populateTicker(sorted);
   startLiveTime(featured.date);
@@ -433,6 +485,57 @@ function initNewsletter() {
   });
 }
 
+/* ── Share (event delegation on #news-list) ──────────────────── */
+function initShare() {
+  document.getElementById('news-list')?.addEventListener('click', async (e) => {
+    const btn = e.target.closest('.card-share');
+    if (!btn) return;
+
+    const url   = btn.dataset.url;
+    const title = btn.dataset.title;
+
+    if (navigator.share) {
+      try { await navigator.share({ title, url }); } catch {}
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(url);
+      btn.classList.add('card-share--copied');
+      btn.setAttribute('aria-label', t('share.copied'));
+      setTimeout(() => {
+        btn.classList.remove('card-share--copied');
+        btn.setAttribute('aria-label', t('share.label'));
+      }, 2000);
+    } catch {}
+  });
+}
+
+/* ── Search ──────────────────────────────────────────────────── */
+function initSearch() {
+  const input = document.getElementById('search-input');
+  if (!input) return;
+
+  let debounceTimer;
+  input.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      const q = input.value.trim().toLowerCase();
+      _visibleCount = PAGE_SIZE;
+      if (!q) {
+        _filtered = null;
+        renderNews(_newsSorted);
+      } else {
+        _filtered = (_newsSorted ?? []).filter(item => {
+          const text = (itemTitle(item) + ' ' + itemBullets(item).join(' ')).toLowerCase();
+          return text.includes(q);
+        });
+        renderNews(_filtered);
+      }
+    }, 280);
+  });
+}
+
 /* ── Boot ────────────────────────────────────────────────────── */
 applyTranslations();
 
@@ -442,3 +545,5 @@ document.getElementById('lang-btn')?.addEventListener('click', () => {
 
 loadNews();
 initNewsletter();
+initShare();
+initSearch();

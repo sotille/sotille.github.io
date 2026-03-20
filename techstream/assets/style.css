@@ -877,6 +877,109 @@ footer {
 
 .footer-text { font-size: 0.74rem; color: var(--text-muted); }
 
+/* ─── Search ─────────────────────────────────────────────────── */
+.search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--text-muted);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.search-input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px 5px 28px;
+  font-size: 0.76rem;
+  color: var(--text);
+  font-family: var(--mono);
+  width: 190px;
+  outline: none;
+  transition: border-color .18s, box-shadow .18s, width .25s;
+  -webkit-appearance: none;
+}
+
+.search-input::placeholder { color: var(--text-muted); }
+
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(59,130,246,.12);
+  width: 240px;
+}
+
+/* hide native clear button in webkit */
+.search-input::-webkit-search-cancel-button { display: none; }
+
+/* ─── Card actions row ───────────────────────────────────────── */
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ─── Share button ───────────────────────────────────────────── */
+.card-share {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid var(--border-bright);
+  color: var(--text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .16s, border-color .16s, color .16s;
+  position: relative;
+}
+
+.card-share:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.card-share--copied {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(34,197,94,.08);
+}
+
+/* ─── Ver mais ───────────────────────────────────────────────── */
+.more-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 4px;
+}
+
+.more-btn {
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: var(--mono);
+  letter-spacing: .05em;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border-bright);
+  border-radius: 20px;
+  padding: 8px 22px;
+  cursor: pointer;
+  transition: background .18s, border-color .18s, color .18s;
+}
+
+.more-btn:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* ─── Category badges ────────────────────────────────────────── */
 .cat-badge {
   display: inline-flex;

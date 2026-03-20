@@ -1,6 +1,19 @@
 {
   "items": [
     {
+      "id": "2026-03-20",
+      "date": "2026-03-20T06:00:21.489Z",
+      "title": "Fixy – Real-time group chat with humans and AI agents (ChatGPT, Claude, Gemini)",
+      "link": "https://fixy.ai/",
+      "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
+      "bullets": [
+        "Destaque: Fixy – Real-time group chat with humans and AI agents (ChatGPT, Claude, Gemini)",
+        "Update de framework: langchain-ai/langchain lançou langchain==1.2.13.",
+        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
+        "Resumo ultracurto para operação diária de baixo custo."
+      ]
+    },
+    {
       "id": "2026-03-19",
       "date": "2026-03-19T06:00:02.958Z",
       "title": "Meta Confronts Rogue AI Agents After Data Exposure",

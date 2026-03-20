@@ -4,117 +4,144 @@
       "id": "2026-03-20",
       "date": "2026-03-20T06:00:21.489Z",
       "title": "Fixy – Real-time group chat with humans and AI agents (ChatGPT, Claude, Gemini)",
+      "title_en": "Fixy – Real-time group chat with humans and AI agents (ChatGPT, Claude, Gemini)",
       "link": "https://fixy.ai/",
       "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
       "bullets": [
-        "Destaque: Fixy – Real-time group chat with humans and AI agents (ChatGPT, Claude, Gemini)",
-        "Update de framework: langchain-ai/langchain lançou langchain==1.2.13.",
-        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
-        "Resumo ultracurto para operação diária de baixo custo."
+        "Destaque: Fixy permite chats em grupo misturando humanos e múltiplos agentes de IA em tempo real.",
+        "Release: langchain-ai/langchain lançou langchain==1.2.13."
+      ],
+      "bullets_en": [
+        "Highlight: Fixy enables real-time group chats mixing humans with multiple AI agents (GPT, Claude, Gemini).",
+        "Release: langchain-ai/langchain released langchain==1.2.13."
       ]
     },
     {
       "id": "2026-03-19",
       "date": "2026-03-19T06:00:02.958Z",
       "title": "Meta Confronts Rogue AI Agents After Data Exposure",
+      "title_en": "Meta Confronts Rogue AI Agents After Data Exposure",
       "link": "https://www.findarticles.com/meta-confronts-rogue-ai-agents-after-data-exposure/",
       "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
       "bullets": [
-        "Destaque: Meta Confronts Rogue AI Agents After Data Exposure",
-        "Update de framework: langchain-ai/langchain lançou langchain-core==1.2.20.",
-        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
-        "Resumo ultracurto para operação diária de baixo custo."
+        "Destaque: Meta lida com agentes de IA fora de controle após incidente de exposição de dados.",
+        "Release: langchain-ai/langchain lançou langchain-core==1.2.20."
+      ],
+      "bullets_en": [
+        "Highlight: Meta confronts rogue AI agents following a data exposure incident.",
+        "Release: langchain-ai/langchain released langchain-core==1.2.20."
       ]
     },
     {
       "id": "2026-03-18",
       "date": "2026-03-18T06:00:02.924Z",
       "title": "Show HN: N0x – LLM inference, agents, RAG, Python exec in browser, no back end",
+      "title_en": "Show HN: N0x – LLM inference, agents, RAG, Python exec in browser, no back end",
       "link": "https://n0xth.vercel.app/",
       "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
       "bullets": [
-        "Destaque: Show HN: N0x – LLM inference, agents, RAG, Python exec in browser, no back end",
-        "Update de framework: langchain-ai/langchain lançou langchain-anthropic==1.4.0.",
-        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
-        "Resumo ultracurto para operação diária de baixo custo."
+        "Destaque: N0x roda inferência de LLMs, agentes, RAG e Python diretamente no browser — sem backend.",
+        "Release: langchain-ai/langchain lançou langchain-anthropic==1.4.0."
+      ],
+      "bullets_en": [
+        "Highlight: N0x runs LLM inference, agents, RAG and Python execution entirely in the browser — no backend needed.",
+        "Release: langchain-ai/langchain released langchain-anthropic==1.4.0."
       ]
     },
     {
       "id": "2026-03-16",
       "date": "2026-03-16T06:00:03.885Z",
       "title": "What Is an Agent Harness?",
+      "title_en": "What Is an Agent Harness?",
       "link": "https://parallel.ai/articles/what-is-an-agent-harness",
       "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
       "bullets": [
-        "Destaque: What Is an Agent Harness?",
-        "Update de framework: langchain-ai/langchain lançou langchain-anthropic==1.3.5.",
-        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
-        "Resumo ultracurto para operação diária de baixo custo."
+        "Destaque: Artigo explica o conceito de \"agent harness\" — a infraestrutura que envolve e controla agentes de IA.",
+        "Release: langchain-ai/langchain lançou langchain-anthropic==1.3.5."
+      ],
+      "bullets_en": [
+        "Highlight: Article explains the \"agent harness\" concept — the infrastructure wrapping and controlling AI agents.",
+        "Release: langchain-ai/langchain released langchain-anthropic==1.3.5."
       ]
     },
     {
       "id": "2026-03-15",
       "date": "2026-03-15T06:00:06.495Z",
       "title": "Nvidia Is Planning to Launch an Open-Source AI Agent Platform",
+      "title_en": "Nvidia Is Planning to Launch an Open-Source AI Agent Platform",
       "link": "https://www.wired.com/story/nvidia-planning-ai-agent-platform-launch-open-source/",
       "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
       "bullets": [
-        "Destaque: Nvidia Is Planning to Launch an Open-Source AI Agent Platform",
-        "Update de framework: langchain-ai/langchain lançou langchain-anthropic==1.3.5.",
-        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
-        "Resumo ultracurto para operação diária de baixo custo."
+        "Destaque: Nvidia planeja lançar uma plataforma open-source de agentes de IA para competir com AWS e Azure.",
+        "Release: langchain-ai/langchain lançou langchain-anthropic==1.3.5."
+      ],
+      "bullets_en": [
+        "Highlight: Nvidia plans to launch an open-source AI agent platform to compete with AWS and Azure.",
+        "Release: langchain-ai/langchain released langchain-anthropic==1.3.5."
       ]
     },
     {
       "id": "2026-03-14",
       "date": "2026-03-14T06:00:04.995Z",
       "title": "AI Agents Are Recruiting Humans to Observe the Offline World",
+      "title_en": "AI Agents Are Recruiting Humans to Observe the Offline World",
       "link": "https://www.noemamag.com/ai-agents-are-recruiting-humans-to-observe-the-offline-world/",
       "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
       "bullets": [
-        "Destaque: AI Agents Are Recruiting Humans to Observe the Offline World",
-        "Update de framework: langchain-ai/langchain lançou langchain-anthropic==1.3.5.",
-        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
-        "Resumo ultracurto para operação diária de baixo custo."
+        "Destaque: Agentes de IA estão recrutando humanos como sensores para observar o mundo offline.",
+        "Release: langchain-ai/langchain lançou langchain-anthropic==1.3.5."
+      ],
+      "bullets_en": [
+        "Highlight: AI agents are recruiting humans as sensors to observe and report on the offline world.",
+        "Release: langchain-ai/langchain released langchain-anthropic==1.3.5."
       ]
     },
     {
       "id": "2026-03-13",
       "date": "2026-03-13T06:00:11.620Z",
       "title": "MCP Doesn't \"Suck\"",
+      "title_en": "MCP Doesn't \"Suck\"",
       "link": "https://www.runlayer.com/blog/mcp-vs-cli-for-ai-agents",
       "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
       "bullets": [
-        "Destaque: MCP Doesn't \"Suck\"",
-        "Update de framework: langchain-ai/langchain lançou langchain==1.2.12.",
-        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
-        "Resumo ultracurto para operação diária de baixo custo."
+        "Destaque: Análise comparativa entre MCP e CLI para agentes de IA — o MCP tem mais a oferecer do que parece.",
+        "Release: langchain-ai/langchain lançou langchain==1.2.12."
+      ],
+      "bullets_en": [
+        "Highlight: Comparative analysis of MCP vs CLI for AI agents — MCP has more to offer than critics suggest.",
+        "Release: langchain-ai/langchain released langchain==1.2.12."
       ]
     },
     {
       "id": "2026-03-12",
       "date": "2026-03-12T06:00:08.759Z",
       "title": "Show HN: An open-source AI Quant Agent trading live with my own $1000",
+      "title_en": "Show HN: An open-source AI Quant Agent trading live with my own $1000",
       "link": "https://github.com/chenjy16/OpenPilot",
       "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
       "bullets": [
-        "Destaque: Show HN: An open-source AI Quant Agent trading live with my own $1000",
-        "Update de framework: langchain-ai/langchain lançou langchain==1.2.12.",
-        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
-        "Resumo ultracurto para operação diária de baixo custo."
+        "Destaque: Desenvolvedor open-source um agente de IA quant operando ao vivo com $1.000 reais.",
+        "Release: langchain-ai/langchain lançou langchain==1.2.12."
+      ],
+      "bullets_en": [
+        "Highlight: Developer open-sources an AI quant agent trading live with their own $1,000.",
+        "Release: langchain-ai/langchain released langchain==1.2.12."
       ]
     },
     {
       "id": "2026-03-11",
       "date": "2026-03-11T06:57:34.012Z",
       "title": "OWASP Top Agents and AI Vulnerabilities",
+      "title_en": "OWASP Top Agents and AI Vulnerabilities",
       "link": "https://blog.alexewerlof.com/p/owasp-top-10-ai-llm-agents",
       "sourceSummary": "Hacker News + GitHub Releases (langchain-ai/langchain)",
       "bullets": [
-        "Destaque: OWASP Top Agents and AI Vulnerabilities",
-        "Update de framework: langchain-ai/langchain lançou langchain==1.2.11.",
-        "Impacto prático: acompanhar tendências de agentes para decisões de stack e automação.",
-        "Resumo ultracurto para operação diária de baixo custo."
+        "Destaque: Guia prático das principais vulnerabilidades de segurança em agentes LLM segundo o OWASP.",
+        "Release: langchain-ai/langchain lançou langchain==1.2.11."
+      ],
+      "bullets_en": [
+        "Highlight: Practical guide to the top security vulnerabilities in LLM agents according to OWASP.",
+        "Release: langchain-ai/langchain released langchain==1.2.11."
       ]
     },
     {

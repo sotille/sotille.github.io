@@ -341,7 +341,7 @@ function populateTicker(items) {
   track.innerHTML = makeItems() + makeItems();
 
   const totalWidth = track.scrollWidth / 2;
-  const speed = 40; // px/s — ritmo confortável para leitura humana
+  const speed = 20; // px/s — ritmo confortável para leitura humana
   const duration = Math.max(30, totalWidth / speed);
   track.style.setProperty('--ticker-duration', `${duration}s`);
 }

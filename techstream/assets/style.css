@@ -226,7 +226,7 @@ header {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  animation: ticker-scroll 60s linear infinite;
+  animation: ticker-scroll var(--ticker-duration, 120s) linear infinite;
   will-change: transform;
 }
 
@@ -1188,6 +1188,71 @@ footer {
 
 .newsletter-msg--success { color: var(--green); }
 .newsletter-msg--error   { color: var(--red); }
+
+/* ─── Read progress bar ──────────────────────────────────────── */
+.read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--gradient);
+  z-index: 200;
+  transition: width .1s linear;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 8px rgba(59,130,246,.6);
+}
+
+/* ─── Category filter tabs ───────────────────────────────────── */
+.cat-filters {
+  max-width: 1120px;
+  margin: 0 auto 0;
+  padding: 20px 24px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cat-filter {
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border-bright);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background .18s, color .18s, border-color .18s, box-shadow .18s;
+  line-height: 1;
+}
+
+.cat-filter:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.cat-filter--active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(59,130,246,.35);
+}
+
+.cat-filter[data-cat="ai"].cat-filter--active       { background: #6366f1; border-color: #6366f1; box-shadow: 0 0 14px rgba(99,102,241,.35); }
+.cat-filter[data-cat="security"].cat-filter--active { background: #ef4444; border-color: #ef4444; box-shadow: 0 0 14px rgba(239,68,68,.35); }
+.cat-filter[data-cat="infra"].cat-filter--active    { background: #22c55e; border-color: #22c55e; box-shadow: 0 0 14px rgba(34,197,94,.35); }
+.cat-filter[data-cat="release"].cat-filter--active  { background: #f59e0b; border-color: #f59e0b; box-shadow: 0 0 14px rgba(245,158,11,.35); }
+
+/* reading time badge */
+.card-read-time {
+  font-size: 0.68rem;
+  font-family: var(--mono);
+  color: var(--text-muted);
+}
 
 /* ─── Reduced motion ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

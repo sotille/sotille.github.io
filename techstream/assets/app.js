@@ -247,6 +247,8 @@ function renderFeaturedCard(item) {
           <span class="card-date">${formatDate(item.date)}</span>
           <span class="card-sep">·</span>
           <span class="card-ago" id="featured-card-ago">${timeAgo(item.date)}</span>
+          <span class="card-sep">·</span>
+          <span class="card-read-time">${readingTime(item)}</span>
           ${sourceMeta(item)}
         </div>
       </div>
@@ -276,6 +278,8 @@ function renderCompactCard(item, idx) {
           <span class="card-date">${formatDate(item.date)}</span>
           <span class="card-sep">·</span>
           <span class="card-ago">${timeAgo(item.date)}</span>
+          <span class="card-sep">·</span>
+          <span class="card-read-time">${readingTime(item)}</span>
           ${sourceMeta(item)}
           ${categoryBadge(item)}
         </div>
@@ -337,8 +341,8 @@ function populateTicker(items) {
   track.innerHTML = makeItems() + makeItems();
 
   const totalWidth = track.scrollWidth / 2;
-  const speed = 80; // px/s
-  const duration = Math.max(20, totalWidth / speed);
+  const speed = 40; // px/s — ritmo confortável para leitura humana
+  const duration = Math.max(30, totalWidth / speed);
   track.style.setProperty('--ticker-duration', `${duration}s`);
 }
 
@@ -520,20 +524,74 @@ function initSearch() {
   input.addEventListener('input', () => {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
-      const q = input.value.trim().toLowerCase();
       _visibleCount = PAGE_SIZE;
-      if (!q) {
-        _filtered = null;
-        renderNews(_newsSorted);
-      } else {
-        _filtered = (_newsSorted ?? []).filter(item => {
-          const text = (itemTitle(item) + ' ' + itemBullets(item).join(' ')).toLowerCase();
-          return text.includes(q);
-        });
-        renderNews(_filtered);
-      }
+      applyFilters();
     }, 280);
   });
+}
+
+/* ── Read progress bar ───────────────────────────────────────── */
+function initReadProgress() {
+  const bar = document.getElementById('read-progress');
+  if (!bar) return;
+  const update = () => {
+    const scrollTop  = window.scrollY;
+    const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+    const pct        = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+    bar.style.width  = pct + '%';
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+/* ── Reading time estimate ───────────────────────────────────── */
+function readingTime(item) {
+  const words = [
+    itemTitle(item),
+    ...(itemBullets(item) ?? []),
+  ].join(' ').split(/\s+/).length;
+  const mins = Math.max(1, Math.round(words / 200));
+  return mins === 1 ? '1 min' : `${mins} min`;
+}
+
+/* ── Category filter tabs ────────────────────────────────────── */
+let _activeCat = 'all';
+
+function initCatFilters() {
+  const wrap = document.getElementById('cat-filters');
+  if (!wrap) return;
+  wrap.addEventListener('click', (e) => {
+    const btn = e.target.closest('.cat-filter');
+    if (!btn) return;
+    _activeCat = btn.dataset.cat;
+    wrap.querySelectorAll('.cat-filter').forEach(b => {
+      b.classList.toggle('cat-filter--active', b === btn);
+      b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+    });
+    _visibleCount = PAGE_SIZE;
+    applyFilters();
+  });
+}
+
+function applyFilters() {
+  const base = _newsSorted ?? [];
+  const searchQ = (document.getElementById('search-input')?.value ?? '').trim().toLowerCase();
+
+  let result = base;
+
+  if (_activeCat !== 'all') {
+    result = result.filter(item => detectCategory(item) === _activeCat);
+  }
+
+  if (searchQ) {
+    result = result.filter(item => {
+      const text = (itemTitle(item) + ' ' + itemBullets(item).join(' ')).toLowerCase();
+      return text.includes(searchQ);
+    });
+  }
+
+  _filtered = result.length < base.length ? result : null;
+  renderNews(result);
 }
 
 /* ── Boot ────────────────────────────────────────────────────── */
@@ -547,3 +605,5 @@ loadNews();
 initNewsletter();
 initShare();
 initSearch();
+initCatFilters();
+initReadProgress();

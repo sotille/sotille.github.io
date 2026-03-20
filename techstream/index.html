@@ -26,6 +26,8 @@
   <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
+  <!-- Scroll progress bar -->
+  <div class="read-progress" id="read-progress" aria-hidden="true"></div>
 
   <header>
     <div class="header-inner">
@@ -124,6 +126,15 @@
   </section>
 
   <main>
+    <!-- Category filter tabs -->
+    <div class="cat-filters" id="cat-filters" role="tablist" aria-label="Filtrar por categoria">
+      <button class="cat-filter cat-filter--active" data-cat="all" role="tab" aria-selected="true">Todas</button>
+      <button class="cat-filter" data-cat="ai"       role="tab" aria-selected="false">AI &amp; Agents</button>
+      <button class="cat-filter" data-cat="security" role="tab" aria-selected="false">Security</button>
+      <button class="cat-filter" data-cat="infra"    role="tab" aria-selected="false">Infra</button>
+      <button class="cat-filter" data-cat="release"  role="tab" aria-selected="false">Release</button>
+    </div>
+
     <div class="section-header">
       <span class="section-title" data-i18n="section.title">Últimas notícias</span>
       <div class="section-line"></div>

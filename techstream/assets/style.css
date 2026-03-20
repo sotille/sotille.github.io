@@ -247,6 +247,20 @@ header {
   font-size: 0.5rem;
 }
 
+.ticker-cat {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-family: var(--mono);
+  padding: 2px 7px;
+  border-radius: 10px;
+  margin-right: 8px;
+  border: 1px solid currentColor;
+  opacity: .8;
+  flex-shrink: 0;
+}
+
 @keyframes ticker-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }

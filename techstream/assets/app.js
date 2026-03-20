@@ -301,9 +301,13 @@ function populateTicker(items) {
   if (!track) return;
 
   const makeItems = () =>
-    items.map(item =>
-      `<span class="ticker-item">${itemTitle(item)}</span>`
-    ).join('');
+    items.map(item => {
+      const cat  = detectCategory(item);
+      const meta = CATEGORY_META[cat];
+      return `<span class="ticker-item">
+        <span class="ticker-cat ${meta.cls}">${meta.label}</span>${itemTitle(item)}
+      </span>`;
+    }).join('');
 
   track.innerHTML = makeItems() + makeItems();
 

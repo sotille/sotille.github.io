@@ -598,6 +598,18 @@ body[data-calm="true"] .runes-ring{
   background-position: center;
   background-repeat: no-repeat;
 }
+.back-link {
+  font: 600 12px/1 system-ui, sans-serif;
+  color: rgba(244,209,122,.6);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 8px;
+  flex-shrink: 0;
+  transition: color .15s;
+}
+.back-link:hover { color: rgba(244,209,122,.9); }
 
 </style>
 
@@ -615,6 +627,7 @@ body[data-calm="true"] .runes-ring{
 
 <header id="siteHeader">
   <nav class="nav" aria-label="Principal">
+    <a href="/" class="back-link" title="Back to portfolio">← Portfolio</a>
     <a class="brand" href="#top" aria-label="Mancery — início">
       <span class="mark" aria-hidden="true"></span>
       <span class="brand-name">Mancery</span>

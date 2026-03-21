@@ -3,1306 +3,658 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Felipe Sotille — Portfolio / CV</title>
-  <meta name="description" content="Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer with ≈18 years 4 months of experience.">
+  <title>Felipe Sotille</title>
+  <meta name="description" content="Felipe Sotille — Sr. DevSecOps & Software Engineer. Portfolio, CV, projects and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
-  <meta property="og:title" content="Felipe Sotille — Portfolio / CV">
-    <meta property="og:description" content="Sr. DevSecOps & Software Engineer — CI/CD, DevSecOps, Java/Spring, K8s, Angular.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sotille.github.io/">
-    <meta property="og:image" content="https://sotille.github.io/assets/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Felipe Sotille — Portfolio / CV">
-    <meta name="twitter:description" content="DevSecOps, CI/CD, Java/Spring, K8s, Angular.">
-    <meta name="twitter:image" content="https://sotille.github.io/assets/og-image.png">
+  <meta property="og:title" content="Felipe Sotille">
+  <meta property="og:description" content="Sr. DevSecOps & Software Engineer — CI/CD, DevSecOps, Java/Spring, K8s, Angular.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sotille.github.io/">
+  <meta property="og:image" content="https://sotille.github.io/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Felipe Sotille">
+  <meta name="twitter:description" content="DevSecOps, CI/CD, Java/Spring, K8s, Angular.">
+  <meta name="twitter:image" content="https://sotille.github.io/assets/og-image.png">
 
-    <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"Person",
-        "name":"Felipe Sotille",
-        "jobTitle":"Sr. DevSecOps & Software Engineer",
-        "url":"https://sotille.github.io/",
-        "image":"https://sotille.github.io/assets/og-image.png",
-        "email":"mailto:fsotille@gmail.com",
-        "telephone":"+32456250429",
-        "sameAs":[
-            "https://github.com/sotille",
-            "https://www.linkedin.com/in/Felipe-Sotille/"
-        ]
-    }
-    </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Felipe Sotille",
+    "jobTitle": "Sr. DevSecOps & Software Engineer",
+    "url": "https://sotille.github.io/",
+    "email": "mailto:fsotille@gmail.com",
+    "sameAs": [
+      "https://github.com/sotille",
+      "https://www.linkedin.com/in/Felipe-Sotille/"
+    ]
+  }
+  </script>
 
   <style>
-    :root{
-      --bg-0:#070b14;
-      --bg-1:#0b1020;
-      --surface:#121a2b;
-      --text:#e2e8f0;
-      --muted:#94a3b8;
-      --line:#22304b;
-      --accent:#38bdf8;
-      --accent-2:#22d3ee;
-      --shadow: 0 10px 30px rgba(0,0,0,.45);
-      --radius: 14px;
-      --maxw: 1120px;
-      --card-grad: linear-gradient(180deg, rgba(9,15,28,.85), rgba(8,13,25,.7));
-      --hero-grad: linear-gradient(180deg, rgba(10,18,35,.8), rgba(8,14,28,.6));
-      --bg-grad: radial-gradient(900px 600px at 50% -10%, #172032 0%, #0b1020 60%, #060913 100%), linear-gradient(180deg, var(--bg-1), var(--bg-0));
-      --btn-bg: linear-gradient(180deg, #12203b, #0f172a);
-      --chip-bg: rgba(2,6,23,.5);
+    /* ── Design tokens ───────────────────────────────────── */
+    :root {
+      --bg-0: #060913;
+      --bg-1: #0b1020;
+      --surface: #111827;
+      --surface-2: #162032;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --line: #1e2d44;
+      --accent-cv: #38bdf8;
+      --accent-cv-2: #22d3ee;
+      --accent-ts: #6366f1;
+      --accent-ts-2: #8b5cf6;
+      --accent-mc: #f4d17a;
+      --accent-mc-2: #7a8ee6;
+      --shadow: 0 12px 40px rgba(0,0,0,.5);
+      --shadow-sm: 0 4px 16px rgba(0,0,0,.35);
+      --radius: 18px;
+      --maxw: 1080px;
     }
-    /* Light theme overrides */
-    [data-theme="light"]{
-      --bg-0:#f6f8fb;
-      --bg-1:#eef2f8;
-      --surface:#ffffff;
-      --text:#0b1220;
-      --muted:#475569;
-      --line:#cbd5e1;
-      --accent:#0ea5e9;
-      --accent-2:#60a5fa;
-      --shadow: 0 10px 30px rgba(0,0,0,.08);
-      --card-grad: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
-      --hero-grad: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
-      --bg-grad: radial-gradient(900px 600px at 50% -10%, #eaf2ff 0%, #f4f7fb 60%, #eef2f8 100%), linear-gradient(180deg, var(--bg-1), var(--bg-0));
-      --btn-bg: linear-gradient(180deg, #f1f5f9, #e2e8f0);
-      --chip-bg: rgba(241,245,249,.8);
+    [data-theme="light"] {
+      --bg-0: #f0f4fa;
+      --bg-1: #e8eef8;
+      --surface: #ffffff;
+      --surface-2: #f1f5fd;
+      --text: #0b1220;
+      --muted: #475569;
+      --line: #d1daea;
+      --shadow: 0 12px 40px rgba(0,0,0,.1);
+      --shadow-sm: 0 4px 16px rgba(0,0,0,.07);
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-      color:var(--text);
-      background: var(--bg-grad) fixed;
-      line-height:1.55;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      transition: background .3s ease, color .2s ease;
-    }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{opacity:.9}
-    .wrap{max-width:var(--maxw); margin:auto; padding:24px}
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(16,24,40,.75), rgba(16,24,40,.35));
-      border-bottom:1px solid var(--line);
-    }
-    [data-theme="light"] header{
-      background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
-    }
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:var(--maxw); margin:0 auto}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
-    .brand .logo{
-      width:38px; height:38px; border-radius:50%;
-      background: conic-gradient(from 210deg at 50% 50%, #38bdf8, #22d3ee, #818cf8, #38bdf8);
-      box-shadow: 0 0 0 2px rgba(56,189,248,.2), 0 8px 24px rgba(2,8,23,.55) inset;
-      position:relative; display:grid; place-items:center; overflow:hidden;
-    }
-    .brand .logo::after{
-      content:"FS"; font:700 14px/1 JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      color:#0b1020; background:rgba(255,255,255,.96);
-      width:30px; height:30px; border-radius:50%; display:grid; place-items:center;
-      transform:rotate(-12deg);
-      mix-blend-mode:screen;
-    }
-    .nav a{color:var(--text); opacity:.84; font-weight:600}
-    .links{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px;
-      background:var(--btn-bg); border:1px solid var(--line);
-      box-shadow: var(--shadow);
-      font-weight:600; color:var(--text); cursor:pointer;
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .ghost{background:transparent}
-    .btn.sm{padding:6px 10px; border-radius:8px; font-size:13px}
-    .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--line); border-radius:999px; background:var(--chip-bg)}
-    .lang-toggle, .theme-toggle{display:inline-flex; border:1px solid var(--line); border-radius:12px; overflow:hidden}
-    .lang-toggle button, .theme-toggle button{background:transparent; border:0; color:var(--text); padding:8px 12px; font-weight:700; cursor:pointer}
-    .lang-toggle button[aria-pressed="true"]{background:var(--btn-bg)}
-    main{padding:18px 0 64px}
-    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:28px 0 12px}
-    .headline{font-size: clamp(28px, 5vw, 56px); line-height:1.08; letter-spacing:.2px; font-weight:800; margin:0 0 6px}
-    .scramble{font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight:300; font-size: clamp(16px, 2.4vw, 20px); color:var(--muted); min-height:1.6em}
-    .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
-    .hero-card{
-      position:relative; border-radius:var(--radius);
-      background:var(--hero-grad);
-      border:1px solid var(--line);
-      padding:22px; box-shadow: var(--shadow);
-      transform-style:preserve-3d; will-change:transform;
-    }
-    /* Orb container */
-    .orb-wrap{
-      width:min(380px, 90%); aspect-ratio:1/1; border-radius:24px; margin:0 auto;
-      background: radial-gradient(200px 140px at 30% 20%, rgba(56,189,248,.22), transparent),
-                  radial-gradient(200px 160px at 70% 80%, rgba(129,140,248,.16), transparent),
-                  var(--surface);
-      display:grid; place-items:center; border:1px solid var(--line); position:relative; overflow:hidden;
-    }
-    .sphere{width:86%; height:86%; filter: drop-shadow(0 16px 28px rgba(0,0,0,.2));}
-    .sphere path{fill:none; stroke:url(#sphereGradient); stroke-linecap:round; stroke-width:1.25}
-    .sphere .disc{fill:url(#sphereGradient); opacity:.08}
-    section{margin-top:42px}
-    .sec-title{font-weight:800; font-size: clamp(18px, 2.4vw, 24px); margin:0 0 12px; letter-spacing:.4px}
-    .grid{display:grid; gap:16px}
-    .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
-    .grid.cols-2{grid-template-columns: repeat(2, 1fr)}
-    .card{
-      background:var(--card-grad);
-      border:1px solid var(--line); border-radius:16px; padding:18px 18px; box-shadow:var(--shadow);
-      transform: translate3d(0,6px,0);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
-      will-change: transform;
-    }
-    .card:hover{transform: translate3d(0,0,0); border-color:#2f436b}
-    .muted{color:var(--muted)}
-    .kbd{border:1px solid var(--line); padding:2px 6px; border-radius:6px; background:var(--surface); font-family: "JetBrains Mono", monospace}
-    ul{padding-left:20px; margin:10px 0}
-    li{margin:6px 0}
-    .timeline{position:relative; padding-left:26px}
-    .timeline::before{content:""; position:absolute; left:8px; top:4px; bottom:4px; width:2px; background:linear-gradient(#1f2a44,#22304b)}
-    [data-theme="light"] .timeline::before{background:linear-gradient(#cbd5e1,#94a3b8)}
-    .tl-item{position:relative; margin:0 0 18px}
-    .tl-item::before{content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border:2px solid #2f436b; background:var(--surface); border-radius:50%}
-    .tl-meta{font:600 12px/1.6 Inter, system-ui; color:var(--muted); letter-spacing:.3px; padding-left: 20px;}
-    .tl-role{font-weight:700; letter-spacing:.2px}
-    .stack{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
-    .tag{padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:var(--surface); font:600 12px/1 Inter}
-    .skillbar{height:10px; background:var(--surface); border:1px solid var(--line); border-radius:999px; overflow:hidden}
-    .skillbar > i{display:block; height:100%; width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); transition:width 1.2s ease}
-    .project a{color:var(--text)}
-    .project .title{font-weight:700}
-    .project .meta{font:600 12px/1.6 Inter; color:var(--muted)}
-    .contact{display:grid; gap:12px}
-    footer{margin:48px 0 16px; color:var(--muted); font-size:14px; text-align:center}
-    .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
-    .reveal.visible{opacity:1; transform:none}
-    .pill{display:inline-flex; align-items:center; padding:6px 10px; gap:8px; border-radius:999px; border:1px solid var(--line); background:var(--chip-bg); font-weight:600}
-    .two-col{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
-    .kv{display:grid; grid-template-columns: 1fr auto; gap:8px 12px; align-items:center}
-    .stars{letter-spacing:2px}
-    blockquote{margin:0; padding:0; border-left:3px solid #2f436b; padding-left:12px}
-    cite{display:block; color:var(--muted); font-style:normal; margin-top:6px}
-    /* Responsive */
-    @media (max-width: 980px){ .hero{grid-template-columns: 1fr; text-align:center} .actions{justify-content:center} .nav{padding:10px 16px} .two-col{grid-template-columns:1fr} }
-    @media (prefers-reduced-motion: reduce){
-      *{scroll-behavior:auto !important}
-      .reveal{transition:none}
-      .card,.hero-card{transform:none}
-    }
-    @media print{
-      :root{--text:#0b1220; --muted:#334155; --line:#cbd5e1}
-      body{background:#fff; color:var(--text)}
-      header, .actions, .links, .chip, .btn, .lang-toggle, .theme-toggle{display:none !important}
-      .card, .hero-card{box-shadow:none; border-color:#e2e8f0}
-      a{color:#0b1220; text-decoration:underline}
-    }
-    .skip-link{
-        position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
-    .skip-link:focus{
-        left:16px; top:12px; width:auto; height:auto; padding:8px 12px;
-        background:var(--btn-bg); color:var(--text); border:1px solid var(--line);
-        border-radius:8px; z-index:1000;
-    }
-    :focus-visible{
-        outline:2px solid var(--accent); outline-offset:3px; border-radius:6px;
-    }
-    @media print{
-        section{ break-inside: avoid; page-break-inside: avoid }
-        #projects .card{ break-inside: avoid }
-    }
-    .scramble .dud{ opacity:.45 }
-    section{ content-visibility:auto; contain-intrinsic-size: 600px }
 
+    /* ── Reset & base ────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg-0);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background .3s, color .2s;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Mesh background ─────────────────────────────────── */
+    .mesh {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+    }
+    .mesh::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 900px 600px at 10% 20%, rgba(56,189,248,.07) 0%, transparent 70%),
+        radial-gradient(ellipse 700px 500px at 90% 70%, rgba(99,102,241,.08) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 400px at 50% 110%, rgba(244,209,122,.05) 0%, transparent 70%);
+      animation: meshFloat 20s ease-in-out infinite alternate;
+    }
+    @keyframes meshFloat {
+      0%   { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-20px, -30px) scale(1.04); }
+    }
+    [data-theme="light"] .mesh::before {
+      background:
+        radial-gradient(ellipse 900px 600px at 10% 20%, rgba(56,189,248,.1) 0%, transparent 70%),
+        radial-gradient(ellipse 700px 500px at 90% 70%, rgba(99,102,241,.09) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 400px at 50% 110%, rgba(244,209,122,.08) 0%, transparent 70%);
+    }
+
+    /* Grid lines */
+    .mesh::after {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+      opacity: .35;
+    }
+
+    /* ── Layout ──────────────────────────────────────────── */
+    .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* ── Header ──────────────────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px) saturate(160%);
+      -webkit-backdrop-filter: blur(12px) saturate(160%);
+      background: rgba(6,9,19,.6);
+      border-bottom: 1px solid var(--line);
+      transition: background .3s;
+    }
+    [data-theme="light"] header {
+      background: rgba(240,244,250,.75);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 24px; max-width: var(--maxw); margin: 0 auto; gap: 16px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 800; font-size: 15px; letter-spacing: .2px;
+    }
+    .logo {
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      background: conic-gradient(from 210deg, #38bdf8, #22d3ee, #818cf8, #38bdf8);
+      display: grid; place-items: center;
+      box-shadow: 0 0 0 2px rgba(56,189,248,.25), 0 6px 20px rgba(2,8,23,.5);
+      position: relative; overflow: hidden;
+    }
+    .logo::after {
+      content: "FS";
+      font: 700 12px/1 "JetBrains Mono", monospace;
+      color: #0b1020;
+      background: rgba(255,255,255,.95);
+      width: 28px; height: 28px; border-radius: 50%;
+      display: grid; place-items: center;
+      transform: rotate(-12deg);
+      mix-blend-mode: screen;
+    }
+    .nav-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .toggle-group {
+      display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+    }
+    .toggle-group button {
+      background: transparent; border: 0; color: var(--text);
+      padding: 7px 11px; font: 700 12px/1 Inter, system-ui; cursor: pointer;
+      transition: background .15s;
+    }
+    .toggle-group button[aria-pressed="true"],
+    .toggle-group button.active { background: var(--surface-2); }
+    .toggle-group button:hover { background: var(--surface-2); }
+
+    /* ── Hero ────────────────────────────────────────────── */
+    .hero {
+      padding: 72px 24px 56px;
+      max-width: var(--maxw); margin: 0 auto;
+      text-align: center;
+    }
+    .avatar-wrap {
+      display: flex; justify-content: center;
+      margin-bottom: 24px;
+      animation: fadeUp .5s ease both;
+    }
+    .avatar {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: conic-gradient(from 210deg, #38bdf8, #22d3ee, #818cf8, #38bdf8);
+      display: grid; place-items: center;
+      box-shadow: 0 0 0 3px var(--bg-0), 0 0 0 5px rgba(56,189,248,.35), 0 12px 36px rgba(2,8,23,.6);
+      position: relative; overflow: hidden;
+      flex-shrink: 0;
+    }
+    .avatar::after {
+      content: "FS";
+      font: 700 22px/1 "JetBrains Mono", monospace;
+      color: #fff;
+      width: 72px; height: 72px; border-radius: 50%;
+      display: grid; place-items: center;
+      transform: rotate(-12deg);
+    }
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 999px;
+      border: 1px solid rgba(56,189,248,.3);
+      background: rgba(56,189,248,.07);
+      font: 600 13px/1.4 Inter, system-ui; color: var(--accent-cv);
+      margin-bottom: 28px;
+      animation: fadeUp .6s ease both;
+    }
+    .hero-label span[aria-hidden] { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-cv); flex-shrink: 0; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.85)} }
+    .hero h1 {
+      font-size: clamp(36px, 7vw, 72px);
+      font-weight: 800; line-height: 1.05; letter-spacing: -.5px;
+      background: linear-gradient(135deg, var(--text) 30%, var(--muted) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      animation: fadeUp .6s .1s ease both;
+    }
+    .hero-sub {
+      margin-top: 14px;
+      font: 300 clamp(16px, 2.5vw, 20px)/1.5 "JetBrains Mono", monospace;
+      color: var(--muted);
+      animation: fadeUp .6s .2s ease both;
+    }
+    .hero-meta {
+      display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px;
+      margin-top: 28px;
+      animation: fadeUp .6s .3s ease both;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 7px 13px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--surface);
+      font: 600 13px/1 Inter, system-ui; color: var(--muted);
+    }
+    .badge svg { opacity: .6; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Cards grid ──────────────────────────────────────── */
+    .cards {
+      max-width: var(--maxw); margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .card {
+      position: relative; border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      animation: fadeUp .6s ease both;
+      text-decoration: none; color: var(--text);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+    .card:nth-child(1) { animation-delay: .35s; }
+    .card:nth-child(2) { animation-delay: .45s; }
+    .card:nth-child(3) { animation-delay: .55s; }
+
+    /* Card banner */
+    .card-banner {
+      height: 148px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card-banner::before {
+      content: ""; position: absolute; inset: 0;
+      opacity: .12;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .card--cv .card-banner { background: linear-gradient(135deg, #0c1e38 0%, #0f2a4a 100%); }
+    .card--ts .card-banner { background: linear-gradient(135deg, #0f0c2e 0%, #1a1045 100%); }
+    .card--mc .card-banner { background: linear-gradient(135deg, #1a1408 0%, #2a1f0a 100%); }
+
+    .card--cv:hover { border-color: rgba(56,189,248,.4); }
+    .card--ts:hover { border-color: rgba(99,102,241,.4); }
+    .card--mc:hover { border-color: rgba(244,209,122,.4); }
+
+    /* Glowing orb in banner */
+    .banner-orb {
+      width: 80px; height: 80px; border-radius: 50%;
+      position: relative; z-index: 1;
+      display: grid; place-items: center;
+    }
+    .card--cv .banner-orb {
+      background: radial-gradient(circle at 35% 35%, rgba(56,189,248,.25), rgba(34,211,238,.1));
+      box-shadow: 0 0 0 1px rgba(56,189,248,.2), 0 0 40px rgba(56,189,248,.2);
+    }
+    .card--ts .banner-orb {
+      background: radial-gradient(circle at 35% 35%, rgba(99,102,241,.25), rgba(139,92,246,.1));
+      box-shadow: 0 0 0 1px rgba(99,102,241,.2), 0 0 40px rgba(99,102,241,.2);
+    }
+    .card--mc .banner-orb {
+      background: radial-gradient(circle at 35% 35%, rgba(244,209,122,.25), rgba(122,142,230,.1));
+      box-shadow: 0 0 0 1px rgba(244,209,122,.2), 0 0 40px rgba(244,209,122,.18);
+    }
+    .banner-icon {
+      font-size: 32px; line-height: 1;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,.4));
+    }
+
+    /* Card body */
+    .card-body { padding: 22px 22px 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .card-eyebrow {
+      font: 700 11px/1 "JetBrains Mono", monospace; letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .card--cv .card-eyebrow { color: var(--accent-cv); }
+    .card--ts .card-eyebrow { color: var(--accent-ts); }
+    .card--mc .card-eyebrow { color: var(--accent-mc); }
+    .card-title { font: 800 20px/1.2 Inter, system-ui; }
+    .card-desc { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .tag {
+      padding: 4px 10px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--surface-2);
+      font: 600 12px/1 Inter, system-ui; color: var(--muted);
+    }
+
+    /* Card footer */
+    .card-footer {
+      padding: 14px 22px; border-top: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .card-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      font: 700 13px/1 Inter, system-ui;
+      padding: 8px 14px; border-radius: 10px; border: 1px solid transparent;
+      transition: background .15s, border-color .15s, transform .15s;
+    }
+    .card--cv  .card-cta { background: rgba(56,189,248,.1); color: var(--accent-cv); border-color: rgba(56,189,248,.2); }
+    .card--ts  .card-cta { background: rgba(99,102,241,.1); color: var(--accent-ts); border-color: rgba(99,102,241,.2); }
+    .card--mc  .card-cta { background: rgba(244,209,122,.1); color: var(--accent-mc); border-color: rgba(244,209,122,.2); }
+    .card:hover .card-cta { transform: translateX(3px); }
+    .cta-arrow { font-size: 16px; transition: transform .15s; }
+    .card:hover .cta-arrow { transform: translateX(3px); }
+    .card-status { font: 600 12px/1 Inter, system-ui; color: var(--muted); }
+
+    /* ── Contact strip ───────────────────────────────────── */
+    .contact {
+      border-top: 1px solid var(--line);
+      padding: 40px 24px;
+      max-width: var(--maxw); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+      animation: fadeUp .6s .65s ease both;
+    }
+    .contact-left h2 {
+      font: 800 18px/1.2 Inter, system-ui; margin-bottom: 4px;
+    }
+    .contact-left p { font-size: 14px; color: var(--muted); }
+    .contact-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 12px;
+      border: 1px solid var(--line); background: var(--surface);
+      font: 600 13px/1 Inter, system-ui; color: var(--text);
+      cursor: pointer; text-decoration: none;
+      transition: background .15s, transform .15s, border-color .15s;
+    }
+    .contact-btn:hover { transform: translateY(-2px); border-color: rgba(56,189,248,.3); }
+    .contact-btn.primary {
+      background: linear-gradient(135deg, rgba(56,189,248,.15), rgba(34,211,238,.08));
+      border-color: rgba(56,189,248,.3); color: var(--accent-cv);
+    }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    footer {
+      text-align: center; padding: 24px;
+      font-size: 13px; color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .cards { grid-template-columns: 1fr; max-width: 480px; }
+      .hero { padding: 60px 24px 48px; }
+    }
+    @media (max-width: 580px) {
+      .nav { padding: 12px 16px; }
+      .cards { padding: 0 16px 60px; max-width: 100%; }
+      .hero { padding: 48px 16px 36px; }
+      .contact { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header>
-    <nav class="nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>Felipe Sotille</div>
-      </div>
-      <div class="links">
-        <a href="#about" data-i18n="nav_about">About</a>
-        <a href="#experience" data-i18n="nav_experience">Experience</a>
-        <a href="#skills" data-i18n="nav_skills">Skills</a>
-        <a href="#projects" data-i18n="nav_projects">Projects</a>
-        <a href="#contact" data-i18n="nav_contact">Contact</a>
-        <div class="lang-toggle" role="group" aria-label="Language">
-          <button class="sm" data-lang="en" aria-pressed="true">EN</button>
-          <button class="sm" data-lang="pt">PT‑BR</button>
-        </div>
-        <div class="theme-toggle" role="group" aria-label="Theme">
-          <button class="sm" id="theme-dark" title="Dark">🌙</button>
-          <button class="sm" id="theme-light" title="Light">☀️</button>
-          <button class="sm" id="theme-auto" title="Auto">🖥️</button>
-        </div>
-        <button class="btn ghost sm" id="btn-pdf" data-i18n="btn_download_pdf" title="Download / Print PDF" onclick="window.print()">Download PDF</button>
-      </div>
-    </nav>
-  </header>
+  <div class="mesh" aria-hidden="true"></div>
 
-  <main class="wrap" id="main">
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <nav class="nav">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          Felipe Sotille
+        </div>
+        <div class="nav-right">
+          <div class="toggle-group" role="group" aria-label="Language">
+            <button id="lang-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+            <button id="lang-pt" aria-pressed="false" onclick="setLang('pt')">PT</button>
+          </div>
+          <div class="toggle-group" role="group" aria-label="Theme">
+            <button id="theme-dark"  title="Dark"  onclick="setTheme('dark')">🌙</button>
+            <button id="theme-light" title="Light" onclick="setTheme('light')">☀️</button>
+            <button id="theme-auto"  title="Auto"  onclick="setTheme('auto')" class="active">🖥️</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
     <!-- HERO -->
-    <section class="hero reveal">
-      <div>
-        <p class="pill" aria-live="polite"><span aria-hidden="true">🟢</span> <span data-i18n="hero_pill">Open to OSS collaborations</span></p>
-        <h1 class="headline" data-i18n="headline">Sr. DevSecOps & Software Engineer</h1>
-        <div class="scramble" id="scramble" aria-live="polite"></div>
-        <p class="muted" data-i18n="hero_desc">18+ years across banking, ERPs, real‑time and social apps. Backend engineer, frontend enthusiast and DevOps lover.</p>
-        <div class="actions">
-          <a class="btn" href="#experience" data-i18n="btn_view_experience">View experience</a>
-          <a class="btn ghost" href="mailto:fsotille@gmail.com" data-i18n="btn_email">Email</a>
-          <a class="btn ghost" href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener" data-i18n="btn_linkedin">LinkedIn</a>
-          <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
-        </div>
-        <div class="stack" style="margin-top:12px">
-          <span class="chip" id="exp-chip">≈18 years</span>
-          <span class="chip">Java · Spring</span>
-          <span class="chip">Angular · TypeScript</span>
-          <span class="chip">Kubernetes · Docker</span>
-          <span class="chip">CI/CD · DevSecOps</span>
-          <span class="chip">AWS · GCP · Oracle</span>
-        </div>
+    <section class="hero">
+      <div class="avatar-wrap">
+        <div class="avatar" role="img" aria-label="Felipe Sotille initials"></div>
       </div>
-
-      <div class="hero-card tilt" aria-label="Animated orb">
-        <div class="orb-wrap">
-          <!-- Sphere animation inspired by Julian Garnier's pen -->
-          <svg class="sphere" viewBox="0 0 440 440" aria-hidden="true">
-            <defs>
-              <linearGradient id="sphereGradient" x1="0%" x2="0%" y1="0%" y2="100%">
-                <stop stop-color="#8ab4ff" offset="0%"/>
-                <stop stop-color="#38bdf8" offset="50%"/>
-                <stop stop-color="#22d3ee" offset="100%"/>
-              </linearGradient>
-            </defs>
-            <circle class="disc" cx="220" cy="220" r="175"/>
-            <g class="lat">
-              <!-- wireframe paths (latitude-like) -->
-              <path d="M361.604 361.238c-24.407 24.408-51.119 37.27-59.662 28.727-8.542-8.543 4.319-35.255 28.726-59.663 24.408-24.407 51.12-37.269 59.663-28.726 8.542 8.543-4.319 35.255-28.727 59.662z"/>
-              <path d="M360.72 360.354c-35.879 35.88-75.254 54.677-87.946 41.985-12.692-12.692 6.105-52.067 41.985-87.947 35.879-35.879 75.254-54.676 87.946-41.984 12.692 12.692-6.105 52.067-41.984 87.946z"/>
-              <path d="M357.185 356.819c-44.91 44.91-94.376 68.258-110.485 52.149-16.11-16.11 7.238-65.575 52.149-110.485 44.91-44.91 94.376-68.259 110.485-52.15 16.11 16.11-7.239 65.576-52.149 110.486z"/>
-              <path d="M350.998 350.632c-53.21 53.209-111.579 81.107-130.373 62.313-18.794-18.793 9.105-77.163 62.314-130.372 53.209-53.21 111.579-81.108 130.373-62.314 18.794 18.794-9.105 77.164-62.314 130.373z"/>
-              <path d="M343.043 342.677c-59.8 59.799-125.292 91.26-146.283 70.268-20.99-20.99 10.47-86.483 70.269-146.282 59.799-59.8 125.292-91.26 146.283-70.269 20.99 20.99-10.47 86.484-70.27 146.283z"/>
-              <path d="M334.646 334.28c-65.169 65.169-136.697 99.3-159.762 76.235-23.065-23.066 11.066-94.593 76.235-159.762s136.697-99.3 159.762-76.235c23.065 23.065-11.066 94.593-76.235 159.762z"/>
-              <path d="M324.923 324.557c-69.806 69.806-146.38 106.411-171.031 81.76-24.652-24.652 11.953-101.226 81.759-171.032 69.806-69.806 146.38-106.411 171.031-81.76 24.652 24.653-11.953 101.226-81.759 171.032z"/>
-              <path d="M312.99 312.625c-73.222 73.223-153.555 111.609-179.428 85.736-25.872-25.872 12.514-106.205 85.737-179.428s153.556-111.609 179.429-85.737c25.872 25.873-12.514 106.205-85.737 179.429z"/>
-              <path d="M300.175 299.808c-75.909 75.909-159.11 115.778-185.837 89.052-26.726-26.727 13.143-109.929 89.051-185.837 75.908-75.908 159.11-115.778 185.837-89.051 26.726 26.726-13.143 109.928-89.051 185.836z"/>
-              <path d="M284.707 284.34c-77.617 77.617-162.303 118.773-189.152 91.924-26.848-26.848 14.308-111.534 91.924-189.15C265.096 109.496 349.782 68.34 376.63 95.188c26.849 26.849-14.307 111.535-91.923 189.151z"/>
-              <path d="M269.239 267.989c-78.105 78.104-163.187 119.656-190.035 92.807-26.849-26.848 14.703-111.93 92.807-190.035 78.105-78.104 163.187-119.656 190.035-92.807 26.849 26.848-14.703 111.93-92.807 190.035z"/>
-              <path d="M252.887 252.52C175.27 330.138 90.584 371.294 63.736 344.446 36.887 317.596 78.043 232.91 155.66 155.293 233.276 77.677 317.962 36.521 344.81 63.37c26.85 26.848-14.307 111.534-91.923 189.15z"/>
-              <path d="M236.977 236.61C161.069 312.52 77.867 352.389 51.14 325.663c-26.726-26.727 13.143-109.928 89.052-185.837 75.908-75.908 159.11-115.777 185.836-89.05 26.727 26.726-13.143 109.928-89.051 185.836z"/>
-              <path d="M221.067 220.7C147.844 293.925 67.51 332.31 41.639 306.439c-25.873-25.873 12.513-106.206 85.736-179.429C200.6 53.786 280.931 15.4 306.804 41.272c25.872 25.873-12.514 106.206-85.737 179.429z"/>
-              <path d="M205.157 204.79c-69.806 69.807-146.38 106.412-171.031 81.76-24.652-24.652 11.953-101.225 81.759-171.031 69.806-69.807 146.38-106.411 171.031-81.76 24.652 24.652-11.953 101.226-81.759 171.032z"/>
-              <path d="M189.247 188.881c-65.169 65.169-136.696 99.3-159.762 76.235-23.065-23.065 11.066-94.593 76.235-159.762s136.697-99.3 159.762-76.235c23.065 23.065-11.066 94.593-76.235 159.762z"/>
-              <path d="M173.337 172.971c-59.799 59.8-125.292 91.26-146.282 70.269-20.991-20.99 10.47-86.484 70.268-146.283 59.8-59.799 125.292-91.26 146.283-70.269 20.99 20.991-10.47 86.484-70.269 146.283z"/>
-              <path d="M157.427 157.061c-53.209 53.21-111.578 81.108-130.372 62.314-18.794-18.794 9.104-77.164 62.313-130.373 53.21-53.209 111.58-81.108 130.373-62.314 18.794 18.794-9.105 77.164-62.314 130.373z"/>
-              <path d="M141.517 141.151c-44.91 44.91-94.376 68.259-110.485 52.15-16.11-16.11 7.239-65.576 52.15-110.486 44.91-44.91 94.375-68.258 110.485-52.15 16.109 16.11-7.24 65.576-52.15 110.486z"/>
-              <path d="M125.608 125.241c-35.88 35.88-75.255 54.677-87.947 41.985-12.692-12.692 6.105-52.067 41.985-87.947C115.525 43.4 154.9 24.603 167.592 37.295c12.692 12.692-6.105 52.067-41.984 87.946z"/>
-            </g>
-            <g class="lon" transform="rotate(90 220 220)"></g>
-          </svg>
-        </div>
-        <div class="two-col" style="margin-top:14px">
-          <div class="card">
-            <div class="tl-meta" data-i18n="card_focus_title">Current focus</div>
-            <div class="tl-role" data-i18n="card_focus_value">CI/CD, DevSecOps, Observability</div>
-          </div>
-          <div class="card">
-            <div class="tl-meta" data-i18n="card_interests_title">Interests</div>
-            <div class="tl-role" data-i18n="card_interests_value">Mountains · Chess · Music · Technology · AI · Sci‑Fi</div>
-          </div>
-        </div>
+      <div class="hero-label">
+        <span aria-hidden="true"></span>
+        <span data-i18n="hero_status">Open to consulting &amp; OSS</span>
+      </div>
+      <h1>Felipe Sotille</h1>
+      <p class="hero-sub" data-i18n="hero_sub">Sr. DevSecOps &amp; Software Engineer</p>
+      <div class="hero-meta">
+        <span class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-i18n="badge_location">Brussels, Belgium</span>
+        </span>
+        <span class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span data-i18n="badge_exp">18+ years experience</span>
+        </span>
+        <span class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Java · Spring · K8s · CI/CD · Angular
+        </span>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="reveal">
-      <h2 class="sec-title" data-i18n="section_about_title">About</h2>
-      <div class="grid cols-2">
-        <article class="card">
-          <p data-i18n="about_intro">I’m a distinguished software engineer with ≈18 years 4 months in the industry. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.</p>
-          <p class="muted" data-i18n="about_quote">“Strive not to be a success, but rather to be of value.” — Albert Einstein</p>
-        </article>
-        <aside class="card">
-          <div class="grid" style="gap:10px">
-            <div class="pill"><strong data-i18n="aside_loc">Location</strong>: <span data-i18n="aside_loc_value">Brussels Metropolitan Area (remote/global)</span></div>
-            <div class="pill"><strong data-i18n="aside_langs">Languages</strong>: <span data-i18n="aside_langs_value">Portuguese, English, French</span></div>
-            <div class="pill"><strong data-i18n="aside_avail">Availability</strong>: <span data-i18n="aside_avail_value">Consulting & OSS collaborations</span></div>
+    <!-- CARDS -->
+    <div class="cards" role="list">
+
+      <!-- CV -->
+      <a href="/cv.html" class="card card--cv" role="listitem" aria-label="Open CV / Resume">
+        <div class="card-banner">
+          <div class="banner-orb">
+            <span class="banner-icon" aria-hidden="true">📄</span>
           </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="reveal">
-      <h2 class="sec-title" data-i18n="section_experience_title">Experience</h2>
-      <div class="grid cols-2">
-        <article class="card">
-          <div class="timeline">
-            <div class="tl-item">
-              <div class="tl-meta" data-i18n="expA_meta">Jan 2, 2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Brussels Area, Belgium</div>
-              <div class="tl-role" data-i18n="expA_role">DevSecOps & CI/CD</div>
-              <ul class="muted" data-i18n-list="expA_bullets"></ul>
-            </div>
-            <div class="tl-item">
-              <div class="tl-meta" data-i18n="expB_meta">Jul 2024 — Dec 2024 · Senior Java Consultant (Freelance) · Swissquote · Geneva Metropolitan Area · Hybrid</div>
-              <div class="tl-role" data-i18n="expB_role">Data migration & database engineering</div>
-              <ul class="muted" data-i18n-list="expB_bullets"></ul>
-            </div>
-            <div class="tl-item">
-              <div class="tl-meta" data-i18n="expC_meta">Jul 2019 — Jun 2024 · Sr. Software Engineer (Consultant) · Swift · Brussels Area, Belgium</div>
-              <div class="tl-role" data-i18n="expC_role">Full‑stack engineering & platform evolution</div>
-              <ul class="muted" data-i18n-list="expC_bullets"></ul>
-            </div>
-            <div class="tl-item">
-              <div class="tl-meta" data-i18n="expD_meta">Jun 2018 — Jun 2019 · Lead Software & DevOps Engineer · MyCujoo (An Eleven Company) · Lisbon Area, Portugal</div>
-              <div class="tl-role" data-i18n="expD_role">Real‑time microservices & team leadership</div>
-              <ul class="muted" data-i18n-list="expD_bullets"></ul>
-            </div>
+        </div>
+        <div class="card-body">
+          <div class="card-eyebrow" data-i18n="card_cv_eyebrow">Resume &amp; Experience</div>
+          <div class="card-title" data-i18n="card_cv_title">Curriculum Vitae</div>
+          <p class="card-desc" data-i18n="card_cv_desc">Full interactive CV with 18+ years of professional experience in DevSecOps, full-stack engineering and platform architecture. Bilingual, printable to PDF.</p>
+          <div class="card-tags">
+            <span class="tag">Java · Spring</span>
+            <span class="tag">DevSecOps</span>
+            <span class="tag">K8s · Docker</span>
+            <span class="tag">Angular · TS</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">AI Automation</span>
+            <span class="tag">AI Agents</span>
           </div>
-        </article>
+        </div>
+        <div class="card-footer">
+          <span class="card-cta">
+            <span data-i18n="cta_cv">View CV</span>
+            <span class="cta-arrow" aria-hidden="true">→</span>
+          </span>
+          <span class="card-status" data-i18n="status_cv">PDF export available</span>
+        </div>
+      </a>
 
-        <!-- RIGHT COLUMN: detailed earlier roles -->
-        <aside class="card">
-          <h3 style="margin:0 0 10px" data-i18n="aside_prev_title">Previous experiences</h3>
-          <div class="timeline">
-            <div class="tl-item">
-              <div class="tl-meta" data-i18n="wplex_meta">Oct 2015 — Mar 2018 · Senior Java Developer · WPLEX Software · Florianópolis Area, Brazil</div>
-              <ul class="muted" data-i18n-list="wplex_bullets"></ul>
-              <div class="stack">
-                <span class="tag">Spring (MVC, Boot, Security, Web)</span>
-                <span class="tag">Java 8/EE</span><span class="tag">ReactJS</span><span class="tag">REST</span>
-                <span class="tag">Jira/Confluence/Bitbucket</span><span class="tag">JSF</span><span class="tag">TDD</span>
-              </div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-meta" data-i18n="metaway_meta">Mar 2015 — Aug 2015 · Software Developer · Metaway · Bento Gonçalves Area, Brazil</div>
-              <ul class="muted" data-i18n-list="metaway_bullets"></ul>
-              <div class="stack">
-                <span class="tag">Java 7</span><span class="tag">SCRUM</span><span class="tag">RichFaces</span>
-                <span class="tag">REST</span><span class="tag">SQL/JPA</span><span class="tag">Liquibase</span>
-              </div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-meta" data-i18n="cybersec_meta">Apr 2014 — Jan 2015 · Network & Security Analyst · CyberSec · Marau Area, Brazil</div>
-              <ul class="muted" data-i18n-list="cybersec_bullets"></ul>
-              <div class="stack">
-                <span class="tag">Hyper‑V/Citrix/VMWare</span><span class="tag">Unix/Windows Admin</span>
-                <span class="tag">Security hardening</span><span class="tag">Cisco routers</span>
-              </div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-meta" data-i18n="citta_meta">Oct 2009 — Mar 2014 · Software Developer · Città Inteligência em Gestão Pública · Marau Area, Brazil</div>
-              <ul class="muted" data-i18n-list="citta_bullets"></ul>
-              <div class="stack">
-                <span class="tag">Spring MVC/Security/Web</span><span class="tag">Java 6</span>
-                <span class="tag">JSF (RichFaces/PrimeFaces)</span><span class="tag">Jasper/iReport</span>
-                <span class="tag">SVN</span><span class="tag">SQL/JPA</span>
-              </div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-meta" data-i18n="holma_meta">Jan 2007 — Sep 2009 · Delphi Developer / IT Support Analyst · Holma Software · Marau Area, Brazil</div>
-              <ul class="muted" data-i18n-list="holma_bullets"></ul>
-              <div class="stack">
-                <span class="tag">Delphi (Object Pascal)</span><span class="tag">Firebird SQL</span>
-              </div>
-            </div>
+      <!-- TechStream -->
+      <a href="/techstream/" class="card card--ts" role="listitem" aria-label="Open TechStream">
+        <div class="card-banner">
+          <div class="banner-orb">
+            <span class="banner-icon" aria-hidden="true">📡</span>
           </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="reveal">
-      <h2 class="sec-title" data-i18n="section_skills_title">Skills</h2>
-      <div class="grid cols-2">
-        <article class="card">
-          <h3 style="margin:0 0 8px" data-i18n="skills_hard_title">Hard skills</h3>
-          <div class="kv">
-            <div>Java / Linux</div><div>14y</div>
-            <div>Serverless / Microservices</div><div>4y</div>
-            <div>Spring (Security, Web, Boot...)</div><div>7y</div>
-            <div>Docker / Containers</div><div>6y</div>
-            <div>SQL (HQL, Oracle, Postgres)</div><div>8y</div>
-            <div>SOLID OOP</div><div>8y</div>
-            <div>Angular 10+</div><div>5y</div>
-            <div>Agile / Scrum</div><div>10y</div>
-            <div>Clean & Secure Coding</div><div>6y</div>
-            <div>CI/CD & DevOps (Jenkins/CloudBees, Heroku, CircleCI)</div><div>7y</div>
-            <div>Kafka / Kubernetes / AWS / GCP</div><div>2y</div>
-            <div>Cloud integrations (Coveo, Adobe Cloud, Twilio)</div><div>3y</div>
-            <div>Ansible Tower / Scripting</div><div>3y</div>
+        </div>
+        <div class="card-body">
+          <div class="card-eyebrow" data-i18n="card_ts_eyebrow">Daily Tech News</div>
+          <div class="card-title">TechStream</div>
+          <p class="card-desc" data-i18n="card_ts_desc">Curated technology news covering security, infrastructure, developer tools and major releases. Handpicked signal, no noise. Updated automatically every day.</p>
+          <div class="card-tags">
+            <span class="tag">Security</span>
+            <span class="tag">Infra</span>
+            <span class="tag">Dev Tools</span>
+            <span class="tag">Releases</span>
+            <span class="tag">Open Source</span>
           </div>
+        </div>
+        <div class="card-footer">
+          <span class="card-cta">
+            <span data-i18n="cta_ts">Open TechStream</span>
+            <span class="cta-arrow" aria-hidden="true">→</span>
+          </span>
+          <span class="card-status" data-i18n="status_ts">Updated daily</span>
+        </div>
+      </a>
 
-          <h3 style="margin:16px 0 8px" data-i18n="skills_bars_title">Proficiency overview</h3>
-          <label data-i18n="skillbars_platform">Platforms & DevSecOps</label>
-          <div class="skillbar" data-skill="88"><i></i></div>
-          <label data-i18n="skillbars_backend">Back‑end (Java/Spring)</label>
-          <div class="skillbar" data-skill="86"><i></i></div>
-          <label data-i18n="skillbars_frontend">Front‑end (Angular/TS)</label>
-          <div class="skillbar" data-skill="72"><i></i></div>
-          <p class="muted" style="margin-top:10px" data-i18n="skills_note">*Self‑assessed indicators for quick visualization.</p>
-        </article>
-
-        <aside class="card">
-          <h3 style="margin:0 0 8px" data-i18n="skills_soft_title">Soft skills</h3>
-          <div class="stack">
-            <span class="tag" data-i18n="soft1">Interpersonal</span>
-            <span class="tag" data-i18n="soft2">Team member</span>
-            <span class="tag" data-i18n="soft3">Collaborative</span>
-            <span class="tag" data-i18n="soft4">Creative thinker</span>
-            <span class="tag" data-i18n="soft5">Attention to detail</span>
-            <span class="tag" data-i18n="soft6">Problem‑solver</span>
-            <span class="tag" data-i18n="soft7">Time management</span>
-            <span class="tag" data-i18n="soft8">Authentic & approachable</span>
-            <span class="tag" data-i18n="soft9">Open & honest</span>
-            <span class="tag" data-i18n="soft10">Natural leader</span>
+      <!-- Mancery -->
+      <a href="/mancery/" class="card card--mc" role="listitem" aria-label="Open Mancery">
+        <div class="card-banner">
+          <div class="banner-orb">
+            <span class="banner-icon" aria-hidden="true">🔮</span>
           </div>
-
-          <h3 style="margin:16px 0 8px" data-i18n="skills_lang_title">Languages</h3>
-          <div class="kv">
-            <div>Portuguese</div><div class="stars">★★★★★</div>
-            <div>English</div><div class="stars">★★★★★</div>
-            <div>French</div><div class="stars">★★★★★</div>
+        </div>
+        <div class="card-body">
+          <div class="card-eyebrow" data-i18n="card_mc_eyebrow">Tarot &amp; Divination</div>
+          <div class="card-title">Mancery</div>
+          <p class="card-desc" data-i18n="card_mc_desc">The Living Tarot — draw cards from the Major and Minor Arcana, receive personal interpretations and explore archetypal insights. Available in four languages.</p>
+          <div class="card-tags">
+            <span class="tag">Tarot Readings</span>
+            <span class="tag">Major Arcana</span>
+            <span class="tag">Interpretations</span>
+            <span class="tag">4 Languages</span>
           </div>
+        </div>
+        <div class="card-footer">
+          <span class="card-cta">
+            <span data-i18n="cta_mc">Open Mancery</span>
+            <span class="cta-arrow" aria-hidden="true">→</span>
+          </span>
+          <span class="card-status" data-i18n="status_mc">EN · PT · ES · FR</span>
+        </div>
+      </a>
 
-          <h3 style="margin:16px 0 8px" data-i18n="edu_title">Education</h3>
-          <ul class="muted">
-            <li data-i18n="edu1">Specialization — Blockchain, Smart Contracts & Cloud Security · UPF · 2023</li>
-            <li data-i18n="edu2">Specialization — Artificial Intelligence & Data Science · UPF · 2023</li>
-            <li data-i18n="edu3">B.Sc. in Computer Science · UPF · 2015</li>
-            <li data-i18n="edu4">Security+ (CompTIA) · 2015</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
+    </div>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="reveal">
-      <h2 class="sec-title" data-i18n="section_projects_title">Featured projects</h2>
-      <div class="grid cols-3">
-        <article class="card project tilt">
-          <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
-            <div class="title" data-i18n="proj1_title">Infra as Code Starter</div>
-            <div class="meta" data-i18n="proj1_meta">Blueprint · K8s · GitOps · Observability</div>
-            <p class="muted" data-i18n="proj1_desc">Platform template with Helm, ArgoCD, Prometheus/Grafana and service‑mesh patterns.</p>
+    <!-- CONTACT STRIP -->
+    <div class="wrap">
+      <div class="contact">
+        <div class="contact-left">
+          <h2 data-i18n="contact_title">Let's work together</h2>
+          <p data-i18n="contact_sub">Available for consulting, freelance and OSS collaborations.</p>
+        </div>
+        <div class="contact-links">
+          <a class="contact-btn primary" href="mailto:fsotille@gmail.com">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-i18n="btn_email">Send email</span>
           </a>
-        </article>
-        <article class="card project tilt">
-          <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
-            <div class="title" data-i18n="proj2_title">Java Service Kit</div>
-            <div class="meta" data-i18n="proj2_meta">Spring Boot · Resilience · Telemetry</div>
-            <p class="muted" data-i18n="proj2_desc">Best‑practices kit: tracing, metrics, retries, circuit‑breaker and hardening.</p>
+          <a class="contact-btn" href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
           </a>
-        </article>
-        <article class="card project tilt">
-          <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
-            <div class="title" data-i18n="proj3_title">Angular + DX</div>
-            <div class="meta" data-i18n="proj3_meta">CLI · Schematics · Storybook</div>
-            <p class="muted" data-i18n="proj3_desc">DX tools: scaffolding, tests, lint and integrated UI docs.</p>
+          <a class="contact-btn" href="https://github.com/sotille" target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
           </a>
-        </article>
+        </div>
       </div>
-      <p style="margin-top:10px"><a class="btn ghost" href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener" data-i18n="btn_view_all_repos">View all repositories</a></p>
-    </section>
+    </div>
 
-    <!-- RECOMMENDATIONS -->
-    <section id="recommendations" class="reveal">
-      <h2 class="sec-title" data-i18n="section_reco_title">Recommendations</h2>
-      <div class="grid cols-3">
-        <article class="card">
-          <blockquote data-i18n="rec1_text">“I had the chance to closely collaborate with Felipe in our squad. Felipe adapts very quickly to our day‑to‑day process. He finds improvements at different levels and shares ideas that are always relevant and helpful. He doesn’t hesitate to leave his comfort zone and try new technologies and tools. He’s respectful and always ready to help.”</blockquote>
-          <cite data-i18n="rec1_cite">— Jérôme Vervier, Full‑stack Developer & Trainer (Swift)</cite>
-        </article>
-        <article class="card">
-          <blockquote data-i18n="rec2_text">“He is the go‑to man when it comes to Linux and microservices. We worked closely on microservices together at Swift — nice colleague to work with. I recommend him for IT development roles.”</blockquote>
-          <cite data-i18n="rec2_cite">— Sadhana Italiya, Java Software Developer (Swift)</cite>
-        </article>
-        <article class="card">
-          <blockquote data-i18n="rec3_text">“I have had the pleasure to work with Felipe, probably the most skilled developer I have ever met. Enthusiastic about new technologies and making things work, but also a fun and relaxed teammate.”</blockquote>
-          <cite data-i18n="rec3_cite">— Arnau Rovira, DevOps Engineer (Eleven Sports)</cite>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="reveal">
-      <h2 class="sec-title" data-i18n="section_contact_title">Contact</h2>
-      <div class="grid cols-2 contact">
-        <article class="card">
-          <p class="muted"><strong>E‑mail:</strong> <a href="mailto:fsotille@gmail.com">fsotille@gmail.com</a> • <strong>Phone:</strong> <a href="tel:+32456250429">+32&nbsp;456&nbsp;250&nbsp;429</a> • <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener">linkedin.com/in/Felipe‑Sotille</a></p>
-          <div class="stack">
-            <a class="btn" href="mailto:fsotille@gmail.com" data-i18n="btn_email">Send email</a>
-            <a class="btn ghost" href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener" data-i18n="btn_linkedin">LinkedIn</a>
-            <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
-            <button class="btn ghost" id="copy-email" type="button">Copy email</button>
-          </div>
-        </article>
-        <aside class="card">
-          <h3 style="margin:0 0 10px" data-i18n="links_quick_title">Quick links</h3>
-          <div class="stack">
-            <a class="chip" href="#experience" data-i18n="link_experience">Experience</a>
-            <a class="chip" href="#skills" data-i18n="link_skills">Skills</a>
-            <a class="chip" href="#projects" data-i18n="link_projects">Projects</a>
-            <a class="chip" href="#" onclick="window.print();return false;" data-i18n="link_download_pdf">Download PDF</a>
-            <button class="btn ghost" id="btn-vcard" type="button">Download vCard</button>
-          </div>
-          <p class="muted" style="margin-top:8px" data-i18n="tip_replay">Tip: press <span class='kbd'>R</span> to replay the top animation.</p>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="wrap">
-    <div>© <span id="year"></span> Felipe Sotille • <span data-i18n="footer_text">Made with plain HTML/CSS/JS • Deployed on GitHub Pages</span></div>
-  </footer>
-
-  <!-- Anime.js for the orb animation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <footer>
+      <span>© <span id="year"></span> Felipe Sotille</span>
+      &nbsp;·&nbsp;
+      <span data-i18n="footer_made">Made with plain HTML/CSS/JS · Deployed on GitHub Pages</span>
+    </footer>
+  </div>
 
   <script>
-    // Helpers
-    const $ = (sel, el = document) => el.querySelector(sel);
-    const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
+    // ── Year ─────────────────────────────────────────────
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // i18n dictionary (EN default) with list arrays
-    const I18N = {
+    // ── Theme ─────────────────────────────────────────────
+    const THEME_KEY = 'fs-theme';
+    function applyTheme(t) {
+      const resolved = t === 'auto'
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : t;
+      document.documentElement.setAttribute('data-theme', resolved);
+      ['dark','light','auto'].forEach(id => {
+        document.getElementById('theme-' + id)?.classList.toggle('active', id === t);
+      });
+    }
+    function setTheme(t) { localStorage.setItem(THEME_KEY, t); applyTheme(t); }
+    applyTheme(localStorage.getItem(THEME_KEY) || 'auto');
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if ((localStorage.getItem(THEME_KEY) || 'auto') === 'auto') applyTheme('auto');
+    });
+
+    // ── i18n ──────────────────────────────────────────────
+    const LANG_KEY = 'fs-lang';
+    const T = {
       en: {
-        title: "Felipe Sotille — Portfolio / CV",
-        meta_desc: "Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer.",
-        nav_about: "About",
-        nav_experience: "Experience",
-        nav_skills: "Skills",
-        nav_projects: "Projects",
-        nav_contact: "Contact",
-        btn_download_pdf: "Download PDF",
-        hero_pill: "Open to OSS collaborations",
-        headline: "Sr. DevSecOps & Software Engineer",
-        hero_desc: "18+ years across banking, ERPs, real‑time and social apps. Backend engineer, frontend enthusiast and DevOps lover.",
-        btn_view_experience: "View experience",
-        btn_email: "Email",
-        btn_linkedin: "LinkedIn",
-        btn_github: "GitHub",
-        section_about_title: "About",
-        about_intro: "I’m a distinguished software engineer with {EXP} in the industry. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.",        about_quote: "“Strive not to be a success, but rather to be of value.” — Albert Einstein",
-        aside_loc: "Location",
-        aside_loc_value: "Brussels Metropolitan Area (remote/global)",
-        aside_langs: "Languages",
-        aside_langs_value: "Portuguese, English, French",
-        aside_avail: "Availability",
-        aside_avail_value: "Consulting & OSS collaborations",
-        section_experience_title: "Experience",
-        expA_meta: "Jan 2, 2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Brussels Area, Belgium",
-        expA_role: "DevSecOps & CI/CD",
-        expA_bullets: [
-          "Blueprints of CI/CD pipelines.",
-          "Release orchestration (driving a key KPI).",
-          "Standardization of CI/CD.",
-          "Security scans for several applications (static analysis).",
-          "DevOps coaching across squads.",
-          "Automation and tooling scripting."
-        ],
-        expB_meta: "Jul 2024 — Dec 2024 · Senior Java Consultant (Freelance) · Swissquote · Geneva Metropolitan Area · Hybrid",
-        expB_role: "Data migration & database engineering",
-        expB_bullets: [
-          "Created reports for the DBA squad to explain migration efforts.",
-          "Migrated a huge database with billions of financial transaction records to Oracle.",
-          "Improved database interactions by rewriting queries for optimal results.",
-          "Built a Java data loader to move billions of records seamlessly.",
-          "Applied denormalization and table partitioning to optimize performance."
-        ],
-        expC_meta: "Jul 2019 — Jun 2024 · Sr. Software Engineer (Consultant) · Swift · Brussels Area, Belgium",
-        expC_role: "Full‑stack engineering & platform evolution",
-        expC_bullets: [
-          "Full‑stack engineer across multiple squads.",
-          "Implemented Coveo AI Search in Knowledge Centre Angular application.",
-          "Fixed security vulnerabilities and code smells across back‑office apps.",
-          "Upgraded Angular versions in more than 10 applications.",
-          "Wrote documentation/specifications with stakeholders for new features.",
-          "Upgraded Docker images to align with current technologies.",
-          "Interviewed candidates for technical and cultural fit.",
-          "Led migration from monolith to microservices in Identity Management app.",
-          "Delivered JSF → Angular migration, pivotal for company KPIs.",
-          "Acted as Scrum Master with agile coaches to improve agility and motivation.",
-          "Integrated Adobe Experience Cloud into the application flow.",
-          "Received nominations: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player."
-        ],
-        expD_meta: "Jun 2018 — Jun 2019 · Lead Software & DevOps Engineer · MyCujoo (An Eleven Company) · Lisbon Area, Portugal",
-        expD_role: "Real‑time microservices & team leadership",
-        expD_bullets: [
-          "Designed and launched a cloud‑centric, scalable microservice backend using Vert.x to elevate the player experience.",
-          "Built a real‑time app with the Kafka ecosystem to connect football players and their fanbase (social‑network‑like).",
-          "Used Kubernetes and Google Cloud Platform to handle hundreds of thousands of interactions.",
-          "Led a passionate engineering team and cultivated a positive environment."
-        ],
-        aside_prev_title: "Previous experiences",
-
-        /* Right-column detailed items (EN) */
-        wplex_meta: "Oct 2015 — Mar 2018 · Senior Java Developer · WPLEX Software · Florianópolis Area, Brazil",
-        wplex_bullets: [
-          "Built and evolved real‑time urban transport features; delivered citizen‑facing monitoring apps.",
-          "Optimized SQL for performance; increased unit test coverage.",
-          "Frontend in ReactJS consuming backend endpoints; REST APIs.",
-          "Customer features & reports; Java architecture design."
-        ],
-        metaway_meta: "Mar 2015 — Aug 2015 · Software Developer · Metaway · Bento Gonçalves Area, Brazil",
-        metaway_bullets: [
-          "Client database conversions; improvements to data modeling.",
-          "Added indexes to speed up queries; built features & reports.",
-          "Introduced Liquibase for DB management; maintained client relationships."
-        ],
-        cybersec_meta: "Apr 2014 — Jan 2015 · Network & Security Analyst · CyberSec · Marau Area, Brazil",
-        cybersec_bullets: [
-          "Security hardening, server/network administration and virtualization.",
-          "CompTIA Security+ earned; on‑prem improvements and best practices."
-        ],
-        citta_meta: "Oct 2009 — Mar 2014 · Software Developer · Città Inteligência em Gestão Pública · Marau Area, Brazil",
-        citta_bullets: [
-          "Government systems; UI in Adobe Flex; testing and delivery.",
-          "Modularized parts of a monolithic system; automated client updates.",
-          "Maintained client relationships."
-        ],
-        holma_meta: "Jan 2007 — Sep 2009 · Delphi Developer / IT Support Analyst · Holma Software · Marau Area, Brazil",
-        holma_bullets: [
-          "IT support (DB admin, client support); promoted to Delphi developer.",
-          "Built reports, fixed bugs, trained customers; on‑site installs and validation.",
-          "Improved infrastructure to reduce customer update time."
-        ],
-
-        section_skills_title: "Skills",
-        skills_hard_title: "Hard skills",
-        skills_bars_title: "Proficiency overview",
-        skillbars_platform: "Platforms & DevSecOps",
-        skillbars_backend: "Back‑end (Java/Spring)",
-        skillbars_frontend: "Front‑end (Angular/TS)",
-        skills_note: "*Self‑assessed indicators for quick visualization.",
-        skills_soft_title: "Soft skills",
-        soft1: "Interpersonal",
-        soft2: "Team member",
-        soft3: "Collaborative",
-        soft4: "Creative thinker",
-        soft5: "Attention to detail",
-        soft6: "Problem‑solver",
-        soft7: "Time management",
-        soft8: "Authentic & approachable",
-        soft9: "Open & honest",
-        soft10: "Natural leader",
-        skills_lang_title: "Languages",
-        edu_title: "Education",
-        edu1: "Specialization — Blockchain, Smart Contracts & Cloud Security · UPF · 2023",
-        edu2: "Specialization — Artificial Intelligence & Data Science · UPF · 2023",
-        edu3: "B.Sc. in Computer Science · UPF · 2015",
-        edu4: "Security+ (CompTIA) · 2015",
-        section_projects_title: "Featured projects",
-        proj1_title: "Infra as Code Starter",
-        proj1_meta: "Blueprint · K8s · GitOps · Observability",
-        proj1_desc: "Platform template with Helm, ArgoCD, Prometheus/Grafana and service‑mesh patterns.",
-        proj2_title: "Java Service Kit",
-        proj2_meta: "Spring Boot · Resilience · Telemetry",
-        proj2_desc: "Best‑practices kit: tracing, metrics, retries, circuit‑breaker and hardening.",
-        proj3_title: "Angular + DX",
-        proj3_meta: "CLI · Schematics · Storybook",
-        proj3_desc: "DX tools: scaffolding, tests, lint and integrated UI docs.",
-        btn_view_all_repos: "View all repositories",
-        section_reco_title: "Recommendations",
-        rec1_text: "“I had the chance to closely collaborate with Felipe in our squad. Felipe adapts very quickly to our day‑to‑day process. He finds improvements at different levels and shares ideas that are always relevant and helpful. He doesn’t hesitate to leave his comfort zone and try new technologies and tools. He’s respectful and always ready to help.”",
-        rec1_cite: "— Jérôme Vervier, Full‑stack Developer & Trainer (Swift)",
-        rec2_text: "“He is the go‑to man when it comes to Linux and microservices. We worked closely on microservices together at Swift — nice colleague to work with. I recommend him for IT development roles.”",
-        rec2_cite: "— Sadhana Italiya, Java Software Developer (Swift)",
-        rec3_text: "“I have had the pleasure to work with Felipe, probably the most skilled developer I have ever met. Enthusiastic about new technologies and making things work, but also a fun and relaxed teammate.”",
-        rec3_cite: "— Arnau Rovira, DevOps Engineer (Eleven Sports)",
-        section_contact_title: "Contact",
-        links_quick_title: "Quick links",
-        link_experience: "Experience",
-        link_skills: "Skills",
-        link_projects: "Projects",
-        link_download_pdf: "Download PDF",
-        tip_replay: "Tip: press <span class='kbd'>R</span> to replay the top animation.",
-        footer_text: "Made with plain HTML/CSS/JS • Deployed on GitHub Pages",
-        // --- I18N.en.scramble (replace this array) ---
-        scramble: [
-        "DevSecOps · CI/CD · Cloud‑Native",
-        "Platform Engineering · SRE mindset",
-        "Java · Spring Boot · REST",
-        "Angular · TypeScript · DX",
-        "Kubernetes · Docker",
-        "GitOps · Argo CD · Helm",
-        "Observability · Prometheus · Grafana",
-        "Kafka · Event‑Driven · Vert.x",
-        "Microservices · Resilience · Scalability",
-        "Oracle · SQL Tuning · Partitioning",
-        "AWS · GCP · Cloud Architecture",
-        "Security · SAST · Hardening",
-        "Release Orchestration · Standardization",
-        "Leadership · Coaching · Mentoring",
-        "Agile · Scrum · Stakeholder Comms",
-        "Clean Code · Secure Coding · Testing"
-        ]
+        hero_status: 'Open to consulting & OSS',
+        hero_sub: 'Sr. DevSecOps & Software Engineer',
+        badge_location: 'Brussels, Belgium',
+        badge_exp: '18+ years experience',
+        card_cv_eyebrow: 'Resume & Experience',
+        card_cv_title: 'Curriculum Vitae',
+        card_cv_desc: 'Full interactive CV with 18+ years of professional experience in DevSecOps, full-stack engineering and platform architecture. Bilingual, printable to PDF.',
+        cta_cv: 'View CV',
+        status_cv: 'PDF export available',
+        card_ts_eyebrow: 'Daily Tech News',
+        card_ts_desc: 'Curated technology news covering security, infrastructure, developer tools and major releases. Handpicked signal, no noise. Updated automatically every day.',
+        cta_ts: 'Open TechStream',
+        status_ts: 'Updated daily',
+        card_mc_eyebrow: 'Tarot & Divination',
+        card_mc_desc: 'The Living Tarot — draw cards from the Major and Minor Arcana, receive personal interpretations and explore archetypal insights. Available in four languages.',
+        cta_mc: 'Open Mancery',
+        status_mc: 'EN · PT · ES · FR',
+        contact_title: "Let's work together",
+        contact_sub: 'Available for consulting, freelance and OSS collaborations.',
+        btn_email: 'Send email',
+        footer_made: 'Made with plain HTML/CSS/JS · Deployed on GitHub Pages',
       },
       pt: {
-        title: "Felipe Sotille — Portfólio / Currículo",
-        meta_desc: "Currículo interativo de Felipe Sotille — Sr. DevSecOps & Software Engineer.",
-        nav_about: "Sobre",
-        nav_experience: "Experiência",
-        nav_skills: "Skills",
-        nav_projects: "Projetos",
-        nav_contact: "Contato",
-        btn_download_pdf: "Baixar PDF",
-        hero_pill: "Aberto a colaborações OSS",
-        headline: "Sr. DevSecOps & Software Engineer",
-        hero_desc: "18+ anos entre banking, ERPs, apps em tempo real e sociais. Engenheiro de backend, entusiasta de frontend e apaixonado por DevOps.",
-        btn_view_experience: "Ver experiência",
-        btn_email: "E‑mail",
-        btn_linkedin: "LinkedIn",
-        btn_github: "GitHub",
-        section_about_title: "Sobre",
-        about_intro: "Sou um engenheiro de software com {EXP} de atuação. Contribuí para catálogos de produtos, ERPs, aplicações em tempo real e sociais, e para o setor bancário. Desenvolvedor versátil: engenheiro de backend, entusiasta de frontend e apaixonado por DevOps. Sempre aberto a compartilhar conhecimento e ajudar.",        about_quote: "“Esforce‑se não para ser um sucesso, mas para ser valioso.” — Albert Einstein",
-        aside_loc: "Local",
-        aside_loc_value: "Área metropolitana de Bruxelas (remoto/global)",
-        aside_langs: "Idiomas",
-        aside_langs_value: "Português, Inglês, Francês",
-        aside_avail: "Disponibilidade",
-        aside_avail_value: "Consultoria & colaborações em OSS",
-        section_experience_title: "Experiência",
-        expA_meta: "2 jan. 2025 — Atual · Sr. DevSecOps Engineer (Consultor) · Swift · Área de Bruxelas, Bélgica",
-        expA_role: "DevSecOps & CI/CD",
-        expA_bullets: [
-          "Blueprints de pipelines de CI/CD.",
-          "Orquestração de releases (impulsionando KPI chave).",
-          "Padronização de CI/CD.",
-          "Scans de segurança em várias aplicações (análise estática).",
-          "Coaching DevOps para diversos squads.",
-          "Automação e scripts de tooling."
-        ],
-        expB_meta: "jul. 2024 — dez. 2024 · Senior Java Consultant (Freelance) · Swissquote · Área metropolitana de Genebra · Híbrido",
-        expB_role: "Migração de dados & engenharia de banco de dados",
-        expB_bullets: [
-          "Relatórios para o time de DBA explicando os esforços de migração.",
-          "Migração de um banco com bilhões de registros de transações financeiras para Oracle.",
-          "Melhoria nas interações com o banco reescrevendo queries para resultados ótimos.",
-          "Criação de loader em Java para mover bilhões de registros sem interrupções.",
-          "Aplicação de desnormalização e particionamento para otimizar performance."
-        ],
-        expC_meta: "jul. 2019 — jun. 2024 · Sr. Software Engineer (Consultor) · Swift · Área de Bruxelas, Bélgica",
-        expC_role: "Engenharia full‑stack & evolução de plataforma",
-        expC_bullets: [
-          "Atuação full‑stack em múltiplos squads.",
-          "Implementação do Coveo AI Search no app Angular do Knowledge Centre.",
-          "Correção de vulnerabilidades e code smells em apps de back‑office.",
-          "Upgrade de Angular em mais de 10 aplicações.",
-          "Documentação/especificações de novas features com stakeholders.",
-          "Upgrade de imagens Docker para tecnologias atuais.",
-          "Entrevistas de candidatos para fit técnico e cultural.",
-          "Liderança na migração de monólito para microserviços no app de Identity Management.",
-          "Entrega da migração JSF → Angular, crucial para KPIs.",
-          "Atuação como Scrum Master com agile coaches para aumentar agilidade e motivação.",
-          "Integração do Adobe Experience Cloud no fluxo do app.",
-          "Indicações: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player."
-        ],
-        expD_meta: "jun. 2018 — jun. 2019 · Lead Software & DevOps Engineer · MyCujoo (Eleven) · Área de Lisboa, Portugal",
-        expD_role: "Microserviços em tempo real & liderança de time",
-        expD_bullets: [
-          "Design e lançamento de backend escalável em microserviços com Vert.x.",
-          "App em tempo real com Kafka para conectar jogadores e fãs (estilo rede social).",
-          "Uso de Kubernetes e Google Cloud Platform para alto throughput.",
-          "Liderança de equipe e cultura positiva."
-        ],
-        aside_prev_title: "Experiências anteriores",
-
-        /* Right-column detailed items (PT) */
-        wplex_meta: "out. 2015 — mar. 2018 · Senior Java Developer · WPLEX Software · Florianópolis, Brasil",
-        wplex_bullets: [
-          "Funcionalidades de transporte urbano em tempo real; apps de monitoramento para cidadãos.",
-          "Tuning de SQL para performance; aumento de cobertura de testes.",
-          "Frontend em ReactJS consumindo endpoints do backend; APIs REST.",
-          "Features e relatórios para clientes; desenho de arquitetura Java."
-        ],
-        metaway_meta: "mar. 2015 — ago. 2015 · Software Developer · Metaway · Bento Gonçalves, Brasil",
-        metaway_bullets: [
-          "Conversões de bancos de dados de clientes; melhorias no modelo de dados.",
-          "Índices para acelerar consultas; features e relatórios.",
-          "Introdução do Liquibase para gestão de banco; relacionamento com clientes."
-        ],
-        cybersec_meta: "abr. 2014 — jan. 2015 · Network & Security Analyst · CyberSec · Marau, Brasil",
-        cybersec_bullets: [
-          "Hardening de segurança, administração de servidores/redes e virtualização.",
-          "Certificação CompTIA Security+; melhorias on‑prem e boas práticas."
-        ],
-        citta_meta: "out. 2009 — mar. 2014 · Software Developer · Città Inteligência em Gestão Pública · Marau, Brasil",
-        citta_bullets: [
-          "Sistemas governamentais; UI em Adobe Flex; testes e entregas.",
-          "Modularização de partes do monólito; atualização automática nos clientes.",
-          "Manutenção de relacionamento com clientes."
-        ],
-        holma_meta: "jan. 2007 — set. 2009 · Delphi Developer / IT Support Analyst · Holma Software · Marau, Brasil",
-        holma_bullets: [
-          "Suporte de TI (admin de BD, suporte a clientes); promoção para desenvolvedor Delphi.",
-          "Relatórios, correção de bugs, treinamentos; instalações e validações in loco.",
-          "Melhorias na infraestrutura para reduzir tempo de atualização dos clientes."
-        ],
-
-        section_skills_title: "Skills",
-        skills_hard_title: "Hard skills",
-        skills_bars_title: "Visão geral de proficiência",
-        skillbars_platform: "Plataformas & DevSecOps",
-        skillbars_backend: "Back‑end (Java/Spring)",
-        skillbars_frontend: "Front‑end (Angular/TS)",
-        skills_note: "*Indicadores autoavaliados para visualização rápida.",
-        skills_soft_title: "Soft skills",
-        soft1: "Interpessoal",
-        soft2: "Trabalho em equipe",
-        soft3: "Colaborativo",
-        soft4: "Pensamento criativo",
-        soft5: "Atenção aos detalhes",
-        soft6: "Resolvedor de problemas",
-        soft7: "Gestão do tempo",
-        soft8: "Autêntico & acessível",
-        soft9: "Aberto & honesto",
-        soft10: "Liderança natural",
-        skills_lang_title: "Idiomas",
-        edu_title: "Formação",
-        edu1: "Especialização — Blockchain, Smart Contracts & Cloud Security · UPF · 2023",
-        edu2: "Especialização — Inteligência Artificial & Data Science · UPF · 2023",
-        edu3: "Bacharel em Ciência da Computação · UPF · 2015",
-        edu4: "Security+ (CompTIA) · 2015",
-        section_projects_title: "Projetos em destaque",
-        proj1_title: "Infra as Code Starter",
-        proj1_meta: "Blueprint · K8s · GitOps · Observability",
-        proj1_desc: "Template de plataforma com Helm, ArgoCD, Prometheus/Grafana e patterns de service‑mesh.",
-        proj2_title: "Java Service Kit",
-        proj2_meta: "Spring Boot · Resiliência · Telemetria",
-        proj2_desc: "Kit de boas práticas: tracing, métricas, retries, circuit‑breaker e hardening.",
-        proj3_title: "Angular + DX",
-        proj3_meta: "CLI · Schematics · Storybook",
-        proj3_desc: "Ferramentas de DX: scaffolding, testes, lint e UI docs integradas.",
-        btn_view_all_repos: "Ver todos os repositórios",
-        section_reco_title: "Recomendações",
-        rec1_text: "“Tive a chance de colaborar de perto com o Felipe no nosso squad. Ele se adapta muito rápido ao dia a dia. Encontra melhorias em diferentes níveis e compartilha ideias sempre relevantes. Não hesita em sair da zona de conforto e experimentar novas tecnologias e ferramentas. Respeitoso e sempre pronto para ajudar.”",
-        rec1_cite: "— Jérôme Vervier, Full‑stack Developer & Trainer (Swift)",
-        rec2_text: "“Ele é a pessoa de referência quando se trata de Linux e microserviços. Trabalhamos juntos em microserviços na Swift — ótimo colega. Recomendo para vagas de desenvolvimento.”",
-        rec2_cite: "— Sadhana Italiya, Java Software Developer (Swift)",
-        rec3_text: "“Tive o prazer de trabalhar com o Felipe, provavelmente o desenvolvedor mais habilidoso que já conheci. Entusiasta de novas tecnologias e de fazer as coisas funcionarem, além de um colega divertido e tranquilo.”",
-        rec3_cite: "— Arnau Rovira, DevOps Engineer (Eleven Sports)",
-        section_contact_title: "Contato",
-        links_quick_title: "Links rápidos",
-        link_experience: "Experiência",
-        link_skills: "Skills",
-        link_projects: "Projetos",
-        link_download_pdf: "Baixar PDF",
-        tip_replay: "Dica: pressione <span class='kbd'>R</span> para reiniciar a animação do topo.",
-        footer_text: "Feito com HTML/CSS/JS puro • Deploy no GitHub Pages",
-        // --- I18N.pt.scramble (replace this array) ---
-        scramble: [
-        "DevSecOps · CI/CD · Cloud‑Native",
-        "Platform Engineering · SRE",
-        "Java · Spring Boot · REST",
-        "Angular · TypeScript · DX",
-        "Kubernetes · Docker",
-        "GitOps · Argo CD · Helm",
-        "Observabilidade · Prometheus · Grafana",
-        "Kafka · Event‑Driven · Vert.x",
-        "Microserviços · Resiliência · Escalabilidade",
-        "Oracle · Tuning SQL · Particionamento",
-        "AWS · GCP · Arquitetura Cloud",
-        "Segurança · SAST · Hardening",
-        "Orquestração de Releases · Padronização",
-        "Liderança · Coaching · Mentoria",
-        "Agile · Scrum · Stakeholders",
-        "Clean Code · Secure Coding · Testes"
-        ]
+        hero_status: 'Disponível para consultoria & OSS',
+        hero_sub: 'Engenheiro Sênior DevSecOps & Software',
+        badge_location: 'Bruxelas, Bélgica',
+        badge_exp: '18+ anos de experiência',
+        card_cv_eyebrow: 'Currículo & Experiência',
+        card_cv_title: 'Currículo',
+        card_cv_desc: 'CV interativo completo com 18+ anos de experiência em DevSecOps, engenharia full-stack e arquitetura de plataformas. Bilíngue, exportável em PDF.',
+        cta_cv: 'Ver CV',
+        status_cv: 'Exportação em PDF disponível',
+        card_ts_eyebrow: 'Notícias de Tecnologia',
+        card_ts_desc: 'Notícias de tecnologia cobrindo segurança, infraestrutura, ferramentas para devs e grandes lançamentos. Sinal sem ruído. Atualizado automaticamente todos os dias.',
+        cta_ts: 'Abrir TechStream',
+        status_ts: 'Atualizado diariamente',
+        card_mc_eyebrow: 'Tarô & Adivinhação',
+        card_mc_desc: 'O Tarô Vivo — tire cartas do Arcano Maior e Menor, receba interpretações pessoais e explore insights arquetípicos. Disponível em quatro idiomas.',
+        cta_mc: 'Abrir Mancery',
+        status_mc: 'PT · EN · ES · FR',
+        contact_title: 'Vamos trabalhar juntos',
+        contact_sub: 'Disponível para consultoria, freelance e colaborações OSS.',
+        btn_email: 'Enviar e-mail',
+        footer_made: 'Feito com HTML/CSS/JS puro · Hospedado no GitHub Pages',
       }
     };
 
-    // Default language: EN (unless user saved a preference)
-    const storedLang = localStorage.getItem('lang');
-    let LANG = storedLang || 'en';
-
-    // --- Unified career timeline to compute unique months (no double counting)
-    const ROLES = [
-    { start: '2007-01-01', end: '2009-09-30' }, // Holma
-    { start: '2009-10-01', end: '2014-03-31' }, // Città
-    { start: '2014-04-01', end: '2015-01-31' }, // CyberSec
-    { start: '2015-03-01', end: '2015-08-31' }, // Metaway
-    { start: '2015-10-01', end: '2018-03-31' }, // WPLEX
-    { start: '2018-06-01', end: '2019-06-30' }, // MyCujoo/Eleven
-    { start: '2019-07-01', end: '2024-06-30' }, // SWIFT (1ª fase)
-    { start: '2024-07-01', end: '2024-12-31' }, // Swissquote
-    { start: '2025-01-02', end: null }          // SWIFT (2ª fase, presente)
-    ];
-
-    function toMonthIndex(d){ return d.getFullYear()*12 + d.getMonth(); } // Jan=0
-    function unionMonths(roles){
-    const set = new Set();
-    roles.forEach(r=>{
-        const s = new Date(r.start);
-        const e = r.end ? new Date(r.end) : new Date();
-        let a = toMonthIndex(new Date(s.getFullYear(), s.getMonth(), 1));
-        let b = toMonthIndex(new Date(e.getFullYear(), e.getMonth(), 1));
-        for (let m=a; m<=b; m++) set.add(m);
-    });
-    return set.size; // unique months across the whole career
-    }
-    function formatExpLabel(lang, years, months){
-    return lang === 'pt'
-        ? `≈${years} anos e ${months} meses`
-        : `≈${years} years ${months} months`;
-    }
-    function computeExperience(){
-    const totalMonths = unionMonths(ROLES);
-    const years = Math.floor(totalMonths / 12);
-    const months = totalMonths % 12;
-    return { totalMonths, years, months };
-    }
-    function injectExperience(){
-    const { years, months } = computeExperience();
-    const label = formatExpLabel(LANG, years, months);
-
-    // HERO chip
-    const chip = document.getElementById('exp-chip');
-    if (chip) chip.textContent = label;
-
-    // ABOUT paragraph (uses placeholder {EXP} in the i18n string)
-    const about = document.querySelector('[data-i18n="about_intro"]');
-    if (about){
-        const tpl = I18N[LANG].about_intro;
-        about.textContent = tpl.replace('{EXP}', label);
-    }
-
-    // Meta description also gets the updated figure (EN baseline)
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content',
-        `Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer with ${formatExpLabel('en', years, months)} of experience.`
-    );
-    }
-
-
-    function applyI18n(lang){
-      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-      document.title = I18N[lang].title;
-      const meta = document.querySelector('meta[name=description]'); if (meta) meta.setAttribute('content', I18N[lang].meta_desc);
-      $$("[data-i18n]").forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const v = I18N[lang][key];
-        if (v !== undefined){
-          if (/<[a-z][\s\S]*>/i.test(v)) el.innerHTML = v; else el.textContent = v;
-        }
+    function applyLang(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById('lang-en').setAttribute('aria-pressed', lang === 'en');
+      document.getElementById('lang-pt').setAttribute('aria-pressed', lang === 'pt');
+      const dict = T[lang] || T.en;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) el.textContent = dict[key];
       });
-      // Render lists
-      $$("[data-i18n-list]").forEach(el => {
-        const key = el.getAttribute('data-i18n-list');
-        const arr = I18N[lang][key] || [];
-        el.innerHTML = arr.map(item => `<li>${item}</li>`).join("");
-      });
-      $$('.lang-toggle [data-lang]').forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)));
-      setPhrases(I18N[lang].scramble);
     }
-
-    // Text Scramble
-    class TextScramble {
-      constructor(el){ this.el = el; this.chars = '!<>-_\\/[]{}—=+*^?#________'; this.update = this.update.bind(this); }
-      setText(newText){
-        const oldText = this.el.innerText || "";
-        const length = Math.max(oldText.length, newText.length);
-        const promise = new Promise(resolve => this.resolve = resolve);
-        this.queue = [];
-        for (let i = 0; i < length; i++){
-          const from = oldText[i] || '';
-          const to   = newText[i] || '';
-          const start = Math.floor(Math.random() * 30);
-          const end   = start + Math.floor(Math.random() * 40);
-          this.queue.push({ from, to, start, end });
-        }
-        cancelAnimationFrame(this.frameRequest);
-        this.frame = 0; this.update(); return promise;
-      }
-      update(){
-        let output = '', complete = 0;
-        for (let i = 0, n = this.queue.length; i < n; i++){
-          let { from, to, start, end, char } = this.queue[i];
-          if (this.frame >= end){ complete++; output += to; }
-          else if (this.frame >= start){
-            if (!char || Math.random() < 0.28){ char = this.randomChar(); this.queue[i].char = char; }
-            output += '<span class="dud">' + char + '</span>';
-          } else { output += from; }
-        }
-        this.el.innerHTML = output;
-        if (complete === this.queue.length){ this.resolve(); }
-        else { this.frameRequest = requestAnimationFrame(this.update); this.frame++; }
-      }
-      randomChar(){ return this.chars[Math.floor(Math.random() * this.chars.length)]; }
-    }
-
-    const scrambleEl = document.getElementById('scramble');
-    const fx = new TextScramble(scrambleEl);
-    let counter = 0, phrases = I18N[LANG].scramble;
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let timeoutId;
-
-    function setPhrases(arr){
-      phrases = arr;
-      counter = 0;
-      if (prefersReduced) scrambleEl.textContent = phrases[0];
-      else next();
-    }
-    function next(){
-      fx.setText(phrases[counter]).then(() => {
-        timeoutId = setTimeout(next, 1400);
-      });
-      counter = (counter + 1) % phrases.length;
-    }
-
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting){
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    },{threshold:.12});
-    $$('.reveal').forEach(el => io.observe(el));
-
-    // Skill bars animate
-    const io2 = new IntersectionObserver((entries)=>{
-      entries.forEach(entry => {
-        if (entry.isIntersecting){
-          const i = $('i', entry.target);
-          i.style.width = entry.target.dataset.skill + '%';
-          io2.unobserve(entry.target);
-        }
-      });
-    },{threshold:.4});
-    $$('.skillbar').forEach(el => io2.observe(el));
-
-    // Tilt effect
-    const tilts = $$('.tilt');
-    tilts.forEach(card => {
-      let rAF;
-      card.addEventListener('mousemove', (e) => {
-        const b = card.getBoundingClientRect();
-        const x = (e.clientX - b.left) / b.width;
-        const y = (e.clientY - b.top) / b.height;
-        const rx = (y - .5) * -8;
-        const ry = (x - .5) * 10;
-        cancelAnimationFrame(rAF);
-        rAF = requestAnimationFrame(()=>{
-          card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
-        });
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-      });
-    });
-
-    // Orb: duplicate latitude paths to create longitude set, then animate
-    function prepareSphere(){
-      const lat = document.querySelector('.sphere .lat');
-      const lon = document.querySelector('.sphere .lon');
-      if (lat && lon) lon.innerHTML = lat.innerHTML;
-    }
-    
-    let _animePaths, _animeSpin;
-
-    function animateSphere(){
-        if (prefersReduced || !window.anime) return;
-        _animePaths = window.anime({
-            targets: '.sphere path',
-            strokeDashoffset: [window.anime.setDashoffset, 0],
-            easing: 'easeInOutSine',
-            duration: 1800,
-            delay: (el, i) => i * 24,
-            direction: 'alternate',
-            loop: true,
-            autoplay: false
-        });
-        _animeSpin = window.anime({
-            targets: '.sphere',
-            rotate: '1turn',
-            easing: 'linear',
-            duration: 22000,
-            loop: true,
-            autoplay: false
-        });
-
-        const orb = document.querySelector('.orb-wrap');
-        if (!orb) return;
-
-        const orbIO = new IntersectionObserver((entries)=>{
-            entries.forEach(e=>{
-            if (e.isIntersecting){ _animePaths.play(); _animeSpin.play(); }
-            else { _animePaths.pause(); _animeSpin.pause(); }
-            });
-        },{threshold:0.1});
-        orbIO.observe(orb);
-
-        // Also pause when tab is hidden
-        document.addEventListener('visibilitychange', ()=>{
-            const playing = document.visibilityState === 'visible';
-            [_animePaths, _animeSpin].forEach(a => a && (playing ? a.play() : a.pause()));
-        });
-    }
-
-    // Tilt: run only on precise pointers (saves CPU on touch devices)
-    if (window.matchMedia('(pointer: fine)').matches){
-        const tilts = $$('.tilt');
-        tilts.forEach(card => {
-            let rAF;
-            card.addEventListener('mousemove', (e) => {
-            const b = card.getBoundingClientRect();
-            const x = (e.clientX - b.left) / b.width;
-            const y = (e.clientY - b.top) / b.height;
-            const rx = (y - .5) * -8;
-            const ry = (x - .5) * 10;
-            cancelAnimationFrame(rAF);
-            rAF = requestAnimationFrame(()=>{
-                card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
-            });
-            });
-            card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-        });
-    }
-
-
-    // Language switch
-    $$('.lang-toggle [data-lang]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.dataset.lang;
-        if (LANG === lang) return;
-        LANG = lang;
-        localStorage.setItem('lang', LANG);
-        clearTimeout(timeoutId);
-        applyI18n(LANG);
-        injectExperience();
-      });
-    });
-
-    // THEME: dark/light/auto with persistence
-    function setTheme(mode){
-      if (mode === 'auto'){
-        document.documentElement.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', mode);
-      }
-      localStorage.setItem('theme', mode);
-    }
-    function initTheme(){
-      const stored = localStorage.getItem('theme') || 'auto';
-      setTheme(stored);
-    }
-    $('#theme-dark').addEventListener('click', () => setTheme('dark'));
-    $('#theme-light').addEventListener('click', () => setTheme('light'));
-    $('#theme-auto').addEventListener('click', () => setTheme('auto'));
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if ((localStorage.getItem('theme') || 'auto') === 'auto') setTheme('auto');
-    });
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-// Copy email (mantém igual)
-const copyBtn = document.getElementById('copy-email');
-if (copyBtn){
-  copyBtn.addEventListener('click', async ()=>{
-    try{
-      await navigator.clipboard.writeText('fsotille@gmail.com');
-      copyBtn.textContent = (LANG==='pt' ? 'Copiado!' : 'Copied!');
-      setTimeout(()=> copyBtn.textContent = (LANG==='pt' ? 'Copiar e‑mail' : 'Copy email'), 1200);
-    }catch(e){ console.warn(e); }
-  });
-}
-
-// vCard 3.0 (compatível com Gmail/Outlook/Apple) — CRLF + tipos clássicos
-const vcardBtn = document.getElementById('btn-vcard');
-
-    if (vcardBtn){
-        vcardBtn.addEventListener('click', (e)=>{
-            const data = e.shiftKey ? buildVCardV4() : buildVCardV3();
-            const blob = new Blob([data], { type: 'text/x-vcard;charset=utf-8' });
-            const url  = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = e.shiftKey ? 'Felipe_Sotille_v4.vcf' : 'Felipe_Sotille.vcf';
-            document.body.appendChild(a); a.click(); a.remove();
-            URL.revokeObjectURL(url);
-        }); 
-    }
-  vcardBtn.addEventListener('click', ()=>{
-    const data = buildVCardV3();
-    // text/x-vcard melhora compatibilidade em Windows/Outlook
-    const blob = new Blob([data], { type: 'text/x-vcard;charset=utf-8' });
-    const url  = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Felipe_Sotille.vcf';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-  });
-
-  function buildVCardV3(){
-    const CRLF = '\r\n';
-    const ts = new Date().toISOString()
-      .replace(/[-:]/g,'')       // 2025-08-15T12:34:56.789Z -> 20250815T123456.789Z
-      .replace(/\.\d{3}Z$/,'Z'); // remove milissegundos -> 20250815T123456Z
-
-    const lines = [
-      'BEGIN:VCARD',
-      'VERSION:3.0',
-      'N:Sotille;Felipe;;;',
-      'FN:Felipe Sotille',
-      'ORG:Independent Consultant',
-      'TITLE:Sr. DevSecOps & Software Engineer',
-      'EMAIL;TYPE=INTERNET;TYPE=WORK;TYPE=PREF:fsotille@gmail.com',
-      'TEL;TYPE=CELL;TYPE=WORK;TYPE=VOICE:+32456250429',
-      // URLs sem TYPE custom para compatibilidade ampla
-      'URL:https://linkedin.com/in/Felipe-Sotille/',
-      'URL:https://github.com/sotille',
-      'NOTE:Open to OSS collaborations',
-      'UID:felipe-sotille-vcard',
-      `REV:${ts}`,
-      'END:VCARD'
-    ];
-    // CRLF obrigatório para alguns importadores
-    return lines.join(CRLF) + CRLF;
-  }
-
-  function buildVCardV4(){
-    const CRLF = '\r\n';
-    const lines = [
-        'BEGIN:VCARD',
-        'VERSION:4.0',
-        'N:Sotille;Felipe;;;',
-        'FN:Felipe Sotille',
-        'ORG:Independent Consultant',
-        'TITLE:Sr. DevSecOps & Software Engineer',
-        'EMAIL;type=work;pref=1:fsotille@gmail.com',
-        'TEL;type=cell,work;value=uri:tel:+32456250429',
-        'URL:https://linkedin.com/in/Felipe-Sotille/',
-        'URL:https://github.com/sotille',
-        'NOTE:Open to OSS collaborations',
-        'END:VCARD'
-        ];
-        return lines.join(CRLF) + CRLF;
-    }
-    // Initial render
-    initTheme();
-    applyI18n(LANG);
-    injectExperience();
-    prepareSphere();
-    animateSphere();
+    function setLang(lang) { localStorage.setItem(LANG_KEY, lang); applyLang(lang); }
+    applyLang(localStorage.getItem(LANG_KEY) || 'en');
   </script>
-  <p style="text-align:center;margin-top:40px;"><a href="/techstream/">Ir para TechStream</a></p>
 </body>
 </html>

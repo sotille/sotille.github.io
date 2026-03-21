@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sotille.github.io/sitemap.xml

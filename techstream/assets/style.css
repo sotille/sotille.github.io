@@ -1286,3 +1286,18 @@ footer {
   .newsletter-btn  { width: 100%; }
   .newsletter-right { max-width: 100%; }
 }
+
+/* Back to portfolio link */
+.back-link {
+  font: 600 12px/1 Inter, system-ui;
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 6px;
+  flex-shrink: 0;
+  opacity: .75;
+  transition: opacity .15s;
+}
+.back-link:hover { opacity: 1; }

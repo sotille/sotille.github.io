@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sotille.github.io/techstream/sitemap.xml

@@ -1,0 +1,19 @@
+# IDE / OS
+.idea/
+.claude/
+.DS_Store
+*.iml
+Thumbs.db
+
+# Node (if ever used locally)
+node_modules/
+npm-debug.log*
+
+# Build artifacts
+dist/
+.cache/
+
+# Env files
+.env
+.env.local
+.env*.local

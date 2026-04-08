@@ -1,420 +1,460 @@
 <!doctype html>
-<html lang="en" data-theme="auto">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Felipe Sotille</title>
-  <meta name="description" content="Felipe Sotille — Sr. DevSecOps & Software Engineer. Portfolio, CV, projects and more.">
+  <title>Felipe Sotille — DevSecOps, AI & Software Engineering</title>
+  <meta name="description" content="Felipe Sotille — Sr. engineer with ~20 years building critical systems at SWIFT, Swissquote and beyond. DevSecOps, AI agents, release orchestration.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
-  <meta property="og:title" content="Felipe Sotille">
-  <meta property="og:description" content="Sr. DevSecOps & Software Engineer — CI/CD, DevSecOps, Java/Spring, K8s, Angular.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Felipe Sotille — DevSecOps, AI & Software Engineering">
+  <meta property="og:description" content="~20 years building critical infrastructure at SWIFT, Swissquote and beyond.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sotille.github.io/">
   <meta property="og:image" content="https://sotille.github.io/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Felipe Sotille">
-  <meta name="twitter:description" content="DevSecOps, CI/CD, Java/Spring, K8s, Angular.">
-  <meta name="twitter:image" content="https://sotille.github.io/assets/og-image.png">
-
+  <meta name="twitter:description" content="DevSecOps · AI Agents · Release Orchestration · ~20 years">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Felipe Sotille",
-    "jobTitle": "Sr. DevSecOps & Software Engineer",
-    "url": "https://sotille.github.io/",
-    "email": "mailto:fsotille@gmail.com",
-    "sameAs": [
-      "https://github.com/sotille",
-      "https://www.linkedin.com/in/Felipe-Sotille/"
-    ]
-  }
+  {"@context":"https://schema.org","@type":"Person","name":"Felipe Sotille","jobTitle":"Sr. DevSecOps & Software Engineer","url":"https://sotille.github.io/","email":"mailto:fsotille@gmail.com","sameAs":["https://github.com/sotille","https://www.linkedin.com/in/Felipe-Sotille/"]}
   </script>
-
   <style>
-    /* ── Design tokens ───────────────────────────────────── */
+    /* ── Tokens ──────────────────────────────────── */
     :root {
-      --bg-0: #060913;
-      --bg-1: #0b1020;
-      --surface: #111827;
-      --surface-2: #162032;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --line: #1e2d44;
-      --accent-cv: #38bdf8;
-      --accent-cv-2: #22d3ee;
-      --accent-ts: #6366f1;
-      --accent-ts-2: #8b5cf6;
-      --accent-mc: #f4d17a;
-      --accent-mc-2: #7a8ee6;
-      --shadow: 0 12px 40px rgba(0,0,0,.5);
-      --shadow-sm: 0 4px 16px rgba(0,0,0,.35);
-      --radius: 18px;
-      --maxw: 1080px;
+      --bg:       #05070f;
+      --bg-1:     #080c17;
+      --surface:  #0d1220;
+      --surface-1:#111827;
+      --border:   #1c2438;
+      --border-1: #232f45;
+      --text:     #f1f5f9;
+      --text-2:   #cbd5e1;
+      --muted:    #64748b;
+      --muted-1:  #475569;
+      --cv:       #38bdf8;
+      --cv-dim:   rgba(56,189,248,.12);
+      --cv-glow:  rgba(56,189,248,.18);
+      --ts:       #818cf8;
+      --ts-dim:   rgba(129,140,248,.12);
+      --ts-glow:  rgba(129,140,248,.18);
+      --mc:       #f59e0b;
+      --mc-dim:   rgba(245,158,11,.12);
+      --mc-glow:  rgba(245,158,11,.18);
+      --r: 16px;
+      --w: 1120px;
     }
     [data-theme="light"] {
-      --bg-0: #f0f4fa;
-      --bg-1: #e8eef8;
-      --surface: #ffffff;
-      --surface-2: #f1f5fd;
-      --text: #0b1220;
-      --muted: #475569;
-      --line: #d1daea;
-      --shadow: 0 12px 40px rgba(0,0,0,.1);
-      --shadow-sm: 0 4px 16px rgba(0,0,0,.07);
+      --bg:       #f8fafc;
+      --bg-1:     #f1f5f9;
+      --surface:  #ffffff;
+      --surface-1:#f8fafc;
+      --border:   #e2e8f0;
+      --border-1: #cbd5e1;
+      --text:     #0f172a;
+      --text-2:   #1e293b;
+      --muted:    #64748b;
+      --muted-1:  #94a3b8;
     }
 
-    /* ── Reset & base ────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Inter, system-ui, -apple-system, sans-serif;
-      background: var(--bg-0);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      transition: background .3s, color .2s;
+    /* ── Reset ───────────────────────────────────── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,sans-serif;
+      background:var(--bg); color:var(--text);
+      min-height:100vh; line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      transition:background .3s,color .2s;
     }
-    a { color: inherit; text-decoration: none; }
+    a{color:inherit;text-decoration:none}
 
-    /* ── Mesh background ─────────────────────────────────── */
-    .mesh {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+    /* ── Ambient background ──────────────────────── */
+    .ambient{
+      position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
     }
-    .mesh::before {
-      content: "";
-      position: absolute; inset: 0;
+    .ambient::before{
+      content:"";position:absolute;inset:0;
       background:
-        radial-gradient(ellipse 900px 600px at 10% 20%, rgba(56,189,248,.07) 0%, transparent 70%),
-        radial-gradient(ellipse 700px 500px at 90% 70%, rgba(99,102,241,.08) 0%, transparent 70%),
-        radial-gradient(ellipse 600px 400px at 50% 110%, rgba(244,209,122,.05) 0%, transparent 70%);
-      animation: meshFloat 20s ease-in-out infinite alternate;
+        radial-gradient(ellipse 1000px 700px at 0% 0%,   rgba(56,189,248,.055) 0%,transparent 65%),
+        radial-gradient(ellipse 800px 600px  at 100% 60%, rgba(129,140,248,.06) 0%,transparent 65%),
+        radial-gradient(ellipse 600px 400px  at 50% 100%,rgba(245,158,11,.04)  0%,transparent 65%);
+      animation:drift 25s ease-in-out infinite alternate;
     }
-    @keyframes meshFloat {
-      0%   { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(-20px, -30px) scale(1.04); }
-    }
-    [data-theme="light"] .mesh::before {
+    @keyframes drift{0%{transform:translate(0,0) scale(1)} 100%{transform:translate(-24px,-32px) scale(1.05)}}
+    [data-theme="light"] .ambient::before{
       background:
-        radial-gradient(ellipse 900px 600px at 10% 20%, rgba(56,189,248,.1) 0%, transparent 70%),
-        radial-gradient(ellipse 700px 500px at 90% 70%, rgba(99,102,241,.09) 0%, transparent 70%),
-        radial-gradient(ellipse 600px 400px at 50% 110%, rgba(244,209,122,.08) 0%, transparent 70%);
+        radial-gradient(ellipse 1000px 700px at 0% 0%,   rgba(56,189,248,.08) 0%,transparent 65%),
+        radial-gradient(ellipse 800px 600px  at 100% 60%, rgba(129,140,248,.07) 0%,transparent 65%),
+        radial-gradient(ellipse 600px 400px  at 50% 100%,rgba(245,158,11,.06)  0%,transparent 65%);
     }
 
-    /* Grid lines */
-    .mesh::after {
-      content: "";
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(var(--line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-      opacity: .35;
+    /* ── Layout ──────────────────────────────────── */
+    .page{position:relative;z-index:1;display:flex;flex-direction:column;min-height:100vh}
+    .wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+
+    /* ── Header ──────────────────────────────────── */
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(16px) saturate(180%);
+      -webkit-backdrop-filter:blur(16px) saturate(180%);
+      background:rgba(5,7,15,.7);
+      border-bottom:1px solid var(--border);
+      transition:background .3s;
+    }
+    [data-theme="light"] header{background:rgba(248,250,252,.82)}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:13px 28px;max-width:var(--w);margin:0 auto;gap:12px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:11px;
+      font:700 14px/1 Inter,system-ui;letter-spacing:.1px;
+    }
+    .logo{
+      width:32px;height:32px;border-radius:50%;flex-shrink:0;
+      background:conic-gradient(from 200deg,#38bdf8,#818cf8,#38bdf8);
+      display:grid;place-items:center;
+      box-shadow:0 0 0 2px rgba(56,189,248,.2),0 4px 16px rgba(0,0,0,.5);
+      font:700 11px/1 "JetBrains Mono",monospace;
+      color:#fff;letter-spacing:-.5px;
+    }
+    .nav-right{display:flex;align-items:center;gap:8px}
+    .tg{
+      display:inline-flex;border:1px solid var(--border);
+      border-radius:9px;overflow:hidden;
+    }
+    .tg button{
+      background:transparent;border:0;color:var(--muted);
+      padding:6px 10px;font:600 12px/1 Inter,system-ui;cursor:pointer;
+      transition:background .15s,color .15s;
+    }
+    .tg button[aria-pressed="true"],.tg button.active{
+      background:var(--surface-1);color:var(--text);
+    }
+    .tg button:hover{background:var(--surface-1);color:var(--text-2)}
+
+    /* ── Hero ────────────────────────────────────── */
+    .hero{
+      padding:80px 28px 64px;
+      max-width:var(--w);margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:48px;align-items:center;
+    }
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:5px 13px 5px 10px;border-radius:999px;
+      border:1px solid rgba(56,189,248,.25);
+      background:rgba(56,189,248,.06);
+      font:600 12px/1.4 Inter,system-ui;color:var(--cv);
+      margin-bottom:24px;
+      animation:up .5s ease both;
+    }
+    .hero-eyebrow .dot{
+      width:6px;height:6px;border-radius:50%;
+      background:var(--cv);flex-shrink:0;
+      animation:pulse 2s ease infinite;
+    }
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)}}
+    .hero h1{
+      font-size:clamp(42px,5.5vw,80px);
+      font-weight:900;line-height:1;letter-spacing:-2.5px;
+      color:var(--text);
+      animation:up .5s .05s ease both;
+      margin-bottom:14px;
+    }
+    .hero-role{
+      font-size:clamp(16px,2vw,22px);font-weight:500;
+      color:var(--muted);letter-spacing:-.3px;line-height:1.4;
+      animation:up .5s .1s ease both;
+      margin-bottom:16px;
+    }
+    .hero-role strong{
+      color:var(--text-2);font-weight:600;
+    }
+    .hero-tagline{
+      font:400 15px/1.7 Inter,system-ui;
+      color:var(--muted);
+      max-width:520px;
+      border-left:2px solid var(--border-1);
+      padding-left:16px;
+      margin-bottom:32px;
+      animation:up .5s .15s ease both;
+    }
+    .hero-tagline em{color:var(--text-2);font-style:normal;}
+    .hero-chips{
+      display:flex;flex-wrap:wrap;gap:8px;
+      margin-bottom:36px;
+      animation:up .5s .2s ease both;
+    }
+    .chip{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:6px 12px;border-radius:8px;
+      border:1px solid var(--border-1);background:var(--surface);
+      font:500 13px/1 Inter,system-ui;color:var(--muted);
+    }
+    .chip svg{opacity:.55;flex-shrink:0}
+    .hero-actions{
+      display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+      animation:up .5s .25s ease both;
+    }
+    .btn-primary{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:11px 22px;border-radius:10px;
+      background:var(--cv);color:#05070f;
+      font:700 14px/1 Inter,system-ui;
+      transition:opacity .15s,transform .15s;
+    }
+    .btn-primary:hover{opacity:.9;transform:translateY(-1px)}
+    .btn-ghost{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 18px;border-radius:10px;
+      border:1px solid var(--border-1);background:var(--surface);
+      font:600 13px/1 Inter,system-ui;color:var(--text-2);
+      transition:border-color .15s,transform .15s;
+    }
+    .btn-ghost:hover{border-color:var(--border-1);transform:translateY(-1px)}
+    @keyframes up{from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none}}
+
+    /* Terminal decoration */
+    .hero-deco{animation:up .6s .3s ease both}
+    .terminal{
+      background:var(--surface);
+      border:1px solid var(--border-1);
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.03);
+    }
+    .term-bar{
+      display:flex;align-items:center;gap:8px;
+      padding:12px 16px;
+      border-bottom:1px solid var(--border);
+      background:var(--surface-1);
+    }
+    .term-dot{width:10px;height:10px;border-radius:50%}
+    .term-dot:nth-child(1){background:#ff5f57}
+    .term-dot:nth-child(2){background:#febc2e}
+    .term-dot:nth-child(3){background:#28c840}
+    .term-title{
+      flex:1;text-align:center;
+      font:500 11px/1 "JetBrains Mono",monospace;
+      color:var(--muted);letter-spacing:.3px;
+    }
+    .term-body{
+      padding:20px 22px;
+      font:400 12.5px/1.8 "JetBrains Mono",monospace;
+      color:var(--muted);
+    }
+    .term-prompt{color:var(--cv);}
+    .term-cmd{color:var(--text-2);}
+    .term-out{color:var(--muted);}
+    .term-key{color:var(--ts);}
+    .term-val{color:#86efac;}
+    .term-warn{color:var(--mc);}
+    .term-cursor{
+      display:inline-block;width:7px;height:13px;
+      background:var(--cv);opacity:.9;
+      animation:blink 1.1s step-end infinite;vertical-align:-1px;
+    }
+    @keyframes blink{0%,100%{opacity:.9} 50%{opacity:0}}
+
+    /* ── Trusted by ──────────────────────────────── */
+    .trusted{
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      padding:18px 28px;
+      animation:up .5s .35s ease both;
+    }
+    .trusted-inner{
+      max-width:var(--w);margin:0 auto;
+      display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+    }
+    .trusted-label{
+      font:500 11px/1 "JetBrains Mono",monospace;
+      color:var(--muted-1);letter-spacing:1px;text-transform:uppercase;
+      white-space:nowrap;flex-shrink:0;
+    }
+    .trusted-divider{width:1px;height:16px;background:var(--border-1);flex-shrink:0}
+    .trusted-logos{
+      display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+    }
+    .trusted-logo{
+      font:600 13px/1 Inter,system-ui;
+      color:var(--muted);letter-spacing:.3px;
+      opacity:.7;transition:opacity .15s;
+    }
+    .trusted-logo:hover{opacity:1;color:var(--text-2)}
+    .trusted-logo span{
+      font:500 11px/1 "JetBrains Mono",monospace;
+      color:var(--muted-1);font-size:10px;
+      display:block;margin-top:2px;
     }
 
-    /* ── Layout ──────────────────────────────────────────── */
-    .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    /* ── Cards ───────────────────────────────────── */
+    .cards-section{
+      padding:64px 28px 80px;
+      max-width:var(--w);margin:0 auto;
+    }
+    .cards-header{
+      display:flex;align-items:center;justify-content:space-between;
+      margin-bottom:32px;flex-wrap:wrap;gap:12px;
+    }
+    .section-label{
+      font:700 11px/1 "JetBrains Mono",monospace;
+      color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .card{
+      position:relative;
+      border-radius:var(--r);
+      background:var(--surface);
+      border:1px solid var(--border);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+      transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+      animation:up .55s ease both;
+      text-decoration:none;color:var(--text);
+    }
+    .card:nth-child(1){animation-delay:.4s}
+    .card:nth-child(2){animation-delay:.5s}
+    .card:nth-child(3){animation-delay:.6s}
 
-    /* ── Header ──────────────────────────────────────────── */
-    header {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(12px) saturate(160%);
-      -webkit-backdrop-filter: blur(12px) saturate(160%);
-      background: rgba(6,9,19,.6);
-      border-bottom: 1px solid var(--line);
-      transition: background .3s;
+    /* Accent bar */
+    .card::before{
+      content:"";position:absolute;top:0;left:0;right:0;height:2px;
+      opacity:.7;
     }
-    [data-theme="light"] header {
-      background: rgba(240,244,250,.75);
-    }
-    .nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 24px; max-width: var(--maxw); margin: 0 auto; gap: 16px;
-    }
-    .brand {
-      display: flex; align-items: center; gap: 12px;
-      font-weight: 800; font-size: 15px; letter-spacing: .2px;
-    }
-    .logo {
-      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
-      background: conic-gradient(from 210deg, #38bdf8, #22d3ee, #818cf8, #38bdf8);
-      display: grid; place-items: center;
-      box-shadow: 0 0 0 2px rgba(56,189,248,.25), 0 6px 20px rgba(2,8,23,.5);
-      position: relative; overflow: hidden;
-    }
-    .logo::after {
-      content: "FS";
-      font: 700 12px/1 "JetBrains Mono", monospace;
-      color: #0b1020;
-      background: rgba(255,255,255,.95);
-      width: 28px; height: 28px; border-radius: 50%;
-      display: grid; place-items: center;
-      transform: rotate(-12deg);
-      mix-blend-mode: screen;
-    }
-    .nav-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .toggle-group {
-      display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
-    }
-    .toggle-group button {
-      background: transparent; border: 0; color: var(--text);
-      padding: 7px 11px; font: 700 12px/1 Inter, system-ui; cursor: pointer;
-      transition: background .15s;
-    }
-    .toggle-group button[aria-pressed="true"],
-    .toggle-group button.active { background: var(--surface-2); }
-    .toggle-group button:hover { background: var(--surface-2); }
+    .card--cv::before{background:linear-gradient(90deg,var(--cv),rgba(56,189,248,0))}
+    .card--ts::before{background:linear-gradient(90deg,var(--ts),rgba(129,140,248,0))}
+    .card--mc::before{background:linear-gradient(90deg,var(--mc),rgba(245,158,11,0))}
 
-    /* ── Hero ────────────────────────────────────────────── */
-    .hero {
-      padding: 72px 24px 56px;
-      max-width: var(--maxw); margin: 0 auto;
-      text-align: center;
-    }
-    .avatar-wrap {
-      display: flex; justify-content: center;
-      margin-bottom: 24px;
-      animation: fadeUp .5s ease both;
-    }
-    .avatar {
-      width: 88px; height: 88px; border-radius: 50%;
-      background: conic-gradient(from 210deg, #38bdf8, #22d3ee, #818cf8, #38bdf8);
-      display: grid; place-items: center;
-      box-shadow: 0 0 0 3px var(--bg-0), 0 0 0 5px rgba(56,189,248,.35), 0 12px 36px rgba(2,8,23,.6);
-      position: relative; overflow: hidden;
-      flex-shrink: 0;
-    }
-    .avatar::after {
-      content: "FS";
-      font: 700 22px/1 "JetBrains Mono", monospace;
-      color: #fff;
-      width: 72px; height: 72px; border-radius: 50%;
-      display: grid; place-items: center;
-      transform: rotate(-12deg);
-    }
-    .hero-label {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 14px; border-radius: 999px;
-      border: 1px solid rgba(56,189,248,.3);
-      background: rgba(56,189,248,.07);
-      font: 600 13px/1.4 Inter, system-ui; color: var(--accent-cv);
-      margin-bottom: 28px;
-      animation: fadeUp .6s ease both;
-    }
-    .hero-label span[aria-hidden] { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-cv); flex-shrink: 0; animation: pulse 2s ease infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.85)} }
-    .hero h1 {
-      font-size: clamp(36px, 7vw, 72px);
-      font-weight: 800; line-height: 1.05; letter-spacing: -.5px;
-      background: linear-gradient(135deg, var(--text) 30%, var(--muted) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      animation: fadeUp .6s .1s ease both;
-    }
-    .hero-sub {
-      margin-top: 14px;
-      font: 300 clamp(16px, 2.5vw, 20px)/1.5 "JetBrains Mono", monospace;
-      color: var(--muted);
-      animation: fadeUp .6s .2s ease both;
-    }
-    .hero-meta {
-      display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px;
-      margin-top: 28px;
-      animation: fadeUp .6s .3s ease both;
-    }
-    .badge {
-      display: inline-flex; align-items: center; gap: 7px;
-      padding: 7px 13px; border-radius: 999px;
-      border: 1px solid var(--line); background: var(--surface);
-      font: 600 13px/1 Inter, system-ui; color: var(--muted);
-    }
-    .badge svg { opacity: .6; }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .card--cv:hover{border-color:rgba(56,189,248,.3);box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 0 1px rgba(56,189,248,.1)}
+    .card--ts:hover{border-color:rgba(129,140,248,.3);box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 0 1px rgba(129,140,248,.1)}
+    .card--mc:hover{border-color:rgba(245,158,11,.3);box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 0 1px rgba(245,158,11,.1)}
+    .card:hover{transform:translateY(-5px)}
+
+    /* Card number */
+    .card-num{
+      position:absolute;top:16px;right:18px;
+      font:800 11px/1 "JetBrains Mono",monospace;
+      color:var(--border-1);letter-spacing:1px;
     }
 
-    /* ── Cards grid ──────────────────────────────────────── */
-    .cards {
-      max-width: var(--maxw); margin: 0 auto;
-      padding: 0 24px 80px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    .card-body{padding:28px 24px 20px;flex:1;display:flex;flex-direction:column;gap:10px}
+    .card-eyebrow{
+      font:700 11px/1 "JetBrains Mono",monospace;
+      letter-spacing:1.5px;text-transform:uppercase;
     }
-    .card {
-      position: relative; border-radius: var(--radius);
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-      display: flex; flex-direction: column;
-      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-      animation: fadeUp .6s ease both;
-      text-decoration: none; color: var(--text);
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow);
-    }
-    .card:nth-child(1) { animation-delay: .35s; }
-    .card:nth-child(2) { animation-delay: .45s; }
-    .card:nth-child(3) { animation-delay: .55s; }
+    .card--cv .card-eyebrow{color:var(--cv)}
+    .card--ts .card-eyebrow{color:var(--ts)}
+    .card--mc .card-eyebrow{color:var(--mc)}
 
-    /* Card banner */
-    .card-banner {
-      height: 148px; position: relative; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .card-banner::before {
-      content: ""; position: absolute; inset: 0;
-      opacity: .12;
-      background-image:
-        linear-gradient(var(--line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-    .card--cv .card-banner { background: linear-gradient(135deg, #0c1e38 0%, #0f2a4a 100%); }
-    .card--ts .card-banner { background: linear-gradient(135deg, #0f0c2e 0%, #1a1045 100%); }
-    .card--mc .card-banner { background: linear-gradient(135deg, #1a1408 0%, #2a1f0a 100%); }
-
-    .card--cv:hover { border-color: rgba(56,189,248,.4); }
-    .card--ts:hover { border-color: rgba(99,102,241,.4); }
-    .card--mc:hover { border-color: rgba(244,209,122,.4); }
-
-    /* Glowing orb in banner */
-    .banner-orb {
-      width: 80px; height: 80px; border-radius: 50%;
-      position: relative; z-index: 1;
-      display: grid; place-items: center;
-    }
-    .card--cv .banner-orb {
-      background: radial-gradient(circle at 35% 35%, rgba(56,189,248,.25), rgba(34,211,238,.1));
-      box-shadow: 0 0 0 1px rgba(56,189,248,.2), 0 0 40px rgba(56,189,248,.2);
-    }
-    .card--ts .banner-orb {
-      background: radial-gradient(circle at 35% 35%, rgba(99,102,241,.25), rgba(139,92,246,.1));
-      box-shadow: 0 0 0 1px rgba(99,102,241,.2), 0 0 40px rgba(99,102,241,.2);
-    }
-    .card--mc .banner-orb {
-      background: radial-gradient(circle at 35% 35%, rgba(244,209,122,.25), rgba(122,142,230,.1));
-      box-shadow: 0 0 0 1px rgba(244,209,122,.2), 0 0 40px rgba(244,209,122,.18);
-    }
-    .banner-icon {
-      font-size: 32px; line-height: 1;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,.4));
+    .card-title{font:800 22px/1.15 Inter,system-ui;letter-spacing:-.4px}
+    .card-desc{font:400 14px/1.65 Inter,system-ui;color:var(--muted);flex:1}
+    .card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+    .tag{
+      padding:3px 9px;border-radius:6px;
+      border:1px solid var(--border);background:var(--surface-1);
+      font:500 11px/1.5 Inter,system-ui;color:var(--muted);
     }
 
-    /* Card body */
-    .card-body { padding: 22px 22px 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
-    .card-eyebrow {
-      font: 700 11px/1 "JetBrains Mono", monospace; letter-spacing: 1.5px;
-      text-transform: uppercase;
+    .card-footer{
+      padding:14px 24px;border-top:1px solid var(--border);
+      display:flex;align-items:center;justify-content:space-between;
     }
-    .card--cv .card-eyebrow { color: var(--accent-cv); }
-    .card--ts .card-eyebrow { color: var(--accent-ts); }
-    .card--mc .card-eyebrow { color: var(--accent-mc); }
-    .card-title { font: 800 20px/1.2 Inter, system-ui; }
-    .card-desc { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; }
-    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
-    .tag {
-      padding: 4px 10px; border-radius: 999px;
-      border: 1px solid var(--line); background: var(--surface-2);
-      font: 600 12px/1 Inter, system-ui; color: var(--muted);
+    .card-cta{
+      display:inline-flex;align-items:center;gap:6px;
+      font:700 13px/1 Inter,system-ui;
+      padding:7px 13px;border-radius:8px;
+      border:1px solid transparent;
+      transition:transform .15s;
+    }
+    .card--cv  .card-cta{background:var(--cv-dim);color:var(--cv);border-color:rgba(56,189,248,.2)}
+    .card--ts  .card-cta{background:var(--ts-dim);color:var(--ts);border-color:rgba(129,140,248,.2)}
+    .card--mc  .card-cta{background:var(--mc-dim);color:var(--mc);border-color:rgba(245,158,11,.2)}
+    .card:hover .card-cta{transform:translateX(3px)}
+    .card-status{font:500 12px/1 Inter,system-ui;color:var(--muted-1)}
+
+    /* ── Contact ─────────────────────────────────── */
+    .contact-section{
+      border-top:1px solid var(--border);
+      padding:60px 28px;
+    }
+    .contact-inner{
+      max-width:var(--w);margin:0 auto;
+      display:grid;grid-template-columns:1fr auto;
+      gap:40px;align-items:center;
+    }
+    .contact-heading{
+      font:900 clamp(24px,3.5vw,40px)/1.1 Inter,system-ui;
+      letter-spacing:-1px;margin-bottom:10px;
+    }
+    .contact-sub{font:400 15px/1.6 Inter,system-ui;color:var(--muted);max-width:480px}
+    .contact-links{display:flex;gap:10px;flex-wrap:wrap}
+    .contact-btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 18px;border-radius:10px;
+      border:1px solid var(--border-1);background:var(--surface);
+      font:600 13px/1 Inter,system-ui;color:var(--text-2);
+      transition:border-color .15s,transform .15s;
+    }
+    .contact-btn:hover{transform:translateY(-2px);border-color:rgba(56,189,248,.3)}
+    .contact-btn.primary{
+      background:rgba(56,189,248,.08);
+      border-color:rgba(56,189,248,.3);color:var(--cv);
     }
 
-    /* Card footer */
-    .card-footer {
-      padding: 14px 22px; border-top: 1px solid var(--line);
-      display: flex; align-items: center; justify-content: space-between;
+    /* ── Footer ──────────────────────────────────── */
+    footer{
+      text-align:center;padding:20px 28px;
+      font:400 12px/1 Inter,system-ui;color:var(--muted-1);
+      border-top:1px solid var(--border);
     }
-    .card-cta {
-      display: inline-flex; align-items: center; gap: 6px;
-      font: 700 13px/1 Inter, system-ui;
-      padding: 8px 14px; border-radius: 10px; border: 1px solid transparent;
-      transition: background .15s, border-color .15s, transform .15s;
-    }
-    .card--cv  .card-cta { background: rgba(56,189,248,.1); color: var(--accent-cv); border-color: rgba(56,189,248,.2); }
-    .card--ts  .card-cta { background: rgba(99,102,241,.1); color: var(--accent-ts); border-color: rgba(99,102,241,.2); }
-    .card--mc  .card-cta { background: rgba(244,209,122,.1); color: var(--accent-mc); border-color: rgba(244,209,122,.2); }
-    .card:hover .card-cta { transform: translateX(3px); }
-    .cta-arrow { font-size: 16px; transition: transform .15s; }
-    .card:hover .cta-arrow { transform: translateX(3px); }
-    .card-status { font: 600 12px/1 Inter, system-ui; color: var(--muted); }
+    footer a{color:var(--muted-1);transition:color .15s}
+    footer a:hover{color:var(--text-2)}
 
-    /* ── Contact strip ───────────────────────────────────── */
-    .contact {
-      border-top: 1px solid var(--line);
-      padding: 40px 24px;
-      max-width: var(--maxw); margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
-      animation: fadeUp .6s .65s ease both;
+    /* ── Responsive ──────────────────────────────── */
+    @media(max-width:1024px){
+      .hero{grid-template-columns:1fr;padding-bottom:48px}
+      .hero-deco{display:none}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .contact-inner{grid-template-columns:1fr;gap:28px}
     }
-    .contact-left h2 {
-      font: 800 18px/1.2 Inter, system-ui; margin-bottom: 4px;
+    @media(max-width:640px){
+      .hero{padding:52px 20px 40px}
+      .cards{grid-template-columns:1fr;padding:48px 20px 60px}
+      .cards-section{padding:48px 20px 60px}
+      .trusted{padding:16px 20px}
+      .contact-section{padding:48px 20px}
+      .nav{padding:12px 20px}
     }
-    .contact-left p { font-size: 14px; color: var(--muted); }
-    .contact-links { display: flex; gap: 10px; flex-wrap: wrap; }
-    .contact-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 18px; border-radius: 12px;
-      border: 1px solid var(--line); background: var(--surface);
-      font: 600 13px/1 Inter, system-ui; color: var(--text);
-      cursor: pointer; text-decoration: none;
-      transition: background .15s, transform .15s, border-color .15s;
-    }
-    .contact-btn:hover { transform: translateY(-2px); border-color: rgba(56,189,248,.3); }
-    .contact-btn.primary {
-      background: linear-gradient(135deg, rgba(56,189,248,.15), rgba(34,211,238,.08));
-      border-color: rgba(56,189,248,.3); color: var(--accent-cv);
-    }
-
-    /* ── Footer ──────────────────────────────────────────── */
-    footer {
-      text-align: center; padding: 24px;
-      font-size: 13px; color: var(--muted);
-      border-top: 1px solid var(--line);
-    }
-    footer a { color: var(--muted); }
-    footer a:hover { color: var(--text); }
-
-    /* ── Responsive ──────────────────────────────────────── */
-    @media (max-width: 860px) {
-      .cards { grid-template-columns: 1fr; max-width: 480px; }
-      .hero { padding: 60px 24px 48px; }
-    }
-    @media (max-width: 580px) {
-      .nav { padding: 12px 16px; }
-      .cards { padding: 0 16px 60px; max-width: 100%; }
-      .hero { padding: 48px 16px 36px; }
-      .contact { flex-direction: column; align-items: flex-start; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation:none!important;transition:none!important}
     }
   </style>
 </head>
 <body>
-  <div class="mesh" aria-hidden="true"></div>
-
+  <div class="ambient" aria-hidden="true"></div>
   <div class="page">
+
     <!-- HEADER -->
     <header>
       <nav class="nav">
         <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
+          <div class="logo" aria-hidden="true">FS</div>
           Felipe Sotille
         </div>
         <div class="nav-right">
-          <div class="toggle-group" role="group" aria-label="Language">
-            <button id="lang-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+          <div class="tg" role="group" aria-label="Language">
+            <button id="lang-en" aria-pressed="true"  onclick="setLang('en')">EN</button>
             <button id="lang-pt" aria-pressed="false" onclick="setLang('pt')">PT</button>
           </div>
-          <div class="toggle-group" role="group" aria-label="Theme">
+          <div class="tg" role="group" aria-label="Theme">
             <button id="theme-dark"  title="Dark"  onclick="setTheme('dark')">🌙</button>
             <button id="theme-light" title="Light" onclick="setTheme('light')">☀️</button>
             <button id="theme-auto"  title="Auto"  onclick="setTheme('auto')" class="active">🖥️</button>
@@ -424,222 +464,278 @@
     </header>
 
     <!-- HERO -->
-    <section class="hero">
-      <div class="avatar-wrap">
-        <div class="avatar" role="img" aria-label="Felipe Sotille initials"></div>
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="dot" aria-hidden="true"></span>
+          <span data-i18n="hero_status">Open to consulting &amp; OSS</span>
+        </div>
+        <h1>Felipe Sotille</h1>
+        <p class="hero-role">
+          <strong data-i18n="hero_strong">DevSecOps, AI &amp; Software Engineering</strong>
+        </p>
+        <p class="hero-tagline" data-i18n="hero_tagline">
+          ~20 years building critical systems at <em>SWIFT</em>, <em>Swissquote</em> and global fintech. Currently focused on <em>AI agents</em>, release orchestration and industrial automation.
+        </p>
+        <div class="hero-chips">
+          <span class="chip">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="badge_location">Brussels, Belgium</span>
+          </span>
+          <span class="chip">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <span data-i18n="badge_exp">~20 years experience</span>
+          </span>
+          <span class="chip">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-i18n="badge_avail">Remote · Global</span>
+          </span>
+        </div>
+        <div class="hero-actions">
+          <a href="/cv.html" class="btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-i18n="btn_cv">View Résumé</span>
+          </a>
+          <a href="mailto:fsotille@gmail.com" class="btn-ghost">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-i18n="btn_contact">Get in touch</span>
+          </a>
+          <a href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener noreferrer" class="btn-ghost" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
       </div>
-      <div class="hero-label">
-        <span aria-hidden="true"></span>
-        <span data-i18n="hero_status">Open to consulting &amp; OSS</span>
-      </div>
-      <h1>Felipe Sotille</h1>
-      <p class="hero-sub" data-i18n="hero_sub">Sr. DevSecOps &amp; Software Engineer</p>
-      <div class="hero-meta">
-        <span class="badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span data-i18n="badge_location">Brussels, Belgium</span>
-        </span>
-        <span class="badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <span data-i18n="badge_exp">~20 years experience</span>
-        </span>
-        <span class="badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          AI Agents · Java · Spring · K8s · CI/CD · Angular
-        </span>
+
+      <!-- Terminal decoration -->
+      <div class="hero-deco" aria-hidden="true">
+        <div class="terminal">
+          <div class="term-bar">
+            <span class="term-dot"></span>
+            <span class="term-dot"></span>
+            <span class="term-dot"></span>
+            <span class="term-title">~/ terminal</span>
+          </div>
+          <div class="term-body">
+<span class="term-prompt">❯ </span><span class="term-cmd">whoami</span>
+<span class="term-out">Felipe Sotille</span>
+<span class="term-out">Sr. DevSecOps &amp; Software Engineer</span>
+
+<span class="term-prompt">❯ </span><span class="term-cmd">cat focus.json</span>
+<span class="term-out">{</span>
+<span class="term-out">  <span class="term-key">"current"</span>: <span class="term-val">"AI Agents &amp; Automation"</span>,</span>
+<span class="term-out">  <span class="term-key">"expertise"</span>: <span class="term-val">"DevSecOps · CI/CD"</span>,</span>
+<span class="term-out">  <span class="term-key">"experience"</span>: <span class="term-val">"~20 years"</span>,</span>
+<span class="term-out">  <span class="term-key">"location"</span>: <span class="term-val">"Brussels 🇧🇪"</span></span>
+<span class="term-out">}</span>
+
+<span class="term-prompt">❯ </span><span class="term-cmd">git log --oneline -3</span>
+<span class="term-out"><span class="term-warn">a3f1c2b</span> feat: agentic pipeline at SWIFT</span>
+<span class="term-out"><span class="term-warn">7d82e19</span> fix: secure CI/CD for fintech</span>
+<span class="term-out"><span class="term-warn">c0de418</span> chore: release orchestration v2</span>
+
+<span class="term-prompt">❯ </span><span class="term-cursor"></span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- CARDS -->
-    <div class="cards" role="list">
-
-      <!-- CV -->
-      <a href="/cv.html" class="card card--cv" role="listitem" aria-label="Open CV / Resume">
-        <div class="card-banner">
-          <div class="banner-orb">
-            <span class="banner-icon" aria-hidden="true">📄</span>
-          </div>
+    <!-- TRUSTED BY -->
+    <div class="trusted" role="complementary" aria-label="Work history">
+      <div class="trusted-inner">
+        <span class="trusted-label" data-i18n="trusted_label">Worked at</span>
+        <div class="trusted-divider" aria-hidden="true"></div>
+        <div class="trusted-logos">
+          <span class="trusted-logo">SWIFT<span>Brussels · 2019–Present</span></span>
+          <span class="trusted-logo">Swissquote<span>Geneva · 2024</span></span>
+          <span class="trusted-logo">MyCujoo<span>Amsterdam · 2018</span></span>
+          <span class="trusted-logo">Metaway<span>Brazil · 2012–2018</span></span>
         </div>
-        <div class="card-body">
-          <div class="card-eyebrow" data-i18n="card_cv_eyebrow">Resume &amp; Experience</div>
-          <div class="card-title" data-i18n="card_cv_title">Curriculum Vitae</div>
-          <p class="card-desc" data-i18n="card_cv_desc">Full interactive CV with ~20 years of professional experience in DevSecOps, AI agents, full-stack engineering and platform architecture. Bilingual, printable to PDF.</p>
-          <div class="card-tags">
-            <span class="tag">Java · Spring</span>
-            <span class="tag">DevSecOps</span>
-            <span class="tag">K8s · Docker</span>
-            <span class="tag">Angular · TS</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">AI Automation</span>
-            <span class="tag">AI Agents</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <span class="card-cta">
-            <span data-i18n="cta_cv">View CV</span>
-            <span class="cta-arrow" aria-hidden="true">→</span>
-          </span>
-          <span class="card-status" data-i18n="status_cv">PDF export available</span>
-        </div>
-      </a>
-
-      <!-- TechStream -->
-      <a href="https://techstream.app" target="_blank" rel="noopener noreferrer" class="card card--ts" role="listitem" aria-label="Open TechStream">
-        <div class="card-banner">
-          <div class="banner-orb">
-            <span class="banner-icon" aria-hidden="true">📡</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-eyebrow" data-i18n="card_ts_eyebrow">Daily Tech News</div>
-          <div class="card-title">TechStream</div>
-          <p class="card-desc" data-i18n="card_ts_desc">Curated technology news covering security, infrastructure, developer tools and major releases. Handpicked signal, no noise. Updated automatically every day.</p>
-          <div class="card-tags">
-            <span class="tag">Security</span>
-            <span class="tag">Infra</span>
-            <span class="tag">Dev Tools</span>
-            <span class="tag">Releases</span>
-            <span class="tag">Open Source</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <span class="card-cta">
-            <span data-i18n="cta_ts">Open TechStream</span>
-            <span class="cta-arrow" aria-hidden="true">→</span>
-          </span>
-          <span class="card-status" data-i18n="status_ts">Updated daily</span>
-        </div>
-      </a>
-
-      <!-- Tarotmancer -->
-      <a href="https://tarotmancer.techstream.app" target="_blank" rel="noopener noreferrer" class="card card--mc" role="listitem" aria-label="Open Tarotmancer">
-        <div class="card-banner">
-          <div class="banner-orb">
-            <span class="banner-icon" aria-hidden="true">🔮</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-eyebrow" data-i18n="card_mc_eyebrow">Tarot &amp; Divination</div>
-          <div class="card-title">Tarotmancer</div>
-          <p class="card-desc" data-i18n="card_mc_desc">The Living Tarot — draw cards from the Major and Minor Arcana, receive personal interpretations and explore archetypal insights. Available in four languages.</p>
-          <div class="card-tags">
-            <span class="tag">78 Cards</span>
-            <span class="tag">Major &amp; Minor Arcana</span>
-            <span class="tag">AI Interpretations</span>
-            <span class="tag">4 Languages</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <span class="card-cta">
-            <span data-i18n="cta_mc">Open Tarotmancer</span>
-            <span class="cta-arrow" aria-hidden="true">→</span>
-          </span>
-          <span class="card-status" data-i18n="status_mc">EN · PT · ES · FR</span>
-        </div>
-      </a>
-
+      </div>
     </div>
 
-    <!-- CONTACT STRIP -->
-    <div class="wrap">
-      <div class="contact">
-        <div class="contact-left">
-          <h2 data-i18n="contact_title">Let's work together</h2>
-          <p data-i18n="contact_sub">Available for consulting, freelance and OSS collaborations.</p>
+    <!-- CARDS -->
+    <div class="cards-section">
+      <div class="cards-header">
+        <span class="section-label" data-i18n="section_projects">Projects &amp; Work</span>
+      </div>
+      <div class="cards" role="list">
+
+        <!-- CV -->
+        <a href="/cv.html" class="card card--cv" role="listitem" aria-label="Open CV">
+          <span class="card-num" aria-hidden="true">01</span>
+          <div class="card-body">
+            <div class="card-eyebrow" data-i18n="card_cv_eyebrow">Resume &amp; Experience</div>
+            <div class="card-title" data-i18n="card_cv_title">Curriculum Vitae</div>
+            <p class="card-desc" data-i18n="card_cv_desc">Full interactive CV with ~20 years of experience in DevSecOps, AI agents, full-stack engineering and platform architecture. Bilingual, printable to PDF.</p>
+            <div class="card-tags">
+              <span class="tag">Java · Spring</span>
+              <span class="tag">DevSecOps</span>
+              <span class="tag">K8s · Docker</span>
+              <span class="tag">Angular</span>
+              <span class="tag">AI Agents</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="card-cta">
+              <span data-i18n="cta_cv">View CV</span>
+              <span aria-hidden="true">→</span>
+            </span>
+            <span class="card-status" data-i18n="status_cv">PDF export</span>
+          </div>
+        </a>
+
+        <!-- TechStream -->
+        <a href="https://techstream.app" target="_blank" rel="noopener noreferrer" class="card card--ts" role="listitem" aria-label="Open TechStream">
+          <span class="card-num" aria-hidden="true">02</span>
+          <div class="card-body">
+            <div class="card-eyebrow" data-i18n="card_ts_eyebrow">Tech Intelligence</div>
+            <div class="card-title">TechStream</div>
+            <p class="card-desc" data-i18n="card_ts_desc">Curated daily digest of AI, security and infrastructure. Handpicked signal, no noise — covering agents, DevSecOps, releases and developer tooling.</p>
+            <div class="card-tags">
+              <span class="tag">AI &amp; Agents</span>
+              <span class="tag">Security</span>
+              <span class="tag">Infrastructure</span>
+              <span class="tag">Releases</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="card-cta">
+              <span data-i18n="cta_ts">Open TechStream</span>
+              <span aria-hidden="true">→</span>
+            </span>
+            <span class="card-status" data-i18n="status_ts">Daily updates</span>
+          </div>
+        </a>
+
+        <!-- Tarotmancer -->
+        <a href="https://tarotmancer.techstream.app" target="_blank" rel="noopener noreferrer" class="card card--mc" role="listitem" aria-label="Open Tarotmancer">
+          <span class="card-num" aria-hidden="true">03</span>
+          <div class="card-body">
+            <div class="card-eyebrow" data-i18n="card_mc_eyebrow">Tarot &amp; Divination</div>
+            <div class="card-title">Tarotmancer</div>
+            <p class="card-desc" data-i18n="card_mc_desc">The Living Tarot — draw from all 78 cards, receive AI-powered personal readings and explore archetypal insights. Available in four languages.</p>
+            <div class="card-tags">
+              <span class="tag">78 Cards</span>
+              <span class="tag">AI Readings</span>
+              <span class="tag">4 Languages</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="card-cta">
+              <span data-i18n="cta_mc">Open Tarotmancer</span>
+              <span aria-hidden="true">→</span>
+            </span>
+            <span class="card-status" data-i18n="status_mc">EN · PT · ES · FR</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="contact-section" aria-label="Contact">
+      <div class="contact-inner">
+        <div>
+          <h2 class="contact-heading" data-i18n="contact_title">Let's work together.</h2>
+          <p class="contact-sub" data-i18n="contact_sub">Available for consulting, AI projects, DevSecOps and OSS collaborations.</p>
         </div>
         <div class="contact-links">
           <a class="contact-btn primary" href="mailto:fsotille@gmail.com">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <span data-i18n="btn_email">Send email</span>
           </a>
-          <a class="contact-btn" href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener noreferrer">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
           <a class="contact-btn" href="https://github.com/sotille" target="_blank" rel="noopener noreferrer">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
         </div>
       </div>
-    </div>
+    </section>
 
     <footer>
       <span>© <span id="year"></span> Felipe Sotille</span>
       &nbsp;·&nbsp;
-      <span data-i18n="footer_made">Made with plain HTML/CSS/JS · Deployed on GitHub Pages</span>
+      <span data-i18n="footer_made">Plain HTML/CSS/JS · GitHub Pages</span>
     </footer>
   </div>
 
   <script>
-    // ── Year ─────────────────────────────────────────────
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // ── Theme ─────────────────────────────────────────────
-    const THEME_KEY = 'fs-theme';
+    // Theme
+    const TK = 'fs-theme';
     function applyTheme(t) {
-      const resolved = t === 'auto'
-        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-        : t;
-      document.documentElement.setAttribute('data-theme', resolved);
-      ['dark','light','auto'].forEach(id => {
-        document.getElementById('theme-' + id)?.classList.toggle('active', id === t);
-      });
+      const r = t === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : t;
+      document.documentElement.setAttribute('data-theme', r);
+      ['dark','light','auto'].forEach(id => document.getElementById('theme-'+id)?.classList.toggle('active', id === t));
     }
-    function setTheme(t) { localStorage.setItem(THEME_KEY, t); applyTheme(t); }
-    applyTheme(localStorage.getItem(THEME_KEY) || 'auto');
+    function setTheme(t) { localStorage.setItem(TK, t); applyTheme(t); }
+    applyTheme(localStorage.getItem(TK) || 'auto');
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if ((localStorage.getItem(THEME_KEY) || 'auto') === 'auto') applyTheme('auto');
+      if ((localStorage.getItem(TK)||'auto') === 'auto') applyTheme('auto');
     });
 
-    // ── i18n ──────────────────────────────────────────────
-    const LANG_KEY = 'fs-lang';
+    // i18n
+    const LK = 'fs-lang';
     const T = {
       en: {
-        hero_status: 'Open to consulting & OSS',
-        hero_sub: 'Sr. DevSecOps & Software Engineer',
+        hero_status:    'Open to consulting & OSS',
+        hero_strong:    'DevSecOps, AI & Software Engineering',
+        hero_tagline:   '~20 years building critical systems at SWIFT, Swissquote and global fintech. Currently focused on AI agents, release orchestration and industrial automation.',
         badge_location: 'Brussels, Belgium',
-        badge_exp: '~20 years experience',
+        badge_exp:      '~20 years experience',
+        badge_avail:    'Remote · Global',
+        btn_cv:         'View Résumé',
+        btn_contact:    'Get in touch',
+        trusted_label:  'Worked at',
+        section_projects: 'Projects & Work',
         card_cv_eyebrow: 'Resume & Experience',
-        card_cv_title: 'Curriculum Vitae',
-        card_cv_desc: 'Full interactive CV with ~20 years of professional experience in DevSecOps, AI agents, full-stack engineering and platform architecture. Bilingual, printable to PDF.',
-        cta_cv: 'View CV',
-        status_cv: 'PDF export available',
-        card_ts_eyebrow: 'Daily Tech News',
-        card_ts_desc: 'Curated technology news covering security, infrastructure, developer tools and major releases. Handpicked signal, no noise. Updated automatically every day.',
-        cta_ts: 'Open TechStream',
-        status_ts: 'Updated daily',
+        card_cv_title:   'Curriculum Vitae',
+        card_cv_desc:    'Full interactive CV with ~20 years of experience in DevSecOps, AI agents, full-stack engineering and platform architecture. Bilingual, printable to PDF.',
+        cta_cv:          'View CV',
+        status_cv:       'PDF export',
+        card_ts_eyebrow: 'Tech Intelligence',
+        card_ts_desc:    'Curated daily digest of AI, security and infrastructure. Handpicked signal, no noise — covering agents, DevSecOps, releases and developer tooling.',
+        cta_ts:          'Open TechStream',
+        status_ts:       'Daily updates',
         card_mc_eyebrow: 'Tarot & Divination',
-        card_mc_desc: 'The Living Tarot — draw from all 78 cards across Major and Minor Arcana, receive AI-powered personal readings and explore archetypal insights. Available in four languages.',
-        cta_mc: 'Open Tarotmancer',
-        status_mc: 'EN · PT · ES · FR',
-        contact_title: "Let's work together",
-        contact_sub: 'Available for consulting, freelance and OSS collaborations.',
-        btn_email: 'Send email',
-        footer_made: 'Made with plain HTML/CSS/JS · Deployed on GitHub Pages',
+        card_mc_desc:    'The Living Tarot — draw from all 78 cards, receive AI-powered personal readings and explore archetypal insights. Available in four languages.',
+        cta_mc:          'Open Tarotmancer',
+        status_mc:       'EN · PT · ES · FR',
+        contact_title:   "Let's work together.",
+        contact_sub:     'Available for consulting, AI projects, DevSecOps and OSS collaborations.',
+        btn_email:       'Send email',
+        footer_made:     'Plain HTML/CSS/JS · GitHub Pages',
       },
       pt: {
-        hero_status: 'Disponível para consultoria & OSS',
-        hero_sub: 'Engenheiro Sênior DevSecOps & Software',
+        hero_status:    'Disponível para consultoria & OSS',
+        hero_strong:    'DevSecOps, IA & Engenharia de Software',
+        hero_tagline:   '~20 anos construindo sistemas críticos na SWIFT, Swissquote e fintechs globais. Foco atual em agentes de IA, orquestração de releases e automação industrial.',
         badge_location: 'Bruxelas, Bélgica',
-        badge_exp: '~20 anos de experiência',
+        badge_exp:      '~20 anos de experiência',
+        badge_avail:    'Remoto · Global',
+        btn_cv:         'Ver Currículo',
+        btn_contact:    'Entrar em contato',
+        trusted_label:  'Trabalhei em',
+        section_projects: 'Projetos & Trabalho',
         card_cv_eyebrow: 'Currículo & Experiência',
-        card_cv_title: 'Currículo',
-        card_cv_desc: 'CV interativo completo com ~20 anos de experiência em DevSecOps, agentes de IA, engenharia full-stack e arquitetura de plataformas. Bilíngue, exportável em PDF.',
-        cta_cv: 'Ver CV',
-        status_cv: 'Exportação em PDF disponível',
-        card_ts_eyebrow: 'Notícias de Tecnologia',
-        card_ts_desc: 'Notícias de tecnologia cobrindo segurança, infraestrutura, ferramentas para devs e grandes lançamentos. Sinal sem ruído. Atualizado automaticamente todos os dias.',
-        cta_ts: 'Abrir TechStream',
-        status_ts: 'Atualizado diariamente',
+        card_cv_title:   'Curriculum Vitae',
+        card_cv_desc:    'CV interativo com ~20 anos de experiência em DevSecOps, agentes de IA, engenharia full-stack e arquitetura de plataformas. Bilíngue, exportável em PDF.',
+        cta_cv:          'Ver CV',
+        status_cv:       'Exportar em PDF',
+        card_ts_eyebrow: 'Inteligência Tecnológica',
+        card_ts_desc:    'Digest diário curado de IA, segurança e infraestrutura. Sinal sem ruído — cobrindo agentes, DevSecOps, lançamentos e ferramentas para devs.',
+        cta_ts:          'Abrir TechStream',
+        status_ts:       'Atualizado diariamente',
         card_mc_eyebrow: 'Tarô & Adivinhação',
-        card_mc_desc: 'O Tarô Vivo — tire cartas das 78 cartas do Arcano Maior e Menor, receba leituras pessoais com IA e explore insights arquetípicos. Disponível em quatro idiomas.',
-        cta_mc: 'Abrir Tarotmancer',
-        status_mc: 'PT · EN · ES · FR',
-        contact_title: 'Vamos trabalhar juntos',
-        contact_sub: 'Disponível para consultoria, freelance e colaborações OSS.',
-        btn_email: 'Enviar e-mail',
-        footer_made: 'Feito com HTML/CSS/JS puro · Hospedado no GitHub Pages',
+        card_mc_desc:    'O Tarô Vivo — tire de todas as 78 cartas, receba leituras pessoais com IA e explore insights arquetípicos. Disponível em quatro idiomas.',
+        cta_mc:          'Abrir Tarotmancer',
+        status_mc:       'PT · EN · ES · FR',
+        contact_title:   'Vamos trabalhar juntos.',
+        contact_sub:     'Disponível para consultoria, projetos de IA, DevSecOps e colaborações OSS.',
+        btn_email:       'Enviar e-mail',
+        footer_made:     'HTML/CSS/JS puro · GitHub Pages',
       }
     };
 
@@ -647,14 +743,14 @@
       document.documentElement.lang = lang;
       document.getElementById('lang-en').setAttribute('aria-pressed', lang === 'en');
       document.getElementById('lang-pt').setAttribute('aria-pressed', lang === 'pt');
-      const dict = T[lang] || T.en;
+      const d = T[lang] || T.en;
       document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.dataset.i18n;
-        if (dict[key] !== undefined) el.textContent = dict[key];
+        const v = d[el.dataset.i18n];
+        if (v !== undefined) el.textContent = v;
       });
     }
-    function setLang(lang) { localStorage.setItem(LANG_KEY, lang); applyLang(lang); }
-    applyLang(localStorage.getItem(LANG_KEY) || 'en');
+    function setLang(lang) { localStorage.setItem(LK, lang); applyLang(lang); }
+    applyLang(localStorage.getItem(LK) || 'en');
   </script>
 </body>
 </html>

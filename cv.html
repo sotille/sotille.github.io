@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Felipe Sotille — CV</title>
-  <meta name="description" content="Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer with 18+ years of experience in banking, fintech and platform engineering.">
+  <title>Felipe Sotille — Portfolio / CV</title>
+  <meta name="description" content="Interactive CV of Felipe Sotille — DevSecOps, AI Engineering &amp; Software Engineer with ~20 years across banking, fintech and platform engineering.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
-  <meta property="og:title" content="Felipe Sotille — CV">
-  <meta property="og:description" content="Sr. DevSecOps & Software Engineer — CI/CD, DevSecOps, Java/Spring, K8s, Angular.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Felipe Sotille — Portfolio / CV">
+  <meta property="og:description" content="DevSecOps, AI Engineering &amp; Software Engineer — CI/CD, AI Agents, Java/Spring, K8s.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://sotille.github.io/cv">
   <meta property="og:image" content="https://sotille.github.io/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Felipe Sotille — CV">
-  <meta name="twitter:description" content="DevSecOps, CI/CD, Java/Spring, K8s, Angular.">
+  <meta name="twitter:title" content="Felipe Sotille — Portfolio / CV">
+  <meta name="twitter:description" content="DevSecOps, AI Agents, CI/CD, Java/Spring, K8s.">
   <meta name="twitter:image" content="https://sotille.github.io/assets/og-image.png">
   <link rel="canonical" href="https://sotille.github.io/cv">
 
@@ -24,7 +25,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Felipe Sotille",
-    "jobTitle": "Sr. DevSecOps & Software Engineer",
+    "jobTitle": "DevSecOps, AI Engineering & Software Engineer",
     "url": "https://sotille.github.io/cv",
     "image": "https://sotille.github.io/assets/og-image.png",
     "email": "mailto:fsotille@gmail.com",
@@ -38,207 +39,352 @@
 
   <style>
     :root{
-      --bg-0:#070b14;
-      --bg-1:#0b1020;
-      --surface:#121a2b;
+      --bg-0:#05070f;
+      --bg-1:#07091a;
+      --surface:#0d1220;
       --text:#e2e8f0;
-      --muted:#94a3b8;
-      --line:#22304b;
+      --muted:#8494a8;
+      --line:#1a2540;
       --accent:#38bdf8;
-      --accent-2:#22d3ee;
-      --shadow: 0 10px 30px rgba(0,0,0,.45);
-      --radius: 14px;
+      --accent-2:#818cf8;
+      --accent-3:#22d3ee;
+      --glow: 0 0 40px rgba(56,189,248,.07);
+      --shadow: 0 8px 32px rgba(0,0,0,.5);
+      --radius: 16px;
       --maxw: 1120px;
-      --card-grad: linear-gradient(180deg, rgba(9,15,28,.85), rgba(8,13,25,.7));
-      --hero-grad: linear-gradient(180deg, rgba(10,18,35,.8), rgba(8,14,28,.6));
-      --bg-grad: radial-gradient(900px 600px at 50% -10%, #172032 0%, #0b1020 60%, #060913 100%), linear-gradient(180deg, var(--bg-1), var(--bg-0));
-      --btn-bg: linear-gradient(180deg, #12203b, #0f172a);
-      --chip-bg: rgba(2,6,23,.5);
+      --card-bg: rgba(13,18,32,.8);
+      --hero-bg: rgba(10,14,28,.85);
     }
-    /* Light theme overrides */
     [data-theme="light"]{
-      --bg-0:#f6f8fb;
+      --bg-0:#f4f7fb;
       --bg-1:#eef2f8;
       --surface:#ffffff;
       --text:#0b1220;
       --muted:#475569;
-      --line:#cbd5e1;
+      --line:#dde4ef;
       --accent:#0ea5e9;
-      --accent-2:#60a5fa;
-      --shadow: 0 10px 30px rgba(0,0,0,.08);
-      --card-grad: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
-      --hero-grad: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
-      --bg-grad: radial-gradient(900px 600px at 50% -10%, #eaf2ff 0%, #f4f7fb 60%, #eef2f8 100%), linear-gradient(180deg, var(--bg-1), var(--bg-0));
-      --btn-bg: linear-gradient(180deg, #f1f5f9, #e2e8f0);
-      --chip-bg: rgba(241,245,249,.8);
+      --accent-2:#6366f1;
+      --accent-3:#06b6d4;
+      --glow: 0 0 40px rgba(14,165,233,.06);
+      --shadow: 0 8px 32px rgba(0,0,0,.07);
+      --card-bg: rgba(255,255,255,.92);
+      --hero-bg: rgba(255,255,255,.95);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       color:var(--text);
-      background: var(--bg-grad) fixed;
-      line-height:1.55;
+      background: var(--bg-0);
+      background-image: radial-gradient(ellipse 900px 600px at 60% -10%, rgba(56,189,248,.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 700px 500px at 0% 60%, rgba(129,140,248,.05) 0%, transparent 70%);
+      background-attachment: fixed;
+      line-height:1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       transition: background .3s ease, color .2s ease;
     }
     a{color:var(--accent); text-decoration:none}
-    a:hover{opacity:.9}
-    .wrap{max-width:var(--maxw); margin:auto; padding:24px}
+    a:hover{opacity:.85}
+    .wrap{max-width:var(--maxw); margin:auto; padding:0 28px}
+
+    /* ── NAV ── */
     header{
       position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(16,24,40,.75), rgba(16,24,40,.35));
+      backdrop-filter: blur(16px) saturate(1.5);
+      background: rgba(5,7,15,.72);
       border-bottom:1px solid var(--line);
     }
     [data-theme="light"] header{
-      background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
+      background: rgba(244,247,251,.85);
     }
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:var(--maxw); margin:0 auto}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
-    .brand .logo{
-      width:38px; height:38px; border-radius:50%;
-      background: conic-gradient(from 210deg at 50% 50%, #38bdf8, #22d3ee, #818cf8, #38bdf8);
-      box-shadow: 0 0 0 2px rgba(56,189,248,.2), 0 8px 24px rgba(2,8,23,.55) inset;
-      position:relative; display:grid; place-items:center; overflow:hidden;
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 28px; max-width:var(--maxw); margin:0 auto; flex-wrap:wrap}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; text-decoration:none; color:var(--text)}
+    .brand .logo{width:34px; height:34px; border-radius:9px; display:block; flex-shrink:0}
+    .nav-links{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .nav-links a{color:var(--text); opacity:.7; font-weight:600; font-size:14px; transition:opacity .15s}
+    .nav-links a:hover{opacity:1}
+    .back-link{
+      opacity:.6; font-size:13px; display:inline-flex; align-items:center; gap:4px;
+      color:var(--text); text-decoration:none; transition:opacity .15s;
     }
-    .brand .logo::after{
-      content:"FS"; font:700 14px/1 JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      color:#0b1020; background:rgba(255,255,255,.96);
-      width:30px; height:30px; border-radius:50%; display:grid; place-items:center;
-      transform:rotate(-12deg);
-      mix-blend-mode:screen;
-    }
-    .nav a{color:var(--text); opacity:.84; font-weight:600}
-    .links{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .back-link:hover{opacity:1}
+
+    /* ── BUTTONS ── */
     .btn{
-      display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px;
-      background:var(--btn-bg); border:1px solid var(--line);
-      box-shadow: var(--shadow);
-      font-weight:600; color:var(--text); cursor:pointer;
+      display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border-radius:10px;
+      background: linear-gradient(135deg, #38bdf8 0%, #22d3ee 50%, #818cf8 100%);
+      background-size: 200%;
+      background-position: 0% 50%;
+      border:none;
+      font-weight:700; font-size:14px; color:#02060f; cursor:pointer;
+      transition: background-position .4s ease, transform .15s ease, box-shadow .15s ease;
+      box-shadow: 0 0 0 0 rgba(56,189,248,0);
     }
-    .btn:hover{transform:translateY(-1px)}
-    .ghost{background:transparent}
-    .btn.sm{padding:6px 10px; border-radius:8px; font-size:13px}
-    .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--line); border-radius:999px; background:var(--chip-bg)}
-    .lang-toggle, .theme-toggle{display:inline-flex; border:1px solid var(--line); border-radius:12px; overflow:hidden}
-    .lang-toggle button, .theme-toggle button{background:transparent; border:0; color:var(--text); padding:8px 12px; font-weight:700; cursor:pointer}
-    .lang-toggle button[aria-pressed="true"]{background:var(--btn-bg)}
-    main{padding:18px 0 64px}
-    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:28px 0 12px}
-    .headline{font-size: clamp(28px, 5vw, 56px); line-height:1.08; letter-spacing:.2px; font-weight:800; margin:0 0 6px}
-    .scramble{font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight:300; font-size: clamp(16px, 2.4vw, 20px); color:var(--muted); min-height:1.6em}
-    .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
-    .hero-card{
-      position:relative; border-radius:var(--radius);
-      background:var(--hero-grad);
+    .btn:hover{
+      background-position: 100% 50%;
+      transform:translateY(-1px);
+      box-shadow: 0 4px 20px rgba(56,189,248,.25);
+      opacity:1;
+    }
+    .btn.ghost{
+      background: transparent;
       border:1px solid var(--line);
-      padding:22px; box-shadow: var(--shadow);
+      color:var(--text);
+      box-shadow: none;
+    }
+    .btn.ghost:hover{border-color: rgba(56,189,248,.4); box-shadow: 0 2px 12px rgba(56,189,248,.08)}
+    .btn.sm{padding:5px 10px; border-radius:8px; font-size:13px}
+    .lang-toggle, .theme-toggle{display:inline-flex; border:1px solid var(--line); border-radius:10px; overflow:hidden}
+    .lang-toggle button, .theme-toggle button{background:transparent; border:0; color:var(--text); padding:6px 10px; font-weight:700; font-size:13px; cursor:pointer}
+    .lang-toggle button[aria-pressed="true"]{background:rgba(56,189,248,.12); color:var(--accent)}
+    .btn-pdf{
+      background:transparent; border:1px solid var(--line); color:var(--text);
+      padding:5px 12px; border-radius:8px; font-weight:600; font-size:13px; cursor:pointer;
+      transition: border-color .15s, color .15s;
+    }
+    .btn-pdf:hover{border-color:var(--accent); color:var(--accent)}
+
+    /* ── HERO ── */
+    main{padding:24px 0 80px}
+    .hero{
+      display:grid; grid-template-columns:1.25fr .75fr; gap:32px; align-items:center; padding:36px 0 16px;
+    }
+    .hero-pill{
+      display:inline-flex; align-items:center; gap:8px; padding:6px 14px;
+      border:1px solid rgba(56,189,248,.25); border-radius:999px;
+      background:rgba(56,189,248,.06); font-size:13px; font-weight:600;
+      color:var(--accent); margin-bottom:14px;
+    }
+    .hero-pill .dot{width:7px; height:7px; border-radius:50%; background:#4ade80; flex-shrink:0; animation: pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.8)}}
+    .headline{
+      font-size: clamp(30px, 4.5vw, 52px); line-height:1.06; font-weight:900; margin:0 0 8px;
+      background: linear-gradient(120deg, #f1f5f9 20%, #93c5fd 60%, #c4b5fd 100%);
+      -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+      letter-spacing:-.5px;
+    }
+    .scramble{
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-weight:300; font-size: clamp(14px, 2vw, 18px);
+      color:var(--muted); min-height:1.6em; margin:0 0 10px;
+    }
+    .scramble .dud{opacity:.4}
+    .hero-desc{color:var(--muted); margin:0 0 18px; font-size:15px; max-width:540px}
+    .actions{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{
+      display:inline-flex; align-items:center; gap:6px; padding:5px 12px;
+      border:1px solid var(--line); border-radius:999px;
+      background:rgba(56,189,248,.04); font-size:12px; font-weight:600; color:var(--muted);
+    }
+    .chip.hl{border-color:rgba(56,189,248,.3); color:var(--accent); background:rgba(56,189,248,.07)}
+
+    /* ── ORB CARD ── */
+    .hero-card{
+      border-radius:20px;
+      background:var(--hero-bg);
+      border:1px solid var(--line);
+      padding:20px; box-shadow: var(--shadow), var(--glow);
       transform-style:preserve-3d; will-change:transform;
     }
-    /* Orb container */
     .orb-wrap{
-      width:min(380px, 90%); aspect-ratio:1/1; border-radius:24px; margin:0 auto;
-      background: radial-gradient(200px 140px at 30% 20%, rgba(56,189,248,.22), transparent),
-                  radial-gradient(200px 160px at 70% 80%, rgba(129,140,248,.16), transparent),
+      width:100%; aspect-ratio:1/1; border-radius:16px; margin:0 auto 14px;
+      background: radial-gradient(180px 120px at 35% 25%, rgba(56,189,248,.18), transparent),
+                  radial-gradient(180px 140px at 65% 75%, rgba(129,140,248,.14), transparent),
                   var(--surface);
       display:grid; place-items:center; border:1px solid var(--line); position:relative; overflow:hidden;
     }
-    .sphere{width:86%; height:86%; filter: drop-shadow(0 16px 28px rgba(0,0,0,.2));}
+    .sphere{width:84%; height:84%; filter: drop-shadow(0 12px 24px rgba(0,0,0,.2));}
     .sphere path{fill:none; stroke:url(#sphereGradient); stroke-linecap:round; stroke-width:1.25}
-    .sphere .disc{fill:url(#sphereGradient); opacity:.08}
-    section{margin-top:42px}
-    .sec-title{font-weight:800; font-size: clamp(18px, 2.4vw, 24px); margin:0 0 12px; letter-spacing:.4px}
+    .sphere .disc{fill:url(#sphereGradient); opacity:.07}
+    .focus-row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    .focus-card{
+      background:var(--card-bg); border:1px solid var(--line); border-radius:12px;
+      padding:12px; box-shadow:var(--shadow);
+    }
+    .focus-card .label{font-size:11px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.6px; margin-bottom:4px}
+    .focus-card .value{font-size:13px; font-weight:700; color:var(--text); line-height:1.4}
+
+    /* ── SECTIONS ── */
+    section{margin-top:56px}
+    .sec-header{display:flex; align-items:center; gap:14px; margin-bottom:18px}
+    .sec-title{
+      font-weight:900; font-size: clamp(18px, 2.5vw, 24px); margin:0;
+      letter-spacing:-.2px;
+    }
+    .sec-line{flex:1; height:1px; background:var(--line)}
+
+    /* ── CARDS ── */
     .grid{display:grid; gap:16px}
     .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
     .grid.cols-2{grid-template-columns: repeat(2, 1fr)}
     .card{
-      background:var(--card-grad);
-      border:1px solid var(--line); border-radius:16px; padding:18px 18px; box-shadow:var(--shadow);
-      transform: translate3d(0,6px,0);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      background:var(--card-bg);
+      border:1px solid var(--line); border-radius:var(--radius); padding:20px;
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
       will-change: transform;
     }
-    .card:hover{transform: translate3d(0,0,0); border-color:#2f436b}
+    .card:hover{
+      transform:translateY(-2px);
+      border-color: rgba(56,189,248,.2);
+      box-shadow: var(--shadow), 0 0 24px rgba(56,189,248,.06);
+    }
+    .card h3{margin:0 0 12px; font-size:15px; font-weight:800}
     .muted{color:var(--muted)}
-    .kbd{border:1px solid var(--line); padding:2px 6px; border-radius:6px; background:var(--surface); font-family: "JetBrains Mono", monospace}
-    ul{padding-left:20px; margin:10px 0}
-    li{margin:6px 0}
-    .timeline{position:relative; padding-left:26px}
-    .timeline::before{content:""; position:absolute; left:8px; top:4px; bottom:4px; width:2px; background:linear-gradient(#1f2a44,#22304b)}
-    [data-theme="light"] .timeline::before{background:linear-gradient(#cbd5e1,#94a3b8)}
-    .tl-item{position:relative; margin:0 0 18px}
-    .tl-item::before{content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border:2px solid #2f436b; background:var(--surface); border-radius:50%}
-    .tl-meta{font:600 12px/1.6 Inter, system-ui; color:var(--muted); letter-spacing:.3px; padding-left: 20px;}
-    .tl-role{font-weight:700; letter-spacing:.2px}
-    .stack{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
-    .tag{padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:var(--surface); font:600 12px/1 Inter}
-    .skillbar{height:10px; background:var(--surface); border:1px solid var(--line); border-radius:999px; overflow:hidden}
-    .skillbar > i{display:block; height:100%; width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); transition:width 1.2s ease}
-    .project a{color:var(--text)}
-    .project .title{font-weight:700}
-    .project .meta{font:600 12px/1.6 Inter; color:var(--muted)}
-    .contact{display:grid; gap:12px}
-    footer{margin:48px 0 16px; color:var(--muted); font-size:14px; text-align:center}
-    .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
+
+    /* ── ABOUT SIDE ── */
+    .about-meta{display:grid; gap:10px}
+    .meta-row{
+      display:flex; align-items:flex-start; gap:10px; padding:10px 14px;
+      border:1px solid var(--line); border-radius:12px; background:rgba(56,189,248,.03);
+    }
+    .meta-row .meta-label{font-size:12px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.5px; white-space:nowrap; min-width:84px}
+    .meta-row .meta-val{font-size:14px; font-weight:500; color:var(--text)}
+    .about-quote{
+      margin:14px 0 0; padding:14px 16px;
+      border-left:3px solid rgba(129,140,248,.5); border-radius:0 8px 8px 0;
+      background:rgba(129,140,248,.05);
+      font-style:italic; font-size:14px; color:var(--muted); line-height:1.55;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline{position:relative; padding-left:28px}
+    .timeline::before{
+      content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px;
+      background:linear-gradient(180deg, var(--accent), var(--accent-2), transparent);
+      border-radius:2px;
+    }
+    .tl-item{position:relative; margin:0 0 22px}
+    .tl-item:last-child{margin-bottom:0}
+    .tl-item::before{
+      content:""; position:absolute; left:-4px; top:7px; width:10px; height:10px;
+      border:2px solid var(--accent); background:var(--bg-0); border-radius:50%;
+      box-shadow: 0 0 8px rgba(56,189,248,.3);
+    }
+    .tl-meta{font:600 12px/1.6 Inter, sans-serif; color:var(--muted); letter-spacing:.2px; padding-left:20px; margin-bottom:2px}
+    .tl-role{font-weight:800; font-size:14px; letter-spacing:.1px; padding-left:20px; color:var(--text)}
+    .tl-bullets{padding-left:36px; margin:8px 0 0; color:var(--muted)}
+    .tl-bullets li{margin:4px 0; font-size:13.5px}
+    .stack{display:flex; flex-wrap:wrap; gap:7px; margin-top:10px}
+    .tag{
+      padding:5px 10px; border-radius:999px; border:1px solid var(--line);
+      background:rgba(56,189,248,.04); font:600 12px/1 Inter; color:var(--muted);
+    }
+
+    /* ── SKILLS ── */
+    .kv{display:grid; grid-template-columns: 1fr auto; gap:6px 16px; align-items:center; font-size:14px}
+    .kv .kv-key{color:var(--text); font-weight:500}
+    .kv .kv-val{color:var(--accent); font-weight:700; font-size:13px; text-align:right; white-space:nowrap}
+    .bar-group{margin-top:14px}
+    .bar-label{font-size:13px; font-weight:600; color:var(--muted); margin:10px 0 4px; display:block}
+    .skillbar{height:8px; background:rgba(255,255,255,.06); border:1px solid var(--line); border-radius:999px; overflow:hidden}
+    .skillbar > i{display:block; height:100%; width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); transition:width 1.3s cubic-bezier(.25,.8,.25,1)}
+    .stars{letter-spacing:2px; color:var(--accent); font-size:12px}
+    .soft-tags{display:flex; flex-wrap:wrap; gap:7px}
+    .soft-tag{
+      padding:6px 12px; border-radius:999px;
+      border:1px solid rgba(129,140,248,.25); background:rgba(129,140,248,.06);
+      font:600 12px/1 Inter; color:var(--accent-2);
+    }
+
+    /* ── PROJECTS ── */
+    .project-card{
+      background:var(--card-bg); border:1px solid var(--line); border-radius:var(--radius);
+      padding:20px; box-shadow:var(--shadow);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+      position:relative; overflow:hidden;
+    }
+    .project-card::before{
+      content:""; position:absolute; inset:0; border-radius:inherit;
+      background:linear-gradient(135deg, rgba(56,189,248,.04) 0%, transparent 50%);
+      pointer-events:none;
+    }
+    .project-card:hover{transform:translateY(-3px); border-color:rgba(56,189,248,.22); box-shadow: var(--shadow), 0 0 28px rgba(56,189,248,.08)}
+    .project-card a{color:var(--text); text-decoration:none; display:block}
+    .project-card .proj-accent{font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.6px; margin-bottom:6px}
+    .project-card .proj-title{font-weight:800; font-size:16px; margin:0 0 4px}
+    .project-card .proj-meta{font:600 12px/1.6 Inter; color:var(--muted); margin-bottom:8px}
+    .project-card .proj-desc{font-size:13.5px; color:var(--muted); line-height:1.55; margin:0}
+
+    /* ── RECOMMENDATIONS ── */
+    .rec-card{
+      background:var(--card-bg); border:1px solid var(--line); border-radius:var(--radius);
+      padding:20px; box-shadow:var(--shadow); position:relative;
+    }
+    .rec-card::before{
+      content:'\201C'; position:absolute; top:-6px; left:16px;
+      font-size:48px; line-height:1; color:rgba(56,189,248,.2); font-weight:900;
+      font-family: Georgia, serif;
+    }
+    blockquote{margin:0; padding:0; font-size:14px; line-height:1.65; color:var(--text); padding-top:8px}
+    cite{display:block; color:var(--muted); font-style:normal; font-size:12px; font-weight:600; margin-top:10px}
+
+    /* ── CONTACT ── */
+    .contact-info{font-size:14px; color:var(--muted); margin:0 0 14px; line-height:1.8}
+    .contact-info a{color:var(--accent)}
+    .kbd{border:1px solid var(--line); padding:2px 6px; border-radius:5px; background:var(--surface); font-family: "JetBrains Mono", monospace; font-size:12px}
+
+    /* ── FOOTER ── */
+    footer{margin:60px 0 20px; color:var(--muted); font-size:13px; text-align:center; padding:0 28px}
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal{opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s ease}
     .reveal.visible{opacity:1; transform:none}
-    .pill{display:inline-flex; align-items:center; padding:6px 10px; gap:8px; border-radius:999px; border:1px solid var(--line); background:var(--chip-bg); font-weight:600}
-    .two-col{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
-    .kv{display:grid; grid-template-columns: 1fr auto; gap:8px 12px; align-items:center}
-    .stars{letter-spacing:2px}
-    blockquote{margin:0; padding:0; border-left:3px solid #2f436b; padding-left:12px}
-    cite{display:block; color:var(--muted); font-style:normal; margin-top:6px}
-    /* Responsive */
-    @media (max-width: 980px){ .hero{grid-template-columns: 1fr; text-align:center} .actions{justify-content:center} .nav{padding:10px 16px} .two-col{grid-template-columns:1fr} }
-    @media (prefers-reduced-motion: reduce){
+
+    /* ── SKIP LINK ── */
+    .skip-link{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip-link:focus{
+      left:16px; top:12px; width:auto; height:auto; padding:8px 14px;
+      background:var(--card-bg); color:var(--text); border:1px solid var(--line);
+      border-radius:8px; z-index:1000;
+    }
+    :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:6px}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .actions{justify-content:center}
+      .chips{justify-content:center}
+      .hero-desc{margin:0 auto 18px}
+      .grid.cols-3{grid-template-columns:1fr}
+      .grid.cols-2{grid-template-columns:1fr}
+      .focus-row{grid-template-columns:1fr 1fr}
+      .wrap, .nav{padding-left:16px; padding-right:16px}
+    }
+    @media(max-width:640px){
+      .nav-links a:not(.back-link){display:none}
+      .focus-row{grid-template-columns:1fr}
+    }
+    @media(prefers-reduced-motion: reduce){
       *{scroll-behavior:auto !important}
-      .reveal{transition:none}
+      .reveal{transition:none; opacity:1; transform:none}
       .card,.hero-card{transform:none}
+      .dot{animation:none}
     }
     @media print{
       :root{--text:#0b1220; --muted:#334155; --line:#cbd5e1}
-      body{background:#fff; color:var(--text)}
-      header, .actions, .links, .chip, .btn, .lang-toggle, .theme-toggle{display:none !important}
-      .card, .hero-card{box-shadow:none; border-color:#e2e8f0}
-      a{color:#0b1220; text-decoration:underline}
+      body{background:#fff; color:var(--text); background-image:none}
+      header, .actions, .nav-links, .chips, .btn, .lang-toggle, .theme-toggle,
+      .btn-pdf, .back-link, footer{display:none !important}
+      .headline{-webkit-text-fill-color:#0b1220; background:none; color:#0b1220}
+      .card,.hero-card,.project-card,.rec-card{box-shadow:none; border-color:#e2e8f0; background:#fff}
+      a{color:#0b1220}
+      section{break-inside:avoid; page-break-inside:avoid}
     }
-    .back-link{
-        opacity:.65; font-size:13px; display:inline-flex; align-items:center; gap:5px;
-        color:var(--text); text-decoration:none; transition:opacity .15s;
-    }
-    .back-link:hover{ opacity:1 }
-    @media print{ .back-link{ display:none !important } }
-    .skip-link{
-        position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
-    .skip-link:focus{
-        left:16px; top:12px; width:auto; height:auto; padding:8px 12px;
-        background:var(--btn-bg); color:var(--text); border:1px solid var(--line);
-        border-radius:8px; z-index:1000;
-    }
-    :focus-visible{
-        outline:2px solid var(--accent); outline-offset:3px; border-radius:6px;
-    }
-    @media print{
-        section{ break-inside: avoid; page-break-inside: avoid }
-        #projects .card{ break-inside: avoid }
-    }
-    .scramble .dud{ opacity:.45 }
-    section{ content-visibility:auto; contain-intrinsic-size: 600px }
-
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <nav class="nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>Felipe Sotille</div>
-      </div>
-      <div class="links">
+      <a class="brand" href="/">
+        <img src="/favicon.svg" class="logo" alt="FS logo" aria-hidden="true">
+        <span>Felipe Sotille</span>
+      </a>
+      <div class="nav-links">
         <a href="/" class="back-link" title="Back to portfolio">← Portfolio</a>
         <a href="#about" data-i18n="nav_about">About</a>
         <a href="#experience" data-i18n="nav_experience">Experience</a>
@@ -254,7 +400,7 @@
           <button class="sm" id="theme-light" title="Light">☀️</button>
           <button class="sm" id="theme-auto" title="Auto">🖥️</button>
         </div>
-        <button class="btn ghost sm" id="btn-pdf" data-i18n="btn_download_pdf" title="Download / Print PDF" onclick="window.print()">Download PDF</button>
+        <button class="btn-pdf" id="btn-pdf" data-i18n="btn_download_pdf" title="Download / Print PDF" onclick="window.print()">PDF</button>
       </div>
     </nav>
   </header>
@@ -263,19 +409,19 @@
     <!-- HERO -->
     <section class="hero reveal">
       <div>
-        <p class="pill" aria-live="polite"><span aria-hidden="true">🟢</span> <span data-i18n="hero_pill">Open to OSS collaborations</span></p>
-        <h1 class="headline" data-i18n="headline">Sr. DevSecOps & Software Engineer</h1>
-        <div class="scramble" id="scramble" aria-live="polite"></div>
-        <p class="muted" data-i18n="hero_desc">~20 years across banking, fintech and real‑time platforms. Current focus: AI engineering, autonomous agents and release orchestration.</p>
+        <div class="hero-pill"><span class="dot" aria-hidden="true"></span><span data-i18n="hero_pill">Open to OSS collaborations</span></div>
+        <h1 class="headline" data-i18n="headline">DevSecOps, AI &amp;<br>Software Engineering</h1>
+        <div class="scramble" id="scramble" aria-live="polite" aria-label="Rotating skills"></div>
+        <p class="hero-desc" data-i18n="hero_desc">~20 years across banking, fintech and real‑time platforms. Current focus: AI engineering, autonomous agents and release orchestration.</p>
         <div class="actions">
           <a class="btn" href="#experience" data-i18n="btn_view_experience">View experience</a>
           <a class="btn ghost" href="mailto:fsotille@gmail.com" data-i18n="btn_email">Email</a>
           <a class="btn ghost" href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener" data-i18n="btn_linkedin">LinkedIn</a>
           <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
         </div>
-        <div class="stack" style="margin-top:12px">
-          <span class="chip" id="exp-chip">~20 years</span>
-          <span class="chip">AI Engineering · Agents</span>
+        <div class="chips">
+          <span class="chip hl">~20 years</span>
+          <span class="chip hl">AI Engineering · Agents</span>
           <span class="chip">Release Orchestration</span>
           <span class="chip">DevSecOps · CI/CD</span>
           <span class="chip">Java · Spring</span>
@@ -283,20 +429,18 @@
         </div>
       </div>
 
-      <div class="hero-card tilt" aria-label="Animated orb">
+      <div class="hero-card tilt" aria-label="Animated sphere decoration">
         <div class="orb-wrap">
-          <!-- Sphere animation inspired by Julian Garnier's pen -->
           <svg class="sphere" viewBox="0 0 440 440" aria-hidden="true">
             <defs>
               <linearGradient id="sphereGradient" x1="0%" x2="0%" y1="0%" y2="100%">
-                <stop stop-color="#8ab4ff" offset="0%"/>
+                <stop stop-color="#818cf8" offset="0%"/>
                 <stop stop-color="#38bdf8" offset="50%"/>
                 <stop stop-color="#22d3ee" offset="100%"/>
               </linearGradient>
             </defs>
             <circle class="disc" cx="220" cy="220" r="175"/>
             <g class="lat">
-              <!-- wireframe paths (latitude-like) -->
               <path d="M361.604 361.238c-24.407 24.408-51.119 37.27-59.662 28.727-8.542-8.543 4.319-35.255 28.726-59.663 24.408-24.407 51.12-37.269 59.663-28.726 8.542 8.543-4.319 35.255-28.727 59.662z"/>
               <path d="M360.72 360.354c-35.879 35.88-75.254 54.677-87.946 41.985-12.692-12.692 6.105-52.067 41.985-87.947 35.879-35.879 75.254-54.676 87.946-41.984 12.692 12.692-6.105 52.067-41.984 87.946z"/>
               <path d="M357.185 356.819c-44.91 44.91-94.376 68.258-110.485 52.149-16.11-16.11 7.238-65.575 52.149-110.485 44.91-44.91 94.376-68.259 110.485-52.15 16.11 16.11-7.239 65.576-52.149 110.486z"/>
@@ -321,14 +465,14 @@
             <g class="lon" transform="rotate(90 220 220)"></g>
           </svg>
         </div>
-        <div class="two-col" style="margin-top:14px">
-          <div class="card">
-            <div class="tl-meta" data-i18n="card_focus_title">Current focus</div>
-            <div class="tl-role" data-i18n="card_focus_value">Release Orchestration, DevSecOps, IA Agents, Industrial Automation</div>
+        <div class="focus-row">
+          <div class="focus-card">
+            <div class="label" data-i18n="card_focus_title">Current focus</div>
+            <div class="value" data-i18n="card_focus_value">Release Orchestration, DevSecOps, AI Agents, Industrial Automation</div>
           </div>
-          <div class="card">
-            <div class="tl-meta" data-i18n="card_interests_title">Interests</div>
-            <div class="tl-role" data-i18n="card_interests_value">Mountains · Chess · Music · Technology · AI · Sci‑Fi</div>
+          <div class="focus-card">
+            <div class="label" data-i18n="card_interests_title">Interests</div>
+            <div class="value" data-i18n="card_interests_value">Mountains · Chess · Music · Technology · AI · Sci‑Fi</div>
           </div>
         </div>
       </div>
@@ -336,17 +480,29 @@
 
     <!-- ABOUT -->
     <section id="about" class="reveal">
-      <h2 class="sec-title" data-i18n="section_about_title">About</h2>
+      <div class="sec-header">
+        <h2 class="sec-title" data-i18n="section_about_title">About</h2>
+        <div class="sec-line"></div>
+      </div>
       <div class="grid cols-2">
         <article class="card">
-          <p data-i18n="about_intro">I’m a distinguished software engineer with ≈18 years 4 months in the industry. I’ve contributed to product catalogs, ERPs, real‑time and social applications, and the banking sector. Versatile developer: backend engineer, frontend enthusiast, DevOps lover. Always open to share knowledge and help.</p>
-          <p class="muted" data-i18n="about_quote">“Strive not to be a success, but rather to be of value.” — Albert Einstein</p>
+          <p style="margin:0 0 14px; font-size:15px; line-height:1.75" data-i18n="about_intro">With {EXP} building production systems across banking, fintech and real‑time platforms, I combine strong backend fundamentals — Java/Spring, distributed systems, cloud‑native infrastructure — with a DevSecOps mindset shaped by years at SWIFT. My current focus is AI engineering and autonomous agents: designing systems where LLMs drive decisions, automate workflows and amplify developer productivity. Open to consulting, OSS collaborations and ambitious technical challenges.</p>
+          <div class="about-quote" data-i18n="about_quote">"Any sufficiently advanced technology is indistinguishable from magic." — Arthur C. Clarke</div>
         </article>
         <aside class="card">
-          <div class="grid" style="gap:10px">
-            <div class="pill"><strong data-i18n="aside_loc">Location</strong>: <span data-i18n="aside_loc_value">Brussels Metropolitan Area (remote/global)</span></div>
-            <div class="pill"><strong data-i18n="aside_langs">Languages</strong>: <span data-i18n="aside_langs_value">Portuguese, English, French</span></div>
-            <div class="pill"><strong data-i18n="aside_avail">Availability</strong>: <span data-i18n="aside_avail_value">Consulting & OSS collaborations</span></div>
+          <div class="about-meta">
+            <div class="meta-row">
+              <span class="meta-label" data-i18n="aside_loc">Location</span>
+              <span class="meta-val" data-i18n="aside_loc_value">Brussels Metropolitan Area (remote/global)</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label" data-i18n="aside_langs">Languages</span>
+              <span class="meta-val" data-i18n="aside_langs_value">Portuguese, English, French</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label" data-i18n="aside_avail">Availability</span>
+              <span class="meta-val" data-i18n="aside_avail_value">Consulting · AI/Agents · OSS</span>
+            </div>
           </div>
         </aside>
       </div>
@@ -354,74 +510,71 @@
 
     <!-- EXPERIENCE -->
     <section id="experience" class="reveal">
-      <h2 class="sec-title" data-i18n="section_experience_title">Experience</h2>
+      <div class="sec-header">
+        <h2 class="sec-title" data-i18n="section_experience_title">Experience</h2>
+        <div class="sec-line"></div>
+      </div>
       <div class="grid cols-2">
         <article class="card">
           <div class="timeline">
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="expA_meta">Jan 2, 2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Brussels Area, Belgium</div>
-              <div class="tl-role" data-i18n="expA_role">DevSecOps & CI/CD</div>
-              <ul class="muted" data-i18n-list="expA_bullets"></ul>
+              <div class="tl-meta" data-i18n="expA_meta">Jan 2, 2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Brussels, Belgium</div>
+              <div class="tl-role" data-i18n="expA_role">DevSecOps &amp; CI/CD</div>
+              <ul class="tl-bullets muted" data-i18n-list="expA_bullets"></ul>
             </div>
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="expB_meta">Jul 2024 — Dec 2024 · Senior Java Consultant (Freelance) · Swissquote · Geneva Metropolitan Area · Hybrid</div>
-              <div class="tl-role" data-i18n="expB_role">Data migration & database engineering</div>
-              <ul class="muted" data-i18n-list="expB_bullets"></ul>
+              <div class="tl-meta" data-i18n="expB_meta">Jul 2024 — Dec 2024 · Senior Java Consultant (Freelance) · Swissquote · Geneva · Hybrid</div>
+              <div class="tl-role" data-i18n="expB_role">Data migration &amp; database engineering</div>
+              <ul class="tl-bullets muted" data-i18n-list="expB_bullets"></ul>
             </div>
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="expC_meta">Jul 2019 — Jun 2024 · Sr. Software Engineer (Consultant) · Swift · Brussels Area, Belgium</div>
-              <div class="tl-role" data-i18n="expC_role">Full‑stack engineering & platform evolution</div>
-              <ul class="muted" data-i18n-list="expC_bullets"></ul>
+              <div class="tl-meta" data-i18n="expC_meta">Jul 2019 — Jun 2024 · Sr. Software Engineer (Consultant) · Swift · Brussels, Belgium</div>
+              <div class="tl-role" data-i18n="expC_role">Full‑stack engineering &amp; platform evolution</div>
+              <ul class="tl-bullets muted" data-i18n-list="expC_bullets"></ul>
             </div>
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="expD_meta">Jun 2018 — Jun 2019 · Lead Software & DevOps Engineer · MyCujoo (An Eleven Company) · Lisbon Area, Portugal</div>
-              <div class="tl-role" data-i18n="expD_role">Real‑time microservices & team leadership</div>
-              <ul class="muted" data-i18n-list="expD_bullets"></ul>
+              <div class="tl-meta" data-i18n="expD_meta">Jun 2018 — Jun 2019 · Lead Software &amp; DevOps Engineer · MyCujoo (An Eleven Company) · Lisbon, Portugal</div>
+              <div class="tl-role" data-i18n="expD_role">Real‑time microservices &amp; team leadership</div>
+              <ul class="tl-bullets muted" data-i18n-list="expD_bullets"></ul>
             </div>
           </div>
         </article>
 
-        <!-- RIGHT COLUMN: detailed earlier roles -->
         <aside class="card">
-          <h3 style="margin:0 0 10px" data-i18n="aside_prev_title">Previous experiences</h3>
+          <h3 data-i18n="aside_prev_title">Previous experiences</h3>
           <div class="timeline">
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="wplex_meta">Oct 2015 — Mar 2018 · Senior Java Developer · WPLEX Software · Florianópolis Area, Brazil</div>
-              <ul class="muted" data-i18n-list="wplex_bullets"></ul>
+              <div class="tl-meta" data-i18n="wplex_meta">Oct 2015 — Mar 2018 · Senior Java Developer · WPLEX Software · Florianópolis, Brazil</div>
+              <ul class="tl-bullets muted" data-i18n-list="wplex_bullets"></ul>
               <div class="stack">
-                <span class="tag">Spring (MVC, Boot, Security, Web)</span>
-                <span class="tag">Java 8/EE</span><span class="tag">ReactJS</span><span class="tag">REST</span>
-                <span class="tag">Jira/Confluence/Bitbucket</span><span class="tag">JSF</span><span class="tag">TDD</span>
+                <span class="tag">Spring Boot/MVC/Security</span><span class="tag">Java 8/EE</span>
+                <span class="tag">ReactJS</span><span class="tag">REST</span><span class="tag">TDD</span>
               </div>
             </div>
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="metaway_meta">Mar 2015 — Aug 2015 · Software Developer · Metaway · Bento Gonçalves Area, Brazil</div>
-              <ul class="muted" data-i18n-list="metaway_bullets"></ul>
+              <div class="tl-meta" data-i18n="metaway_meta">Mar 2015 — Aug 2015 · Software Developer · Metaway · Bento Gonçalves, Brazil</div>
+              <ul class="tl-bullets muted" data-i18n-list="metaway_bullets"></ul>
               <div class="stack">
-                <span class="tag">Java 7</span><span class="tag">SCRUM</span><span class="tag">RichFaces</span>
-                <span class="tag">REST</span><span class="tag">SQL/JPA</span><span class="tag">Liquibase</span>
+                <span class="tag">Java 7</span><span class="tag">SCRUM</span><span class="tag">SQL/JPA</span><span class="tag">Liquibase</span>
               </div>
             </div>
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="cybersec_meta">Apr 2014 — Jan 2015 · Network & Security Analyst · CyberSec · Marau Area, Brazil</div>
-              <ul class="muted" data-i18n-list="cybersec_bullets"></ul>
+              <div class="tl-meta" data-i18n="cybersec_meta">Apr 2014 — Jan 2015 · Network &amp; Security Analyst · CyberSec · Marau, Brazil</div>
+              <ul class="tl-bullets muted" data-i18n-list="cybersec_bullets"></ul>
               <div class="stack">
-                <span class="tag">Hyper‑V/Citrix/VMWare</span><span class="tag">Unix/Windows Admin</span>
-                <span class="tag">Security hardening</span><span class="tag">Cisco routers</span>
+                <span class="tag">Hyper‑V/VMware</span><span class="tag">Security hardening</span><span class="tag">Cisco</span>
               </div>
             </div>
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="citta_meta">Oct 2009 — Mar 2014 · Software Developer · Città Inteligência em Gestão Pública · Marau Area, Brazil</div>
-              <ul class="muted" data-i18n-list="citta_bullets"></ul>
+              <div class="tl-meta" data-i18n="citta_meta">Oct 2009 — Mar 2014 · Software Developer · Città Inteligência em Gestão Pública · Marau, Brazil</div>
+              <ul class="tl-bullets muted" data-i18n-list="citta_bullets"></ul>
               <div class="stack">
-                <span class="tag">Spring MVC/Security/Web</span><span class="tag">Java 6</span>
-                <span class="tag">JSF (RichFaces/PrimeFaces)</span><span class="tag">Jasper/iReport</span>
-                <span class="tag">SVN</span><span class="tag">SQL/JPA</span>
+                <span class="tag">Spring MVC/Security</span><span class="tag">Java 6</span><span class="tag">JSF</span><span class="tag">SQL/JPA</span>
               </div>
             </div>
             <div class="tl-item">
-              <div class="tl-meta" data-i18n="holma_meta">Jan 2007 — Sep 2009 · Delphi Developer / IT Support Analyst · Holma Software · Marau Area, Brazil</div>
-              <ul class="muted" data-i18n-list="holma_bullets"></ul>
+              <div class="tl-meta" data-i18n="holma_meta">Jan 2007 — Sep 2009 · Delphi Developer / IT Support · Holma Software · Marau, Brazil</div>
+              <ul class="tl-bullets muted" data-i18n-list="holma_bullets"></ul>
               <div class="stack">
                 <span class="tag">Delphi (Object Pascal)</span><span class="tag">Firebird SQL</span>
               </div>
@@ -433,64 +586,68 @@
 
     <!-- SKILLS -->
     <section id="skills" class="reveal">
-      <h2 class="sec-title" data-i18n="section_skills_title">Skills</h2>
+      <div class="sec-header">
+        <h2 class="sec-title" data-i18n="section_skills_title">Skills</h2>
+        <div class="sec-line"></div>
+      </div>
       <div class="grid cols-2">
         <article class="card">
-          <h3 style="margin:0 0 8px" data-i18n="skills_hard_title">Hard skills</h3>
+          <h3 data-i18n="skills_hard_title">Hard skills</h3>
           <div class="kv">
-            <div>Java / Linux</div><div>14y</div>
-            <div>Serverless / Microservices</div><div>4y</div>
-            <div>Spring (Security, Web, Boot...)</div><div>7y</div>
-            <div>Docker / Containers</div><div>6y</div>
-            <div>SQL (HQL, Oracle, Postgres)</div><div>8y</div>
-            <div>SOLID OOP</div><div>8y</div>
-            <div>Angular 10+</div><div>5y</div>
-            <div>Agile / Scrum</div><div>10y</div>
-            <div>Clean & Secure Coding</div><div>6y</div>
-            <div>CI/CD & DevOps (Jenkins/CloudBees, Heroku, CircleCI)</div><div>7y</div>
-            <div>Kafka / Kubernetes / AWS / GCP</div><div>2y</div>
-            <div>Cloud integrations (Coveo, Adobe Cloud, Twilio)</div><div>3y</div>
-            <div>Ansible Tower / Scripting</div><div>3y</div>
+            <div class="kv-key">Java / Linux / Backend</div><div class="kv-val">~14y</div>
+            <div class="kv-key">AI Engineering / LLM Agents</div><div class="kv-val">~2y</div>
+            <div class="kv-key">Spring (Security, Web, Boot)</div><div class="kv-val">~7y</div>
+            <div class="kv-key">Docker / Containers / K8s</div><div class="kv-val">~6y</div>
+            <div class="kv-key">SQL (Oracle, Postgres, HQL)</div><div class="kv-val">~8y</div>
+            <div class="kv-key">CI/CD &amp; DevSecOps</div><div class="kv-val">~7y</div>
+            <div class="kv-key">AWS · GCP · Cloud Architecture</div><div class="kv-val">~4y</div>
+            <div class="kv-key">Angular / TypeScript</div><div class="kv-val">~5y</div>
+            <div class="kv-key">Kafka · Event‑Driven · Vert.x</div><div class="kv-val">~3y</div>
+            <div class="kv-key">Ansible · Scripting · Automation</div><div class="kv-val">~3y</div>
           </div>
 
-          <h3 style="margin:16px 0 8px" data-i18n="skills_bars_title">Proficiency overview</h3>
-          <label data-i18n="skillbars_platform">Platforms & DevSecOps</label>
-          <div class="skillbar" data-skill="88"><i></i></div>
-          <label data-i18n="skillbars_backend">Back‑end (Java/Spring)</label>
-          <div class="skillbar" data-skill="86"><i></i></div>
-          <label data-i18n="skillbars_frontend">Front‑end (Angular/TS)</label>
-          <div class="skillbar" data-skill="72"><i></i></div>
-          <p class="muted" style="margin-top:10px" data-i18n="skills_note">*Self‑assessed indicators for quick visualization.</p>
+          <div class="bar-group">
+            <h3 style="margin:16px 0 4px" data-i18n="skills_bars_title">Proficiency overview</h3>
+            <span class="bar-label" data-i18n="skillbars_ai">AI Engineering &amp; Agents</span>
+            <div class="skillbar" data-skill="78"><i></i></div>
+            <span class="bar-label" data-i18n="skillbars_platform">Platforms &amp; DevSecOps</span>
+            <div class="skillbar" data-skill="90"><i></i></div>
+            <span class="bar-label" data-i18n="skillbars_backend">Back‑end (Java/Spring)</span>
+            <div class="skillbar" data-skill="87"><i></i></div>
+            <span class="bar-label" data-i18n="skillbars_frontend">Front‑end (Angular/TS)</span>
+            <div class="skillbar" data-skill="72"><i></i></div>
+            <p class="muted" style="margin-top:10px; font-size:12px" data-i18n="skills_note">*Self‑assessed indicators for quick visualization.</p>
+          </div>
         </article>
 
         <aside class="card">
-          <h3 style="margin:0 0 8px" data-i18n="skills_soft_title">Soft skills</h3>
-          <div class="stack">
-            <span class="tag" data-i18n="soft1">Interpersonal</span>
-            <span class="tag" data-i18n="soft2">Team member</span>
-            <span class="tag" data-i18n="soft3">Collaborative</span>
-            <span class="tag" data-i18n="soft4">Creative thinker</span>
-            <span class="tag" data-i18n="soft5">Attention to detail</span>
-            <span class="tag" data-i18n="soft6">Problem‑solver</span>
-            <span class="tag" data-i18n="soft7">Time management</span>
-            <span class="tag" data-i18n="soft8">Authentic & approachable</span>
-            <span class="tag" data-i18n="soft9">Open & honest</span>
-            <span class="tag" data-i18n="soft10">Natural leader</span>
+          <h3 data-i18n="skills_soft_title">Soft skills</h3>
+          <div class="soft-tags">
+            <span class="soft-tag" data-i18n="soft1">Interpersonal</span>
+            <span class="soft-tag" data-i18n="soft2">Team member</span>
+            <span class="soft-tag" data-i18n="soft3">Collaborative</span>
+            <span class="soft-tag" data-i18n="soft4">Creative thinker</span>
+            <span class="soft-tag" data-i18n="soft5">Attention to detail</span>
+            <span class="soft-tag" data-i18n="soft6">Problem‑solver</span>
+            <span class="soft-tag" data-i18n="soft7">Time management</span>
+            <span class="soft-tag" data-i18n="soft8">Authentic &amp; approachable</span>
+            <span class="soft-tag" data-i18n="soft9">Open &amp; honest</span>
+            <span class="soft-tag" data-i18n="soft10">Natural leader</span>
           </div>
 
-          <h3 style="margin:16px 0 8px" data-i18n="skills_lang_title">Languages</h3>
+          <h3 style="margin:20px 0 10px" data-i18n="skills_lang_title">Languages</h3>
           <div class="kv">
-            <div>Portuguese</div><div class="stars">★★★★★</div>
-            <div>English</div><div class="stars">★★★★★</div>
-            <div>French</div><div class="stars">★★★★★</div>
+            <div class="kv-key">Portuguese</div><div class="kv-val"><span class="stars">★★★★★</span></div>
+            <div class="kv-key">English</div><div class="kv-val"><span class="stars">★★★★★</span></div>
+            <div class="kv-key">French</div><div class="kv-val"><span class="stars">★★★★★</span></div>
           </div>
 
-          <h3 style="margin:16px 0 8px" data-i18n="edu_title">Education</h3>
-          <ul class="muted">
-            <li data-i18n="edu1">Specialization — Blockchain, Smart Contracts & Cloud Security · UPF · 2023</li>
-            <li data-i18n="edu2">Specialization — Artificial Intelligence & Data Science · UPF · 2023</li>
-            <li data-i18n="edu3">B.Sc. in Computer Science · UPF · 2015</li>
-            <li data-i18n="edu4">Security+ (CompTIA) · 2015</li>
+          <h3 style="margin:20px 0 10px" data-i18n="edu_title">Education</h3>
+          <ul class="muted" style="padding-left:18px; margin:0; font-size:13.5px">
+            <li style="margin:6px 0" data-i18n="edu1">Specialization — Blockchain, Smart Contracts &amp; Cloud Security · UPF · 2023</li>
+            <li style="margin:6px 0" data-i18n="edu2">Specialization — Artificial Intelligence &amp; Data Science · UPF · 2023</li>
+            <li style="margin:6px 0" data-i18n="edu3">B.Sc. in Computer Science · UPF · 2015</li>
+            <li style="margin:6px 0" data-i18n="edu4">Security+ (CompTIA) · 2015</li>
           </ul>
         </aside>
       </div>
@@ -498,47 +655,58 @@
 
     <!-- PROJECTS -->
     <section id="projects" class="reveal">
-      <h2 class="sec-title" data-i18n="section_projects_title">Featured projects</h2>
+      <div class="sec-header">
+        <h2 class="sec-title" data-i18n="section_projects_title">Featured projects</h2>
+        <div class="sec-line"></div>
+      </div>
       <div class="grid cols-3">
-        <article class="card project tilt">
-          <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
-            <div class="title" data-i18n="proj1_title">Infra as Code Starter</div>
-            <div class="meta" data-i18n="proj1_meta">Blueprint · K8s · GitOps · Observability</div>
-            <p class="muted" data-i18n="proj1_desc">Platform template with Helm, ArgoCD, Prometheus/Grafana and service‑mesh patterns.</p>
+        <article class="project-card">
+          <a href="https://techstream.app" target="_blank" rel="noopener">
+            <div class="proj-accent">Live · AI News</div>
+            <div class="proj-title" data-i18n="proj1_title">TechStream</div>
+            <div class="proj-meta" data-i18n="proj1_meta">Next.js · Supabase · AI Curation · i18n</div>
+            <p class="proj-desc" data-i18n="proj1_desc">AI-curated tech news hub with multilingual summaries (EN/PT/FR/ES), real-time Supabase feed, and dark/light themes.</p>
           </a>
         </article>
-        <article class="card project tilt">
-          <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
-            <div class="title" data-i18n="proj2_title">Java Service Kit</div>
-            <div class="meta" data-i18n="proj2_meta">Spring Boot · Resilience · Telemetry</div>
-            <p class="muted" data-i18n="proj2_desc">Best‑practices kit: tracing, metrics, retries, circuit‑breaker and hardening.</p>
+        <article class="project-card">
+          <a href="https://tarotmancer.techstream.app" target="_blank" rel="noopener">
+            <div class="proj-accent">Live · AI Agent</div>
+            <div class="proj-title" data-i18n="proj2_title">Tarotmancer</div>
+            <div class="proj-meta" data-i18n="proj2_meta">AI · Claude API · Tarot · Agents</div>
+            <p class="proj-desc" data-i18n="proj2_desc">AI-powered tarot reading agent using the Claude API. An experiment in agentic storytelling and LLM-driven user experiences.</p>
           </a>
         </article>
-        <article class="card project tilt">
+        <article class="project-card">
           <a href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener">
-            <div class="title" data-i18n="proj3_title">Angular + DX</div>
-            <div class="meta" data-i18n="proj3_meta">CLI · Schematics · Storybook</div>
-            <p class="muted" data-i18n="proj3_desc">DX tools: scaffolding, tests, lint and integrated UI docs.</p>
+            <div class="proj-accent">OSS · Infra</div>
+            <div class="proj-title" data-i18n="proj3_title">Infra as Code Starter</div>
+            <div class="proj-meta" data-i18n="proj3_meta">K8s · GitOps · Helm · Observability</div>
+            <p class="proj-desc" data-i18n="proj3_desc">Platform template with Helm, ArgoCD, Prometheus/Grafana and service‑mesh patterns for cloud-native teams.</p>
           </a>
         </article>
       </div>
-      <p style="margin-top:10px"><a class="btn ghost" href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener" data-i18n="btn_view_all_repos">View all repositories</a></p>
+      <p style="margin-top:14px">
+        <a class="btn ghost" href="https://github.com/sotille?tab=repositories" target="_blank" rel="noopener" data-i18n="btn_view_all_repos">View all repositories</a>
+      </p>
     </section>
 
     <!-- RECOMMENDATIONS -->
     <section id="recommendations" class="reveal">
-      <h2 class="sec-title" data-i18n="section_reco_title">Recommendations</h2>
+      <div class="sec-header">
+        <h2 class="sec-title" data-i18n="section_reco_title">Recommendations</h2>
+        <div class="sec-line"></div>
+      </div>
       <div class="grid cols-3">
-        <article class="card">
-          <blockquote data-i18n="rec1_text">“I had the chance to closely collaborate with Felipe in our squad. Felipe adapts very quickly to our day‑to‑day process. He finds improvements at different levels and shares ideas that are always relevant and helpful. He doesn’t hesitate to leave his comfort zone and try new technologies and tools. He’s respectful and always ready to help.”</blockquote>
-          <cite data-i18n="rec1_cite">— Jérôme Vervier, Full‑stack Developer & Trainer (Swift)</cite>
+        <article class="rec-card">
+          <blockquote data-i18n="rec1_text">"I had the chance to closely collaborate with Felipe in our squad. Felipe adapts very quickly to our day‑to‑day process. He finds improvements at different levels and shares ideas that are always relevant and helpful. He doesn't hesitate to leave his comfort zone and try new technologies and tools. He's respectful and always ready to help."</blockquote>
+          <cite data-i18n="rec1_cite">— Jérôme Vervier, Full‑stack Developer &amp; Trainer (Swift)</cite>
         </article>
-        <article class="card">
-          <blockquote data-i18n="rec2_text">“He is the go‑to man when it comes to Linux and microservices. We worked closely on microservices together at Swift — nice colleague to work with. I recommend him for IT development roles.”</blockquote>
+        <article class="rec-card">
+          <blockquote data-i18n="rec2_text">"He is the go‑to man when it comes to Linux and microservices. We worked closely on microservices together at Swift — nice colleague to work with. I recommend him for IT development roles."</blockquote>
           <cite data-i18n="rec2_cite">— Sadhana Italiya, Java Software Developer (Swift)</cite>
         </article>
-        <article class="card">
-          <blockquote data-i18n="rec3_text">“I have had the pleasure to work with Felipe, probably the most skilled developer I have ever met. Enthusiastic about new technologies and making things work, but also a fun and relaxed teammate.”</blockquote>
+        <article class="rec-card">
+          <blockquote data-i18n="rec3_text">"I have had the pleasure to work with Felipe, probably the most skilled developer I have ever met. Enthusiastic about new technologies and making things work, but also a fun and relaxed teammate."</blockquote>
           <cite data-i18n="rec3_cite">— Arnau Rovira, DevOps Engineer (Eleven Sports)</cite>
         </article>
       </div>
@@ -546,11 +714,18 @@
 
     <!-- CONTACT -->
     <section id="contact" class="reveal">
-      <h2 class="sec-title" data-i18n="section_contact_title">Contact</h2>
-      <div class="grid cols-2 contact">
+      <div class="sec-header">
+        <h2 class="sec-title" data-i18n="section_contact_title">Contact</h2>
+        <div class="sec-line"></div>
+      </div>
+      <div class="grid cols-2">
         <article class="card">
-          <p class="muted"><strong>E‑mail:</strong> <a href="mailto:fsotille@gmail.com">fsotille@gmail.com</a> • <strong>Phone:</strong> <a href="tel:+32456250429">+32&nbsp;456&nbsp;250&nbsp;429</a> • <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener">linkedin.com/in/Felipe‑Sotille</a></p>
-          <div class="stack">
+          <p class="contact-info">
+            <strong>E‑mail:</strong> <a href="mailto:fsotille@gmail.com">fsotille@gmail.com</a><br>
+            <strong>Phone:</strong> <a href="tel:+32456250429">+32&nbsp;456&nbsp;250&nbsp;429</a><br>
+            <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener">linkedin.com/in/Felipe‑Sotille</a>
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px">
             <a class="btn" href="mailto:fsotille@gmail.com" data-i18n="btn_email">Send email</a>
             <a class="btn ghost" href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener" data-i18n="btn_linkedin">LinkedIn</a>
             <a class="btn ghost" href="https://github.com/sotille" target="_blank" rel="noopener" data-i18n="btn_github">GitHub</a>
@@ -558,55 +733,53 @@
           </div>
         </article>
         <aside class="card">
-          <h3 style="margin:0 0 10px" data-i18n="links_quick_title">Quick links</h3>
-          <div class="stack">
-            <a class="chip" href="#experience" data-i18n="link_experience">Experience</a>
-            <a class="chip" href="#skills" data-i18n="link_skills">Skills</a>
-            <a class="chip" href="#projects" data-i18n="link_projects">Projects</a>
-            <a class="chip" href="#" onclick="window.print();return false;" data-i18n="link_download_pdf">Download PDF</a>
+          <h3 data-i18n="links_quick_title">Quick links</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px">
+            <a class="btn ghost" href="#experience" data-i18n="link_experience">Experience</a>
+            <a class="btn ghost" href="#skills" data-i18n="link_skills">Skills</a>
+            <a class="btn ghost" href="#projects" data-i18n="link_projects">Projects</a>
+            <a class="btn ghost" href="#" onclick="window.print();return false;" data-i18n="link_download_pdf">Download PDF</a>
             <button class="btn ghost" id="btn-vcard" type="button">Download vCard</button>
           </div>
-          <p class="muted" style="margin-top:8px" data-i18n="tip_replay">Tip: press <span class='kbd'>R</span> to replay the top animation.</p>
+          <p class="muted" style="font-size:13px; margin:0" data-i18n="tip_replay">Tip: press <span class="kbd">R</span> to replay the top animation.</p>
         </aside>
       </div>
     </section>
   </main>
 
-  <footer class="wrap">
-    <div>© <span id="year"></span> Felipe Sotille • <span data-i18n="footer_text">Made with plain HTML/CSS/JS • Deployed on GitHub Pages</span></div>
+  <footer>
+    <div>© <span id="year"></span> Felipe Sotille · <span data-i18n="footer_text">Made with plain HTML/CSS/JS · Deployed on GitHub Pages</span></div>
   </footer>
 
-  <!-- Anime.js for the orb animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
   <script>
-    // Helpers
     const $ = (sel, el = document) => el.querySelector(sel);
     const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
 
-    // i18n dictionary (EN default) with list arrays
     const I18N = {
       en: {
         title: "Felipe Sotille — Portfolio / CV",
-        meta_desc: "Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer.",
+        meta_desc: "Interactive CV of Felipe Sotille — DevSecOps, AI Engineering & Software Engineer.",
         nav_about: "About",
         nav_experience: "Experience",
         nav_skills: "Skills",
         nav_projects: "Projects",
         nav_contact: "Contact",
-        btn_download_pdf: "Download PDF",
-        hero_pill: "Open to OSS collaborations",
-        headline: "Sr. DevSecOps & Software Engineer",
+        btn_download_pdf: "PDF",
+        hero_pill: "Open to consulting &amp; OSS",
+        headline: "DevSecOps, AI &amp; Software Engineering",
         hero_desc: "~20 years across banking, fintech and real‑time platforms. Current focus: AI engineering, autonomous agents and release orchestration.",
         btn_view_experience: "View experience",
         btn_email: "Email",
         btn_linkedin: "LinkedIn",
         btn_github: "GitHub",
         card_focus_title: "Current focus",
-        card_focus_value: "Release Orchestration, DevSecOps, IA Agents, Industrial Automation",
+        card_focus_value: "Release Orchestration, DevSecOps, AI Agents, Industrial Automation",
+        card_interests_title: "Interests",
+        card_interests_value: "Mountains · Chess · Music · Technology · AI · Sci‑Fi",
         section_about_title: "About",
         about_intro: "With {EXP} building production systems across banking, fintech and real‑time platforms, I combine strong backend fundamentals — Java/Spring, distributed systems, cloud‑native infrastructure — with a DevSecOps mindset shaped by years at SWIFT. My current focus is AI engineering and autonomous agents: designing systems where LLMs drive decisions, automate workflows and amplify developer productivity. Open to consulting, OSS collaborations and ambitious technical challenges.",
-        about_quote: "”Any sufficiently advanced technology is indistinguishable from magic.” — Arthur C. Clarke",
+        about_quote: "\u201cAny sufficiently advanced technology is indistinguishable from magic.\u201d — Arthur C. Clarke",
         aside_loc: "Location",
         aside_loc_value: "Brussels Metropolitan Area (remote/global)",
         aside_langs: "Languages",
@@ -614,86 +787,72 @@
         aside_avail: "Availability",
         aside_avail_value: "Consulting · AI/Agents · OSS",
         section_experience_title: "Experience",
-        expA_meta: "Jan 2, 2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Brussels Area, Belgium",
+        expA_meta: "Jan 2, 2025 — Present · Sr. DevSecOps Engineer (Consultant) · Swift · Brussels, Belgium",
         expA_role: "DevSecOps & CI/CD",
         expA_bullets: [
-          "Blueprints of CI/CD pipelines.",
-          "Release orchestration (driving a key KPI).",
-          "Standardization of CI/CD.",
-          "Security scans for several applications (static analysis).",
-          "DevOps coaching across squads.",
-          "Automation and tooling scripting."
+          "CI/CD pipeline blueprints driving key delivery KPIs.",
+          "Release orchestration &amp; standardization across squads.",
+          "Static security analysis for multiple applications.",
+          "DevOps coaching and tooling automation."
         ],
-        expB_meta: "Jul 2024 — Dec 2024 · Senior Java Consultant (Freelance) · Swissquote · Geneva Metropolitan Area · Hybrid",
+        expB_meta: "Jul 2024 — Dec 2024 · Senior Java Consultant (Freelance) · Swissquote · Geneva · Hybrid",
         expB_role: "Data migration & database engineering",
         expB_bullets: [
-          "Created reports for the DBA squad to explain migration efforts.",
-          "Migrated a huge database with billions of financial transaction records to Oracle.",
-          "Improved database interactions by rewriting queries for optimal results.",
-          "Built a Java data loader to move billions of records seamlessly.",
-          "Applied denormalization and table partitioning to optimize performance."
+          "Migrated billions of financial transaction records to Oracle.",
+          "Built a Java data loader for seamless record movement at scale.",
+          "Rewrote queries and applied denormalization/partitioning for performance.",
+          "DBA reporting on migration scope and progress."
         ],
-        expC_meta: "Jul 2019 — Jun 2024 · Sr. Software Engineer (Consultant) · Swift · Brussels Area, Belgium",
+        expC_meta: "Jul 2019 — Jun 2024 · Sr. Software Engineer (Consultant) · Swift · Brussels, Belgium",
         expC_role: "Full‑stack engineering & platform evolution",
         expC_bullets: [
-          "Full‑stack engineer across multiple squads.",
-          "Implemented Coveo AI Search in Knowledge Centre Angular application.",
-          "Fixed security vulnerabilities and code smells across back‑office apps.",
-          "Upgraded Angular versions in more than 10 applications.",
-          "Wrote documentation/specifications with stakeholders for new features.",
-          "Upgraded Docker images to align with current technologies.",
-          "Interviewed candidates for technical and cultural fit.",
-          "Led migration from monolith to microservices in Identity Management app.",
+          "Implemented Coveo AI Search in the Knowledge Centre Angular app.",
+          "Led monolith → microservices migration in Identity Management.",
           "Delivered JSF → Angular migration, pivotal for company KPIs.",
-          "Acted as Scrum Master with agile coaches to improve agility and motivation.",
-          "Integrated Adobe Experience Cloud into the application flow.",
-          "Received nominations: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player."
+          "Upgraded Angular in 10+ applications; integrated Adobe Experience Cloud.",
+          "Fixed security vulnerabilities and code smells across back‑office apps.",
+          "Acted as Scrum Master; interviewed candidates for technical and cultural fit.",
+          "Nominations: Creative Solutions Thinker, Make Things Work, Team Player."
         ],
-        expD_meta: "Jun 2018 — Jun 2019 · Lead Software & DevOps Engineer · MyCujoo (An Eleven Company) · Lisbon Area, Portugal",
+        expD_meta: "Jun 2018 — Jun 2019 · Lead Software & DevOps Engineer · MyCujoo (An Eleven Company) · Lisbon, Portugal",
         expD_role: "Real‑time microservices & team leadership",
         expD_bullets: [
-          "Designed and launched a cloud‑centric, scalable microservice backend using Vert.x to elevate the player experience.",
-          "Built a real‑time app with the Kafka ecosystem to connect football players and their fanbase (social‑network‑like).",
-          "Used Kubernetes and Google Cloud Platform to handle hundreds of thousands of interactions.",
-          "Led a passionate engineering team and cultivated a positive environment."
+          "Designed a cloud‑centric scalable microservice backend using Vert.x.",
+          "Built a real‑time Kafka app connecting football players and their fanbase.",
+          "Used Kubernetes + GCP for hundreds of thousands of interactions.",
+          "Led an engineering team and cultivated a positive culture."
         ],
         aside_prev_title: "Previous experiences",
-
-        /* Right-column detailed items (EN) */
-        wplex_meta: "Oct 2015 — Mar 2018 · Senior Java Developer · WPLEX Software · Florianópolis Area, Brazil",
+        wplex_meta: "Oct 2015 — Mar 2018 · Senior Java Developer · WPLEX Software · Florianópolis, Brazil",
         wplex_bullets: [
-          "Built and evolved real‑time urban transport features; delivered citizen‑facing monitoring apps.",
-          "Optimized SQL for performance; increased unit test coverage.",
-          "Frontend in ReactJS consuming backend endpoints; REST APIs.",
-          "Customer features & reports; Java architecture design."
+          "Real‑time urban transport features; citizen‑facing monitoring apps.",
+          "SQL performance tuning; increased unit test coverage.",
+          "Frontend in ReactJS; REST APIs; architecture design."
         ],
-        metaway_meta: "Mar 2015 — Aug 2015 · Software Developer · Metaway · Bento Gonçalves Area, Brazil",
+        metaway_meta: "Mar 2015 — Aug 2015 · Software Developer · Metaway · Bento Gonçalves, Brazil",
         metaway_bullets: [
-          "Client database conversions; improvements to data modeling.",
-          "Added indexes to speed up queries; built features & reports.",
-          "Introduced Liquibase for DB management; maintained client relationships."
+          "Database migrations and data modeling improvements.",
+          "Introduced Liquibase for DB versioning; built features and reports."
         ],
-        cybersec_meta: "Apr 2014 — Jan 2015 · Network & Security Analyst · CyberSec · Marau Area, Brazil",
+        cybersec_meta: "Apr 2014 — Jan 2015 · Network & Security Analyst · CyberSec · Marau, Brazil",
         cybersec_bullets: [
-          "Security hardening, server/network administration and virtualization.",
-          "CompTIA Security+ earned; on‑prem improvements and best practices."
+          "Security hardening, server/network admin and virtualization.",
+          "Earned CompTIA Security+; on‑prem best practices."
         ],
-        citta_meta: "Oct 2009 — Mar 2014 · Software Developer · Città Inteligência em Gestão Pública · Marau Area, Brazil",
+        citta_meta: "Oct 2009 — Mar 2014 · Software Developer · Città Inteligência em Gestão Pública · Marau, Brazil",
         citta_bullets: [
           "Government systems; UI in Adobe Flex; testing and delivery.",
-          "Modularized parts of a monolithic system; automated client updates.",
-          "Maintained client relationships."
+          "Monolith modularization; automated client deployments."
         ],
-        holma_meta: "Jan 2007 — Sep 2009 · Delphi Developer / IT Support Analyst · Holma Software · Marau Area, Brazil",
+        holma_meta: "Jan 2007 — Sep 2009 · Delphi Developer / IT Support · Holma Software · Marau, Brazil",
         holma_bullets: [
-          "IT support (DB admin, client support); promoted to Delphi developer.",
-          "Built reports, fixed bugs, trained customers; on‑site installs and validation.",
-          "Improved infrastructure to reduce customer update time."
+          "Promoted from IT support to Delphi developer.",
+          "Built reports, fixed bugs, trained customers and did on‑site installs."
         ],
-
         section_skills_title: "Skills",
         skills_hard_title: "Hard skills",
         skills_bars_title: "Proficiency overview",
+        skillbars_ai: "AI Engineering & Agents",
         skillbars_platform: "Platforms & DevSecOps",
         skillbars_backend: "Back‑end (Java/Spring)",
         skillbars_frontend: "Front‑end (Angular/TS)",
@@ -716,22 +875,22 @@
         edu3: "B.Sc. in Computer Science · UPF · 2015",
         edu4: "Security+ (CompTIA) · 2015",
         section_projects_title: "Featured projects",
-        proj1_title: "Infra as Code Starter",
-        proj1_meta: "Blueprint · K8s · GitOps · Observability",
-        proj1_desc: "Platform template with Helm, ArgoCD, Prometheus/Grafana and service‑mesh patterns.",
-        proj2_title: "Java Service Kit",
-        proj2_meta: "Spring Boot · Resilience · Telemetry",
-        proj2_desc: "Best‑practices kit: tracing, metrics, retries, circuit‑breaker and hardening.",
-        proj3_title: "Angular + DX",
-        proj3_meta: "CLI · Schematics · Storybook",
-        proj3_desc: "DX tools: scaffolding, tests, lint and integrated UI docs.",
+        proj1_title: "TechStream",
+        proj1_meta: "Next.js · Supabase · AI Curation · i18n",
+        proj1_desc: "AI-curated tech news hub with multilingual summaries (EN/PT/FR/ES), real-time Supabase feed, and dark/light themes.",
+        proj2_title: "Tarotmancer",
+        proj2_meta: "AI · Claude API · Tarot · Agents",
+        proj2_desc: "AI-powered tarot reading agent using the Claude API. An experiment in agentic storytelling and LLM-driven user experiences.",
+        proj3_title: "Infra as Code Starter",
+        proj3_meta: "K8s · GitOps · Helm · Observability",
+        proj3_desc: "Platform template with Helm, ArgoCD, Prometheus/Grafana and service‑mesh patterns for cloud-native teams.",
         btn_view_all_repos: "View all repositories",
         section_reco_title: "Recommendations",
-        rec1_text: "“I had the chance to closely collaborate with Felipe in our squad. Felipe adapts very quickly to our day‑to‑day process. He finds improvements at different levels and shares ideas that are always relevant and helpful. He doesn’t hesitate to leave his comfort zone and try new technologies and tools. He’s respectful and always ready to help.”",
+        rec1_text: "\u201cI had the chance to closely collaborate with Felipe in our squad. Felipe adapts very quickly to our day\u2011to\u2011day process. He finds improvements at different levels and shares ideas that are always relevant and helpful. He doesn\u2019t hesitate to leave his comfort zone and try new technologies and tools. He\u2019s respectful and always ready to help.\u201d",
         rec1_cite: "— Jérôme Vervier, Full‑stack Developer & Trainer (Swift)",
-        rec2_text: "“He is the go‑to man when it comes to Linux and microservices. We worked closely on microservices together at Swift — nice colleague to work with. I recommend him for IT development roles.”",
+        rec2_text: "\u201cHe is the go\u2011to man when it comes to Linux and microservices. We worked closely on microservices together at Swift — nice colleague to work with. I recommend him for IT development roles.\u201d",
         rec2_cite: "— Sadhana Italiya, Java Software Developer (Swift)",
-        rec3_text: "“I have had the pleasure to work with Felipe, probably the most skilled developer I have ever met. Enthusiastic about new technologies and making things work, but also a fun and relaxed teammate.”",
+        rec3_text: "\u201cI have had the pleasure to work with Felipe, probably the most skilled developer I have ever met. Enthusiastic about new technologies and making things work, but also a fun and relaxed teammate.\u201d",
         rec3_cite: "— Arnau Rovira, DevOps Engineer (Eleven Sports)",
         section_contact_title: "Contact",
         links_quick_title: "Quick links",
@@ -740,36 +899,35 @@
         link_projects: "Projects",
         link_download_pdf: "Download PDF",
         tip_replay: "Tip: press <span class='kbd'>R</span> to replay the top animation.",
-        footer_text: "Made with plain HTML/CSS/JS • Deployed on GitHub Pages",
-        // --- I18N.en.scramble (replace this array) ---
+        footer_text: "Made with plain HTML/CSS/JS · Deployed on GitHub Pages",
         scramble: [
-        "AI Engineering · Autonomous Agents",
-        "Agentic Era · LLMs · Automation",
-        "Release Orchestration · Standardization",
-        "DevSecOps · CI/CD · Cloud‑Native",
-        "Platform Engineering · SRE mindset",
-        "Observability · Prometheus · Grafana",
-        "Java · Spring Boot · REST",
-        "Kubernetes · Docker · GitOps",
-        "AWS · GCP · Cloud Architecture",
-        "Security · SAST · Hardening",
-        "Kafka · Event‑Driven · Vert.x",
-        "Microservices · Resilience · Scalability",
-        "Leadership · Coaching · Mentoring",
-        "Clean Code · Secure Coding · Testing"
+          "AI Engineering · Autonomous Agents",
+          "Agentic Era · LLMs · Automation",
+          "Release Orchestration · Standardization",
+          "DevSecOps · CI/CD · Cloud‑Native",
+          "Platform Engineering · SRE mindset",
+          "Observability · Prometheus · Grafana",
+          "Java · Spring Boot · REST",
+          "Kubernetes · Docker · GitOps",
+          "AWS · GCP · Cloud Architecture",
+          "Security · SAST · Hardening",
+          "Kafka · Event‑Driven · Vert.x",
+          "Microservices · Resilience · Scalability",
+          "Leadership · Coaching · Mentoring",
+          "Clean Code · Secure Coding · Testing"
         ]
       },
       pt: {
         title: "Felipe Sotille — Portfólio / Currículo",
-        meta_desc: "Currículo interativo de Felipe Sotille — Sr. DevSecOps & Software Engineer.",
+        meta_desc: "Currículo interativo de Felipe Sotille — DevSecOps, Engenharia de IA & Software Engineer.",
         nav_about: "Sobre",
         nav_experience: "Experiência",
         nav_skills: "Skills",
         nav_projects: "Projetos",
         nav_contact: "Contato",
-        btn_download_pdf: "Baixar PDF",
-        hero_pill: "Aberto a colaborações OSS",
-        headline: "Sr. DevSecOps & Software Engineer",
+        btn_download_pdf: "PDF",
+        hero_pill: "Aberto a consultoria &amp; OSS",
+        headline: "DevSecOps, IA &amp; Engenharia de Software",
         hero_desc: "~20 anos entre banking, fintech e plataformas em tempo real. Foco atual: engenharia de IA, agentes autônomos e orquestração de releases.",
         btn_view_experience: "Ver experiência",
         btn_email: "E‑mail",
@@ -777,9 +935,11 @@
         btn_github: "GitHub",
         card_focus_title: "Foco atual",
         card_focus_value: "Orquestração de Releases, DevSecOps, Agentes de IA, Automação Industrial",
+        card_interests_title: "Interesses",
+        card_interests_value: "Montanhas · Xadrez · Música · Tecnologia · IA · Sci‑Fi",
         section_about_title: "Sobre",
         about_intro: "Com {EXP} construindo sistemas em produção no setor bancário, fintech e plataformas em tempo real, combino fundamentos sólidos de backend — Java/Spring, sistemas distribuídos, infraestrutura cloud‑native — com uma visão DevSecOps moldada por anos na SWIFT. Meu foco atual é engenharia de IA e agentes autônomos: projetar sistemas onde LLMs tomam decisões, automatizam fluxos e ampliam a produtividade de desenvolvedores. Aberto a consultoria, colaborações OSS e desafios técnicos ambiciosos.",
-        about_quote: "”Qualquer tecnologia suficientemente avançada é indistinguível de magia.” — Arthur C. Clarke",
+        about_quote: "\u201cQualquer tecnologia suficientemente avançada é indistinguível de magia.\u201d — Arthur C. Clarke",
         aside_loc: "Local",
         aside_loc_value: "Área metropolitana de Bruxelas (remoto/global)",
         aside_langs: "Idiomas",
@@ -787,86 +947,72 @@
         aside_avail: "Disponibilidade",
         aside_avail_value: "Consultoria · IA/Agentes · OSS",
         section_experience_title: "Experiência",
-        expA_meta: "2 jan. 2025 — Atual · Sr. DevSecOps Engineer (Consultor) · Swift · Área de Bruxelas, Bélgica",
+        expA_meta: "2 jan. 2025 — Atual · Sr. DevSecOps Engineer (Consultor) · Swift · Bruxelas, Bélgica",
         expA_role: "DevSecOps & CI/CD",
         expA_bullets: [
-          "Blueprints de pipelines de CI/CD.",
-          "Orquestração de releases (impulsionando KPI chave).",
-          "Padronização de CI/CD.",
-          "Scans de segurança em várias aplicações (análise estática).",
-          "Coaching DevOps para diversos squads.",
-          "Automação e scripts de tooling."
+          "Blueprints de pipelines de CI/CD impulsionando KPIs de entrega.",
+          "Orquestração e padronização de releases em múltiplos squads.",
+          "Análise estática de segurança em várias aplicações.",
+          "Coaching DevOps e automação de tooling."
         ],
-        expB_meta: "jul. 2024 — dez. 2024 · Senior Java Consultant (Freelance) · Swissquote · Área metropolitana de Genebra · Híbrido",
+        expB_meta: "jul. 2024 — dez. 2024 · Senior Java Consultant (Freelance) · Swissquote · Genebra · Híbrido",
         expB_role: "Migração de dados & engenharia de banco de dados",
         expB_bullets: [
-          "Relatórios para o time de DBA explicando os esforços de migração.",
-          "Migração de um banco com bilhões de registros de transações financeiras para Oracle.",
-          "Melhoria nas interações com o banco reescrevendo queries para resultados ótimos.",
-          "Criação de loader em Java para mover bilhões de registros sem interrupções.",
-          "Aplicação de desnormalização e particionamento para otimizar performance."
+          "Migração de bilhões de registros de transações financeiras para Oracle.",
+          "Loader em Java para movimentação de dados em escala.",
+          "Reescrita de queries e particionamento para otimizar performance.",
+          "Relatórios para o time de DBA sobre escopo e progresso da migração."
         ],
-        expC_meta: "jul. 2019 — jun. 2024 · Sr. Software Engineer (Consultor) · Swift · Área de Bruxelas, Bélgica",
+        expC_meta: "jul. 2019 — jun. 2024 · Sr. Software Engineer (Consultor) · Swift · Bruxelas, Bélgica",
         expC_role: "Engenharia full‑stack & evolução de plataforma",
         expC_bullets: [
-          "Atuação full‑stack em múltiplos squads.",
           "Implementação do Coveo AI Search no app Angular do Knowledge Centre.",
+          "Liderança na migração monólito → microserviços no Identity Management.",
+          "Entrega da migração JSF → Angular, crucial para KPIs da empresa.",
+          "Upgrade de Angular em 10+ aplicações; integração do Adobe Experience Cloud.",
           "Correção de vulnerabilidades e code smells em apps de back‑office.",
-          "Upgrade de Angular em mais de 10 aplicações.",
-          "Documentação/especificações de novas features com stakeholders.",
-          "Upgrade de imagens Docker para tecnologias atuais.",
-          "Entrevistas de candidatos para fit técnico e cultural.",
-          "Liderança na migração de monólito para microserviços no app de Identity Management.",
-          "Entrega da migração JSF → Angular, crucial para KPIs.",
-          "Atuação como Scrum Master com agile coaches para aumentar agilidade e motivação.",
-          "Integração do Adobe Experience Cloud no fluxo do app.",
-          "Indicações: Creative Solutions Thinker, Make Things Work, Working in the Shadow, Team Player."
+          "Atuação como Scrum Master; entrevistas para fit técnico e cultural.",
+          "Indicações: Creative Solutions Thinker, Make Things Work, Team Player."
         ],
-        expD_meta: "jun. 2018 — jun. 2019 · Lead Software & DevOps Engineer · MyCujoo (Eleven) · Área de Lisboa, Portugal",
-        expD_role: "Microserviços em tempo real & liderança de time",
+        expD_meta: "jun. 2018 — jun. 2019 · Lead Software & DevOps Engineer · MyCujoo (Eleven) · Lisboa, Portugal",
+        expD_role: "Microserviços em tempo real & liderança",
         expD_bullets: [
-          "Design e lançamento de backend escalável em microserviços com Vert.x.",
-          "App em tempo real com Kafka para conectar jogadores e fãs (estilo rede social).",
-          "Uso de Kubernetes e Google Cloud Platform para alto throughput.",
+          "Backend escalável em microserviços com Vert.x.",
+          "App em tempo real com Kafka conectando jogadores e fãs.",
+          "Kubernetes + GCP para alto throughput e baixa latência.",
           "Liderança de equipe e cultura positiva."
         ],
         aside_prev_title: "Experiências anteriores",
-
-        /* Right-column detailed items (PT) */
         wplex_meta: "out. 2015 — mar. 2018 · Senior Java Developer · WPLEX Software · Florianópolis, Brasil",
         wplex_bullets: [
-          "Funcionalidades de transporte urbano em tempo real; apps de monitoramento para cidadãos.",
-          "Tuning de SQL para performance; aumento de cobertura de testes.",
-          "Frontend em ReactJS consumindo endpoints do backend; APIs REST.",
-          "Features e relatórios para clientes; desenho de arquitetura Java."
+          "Funcionalidades de transporte urbano em tempo real; apps para cidadãos.",
+          "Tuning de SQL; aumento de cobertura de testes.",
+          "Frontend em ReactJS; APIs REST; arquitetura Java."
         ],
         metaway_meta: "mar. 2015 — ago. 2015 · Software Developer · Metaway · Bento Gonçalves, Brasil",
         metaway_bullets: [
-          "Conversões de bancos de dados de clientes; melhorias no modelo de dados.",
-          "Índices para acelerar consultas; features e relatórios.",
-          "Introdução do Liquibase para gestão de banco; relacionamento com clientes."
+          "Conversões e melhorias no modelo de dados de clientes.",
+          "Introdução do Liquibase; features e relatórios."
         ],
         cybersec_meta: "abr. 2014 — jan. 2015 · Network & Security Analyst · CyberSec · Marau, Brasil",
         cybersec_bullets: [
-          "Hardening de segurança, administração de servidores/redes e virtualização.",
-          "Certificação CompTIA Security+; melhorias on‑prem e boas práticas."
+          "Hardening de segurança, administração de servidores e virtualização.",
+          "Certificação CompTIA Security+; boas práticas on‑prem."
         ],
         citta_meta: "out. 2009 — mar. 2014 · Software Developer · Città Inteligência em Gestão Pública · Marau, Brasil",
         citta_bullets: [
           "Sistemas governamentais; UI em Adobe Flex; testes e entregas.",
-          "Modularização de partes do monólito; atualização automática nos clientes.",
-          "Manutenção de relacionamento com clientes."
+          "Modularização do monólito; atualização automática em clientes."
         ],
-        holma_meta: "jan. 2007 — set. 2009 · Delphi Developer / IT Support Analyst · Holma Software · Marau, Brasil",
+        holma_meta: "jan. 2007 — set. 2009 · Delphi Developer / IT Support · Holma Software · Marau, Brasil",
         holma_bullets: [
-          "Suporte de TI (admin de BD, suporte a clientes); promoção para desenvolvedor Delphi.",
-          "Relatórios, correção de bugs, treinamentos; instalações e validações in loco.",
-          "Melhorias na infraestrutura para reduzir tempo de atualização dos clientes."
+          "Promovido de suporte TI a desenvolvedor Delphi.",
+          "Relatórios, correção de bugs, treinamentos e instalações in loco."
         ],
-
         section_skills_title: "Skills",
         skills_hard_title: "Hard skills",
         skills_bars_title: "Visão geral de proficiência",
+        skillbars_ai: "Engenharia de IA & Agentes",
         skillbars_platform: "Plataformas & DevSecOps",
         skillbars_backend: "Back‑end (Java/Spring)",
         skillbars_frontend: "Front‑end (Angular/TS)",
@@ -889,22 +1035,22 @@
         edu3: "Bacharel em Ciência da Computação · UPF · 2015",
         edu4: "Security+ (CompTIA) · 2015",
         section_projects_title: "Projetos em destaque",
-        proj1_title: "Infra as Code Starter",
-        proj1_meta: "Blueprint · K8s · GitOps · Observability",
-        proj1_desc: "Template de plataforma com Helm, ArgoCD, Prometheus/Grafana e patterns de service‑mesh.",
-        proj2_title: "Java Service Kit",
-        proj2_meta: "Spring Boot · Resiliência · Telemetria",
-        proj2_desc: "Kit de boas práticas: tracing, métricas, retries, circuit‑breaker e hardening.",
-        proj3_title: "Angular + DX",
-        proj3_meta: "CLI · Schematics · Storybook",
-        proj3_desc: "Ferramentas de DX: scaffolding, testes, lint e UI docs integradas.",
+        proj1_title: "TechStream",
+        proj1_meta: "Next.js · Supabase · Curadoria de IA · i18n",
+        proj1_desc: "Hub de notícias tech com curadoria de IA, resumos multilíngues (EN/PT/FR/ES), feed em tempo real via Supabase e temas dark/light.",
+        proj2_title: "Tarotmancer",
+        proj2_meta: "IA · Claude API · Tarot · Agentes",
+        proj2_desc: "Agente de leitura de tarot com IA usando a API Claude. Experimento em storytelling agêntico e experiências com LLMs.",
+        proj3_title: "Infra as Code Starter",
+        proj3_meta: "K8s · GitOps · Helm · Observability",
+        proj3_desc: "Template de plataforma com Helm, ArgoCD, Prometheus/Grafana e patterns de service‑mesh para equipes cloud-native.",
         btn_view_all_repos: "Ver todos os repositórios",
         section_reco_title: "Recomendações",
-        rec1_text: "“Tive a chance de colaborar de perto com o Felipe no nosso squad. Ele se adapta muito rápido ao dia a dia. Encontra melhorias em diferentes níveis e compartilha ideias sempre relevantes. Não hesita em sair da zona de conforto e experimentar novas tecnologias e ferramentas. Respeitoso e sempre pronto para ajudar.”",
+        rec1_text: "\u201cTive a chance de colaborar de perto com o Felipe no nosso squad. Ele se adapta muito rápido ao dia a dia. Encontra melhorias em diferentes níveis e compartilha ideias sempre relevantes. Não hesita em sair da zona de conforto e experimentar novas tecnologias e ferramentas. Respeitoso e sempre pronto para ajudar.\u201d",
         rec1_cite: "— Jérôme Vervier, Full‑stack Developer & Trainer (Swift)",
-        rec2_text: "“Ele é a pessoa de referência quando se trata de Linux e microserviços. Trabalhamos juntos em microserviços na Swift — ótimo colega. Recomendo para vagas de desenvolvimento.”",
+        rec2_text: "\u201cEle é a pessoa de referência quando se trata de Linux e microserviços. Trabalhamos juntos em microserviços na Swift — ótimo colega. Recomendo para vagas de desenvolvimento.\u201d",
         rec2_cite: "— Sadhana Italiya, Java Software Developer (Swift)",
-        rec3_text: "“Tive o prazer de trabalhar com o Felipe, provavelmente o desenvolvedor mais habilidoso que já conheci. Entusiasta de novas tecnologias e de fazer as coisas funcionarem, além de um colega divertido e tranquilo.”",
+        rec3_text: "\u201cTive o prazer de trabalhar com o Felipe, provavelmente o desenvolvedor mais habilidoso que já conheci. Entusiasta de novas tecnologias e de fazer as coisas funcionarem, além de um colega divertido e tranquilo.\u201d",
         rec3_cite: "— Arnau Rovira, DevOps Engineer (Eleven Sports)",
         section_contact_title: "Contato",
         links_quick_title: "Links rápidos",
@@ -912,106 +1058,85 @@
         link_skills: "Skills",
         link_projects: "Projetos",
         link_download_pdf: "Baixar PDF",
-        tip_replay: "Dica: pressione <span class='kbd'>R</span> para reiniciar a animação do topo.",
-        footer_text: "Feito com HTML/CSS/JS puro • Deploy no GitHub Pages",
-        // --- I18N.pt.scramble (replace this array) ---
+        tip_replay: "Dica: pressione <span class='kbd'>R</span> para reiniciar a animação.",
+        footer_text: "Feito com HTML/CSS/JS puro · Deploy no GitHub Pages",
         scramble: [
-        "Engenharia de IA · Agentes Autônomos",
-        "Era Agêntica · LLMs · Automação",
-        "Orquestração de Releases · Padronização",
-        "DevSecOps · CI/CD · Cloud‑Native",
-        "Platform Engineering · SRE",
-        "Observabilidade · Prometheus · Grafana",
-        "Java · Spring Boot · REST",
-        "Kubernetes · Docker · GitOps",
-        "AWS · GCP · Arquitetura Cloud",
-        "Segurança · SAST · Hardening",
-        "Kafka · Event‑Driven · Vert.x",
-        "Microserviços · Resiliência · Escalabilidade",
-        "Liderança · Coaching · Mentoria",
-        "Clean Code · Secure Coding · Testes"
+          "Engenharia de IA · Agentes Autônomos",
+          "Era Agêntica · LLMs · Automação",
+          "Orquestração de Releases · Padronização",
+          "DevSecOps · CI/CD · Cloud‑Native",
+          "Platform Engineering · SRE",
+          "Observabilidade · Prometheus · Grafana",
+          "Java · Spring Boot · REST",
+          "Kubernetes · Docker · GitOps",
+          "AWS · GCP · Arquitetura Cloud",
+          "Segurança · SAST · Hardening",
+          "Kafka · Event‑Driven · Vert.x",
+          "Microserviços · Resiliência · Escalabilidade",
+          "Liderança · Coaching · Mentoria",
+          "Clean Code · Secure Coding · Testes"
         ]
       }
     };
 
-    // Default language: EN (unless user saved a preference)
     const storedLang = localStorage.getItem('lang');
     let LANG = storedLang || 'en';
 
-    // --- Unified career timeline to compute unique months (no double counting)
     const ROLES = [
-    { start: '2007-01-01', end: '2009-09-30' }, // Holma
-    { start: '2009-10-01', end: '2014-03-31' }, // Città
-    { start: '2014-04-01', end: '2015-01-31' }, // CyberSec
-    { start: '2015-03-01', end: '2015-08-31' }, // Metaway
-    { start: '2015-10-01', end: '2018-03-31' }, // WPLEX
-    { start: '2018-06-01', end: '2019-06-30' }, // MyCujoo/Eleven
-    { start: '2019-07-01', end: '2024-06-30' }, // SWIFT (1ª fase)
-    { start: '2024-07-01', end: '2024-12-31' }, // Swissquote
-    { start: '2025-01-02', end: null }          // SWIFT (2ª fase, presente)
+      { start: '2007-01-01', end: '2009-09-30' },
+      { start: '2009-10-01', end: '2014-03-31' },
+      { start: '2014-04-01', end: '2015-01-31' },
+      { start: '2015-03-01', end: '2015-08-31' },
+      { start: '2015-10-01', end: '2018-03-31' },
+      { start: '2018-06-01', end: '2019-06-30' },
+      { start: '2019-07-01', end: '2024-06-30' },
+      { start: '2024-07-01', end: '2024-12-31' },
+      { start: '2025-01-02', end: null }
     ];
 
-    function toMonthIndex(d){ return d.getFullYear()*12 + d.getMonth(); } // Jan=0
+    function toMonthIndex(d){ return d.getFullYear()*12 + d.getMonth(); }
     function unionMonths(roles){
-    const set = new Set();
-    roles.forEach(r=>{
+      const set = new Set();
+      roles.forEach(r=>{
         const s = new Date(r.start);
         const e = r.end ? new Date(r.end) : new Date();
         let a = toMonthIndex(new Date(s.getFullYear(), s.getMonth(), 1));
         let b = toMonthIndex(new Date(e.getFullYear(), e.getMonth(), 1));
         for (let m=a; m<=b; m++) set.add(m);
-    });
-    return set.size; // unique months across the whole career
-    }
-    function formatExpLabel(lang, years, months){
-    return lang === 'pt'
-        ? `≈${years} anos e ${months} meses`
-        : `≈${years} years ${months} months`;
+      });
+      return set.size;
     }
     function computeExperience(){
-    const totalMonths = unionMonths(ROLES);
-    const years = Math.floor(totalMonths / 12);
-    const months = totalMonths % 12;
-    return { totalMonths, years, months };
+      const totalMonths = unionMonths(ROLES);
+      return { years: Math.floor(totalMonths/12), months: totalMonths%12 };
+    }
+    function formatExpLabel(lang, years, months){
+      return lang === 'pt' ? `≈${years} anos e ${months} meses` : `≈${years} years ${months} months`;
     }
     function injectExperience(){
-    const { years, months } = computeExperience();
-    const label = formatExpLabel(LANG, years, months);
-
-    // HERO chip — fixed label, not computed
-    // (chip shows "~20 years" as set in HTML)
-
-    // ABOUT paragraph (uses placeholder {EXP} in the i18n string)
-    const about = document.querySelector('[data-i18n="about_intro"]');
-    if (about){
-        const tpl = I18N[LANG].about_intro;
-        about.textContent = tpl.replace('{EXP}', label);
+      const { years, months } = computeExperience();
+      const label = formatExpLabel(LANG, years, months);
+      const about = $('[data-i18n="about_intro"]');
+      if (about){ const tpl = I18N[LANG].about_intro; about.textContent = tpl.replace('{EXP}', label); }
+      const meta = $('meta[name="description"]');
+      if (meta) meta.setAttribute('content', `Interactive CV of Felipe Sotille — DevSecOps, AI Engineering & Software Engineer with ${formatExpLabel('en', years, months)} of experience.`);
     }
-
-    // Meta description also gets the updated figure (EN baseline)
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content',
-        `Interactive CV of Felipe Sotille — Sr. DevSecOps & Software Engineer with ${formatExpLabel('en', years, months)} of experience.`
-    );
-    }
-
 
     function applyI18n(lang){
       document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
       document.title = I18N[lang].title;
-      const meta = document.querySelector('meta[name=description]'); if (meta) meta.setAttribute('content', I18N[lang].meta_desc);
-      $$("[data-i18n]").forEach(el => {
+      const meta = $('meta[name=description]'); if (meta) meta.setAttribute('content', I18N[lang].meta_desc);
+      $$('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         const v = I18N[lang][key];
         if (v !== undefined){
           if (/<[a-z][\s\S]*>/i.test(v)) el.innerHTML = v; else el.textContent = v;
         }
       });
-      // Render lists
-      $$("[data-i18n-list]").forEach(el => {
+      $$('[data-i18n-list]').forEach(el => {
         const key = el.getAttribute('data-i18n-list');
         const arr = I18N[lang][key] || [];
-        el.innerHTML = arr.map(item => `<li>${item}</li>`).join("");
+        el.innerHTML = arr.map(item => `<li>${item}</li>`).join('');
       });
       $$('.lang-toggle [data-lang]').forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)));
       setPhrases(I18N[lang].scramble);
@@ -1021,7 +1146,7 @@
     class TextScramble {
       constructor(el){ this.el = el; this.chars = '!<>-_\\/[]{}—=+*^?#________'; this.update = this.update.bind(this); }
       setText(newText){
-        const oldText = this.el.innerText || "";
+        const oldText = this.el.innerText || '';
         const length = Math.max(oldText.length, newText.length);
         const promise = new Promise(resolve => this.resolve = resolve);
         this.queue = [];
@@ -1059,31 +1184,34 @@
     let timeoutId;
 
     function setPhrases(arr){
-      phrases = arr;
-      counter = 0;
+      phrases = arr; counter = 0;
       if (prefersReduced) scrambleEl.textContent = phrases[0];
       else next();
     }
     function next(){
-      fx.setText(phrases[counter]).then(() => {
-        timeoutId = setTimeout(next, 1400);
-      });
+      fx.setText(phrases[counter]).then(() => { timeoutId = setTimeout(next, 1500); });
       counter = (counter + 1) % phrases.length;
     }
+
+    // Keyboard shortcut: R to replay
+    document.addEventListener('keydown', e => {
+      if (e.key === 'r' || e.key === 'R'){
+        if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA'){
+          clearTimeout(timeoutId); counter = 0; next();
+        }
+      }
+    });
 
     // Reveal on scroll
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting){
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
+        if (entry.isIntersecting){ entry.target.classList.add('visible'); io.unobserve(entry.target); }
       });
-    },{threshold:.12});
+    }, {threshold:.1});
     $$('.reveal').forEach(el => io.observe(el));
 
-    // Skill bars animate
-    const io2 = new IntersectionObserver((entries)=>{
+    // Skill bars
+    const io2 = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting){
           const i = $('i', entry.target);
@@ -1091,97 +1219,71 @@
           io2.unobserve(entry.target);
         }
       });
-    },{threshold:.4});
+    }, {threshold:.3});
     $$('.skillbar').forEach(el => io2.observe(el));
 
-    // Tilt effect
-    const tilts = $$('.tilt');
-    tilts.forEach(card => {
-      let rAF;
-      card.addEventListener('mousemove', (e) => {
-        const b = card.getBoundingClientRect();
-        const x = (e.clientX - b.left) / b.width;
-        const y = (e.clientY - b.top) / b.height;
-        const rx = (y - .5) * -8;
-        const ry = (x - .5) * 10;
-        cancelAnimationFrame(rAF);
-        rAF = requestAnimationFrame(()=>{
-          card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
-        });
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-      });
-    });
-
-    // Orb: duplicate latitude paths to create longitude set, then animate
-    function prepareSphere(){
-      const lat = document.querySelector('.sphere .lat');
-      const lon = document.querySelector('.sphere .lon');
-      if (lat && lon) lon.innerHTML = lat.innerHTML;
-    }
-    
-    let _animePaths, _animeSpin;
-
-    function animateSphere(){
-        if (prefersReduced || !window.anime) return;
-        _animePaths = window.anime({
-            targets: '.sphere path',
-            strokeDashoffset: [window.anime.setDashoffset, 0],
-            easing: 'easeInOutSine',
-            duration: 1800,
-            delay: (el, i) => i * 24,
-            direction: 'alternate',
-            loop: true,
-            autoplay: false
-        });
-        _animeSpin = window.anime({
-            targets: '.sphere',
-            rotate: '1turn',
-            easing: 'linear',
-            duration: 22000,
-            loop: true,
-            autoplay: false
-        });
-
-        const orb = document.querySelector('.orb-wrap');
-        if (!orb) return;
-
-        const orbIO = new IntersectionObserver((entries)=>{
-            entries.forEach(e=>{
-            if (e.isIntersecting){ _animePaths.play(); _animeSpin.play(); }
-            else { _animePaths.pause(); _animeSpin.pause(); }
-            });
-        },{threshold:0.1});
-        orbIO.observe(orb);
-
-        // Also pause when tab is hidden
-        document.addEventListener('visibilitychange', ()=>{
-            const playing = document.visibilityState === 'visible';
-            [_animePaths, _animeSpin].forEach(a => a && (playing ? a.play() : a.pause()));
-        });
-    }
-
-    // Tilt: run only on precise pointers (saves CPU on touch devices)
+    // Tilt (fine pointer only)
     if (window.matchMedia('(pointer: fine)').matches){
-        const tilts = $$('.tilt');
-        tilts.forEach(card => {
-            let rAF;
-            card.addEventListener('mousemove', (e) => {
+      ['.hero-card', '.project-card'].forEach(sel => {
+        $$(sel).forEach(card => {
+          let rAF;
+          card.addEventListener('mousemove', (e) => {
             const b = card.getBoundingClientRect();
             const x = (e.clientX - b.left) / b.width;
             const y = (e.clientY - b.top) / b.height;
-            const rx = (y - .5) * -8;
-            const ry = (x - .5) * 10;
+            const rx = (y - .5) * -6;
+            const ry = (x - .5) * 8;
             cancelAnimationFrame(rAF);
-            rAF = requestAnimationFrame(()=>{
-                card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+            rAF = requestAnimationFrame(() => {
+              card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
             });
-            });
-            card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+          });
+          card.addEventListener('mouseleave', () => { card.style.transform = ''; });
         });
+      });
     }
 
+    // Sphere animation
+    function prepareSphere(){
+      const lat = $('.sphere .lat');
+      const lon = $('.sphere .lon');
+      if (lat && lon) lon.innerHTML = lat.innerHTML;
+    }
+    let _animePaths, _animeSpin;
+    function animateSphere(){
+      if (prefersReduced || !window.anime) return;
+      _animePaths = window.anime({
+        targets: '.sphere path',
+        strokeDashoffset: [window.anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 1800,
+        delay: (el, i) => i * 24,
+        direction: 'alternate',
+        loop: true,
+        autoplay: false
+      });
+      _animeSpin = window.anime({
+        targets: '.sphere',
+        rotate: '1turn',
+        easing: 'linear',
+        duration: 24000,
+        loop: true,
+        autoplay: false
+      });
+      const orb = $('.orb-wrap');
+      if (!orb) return;
+      const orbIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting){ _animePaths.play(); _animeSpin.play(); }
+          else { _animePaths.pause(); _animeSpin.pause(); }
+        });
+      }, {threshold:0.1});
+      orbIO.observe(orb);
+      document.addEventListener('visibilitychange', () => {
+        const playing = document.visibilityState === 'visible';
+        [_animePaths, _animeSpin].forEach(a => a && (playing ? a.play() : a.pause()));
+      });
+    }
 
     // Language switch
     $$('.lang-toggle [data-lang]').forEach(btn => {
@@ -1196,7 +1298,7 @@
       });
     });
 
-    // THEME: dark/light/auto with persistence
+    // Theme
     function setTheme(mode){
       if (mode === 'auto'){
         document.documentElement.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -1204,10 +1306,6 @@
         document.documentElement.setAttribute('data-theme', mode);
       }
       localStorage.setItem('theme', mode);
-    }
-    function initTheme(){
-      const stored = localStorage.getItem('theme') || 'auto';
-      setTheme(stored);
     }
     $('#theme-dark').addEventListener('click', () => setTheme('dark'));
     $('#theme-light').addEventListener('click', () => setTheme('light'));
@@ -1219,99 +1317,65 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-// Copy email (mantém igual)
-const copyBtn = document.getElementById('copy-email');
-if (copyBtn){
-  copyBtn.addEventListener('click', async ()=>{
-    try{
-      await navigator.clipboard.writeText('fsotille@gmail.com');
-      copyBtn.textContent = (LANG==='pt' ? 'Copiado!' : 'Copied!');
-      setTimeout(()=> copyBtn.textContent = (LANG==='pt' ? 'Copiar e‑mail' : 'Copy email'), 1200);
-    }catch(e){ console.warn(e); }
-  });
-}
-
-// vCard 3.0 (compatível com Gmail/Outlook/Apple) — CRLF + tipos clássicos
-const vcardBtn = document.getElementById('btn-vcard');
-
-    if (vcardBtn){
-        vcardBtn.addEventListener('click', (e)=>{
-            const data = e.shiftKey ? buildVCardV4() : buildVCardV3();
-            const blob = new Blob([data], { type: 'text/x-vcard;charset=utf-8' });
-            const url  = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = e.shiftKey ? 'Felipe_Sotille_v4.vcf' : 'Felipe_Sotille.vcf';
-            document.body.appendChild(a); a.click(); a.remove();
-            URL.revokeObjectURL(url);
-        }); 
+    // Copy email
+    const copyBtn = document.getElementById('copy-email');
+    if (copyBtn){
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('fsotille@gmail.com');
+          copyBtn.textContent = LANG === 'pt' ? 'Copiado!' : 'Copied!';
+          setTimeout(() => copyBtn.textContent = LANG === 'pt' ? 'Copiar e‑mail' : 'Copy email', 1200);
+        } catch(e){ console.warn(e); }
+      });
     }
-  vcardBtn.addEventListener('click', ()=>{
-    const data = buildVCardV3();
-    // text/x-vcard melhora compatibilidade em Windows/Outlook
-    const blob = new Blob([data], { type: 'text/x-vcard;charset=utf-8' });
-    const url  = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Felipe_Sotille.vcf';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-  });
 
-  function buildVCardV3(){
-    const CRLF = '\r\n';
-    const ts = new Date().toISOString()
-      .replace(/[-:]/g,'')       // 2025-08-15T12:34:56.789Z -> 20250815T123456.789Z
-      .replace(/\.\d{3}Z$/,'Z'); // remove milissegundos -> 20250815T123456Z
+    // vCard
+    const vcardBtn = document.getElementById('btn-vcard');
+    if (vcardBtn){
+      vcardBtn.addEventListener('click', (e) => {
+        const data = e.shiftKey ? buildVCardV4() : buildVCardV3();
+        const blob = new Blob([data], { type: 'text/x-vcard;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = e.shiftKey ? 'Felipe_Sotille_v4.vcf' : 'Felipe_Sotille.vcf';
+        document.body.appendChild(a); a.click(); a.remove();
+        URL.revokeObjectURL(url);
+      });
+    }
 
-    const lines = [
-      'BEGIN:VCARD',
-      'VERSION:3.0',
-      'N:Sotille;Felipe;;;',
-      'FN:Felipe Sotille',
-      'ORG:Independent Consultant',
-      'TITLE:Sr. DevSecOps & Software Engineer',
-      'EMAIL;TYPE=INTERNET;TYPE=WORK;TYPE=PREF:fsotille@gmail.com',
-      'TEL;TYPE=CELL;TYPE=WORK;TYPE=VOICE:+32456250429',
-      // URLs sem TYPE custom para compatibilidade ampla
-      'URL:https://linkedin.com/in/Felipe-Sotille/',
-      'URL:https://github.com/sotille',
-      'NOTE:Open to OSS collaborations',
-      'UID:felipe-sotille-vcard',
-      `REV:${ts}`,
-      'END:VCARD'
-    ];
-    // CRLF obrigatório para alguns importadores
-    return lines.join(CRLF) + CRLF;
-  }
-
-  function buildVCardV4(){
-    const CRLF = '\r\n';
-    const lines = [
-        'BEGIN:VCARD',
-        'VERSION:4.0',
-        'N:Sotille;Felipe;;;',
-        'FN:Felipe Sotille',
-        'ORG:Independent Consultant',
-        'TITLE:Sr. DevSecOps & Software Engineer',
+    function buildVCardV3(){
+      const CRLF = '\r\n';
+      const ts = new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
+      return [
+        'BEGIN:VCARD','VERSION:3.0','N:Sotille;Felipe;;;','FN:Felipe Sotille',
+        'ORG:Independent Consultant','TITLE:DevSecOps, AI Engineering & Software Engineer',
+        'EMAIL;TYPE=INTERNET;TYPE=WORK;TYPE=PREF:fsotille@gmail.com',
+        'TEL;TYPE=CELL;TYPE=WORK;TYPE=VOICE:+32456250429',
+        'URL:https://linkedin.com/in/Felipe-Sotille/','URL:https://github.com/sotille',
+        'NOTE:Open to consulting & OSS collaborations','UID:felipe-sotille-vcard',
+        `REV:${ts}`,'END:VCARD'
+      ].join(CRLF) + CRLF;
+    }
+    function buildVCardV4(){
+      const CRLF = '\r\n';
+      return [
+        'BEGIN:VCARD','VERSION:4.0','N:Sotille;Felipe;;;','FN:Felipe Sotille',
+        'ORG:Independent Consultant','TITLE:DevSecOps, AI Engineering & Software Engineer',
         'EMAIL;type=work;pref=1:fsotille@gmail.com',
         'TEL;type=cell,work;value=uri:tel:+32456250429',
-        'URL:https://linkedin.com/in/Felipe-Sotille/',
-        'URL:https://github.com/sotille',
-        'NOTE:Open to OSS collaborations',
-        'END:VCARD'
-        ];
-        return lines.join(CRLF) + CRLF;
+        'URL:https://linkedin.com/in/Felipe-Sotille/','URL:https://github.com/sotille',
+        'NOTE:Open to consulting & OSS collaborations','END:VCARD'
+      ].join(CRLF) + CRLF;
     }
-    // Initial render
-    initTheme();
+
+    // Init
+    const storedTheme = localStorage.getItem('theme') || 'auto';
+    setTheme(storedTheme);
     applyI18n(LANG);
     injectExperience();
     prepareSphere();
     animateSphere();
   </script>
-  <p style="text-align:center;margin-top:40px;"><a href="/techstream/">Ir para TechStream</a></p>
 </body>
 </html>

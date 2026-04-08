@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta property="og:title" content="Felipe Sotille — DevSecOps, AI & Software Engineering">
   <meta property="og:description" content="~20 years building critical infrastructure at SWIFT, Swissquote and beyond.">
   <meta property="og:type" content="website">
@@ -112,12 +114,9 @@
       font:700 14px/1 Inter,system-ui;letter-spacing:.1px;
     }
     .logo{
-      width:32px;height:32px;border-radius:50%;flex-shrink:0;
-      background:conic-gradient(from 200deg,#38bdf8,#818cf8,#38bdf8);
-      display:grid;place-items:center;
-      box-shadow:0 0 0 2px rgba(56,189,248,.2),0 4px 16px rgba(0,0,0,.5);
-      font:700 11px/1 "JetBrains Mono",monospace;
-      color:#fff;letter-spacing:-.5px;
+      width:32px;height:32px;flex-shrink:0;
+      box-shadow:0 0 0 1px rgba(56,189,248,.2),0 4px 16px rgba(0,0,0,.5);
+      border-radius:8px;
     }
     .nav-right{display:flex;align-items:center;gap:8px}
     .tg{
@@ -160,9 +159,14 @@
     .hero h1{
       font-size:clamp(42px,5.5vw,80px);
       font-weight:900;line-height:1;letter-spacing:-2.5px;
-      color:var(--text);
+      background:linear-gradient(120deg, #f1f5f9 30%, #93c5fd 70%, #c4b5fd 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
       animation:up .5s .05s ease both;
       margin-bottom:14px;
+    }
+    [data-theme="light"] .hero h1{
+      background:linear-gradient(120deg,#0f172a 30%,#0369a1 70%,#6d28d9 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
     }
     .hero-role{
       font-size:clamp(16px,2vw,22px);font-weight:500;
@@ -202,11 +206,18 @@
     .btn-primary{
       display:inline-flex;align-items:center;gap:8px;
       padding:11px 22px;border-radius:10px;
-      background:var(--cv);color:#05070f;
+      background:linear-gradient(135deg,#38bdf8 0%,#22d3ee 50%,#818cf8 100%);
+      background-size:200% 100%;background-position:0% 0%;
+      color:#04060e;
       font:700 14px/1 Inter,system-ui;
-      transition:opacity .15s,transform .15s;
+      box-shadow:0 0 0 1px rgba(56,189,248,.3),0 4px 20px rgba(56,189,248,.2);
+      transition:background-position .4s ease,transform .15s,box-shadow .15s;
     }
-    .btn-primary:hover{opacity:.9;transform:translateY(-1px)}
+    .btn-primary:hover{
+      background-position:100% 0%;
+      transform:translateY(-2px);
+      box-shadow:0 0 0 1px rgba(129,140,248,.4),0 6px 28px rgba(56,189,248,.3);
+    }
     .btn-ghost{
       display:inline-flex;align-items:center;gap:8px;
       padding:10px 18px;border-radius:10px;
@@ -340,10 +351,15 @@
 
     /* Card number */
     .card-num{
-      position:absolute;top:16px;right:18px;
+      position:absolute;top:14px;right:16px;
       font:800 11px/1 "JetBrains Mono",monospace;
-      color:var(--border-1);letter-spacing:1px;
+      letter-spacing:1px;
+      opacity:.35;
     }
+    .card--cv .card-num{color:var(--cv)}
+    .card--ts .card-num{color:var(--ts)}
+    .card--mc .card-num{color:var(--mc)}
+    .card:hover .card-num{opacity:.7;transition:opacity .2s}
 
     .card-body{padding:28px 24px 20px;flex:1;display:flex;flex-direction:column;gap:10px}
     .card-eyebrow{
@@ -446,7 +462,7 @@
     <header>
       <nav class="nav">
         <div class="brand">
-          <div class="logo" aria-hidden="true">FS</div>
+          <img src="favicon.svg" class="logo" alt="" aria-hidden="true" width="32" height="32">
           Felipe Sotille
         </div>
         <div class="nav-right">

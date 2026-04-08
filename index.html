@@ -396,6 +396,38 @@
     .card:hover .card-cta{transform:translateX(3px)}
     .card-status{font:500 12px/1 Inter,system-ui;color:var(--muted-1)}
 
+    /* ── Stats ──────────────────────────────────── */
+    .stats{
+      padding:0 28px 40px;
+      max-width:var(--w);margin:0 auto;
+      display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+      animation:up .5s .38s ease both;
+    }
+    .stat{
+      padding:22px 20px;
+      border:1px solid var(--border);
+      background:var(--surface);
+      text-align:center;
+      transition:border-color .15s,background .15s;
+      position:relative;
+    }
+    .stat+.stat{border-left:none}
+    .stat:first-child{border-radius:12px 0 0 12px}
+    .stat:last-child{border-radius:0 12px 12px 0}
+    .stat:hover{border-color:var(--border-1);background:var(--surface-1)}
+    .stat-num{
+      font:900 clamp(22px,3vw,32px)/1 Inter,system-ui;
+      letter-spacing:-1px;
+      background:linear-gradient(120deg,#f1f5f9 20%,#93c5fd 70%,#c4b5fd 100%);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+      display:block;margin-bottom:5px;
+    }
+    .stat-label{
+      font:500 10px/1.4 "JetBrains Mono",monospace;
+      color:var(--muted-1);text-transform:uppercase;letter-spacing:.8px;
+    }
+    @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-radius:0 12px 0 0}.stat:nth-child(3){border-radius:0 0 0 12px}.stat+.stat{border-left:none}.stat:nth-child(3){border-top:none}.stat:nth-child(4){border-top:none;border-left:none}.stat:nth-child(4){border-radius:0 0 12px 0}}
+
     /* ── Contact ─────────────────────────────────── */
     .contact-section{
       border-top:1px solid var(--border);
@@ -570,6 +602,26 @@
       </div>
     </div>
 
+    <!-- STATS -->
+    <div class="stats" aria-label="Career highlights">
+      <div class="stat">
+        <span class="stat-num">~20</span>
+        <span class="stat-label">Years experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">6+</span>
+        <span class="stat-label">Years at SWIFT</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Continents</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">2</span>
+        <span class="stat-label">AI products live</span>
+      </div>
+    </div>
+
     <!-- CARDS -->
     <div class="cards-section">
       <div class="cards-header">
@@ -653,13 +705,18 @@
     <section class="contact-section" aria-label="Contact">
       <div class="contact-inner">
         <div>
-          <h2 class="contact-heading" data-i18n="contact_title">Let's work together.</h2>
-          <p class="contact-sub" data-i18n="contact_sub">Available for consulting, AI projects, DevSecOps and OSS collaborations.</p>
+          <p style="font:700 11px/1 'JetBrains Mono',monospace;color:var(--muted-1);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-i18n="contact_label">Get in touch</p>
+          <h2 class="contact-heading" data-i18n="contact_title">Let's build something<br>remarkable together.</h2>
+          <p class="contact-sub" data-i18n="contact_sub">Available for consulting, AI engineering, DevSecOps and OSS collaborations. Based in Brussels, working globally.</p>
         </div>
         <div class="contact-links">
           <a class="contact-btn primary" href="mailto:fsotille@gmail.com">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <span data-i18n="btn_email">Send email</span>
+          </a>
+          <a class="contact-btn" href="https://linkedin.com/in/Felipe-Sotille/" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
           </a>
           <a class="contact-btn" href="https://github.com/sotille" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
@@ -719,8 +776,9 @@
         card_mc_desc:    'The Living Tarot — draw from all 78 cards, receive AI-powered personal readings and explore archetypal insights. Available in four languages.',
         cta_mc:          'Open Tarotmancer',
         status_mc:       'EN · PT · ES · FR',
-        contact_title:   "Let's work together.",
-        contact_sub:     'Available for consulting, AI projects, DevSecOps and OSS collaborations.',
+        contact_label:   'Get in touch',
+        contact_title:   "Let's build something remarkable together.",
+        contact_sub:     'Available for consulting, AI engineering, DevSecOps and OSS collaborations. Based in Brussels, working globally.',
         btn_email:       'Send email',
         footer_made:     'Plain HTML/CSS/JS · GitHub Pages',
       },
@@ -748,8 +806,9 @@
         card_mc_desc:    'O Tarô Vivo — tire de todas as 78 cartas, receba leituras pessoais com IA e explore insights arquetípicos. Disponível em quatro idiomas.',
         cta_mc:          'Abrir Tarotmancer',
         status_mc:       'PT · EN · ES · FR',
-        contact_title:   'Vamos trabalhar juntos.',
-        contact_sub:     'Disponível para consultoria, projetos de IA, DevSecOps e colaborações OSS.',
+        contact_label:   'Entre em contato',
+        contact_title:   'Vamos construir algo notável juntos.',
+        contact_sub:     'Disponível para consultoria, engenharia de IA, DevSecOps e colaborações OSS. Baseado em Bruxelas, atuação global.',
         btn_email:       'Enviar e-mail',
         footer_made:     'HTML/CSS/JS puro · GitHub Pages',
       }

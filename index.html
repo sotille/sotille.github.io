@@ -428,6 +428,84 @@
     }
     @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-radius:0 12px 0 0}.stat:nth-child(3){border-radius:0 0 0 12px}.stat+.stat{border-left:none}.stat:nth-child(3){border-top:none}.stat:nth-child(4){border-top:none;border-left:none}.stat:nth-child(4){border-radius:0 0 12px 0}}
 
+    /* ── Books ──────────────────────────────────── */
+    .books-section{padding:0 28px 72px;max-width:var(--w);margin:0 auto}
+    .section-header{
+      display:flex;align-items:flex-end;justify-content:space-between;
+      margin-bottom:24px;gap:16px;flex-wrap:wrap;
+    }
+    .section-heading{
+      font:800 clamp(18px,2.5vw,24px)/1.1 Inter,system-ui;
+      letter-spacing:-.3px;margin:6px 0 4px;
+    }
+    .section-sub{font:400 14px/1.5 Inter,system-ui;color:var(--muted);margin:0}
+    .view-all{
+      display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
+      font:600 13px/1 Inter,system-ui;color:var(--muted);
+      border:1px solid var(--border);padding:7px 13px;border-radius:8px;
+      background:var(--surface);transition:border-color .15s,color .15s;flex-shrink:0;
+    }
+    .view-all:hover{border-color:var(--border-1);color:var(--text-2)}
+    .book-grid{
+      display:grid;grid-template-columns:repeat(6,1fr);gap:14px;
+    }
+    .book-card{
+      display:flex;flex-direction:column;
+      background:var(--surface);border:1px solid var(--border);border-radius:12px;
+      overflow:hidden;text-decoration:none;color:var(--text);
+      transition:transform .2s ease,border-color .2s,box-shadow .2s;
+    }
+    .book-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.45)}
+    .book-cover-wrap{width:100%;aspect-ratio:2/3;background:var(--surface-1);overflow:hidden}
+    .book-cover-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+    .book-card:hover .book-cover-wrap img{transform:scale(1.03)}
+    .book-meta{padding:10px 10px 12px;border-top:1px solid var(--border)}
+    .book-vol{
+      font:700 10px/1 "JetBrains Mono",monospace;letter-spacing:.8px;
+      text-transform:uppercase;display:block;margin-bottom:4px;
+    }
+    .book-name{font:600 12px/1.4 Inter,system-ui;color:var(--text-2)}
+    .book-badge{
+      display:inline-block;margin-top:7px;
+      font:600 9px/1 "JetBrains Mono",monospace;letter-spacing:.5px;text-transform:uppercase;
+      padding:3px 8px;border-radius:4px;border:1px solid var(--border);
+      background:var(--surface-1);color:var(--muted-1);
+    }
+    .book-v1{--bv:#2563eb} .book-v2{--bv:#7c3aed} .book-v3{--bv:#0891b2}
+    .book-v4{--bv:#059669} .book-v5{--bv:#d97706} .book-v6{--bv:#be123c}
+    .book-v1 .book-vol{color:#60a5fa} .book-v2 .book-vol{color:#a78bfa}
+    .book-v3 .book-vol{color:#22d3ee} .book-v4 .book-vol{color:#34d399}
+    .book-v5 .book-vol{color:#fbbf24} .book-v6 .book-vol{color:#fb7185}
+    .book-v1:hover{border-color:rgba(37,99,235,.35)} .book-v2:hover{border-color:rgba(124,58,237,.35)}
+    .book-v3:hover{border-color:rgba(8,145,178,.35)} .book-v4:hover{border-color:rgba(5,150,105,.35)}
+    .book-v5:hover{border-color:rgba(217,119,6,.35)} .book-v6:hover{border-color:rgba(190,18,60,.35)}
+
+    /* ── Frameworks ──────────────────────────────── */
+    .fw-section{padding:0 28px 72px;max-width:var(--w);margin:0 auto}
+    .fw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .fw-card{
+      background:var(--surface);border:1px solid var(--border);border-radius:12px;
+      padding:18px;transition:border-color .15s,transform .15s,box-shadow .15s;
+      text-decoration:none;color:var(--text);display:block;
+    }
+    .fw-card:hover{transform:translateY(-2px);border-color:var(--border-1);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+    .fw-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
+    .fw-acro{
+      font:800 15px/1 "JetBrains Mono",monospace;letter-spacing:-.3px;color:var(--ts);
+    }
+    .fw-gh{
+      display:inline-flex;align-items:center;gap:4px;
+      font:500 10px/1 "JetBrains Mono",monospace;color:var(--muted-1);
+      opacity:.7;transition:opacity .15s;flex-shrink:0;
+    }
+    .fw-card:hover .fw-gh{opacity:1;color:var(--text-2)}
+    .fw-name{font:600 13px/1.4 Inter,system-ui;color:var(--text-2);margin-bottom:10px}
+    .fw-tags{display:flex;flex-wrap:wrap;gap:5px}
+    .fw-tag{
+      font:500 10px/1 Inter,system-ui;padding:3px 8px;border-radius:5px;
+      border:1px solid var(--border);background:var(--surface-1);color:var(--muted-1);
+    }
+
     /* ── Contact ─────────────────────────────────── */
     .contact-section{
       border-top:1px solid var(--border);
@@ -472,6 +550,8 @@
       .hero-deco{display:none}
       .cards{grid-template-columns:repeat(2,1fr)}
       .contact-inner{grid-template-columns:1fr;gap:28px}
+      .book-grid{grid-template-columns:repeat(3,1fr)}
+      .fw-grid{grid-template-columns:repeat(2,1fr)}
     }
     @media(max-width:640px){
       .hero{padding:52px 20px 40px}
@@ -480,6 +560,9 @@
       .trusted{padding:16px 20px}
       .contact-section{padding:48px 20px}
       .nav{padding:12px 20px}
+      .book-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+      .fw-grid{grid-template-columns:1fr}
+      .books-section,.fw-section{padding-left:20px;padding-right:20px}
     }
     @media(prefers-reduced-motion:reduce){
       *,*::before,*::after{animation:none!important;transition:none!important}
@@ -701,6 +784,127 @@
       </div>
     </div>
 
+    <!-- BOOKS -->
+    <div class="books-section" aria-label="Books in progress">
+      <div class="section-header">
+        <div>
+          <span class="section-label" data-i18n="books_label">Writing</span>
+          <h2 class="section-heading" data-i18n="books_title">Techstream DevSecOps Series</h2>
+          <p class="section-sub" data-i18n="books_sub">A 6-volume reference on DevSecOps, AI security and release engineering — in progress.</p>
+        </div>
+        <a href="https://techstream.app/books" target="_blank" rel="noopener" class="view-all" data-i18n="books_view_all">View series →</a>
+      </div>
+      <div class="book-grid">
+        <a href="https://techstream.app/books/devsecops-foundations" target="_blank" rel="noopener" class="book-card book-v1">
+          <div class="book-cover-wrap"><img src="https://techstream.app/images/books/vol-1-cover.svg" alt="Vol 1 cover" loading="lazy" width="200" height="300"></div>
+          <div class="book-meta">
+            <span class="book-vol">Vol. 01</span>
+            <div class="book-name">DevSecOps: Foundations &amp; Transformation</div>
+            <span class="book-badge">In progress</span>
+          </div>
+        </a>
+        <a href="https://techstream.app/books/securing-cicd-supply-chain" target="_blank" rel="noopener" class="book-card book-v2">
+          <div class="book-cover-wrap"><img src="https://techstream.app/images/books/vol-2-cover.svg" alt="Vol 2 cover" loading="lazy" width="200" height="300"></div>
+          <div class="book-meta">
+            <span class="book-vol">Vol. 02</span>
+            <div class="book-name">Securing CI/CD &amp; the Software Supply Chain</div>
+            <span class="book-badge">In progress</span>
+          </div>
+        </a>
+        <a href="https://techstream.app/books/cloud-native-security" target="_blank" rel="noopener" class="book-card book-v3">
+          <div class="book-cover-wrap"><img src="https://techstream.app/images/books/vol-3-cover.svg" alt="Vol 3 cover" loading="lazy" width="200" height="300"></div>
+          <div class="book-meta">
+            <span class="book-vol">Vol. 03</span>
+            <div class="book-name">Cloud-Native Security for DevSecOps</div>
+            <span class="book-badge">In progress</span>
+          </div>
+        </a>
+        <a href="https://techstream.app/books/release-engineering-governance" target="_blank" rel="noopener" class="book-card book-v4">
+          <div class="book-cover-wrap"><img src="https://techstream.app/images/books/vol-4-cover.svg" alt="Vol 4 cover" loading="lazy" width="200" height="300"></div>
+          <div class="book-meta">
+            <span class="book-vol">Vol. 04</span>
+            <div class="book-name">Release Engineering &amp; DevSecOps Governance</div>
+            <span class="book-badge">In progress</span>
+          </div>
+        </a>
+        <a href="https://techstream.app/books/ai-agentic-security" target="_blank" rel="noopener" class="book-card book-v5">
+          <div class="book-cover-wrap"><img src="https://techstream.app/images/books/vol-5-cover.svg" alt="Vol 5 cover" loading="lazy" width="200" height="300"></div>
+          <div class="book-meta">
+            <span class="book-vol">Vol. 05</span>
+            <div class="book-name">AI &amp; Agentic Systems Security</div>
+            <span class="book-badge">In progress</span>
+          </div>
+        </a>
+        <a href="https://techstream.app/books/forensics-incident-response" target="_blank" rel="noopener" class="book-card book-v6">
+          <div class="book-cover-wrap"><img src="https://techstream.app/images/books/vol-6-cover.svg" alt="Vol 6 cover" loading="lazy" width="200" height="300"></div>
+          <div class="book-meta">
+            <span class="book-vol">Vol. 06</span>
+            <div class="book-name">DevSecOps Forensics &amp; Incident Response</div>
+            <span class="book-badge">In progress</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- FRAMEWORKS -->
+    <div class="fw-section" aria-label="Open-source frameworks">
+      <div class="section-header">
+        <div>
+          <span class="section-label" data-i18n="fw_label">Open Source</span>
+          <h2 class="section-heading" data-i18n="fw_title">Frameworks &amp; OSS</h2>
+          <p class="section-sub" data-i18n="fw_sub">9 open-source DevSecOps frameworks — from pipeline security to AI agent hardening.</p>
+        </div>
+        <a href="https://github.com/sotille" target="_blank" rel="noopener" class="view-all">GitHub →</a>
+      </div>
+      <div class="fw-grid">
+        <a href="https://github.com/sotille/devsecops-framework" target="_blank" rel="noopener" class="fw-card">
+          <div class="fw-top"><span class="fw-acro">DSF</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-name">DevSecOps Foundation Framework</div>
+          <div class="fw-tags"><span class="fw-tag">8-Phase Lifecycle</span><span class="fw-tag">Secure SDLC</span><span class="fw-tag">Security Controls</span></div>
+        </a>
+        <a href="https://github.com/sotille/devsecops-maturity-model" target="_blank" rel="noopener" class="fw-card">
+          <div class="fw-top"><span class="fw-acro">TDMM</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-name">Techstream DevSecOps Maturity Model</div>
+          <div class="fw-tags"><span class="fw-tag">5 Levels</span><span class="fw-tag">37-Q Scorecard</span><span class="fw-tag">Gap Analysis</span></div>
+        </a>
+        <a href="https://github.com/sotille/secure-ci-cd-reference-architecture" target="_blank" rel="noopener" class="fw-card">
+          <div class="fw-top"><span class="fw-acro">SCRA</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-name">Secure CI/CD Reference Architecture</div>
+          <div class="fw-tags"><span class="fw-tag">SAST/DAST/SCA</span><span class="fw-tag">Zero-Trust CI/CD</span><span class="fw-tag">Secrets Mgmt</span></div>
+        </a>
+        <a href="https://github.com/sotille/software-supply-chain-security-framework" target="_blank" rel="noopener" class="fw-card">
+          <div class="fw-top"><span class="fw-acro">SSCSF</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-name">Software Supply Chain Security Framework</div>
+          <div class="fw-tags"><span class="fw-tag">SBOM</span><span class="fw-tag">Sigstore</span><span class="fw-tag">SLSA Levels</span></div>
+        </a>
+        <a href="https://github.com/sotille/release-orchestration-framework" target="_blank" rel="noopener" class="fw-card">
+          <div class="fw-top"><span class="fw-acro">ROF</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-name">Release Orchestration Framework</div>
+          <div class="fw-tags"><span class="fw-tag">Blue/Green</span><span class="fw-tag">Canary</span><span class="fw-tag">Rollback Automation</span></div>
+        </a>
+        <a href="https://github.com/sotille/compliance-automation-framework" target="_blank" rel="noopener" class="fw-card">
+          <div class="fw-top"><span class="fw-acro">CAF</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-name">Compliance Automation Framework</div>
+          <div class="fw-tags"><span class="fw-tag">OPA/Rego</span><span class="fw-tag">SOC2/ISO27001</span><span class="fw-tag">Policy as Code</span></div>
+        </a>
+        <a href="https://github.com/sotille/secure-pipeline-templates" target="_blank" rel="noopener" class="fw-card">
+          <div class="fw-top"><span class="fw-acro">SPT</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-name">Secure Pipeline Templates</div>
+          <div class="fw-tags"><span class="fw-tag">GitHub Actions</span><span class="fw-tag">GitLab CI</span><span class="fw-tag">Jenkins</span></div>
+        </a>
+        <a href="https://github.com/sotille/cloud-security-devsecops" target="_blank" rel="noopener" class="fw-card">
+          <div class="fw-top"><span class="fw-acro">CSD</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-name">Cloud Security &amp; DevSecOps</div>
+          <div class="fw-tags"><span class="fw-tag">AWS/GCP/Azure</span><span class="fw-tag">K8s Hardening</span><span class="fw-tag">CSPM</span></div>
+        </a>
+        <a href="https://github.com/sotille/devsecops-methodology" target="_blank" rel="noopener" class="fw-card">
+          <div class="fw-top"><span class="fw-acro">DSM</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-name">DevSecOps Transformation Methodology</div>
+          <div class="fw-tags"><span class="fw-tag">90-Day Playbook</span><span class="fw-tag">RACI Matrices</span><span class="fw-tag">ROI Model</span></div>
+        </a>
+      </div>
+    </div>
+
     <!-- CONTACT -->
     <section class="contact-section" aria-label="Contact">
       <div class="contact-inner">
@@ -776,6 +980,13 @@
         card_mc_desc:    'The Living Tarot — draw from all 78 cards, receive AI-powered personal readings and explore archetypal insights. Available in four languages.',
         cta_mc:          'Open Tarotmancer',
         status_mc:       'EN · PT · ES · FR',
+        books_label:     'Writing',
+        books_title:     'Techstream DevSecOps Series',
+        books_sub:       'A 6-volume reference on DevSecOps, AI security and release engineering — in progress.',
+        books_view_all:  'View series →',
+        fw_label:        'Open Source',
+        fw_title:        'Frameworks & OSS',
+        fw_sub:          '9 open-source DevSecOps frameworks — from pipeline security to AI agent hardening.',
         contact_label:   'Get in touch',
         contact_title:   "Let's build something remarkable together.",
         contact_sub:     'Available for consulting, AI engineering, DevSecOps and OSS collaborations. Based in Brussels, working globally.',
@@ -806,6 +1017,13 @@
         card_mc_desc:    'O Tarô Vivo — tire de todas as 78 cartas, receba leituras pessoais com IA e explore insights arquetípicos. Disponível em quatro idiomas.',
         cta_mc:          'Abrir Tarotmancer',
         status_mc:       'PT · EN · ES · FR',
+        books_label:     'Escrevendo',
+        books_title:     'Série Techstream DevSecOps',
+        books_sub:       'Uma referência em 6 volumes sobre DevSecOps, segurança de IA e engenharia de releases — em andamento.',
+        books_view_all:  'Ver série →',
+        fw_label:        'Open Source',
+        fw_title:        'Frameworks & OSS',
+        fw_sub:          '9 frameworks DevSecOps open-source — de segurança de pipelines a hardening de agentes de IA.',
         contact_label:   'Entre em contato',
         contact_title:   'Vamos construir algo notável juntos.',
         contact_sub:     'Disponível para consultoria, engenharia de IA, DevSecOps e colaborações OSS. Baseado em Bruxelas, atuação global.',

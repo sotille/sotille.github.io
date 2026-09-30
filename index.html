@@ -113,13 +113,17 @@
     }
     .brand{
       display:flex;align-items:center;gap:11px;
-      font:700 14px/1 Inter,system-ui;letter-spacing:.1px;
+      font:700 14px/1 Inter,system-ui;letter-spacing:.1px;white-space:nowrap;min-width:0;
     }
     .logo{
       width:32px;height:32px;flex-shrink:0;
       box-shadow:0 0 0 1px rgba(56,189,248,.2),0 4px 16px rgba(0,0,0,.5);
       border-radius:8px;
     }
+    .nav-links{display:flex;gap:4px;margin-left:auto;margin-right:8px}
+    .nav-links a{font:600 13px/1 Inter,system-ui;color:var(--muted);padding:7px 10px;border-radius:8px;transition:color .15s,background .15s}
+    .nav-links a:hover{color:var(--text);background:var(--surface-1)}
+    @media(max-width:860px){.nav-links{display:none}}
     .nav-right{display:flex;align-items:center;gap:8px}
     .tg{
       display:inline-flex;border:1px solid var(--border);
@@ -257,13 +261,14 @@
     .term-body{
       padding:20px 22px;
       font:400 12.5px/1.8 "JetBrains Mono",monospace;
-      color:var(--muted);
+      color:var(--muted);white-space:pre-wrap;overflow-wrap:anywhere;
     }
     .term-prompt{color:var(--cv);}
     .term-cmd{color:var(--text-2);}
     .term-out{color:var(--muted);}
     .term-key{color:var(--ts);}
     .term-val{color:#86efac;}
+    [data-theme="light"] .term-val{color:#15803d}
     .term-warn{color:var(--mc);}
     .term-cursor{
       display:inline-block;width:7px;height:13px;
@@ -360,6 +365,10 @@
     }
     .card--cv .card-num{color:var(--cv)}
     .card--ts .card-num{color:var(--ts)}
+    .card--fw::before{background:linear-gradient(90deg,var(--mc),rgba(245,158,11,0))}
+    .card--fw:hover{border-color:rgba(245,158,11,.3);box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 0 1px rgba(245,158,11,.1)}
+    .card--fw .card-num,.card--fw .card-eyebrow{color:var(--mc)}
+    .card--fw .card-cta{background:var(--mc-dim);color:var(--mc);border-color:rgba(245,158,11,.2)}
     .card--mc .card-num{color:var(--mc)}
     .card:hover .card-num{opacity:.7;transition:opacity .2s}
 
@@ -423,6 +432,10 @@
       background:linear-gradient(120deg,#f1f5f9 20%,#93c5fd 70%,#c4b5fd 100%);
       -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
       display:block;margin-bottom:5px;
+    }
+    [data-theme="light"] .stat-num{
+      background:linear-gradient(120deg,#0f172a 20%,#0369a1 70%,#6d28d9 100%);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
     }
     .stat-label{
       font:500 10px/1.4 "JetBrains Mono",monospace;
@@ -493,7 +506,7 @@
     .fw-card:hover{transform:translateY(-2px);border-color:var(--border-1);box-shadow:0 8px 24px rgba(0,0,0,.3)}
     .fw-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
     .fw-acro{
-      font:800 15px/1 "JetBrains Mono",monospace;letter-spacing:-.3px;color:var(--ts);
+      font:700 11px/1 "JetBrains Mono",monospace;letter-spacing:1px;color:var(--ts);
     }
     .fw-gh{
       display:inline-flex;align-items:center;gap:4px;
@@ -560,6 +573,8 @@
       .cards{grid-template-columns:1fr;padding:48px 20px 60px}
       .cards-section{padding:48px 20px 60px}
       .trusted{padding:16px 20px}
+      .trusted-inner{gap:12px}.trusted-divider{display:none}.trusted-logos{gap:16px 24px}
+      .brand span.nm{display:none}
       .contact-section{padding:48px 20px}
       .nav{padding:12px 20px}
       .book-grid{grid-template-columns:repeat(2,1fr);gap:10px}
@@ -580,8 +595,14 @@
       <nav class="nav">
         <div class="brand">
           <img src="favicon.svg" class="logo" alt="" aria-hidden="true" width="32" height="32">
-          Felipe Sotille
+          <span class="nm">Felipe Sotille</span>
         </div>
+        <nav class="nav-links" aria-label="Sections">
+          <a href="/cv" data-i18n="nav_cv">CV</a>
+          <a href="#writing" data-i18n="nav_writing">Articles</a>
+          <a href="#frameworks" data-i18n="nav_fw">Frameworks</a>
+          <a href="#contact" data-i18n="nav_contact">Contact</a>
+        </nav>
         <div class="nav-right">
           <div class="tg" role="group" aria-label="Language">
             <button id="lang-en" aria-pressed="true"  onclick="setLang('en')">EN</button>
@@ -629,6 +650,10 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             <span data-i18n="btn_cv">View Résumé</span>
           </a>
+          <a href="/cv/Felipe-Sotille-DevSecOps-Architect.pdf" class="btn-ghost" download>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="btn_pdf">Download PDF</span>
+          </a>
           <a href="mailto:fsotille@gmail.com" class="btn-ghost">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <span data-i18n="btn_contact">Get in touch</span>
@@ -656,16 +681,16 @@
 
 <span class="term-prompt">❯ </span><span class="term-cmd">cat focus.json</span>
 <span class="term-out">{</span>
-<span class="term-out">  <span class="term-key">"current"</span>: <span class="term-val">"Release orchestration &amp; secure delivery"</span>,</span>
-<span class="term-out">  <span class="term-key">"expertise"</span>: <span class="term-val">"CloudBees CI/CD · SBOM · policy-as-code"</span>,</span>
+<span class="term-out">  <span class="term-key">"role"</span>: <span class="term-val">"DevSecOps architect &amp; coach"</span>,</span>
+<span class="term-out">  <span class="term-key">"stack"</span>: <span class="term-val">"CloudBees CI/CD · SBOM · policy"</span>,</span>
 <span class="term-out">  <span class="term-key">"experience"</span>: <span class="term-val">"17+ years"</span>,</span>
 <span class="term-out">  <span class="term-key">"location"</span>: <span class="term-val">"Brussels 🇧🇪"</span></span>
 <span class="term-out">}</span>
 
 <span class="term-prompt">❯ </span><span class="term-cmd">git log --oneline -3</span>
-<span class="term-out"><span class="term-warn">a3f1c2b</span> feat: 40+ Java apps on zero-touch release orchestration</span>
-<span class="term-out"><span class="term-warn">7d82e19</span> feat: 20+ orchestrated-patching pipelines, 300+ VMs, −40% time</span>
-<span class="term-out"><span class="term-warn">c0de418</span> feat: SBOM + policy-as-code guardrails (DORA-aligned)</span>
+<span class="term-out"><span class="term-warn">a3f1c2b</span> feat: 40+ apps on zero-touch releases</span>
+<span class="term-out"><span class="term-warn">7d82e19</span> feat: 300+ VMs patched, −40% time</span>
+<span class="term-out"><span class="term-warn">c0de418</span> feat: SBOM + policy-as-code gates</span>
 
 <span class="term-prompt">❯ </span><span class="term-cursor"></span>
           </div>
@@ -734,7 +759,7 @@
               <span data-i18n="cta_cv">View CV</span>
               <span aria-hidden="true">→</span>
             </span>
-            <span class="card-status" data-i18n="status_cv">PDF/A · Markdown</span>
+            <span class="card-status" data-i18n="status_cv">EN · PDF/A · Markdown</span>
           </div>
         </a>
 
@@ -761,12 +786,35 @@
           </div>
         </a>
 
+        <!-- Techstream frameworks -->
+        <a href="#frameworks" class="card card--fw" role="listitem" aria-label="Techstream frameworks">
+          <span class="card-num" aria-hidden="true">03</span>
+          <div class="card-body">
+            <div class="card-eyebrow" data-i18n="card_fw_eyebrow">Open source · Techstream</div>
+            <div class="card-title" data-i18n="card_fw_title">Nine DevSecOps frameworks</div>
+            <p class="card-desc" data-i18n="card_fw_desc">Release orchestration, supply-chain security, secure CI/CD, compliance automation, agentic delivery, forensics: reference architectures under Apache 2.0, published under my consultancy.</p>
+            <div class="card-tags">
+              <span class="tag">Release governance</span>
+              <span class="tag">Supply chain</span>
+              <span class="tag">Policy as code</span>
+              <span class="tag">Agentic delivery</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="card-cta">
+              <span data-i18n="cta_fw">See the frameworks</span>
+              <span aria-hidden="true">→</span>
+            </span>
+            <span class="card-status" data-i18n="status_fw">Apache 2.0</span>
+          </div>
+        </a>
+
 
       </div>
     </div>
 
     <!-- WRITING -->
-    <div class="fw-section" aria-label="Writing">
+    <div class="fw-section" id="writing" aria-label="Writing">
       <div class="section-header">
         <div>
           <span class="section-label" data-i18n="books_label">Writing</span>
@@ -795,7 +843,7 @@
     </div>
 
     <!-- FRAMEWORKS -->
-    <div class="fw-section" aria-label="Open-source frameworks">
+    <div class="fw-section" id="frameworks" aria-label="Open-source frameworks">
       <div class="section-header">
         <div>
           <span class="section-label" data-i18n="fw_label">Open Source</span>
@@ -806,47 +854,47 @@
       </div>
       <div class="fw-grid">
         <a href="https://github.com/sotille/devsecops-framework" target="_blank" rel="noopener" class="fw-card">
-          <div class="fw-top"><span class="fw-acro">DSF</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-top"><span class="fw-acro">FOUNDATION</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
           <div class="fw-name">DevSecOps Foundation Framework</div>
           <div class="fw-tags"><span class="fw-tag">8-Phase Lifecycle</span><span class="fw-tag">Secure SDLC</span><span class="fw-tag">Security Controls</span></div>
         </a>
         <a href="https://github.com/sotille/devsecops-maturity-model" target="_blank" rel="noopener" class="fw-card">
-          <div class="fw-top"><span class="fw-acro">TDMM</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-top"><span class="fw-acro">MATURITY</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
           <div class="fw-name">Techstream DevSecOps Maturity Model</div>
           <div class="fw-tags"><span class="fw-tag">5 Levels</span><span class="fw-tag">37-Q Scorecard</span><span class="fw-tag">Gap Analysis</span></div>
         </a>
         <a href="https://github.com/sotille/secure-ci-cd-reference-architecture" target="_blank" rel="noopener" class="fw-card">
-          <div class="fw-top"><span class="fw-acro">SCRA</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-top"><span class="fw-acro">PIPELINES</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
           <div class="fw-name">Secure CI/CD Reference Architecture</div>
           <div class="fw-tags"><span class="fw-tag">SAST/DAST/SCA</span><span class="fw-tag">Zero-Trust CI/CD</span><span class="fw-tag">Secrets Mgmt</span></div>
         </a>
         <a href="https://github.com/sotille/software-supply-chain-security-framework" target="_blank" rel="noopener" class="fw-card">
-          <div class="fw-top"><span class="fw-acro">SSCSF</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-top"><span class="fw-acro">SUPPLY CHAIN</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
           <div class="fw-name">Software Supply Chain Security Framework</div>
           <div class="fw-tags"><span class="fw-tag">SBOM</span><span class="fw-tag">Sigstore</span><span class="fw-tag">SLSA Levels</span></div>
         </a>
         <a href="https://github.com/sotille/release-orchestration-framework" target="_blank" rel="noopener" class="fw-card">
-          <div class="fw-top"><span class="fw-acro">ROF</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-top"><span class="fw-acro">RELEASES</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
           <div class="fw-name">Release Orchestration Framework</div>
           <div class="fw-tags"><span class="fw-tag">Blue/Green</span><span class="fw-tag">Canary</span><span class="fw-tag">Rollback Automation</span></div>
         </a>
         <a href="https://github.com/sotille/compliance-automation-framework" target="_blank" rel="noopener" class="fw-card">
-          <div class="fw-top"><span class="fw-acro">CAF</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-top"><span class="fw-acro">COMPLIANCE</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
           <div class="fw-name">Compliance Automation Framework</div>
           <div class="fw-tags"><span class="fw-tag">OPA/Rego</span><span class="fw-tag">SOC2/ISO27001</span><span class="fw-tag">Policy as Code</span></div>
         </a>
         <a href="https://github.com/sotille/ai-devsecops-framework" target="_blank" rel="noopener" class="fw-card">
-          <div class="fw-top"><span class="fw-acro">AIDF</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-top"><span class="fw-acro">AGENTIC AI</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
           <div class="fw-name">AI DevSecOps Framework</div>
           <div class="fw-tags"><span class="fw-tag">Agentic delivery</span><span class="fw-tag">Governance</span><span class="fw-tag">Security gates</span></div>
         </a>
         <a href="https://github.com/sotille/forensics-and-incident-response-framework" target="_blank" rel="noopener" class="fw-card">
-          <div class="fw-top"><span class="fw-acro">FIRF</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-top"><span class="fw-acro">FORENSICS</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
           <div class="fw-name">Forensics &amp; Incident Response Framework</div>
           <div class="fw-tags"><span class="fw-tag">Evidence</span><span class="fw-tag">Incident response</span><span class="fw-tag">Post-mortems</span></div>
         </a>
         <a href="https://github.com/sotille/devsecops-methodology" target="_blank" rel="noopener" class="fw-card">
-          <div class="fw-top"><span class="fw-acro">DSM</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
+          <div class="fw-top"><span class="fw-acro">METHOD</span><span class="fw-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Open</span></div>
           <div class="fw-name">DevSecOps Transformation Methodology</div>
           <div class="fw-tags"><span class="fw-tag">90-Day Playbook</span><span class="fw-tag">RACI Matrices</span><span class="fw-tag">ROI Model</span></div>
         </a>
@@ -854,7 +902,7 @@
     </div>
 
     <!-- CONTACT -->
-    <section class="contact-section" aria-label="Contact">
+    <section class="contact-section" id="contact" aria-label="Contact">
       <div class="contact-inner">
         <div>
           <p style="font:700 11px/1 'JetBrains Mono',monospace;color:var(--muted-1);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-i18n="contact_label">Get in touch</p>
@@ -905,6 +953,7 @@
     const LK = 'fs-lang';
     const T = {
       en: {
+        nav_cv: 'CV', nav_writing: 'Articles', nav_fw: 'Frameworks', nav_contact: 'Contact',
         hero_status:    'Open to consulting & OSS',
         hero_strong:    'Senior DevSecOps Architect & Coach',
         hero_tagline:   '17+ years building critical systems at SWIFT, Swissquote and Eleven Sports. I design the release-orchestration and security standards squads ship through, then coach them until the standard holds. Agent-first, with governance.',
@@ -912,6 +961,7 @@
         badge_exp:      '17+ years experience',
         badge_avail:    'Freelance · Italian (EU) citizen',
         btn_cv:         'View Résumé',
+        btn_pdf:        'Download PDF',
         btn_contact:    'Get in touch',
         trusted_label:  'Worked at',
         section_projects: 'Projects & Work',
@@ -919,8 +969,13 @@
         card_cv_title:   'Curriculum Vitae',
         card_cv_desc:    'Four role-tailored CVs generated from one source: DevSecOps Architect, Principal Architect, Tech Lead and Backend Engineer. PDF/A and Markdown, with quality gates in CI.',
         cta_cv:          'View CV',
-        status_cv:       'PDF/A · Markdown',
+        status_cv:       'EN · PDF/A · Markdown',
         card_ts_eyebrow: 'Side project · tech news',
+        card_fw_eyebrow: 'Open source · Techstream',
+        card_fw_title:   'Nine DevSecOps frameworks',
+        card_fw_desc:    'Release orchestration, supply-chain security, secure CI/CD, compliance automation, agentic delivery, forensics: reference architectures under Apache 2.0, published under my consultancy.',
+        cta_fw:          'See the frameworks',
+        status_fw:       'Apache 2.0',
         card_ts_desc:    'Curated daily digest of AI, security and infrastructure. Handpicked signal, no noise — covering agents, DevSecOps, releases and developer tooling.',
         cta_ts:          'Open TechStream',
         status_ts:       'Daily updates',
@@ -938,6 +993,7 @@
         footer_made:     'Plain HTML/CSS/JS · GitHub Pages',
       },
       pt: {
+        nav_cv: 'CV', nav_writing: 'Artigos', nav_fw: 'Frameworks', nav_contact: 'Contato',
         hero_status:    'Disponível para consultoria & OSS',
         hero_strong:    'Arquiteto DevSecOps Sênior & Coach',
         hero_tagline:   '17+ anos construindo sistemas críticos na SWIFT, Swissquote e Eleven Sports. Desenho os padrões de orquestração de releases e segurança pelos quais os squads entregam, e faço coaching até o padrão se sustentar. Agent-first, com governança.',
@@ -945,6 +1001,7 @@
         badge_exp:      '17+ anos de experiência',
         badge_avail:    'Freelance · Cidadão italiano (UE)',
         btn_cv:         'Ver Currículo',
+        btn_pdf:        'Baixar PDF',
         btn_contact:    'Entrar em contato',
         trusted_label:  'Trabalhei em',
         section_projects: 'Projetos & Trabalho',
@@ -952,8 +1009,13 @@
         card_cv_title:   'Curriculum Vitae',
         card_cv_desc:    'Quatro CVs por perfil gerados de uma única fonte: Arquiteto DevSecOps, Arquiteto Principal, Tech Lead e Engenheiro Backend. PDF/A e Markdown, com gates de qualidade no CI.',
         cta_cv:          'Ver CV',
-        status_cv:       'PDF/A · Markdown',
+        status_cv:       'EN · PDF/A · Markdown',
         card_ts_eyebrow: 'Projeto paralelo · notícias tech',
+        card_fw_eyebrow: 'Open source · Techstream',
+        card_fw_title:   'Nove frameworks DevSecOps',
+        card_fw_desc:    'Orquestração de releases, segurança da cadeia de suprimentos, CI/CD seguro, automação de compliance, entrega agêntica, forense: arquiteturas de referência sob Apache 2.0, publicadas pela minha consultoria.',
+        cta_fw:          'Ver os frameworks',
+        status_fw:       'Apache 2.0',
         card_ts_desc:    'Digest diário curado de IA, segurança e infraestrutura. Sinal sem ruído — cobrindo agentes, DevSecOps, lançamentos e ferramentas para devs.',
         cta_ts:          'Abrir TechStream',
         status_ts:       'Atualizado diariamente',

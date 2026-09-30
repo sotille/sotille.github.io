@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sotille.github.io/sitemap.xml
+Sitemap: https://dev.felipe.sotille.com/sitemap.xml

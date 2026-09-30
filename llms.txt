@@ -1,0 +1,40 @@
+# Felipe Sotille
+
+> Senior DevSecOps Architect & Coach. DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). Designs the release-orchestration and security standards that squads ship through, then coaches 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. Agent-first with Claude Code, Codex and Devin; a Java/Linux background means I speak the developers' language.
+
+Freelance consultant based in Brussels, Italian (EU) citizen. Current role: DevSecOps Customer Success Architect at SWIFT (Jan 2025–Present).
+Headline numbers: 17+ years in software engineering; 40+ Java apps on zero-touch release orchestration; 80%+ of the zero-touch deployment KPI, by my team; −40% patching time, 300+ VMs, 20+ pipelines.
+
+## CV (Markdown, preferred for machines)
+
+- [Senior DevSecOps Architect & Coach](https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.pdf
+- [Senior Backend Engineer (Java)](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Backend-Engineer.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Backend-Engineer.pdf
+- [Principal DevSecOps Architect](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Principal-Architect.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Principal-Architect.pdf
+- [Tech Lead · Senior Software Engineer](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Tech-Lead.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Tech-Lead.pdf
+
+## Pages
+
+- [Portfolio](https://dev.felipe.sotille.com/): overview, projects, frameworks
+- [CV page](https://dev.felipe.sotille.com/cv): the DevSecOps CV as HTML with schema.org/Person
+
+## Open frameworks (Techstream, the consultancy)
+
+- [Release Orchestration Framework](https://github.com/sotille/release-orchestration-framework): deployment governance and controlled delivery across environments
+- [Software Supply Chain Security Framework](https://github.com/sotille/software-supply-chain-security-framework): dependencies, build systems, artifacts and deployment environments
+- [AI DevSecOps Framework](https://github.com/sotille/ai-devsecops-framework): securing AI-assisted and agentic software delivery
+
+## Articles
+
+- [Why Your AI Agent Is the Next SolarWinds: Supply Chain Security for the Agentic Era](https://medium.com/@fsotille): May 2026
+- [The Four Layers of Software Supply Chain Integrity](https://medium.com/@fsotille): May 2026
+- [The 4-Phase DevSecOps Transformation](https://medium.com/@fsotille): Apr 2026
+
+## Profiles
+
+- LinkedIn: https://linkedin.com/in/Felipe-Sotille
+- GitHub: https://github.com/sotille
+- Medium: https://medium.com/@fsotille
+
+## Optional
+
+- [Source repository](https://github.com/sotille/CV): CV-as-code, one YAML source, Typst PDFs, quality gates

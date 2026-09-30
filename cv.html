@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Felipe Sotille — Senior DevSecOps Architect &amp; Coach</title>
@@ -10,33 +10,142 @@
 <meta property="og:url" content="https://dev.felipe.sotille.com/cv"><meta property="og:image" content="https://dev.felipe.sotille.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#0f4c5c;--soft:#e7eff1;--ink:#1b1f24;--muted:#5b6470;--rule:#d5dbe1;--bg:#fff;--card:#f6f8f9}
-@media (prefers-color-scheme:dark){:root{--accent:#7fc4d3;--soft:#10262c;--ink:#e6e9ec;--muted:#9aa4b0;--rule:#2b3640;--bg:#0f1418;--card:#151c22}}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}main{max-width:860px;margin:0 auto;padding:0 20px 64px}
-header.band{background:var(--soft);padding:40px 20px 28px}
-header .in{max-width:860px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end}
-h1{font-size:2.2rem;margin:0 0 4px;letter-spacing:-.02em}.title{color:var(--accent);font-weight:600;font-size:1.2rem;margin:0}
-.tagline{color:var(--muted);margin:6px 0 0}.contact{list-style:none;padding:0;margin:0;color:var(--muted);font-size:.95rem;text-align:right}
-.contact li{margin:2px 0}
-h2{font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--rule);padding-bottom:6px;margin:40px 0 14px}
-h3{font-size:1.05rem;margin:22px 0 2px}h3 small{color:var(--muted);font-weight:400}
-.dates{color:var(--muted);font-size:.9rem;float:right}.ctx{color:var(--muted);font-style:italic;font-size:.93rem;margin:0 0 6px}
-ul.b{padding-left:1.1em;margin:0}ul.b li{margin:4px 0}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0 0}
-.tile{background:var(--card);border-radius:8px;padding:12px 14px}.tile b{display:block;font-size:1.5rem;color:var(--accent)}.tile span{font-size:.85rem;color:var(--muted)}
-.skills{display:grid;grid-template-columns:max-content 1fr;gap:8px 16px}.skills dt{font-weight:600}.skills dd{margin:0}
-.pill{display:inline-block;background:var(--soft);border-radius:4px;padding:2px 8px;margin:2px 4px 2px 0;font-size:.9rem}
-.dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
-.dl .card{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:12px 14px}
-.dl .card b{display:block;color:var(--accent)}.dl .card span{font-size:.85rem;color:var(--muted)}
-blockquote{border-left:3px solid var(--accent);margin:12px 0;padding:2px 14px;font-style:italic}blockquote footer{font-style:normal;color:var(--muted);font-size:.9rem}
-.stack{color:var(--muted);font-size:.88rem;margin:6px 0 0}
-footer.site{color:var(--muted);font-size:.85rem;margin-top:48px;border-top:1px solid var(--rule);padding-top:14px}
-@media (max-width:600px){.contact{text-align:left}.dates{float:none;display:block}.skills{grid-template-columns:1fr}}
+:root{--bg:#05070f;--bg-1:#0a0e1a;--surface:#0d1220;--surface-1:#111827;--border:#1c2438;--border-1:#232f45;
+--text:#f1f5f9;--text-2:#cbd5e1;--muted:#64748b;--muted-1:#475569;--cv:#38bdf8;--cv-dim:rgba(56,189,248,.12);
+--ts:#818cf8;--ts-dim:rgba(129,140,248,.12);--mc:#f59e0b;--ok:#86efac;--r:16px;--w:1120px}
+[data-theme="light"]{--bg:#f8fafc;--bg-1:#f1f5f9;--surface:#fff;--surface-1:#f8fafc;--border:#e2e8f0;--border-1:#cbd5e1;
+--text:#0f172a;--text-2:#1e293b;--muted:#64748b;--muted-1:#94a3b8;--ok:#15803d}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100%}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.ambient::before{content:"";position:absolute;inset:0;background:
+radial-gradient(ellipse 1000px 700px at 0% 0%,rgba(56,189,248,.055) 0%,transparent 65%),
+radial-gradient(ellipse 800px 600px at 100% 60%,rgba(129,140,248,.06) 0%,transparent 65%),
+radial-gradient(ellipse 600px 400px at 50% 100%,rgba(245,158,11,.04) 0%,transparent 65%);
+animation:drift 25s ease-in-out infinite alternate}
+[data-theme="light"] .ambient::before{background:
+radial-gradient(ellipse 1000px 700px at 0% 0%,rgba(56,189,248,.08) 0%,transparent 65%),
+radial-gradient(ellipse 800px 600px at 100% 60%,rgba(129,140,248,.07) 0%,transparent 65%),
+radial-gradient(ellipse 600px 400px at 50% 100%,rgba(245,158,11,.06) 0%,transparent 65%)}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-24px,-32px) scale(1.05)}}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+.page{position:relative;z-index:1;min-width:0}
+.hero>*,.grid2>*,.grid3>*,.grid4>*,.stats>*{min-width:0}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);
+background:rgba(5,7,15,.7);border-bottom:1px solid var(--border)}
+[data-theme="light"] header{background:rgba(248,250,252,.82)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:13px 20px;max-width:var(--w);margin:0 auto;gap:12px}
+.nav .brand{min-width:0;white-space:nowrap}
+@media(max-width:520px){.brand .nm{display:none}}
+.brand{display:flex;align-items:center;gap:11px;font:700 14px/1 Inter,system-ui}
+.logo{width:32px;height:32px;border-radius:8px;box-shadow:0 0 0 1px rgba(56,189,248,.2),0 4px 16px rgba(0,0,0,.5)}
+.brand .back{font:500 12px/1 "JetBrains Mono",monospace;color:var(--muted);margin-left:6px}
+.nav-right{display:flex;align-items:center;gap:8px}
+.tg{display:inline-flex;border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.tg button{background:transparent;border:0;color:var(--muted);padding:6px 10px;font:600 12px/1 Inter,system-ui;cursor:pointer}
+.tg button.active,.tg button:hover{background:var(--surface-1);color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;border:1px solid var(--border-1);background:var(--surface);font:600 13px/1 Inter,system-ui;color:var(--text-2);transition:transform .15s,border-color .15s}
+.btn:hover{transform:translateY(-1px);border-color:var(--cv)}
+.btn-primary{border:0;background:linear-gradient(135deg,#38bdf8 0%,#22d3ee 50%,#818cf8 100%);background-size:200% 100%;color:#04060e;font-weight:700;padding:11px 22px;
+box-shadow:0 0 0 1px rgba(56,189,248,.3),0 4px 20px rgba(56,189,248,.2);transition:background-position .4s,transform .15s}
+.btn-primary:hover{background-position:100% 0;transform:translateY(-2px)}
+.hero{padding:72px 28px 40px;max-width:var(--w);margin:0 auto;display:grid;grid-template-columns:1fr 440px;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 13px 5px 10px;border-radius:999px;border:1px solid rgba(56,189,248,.25);background:rgba(56,189,248,.06);font:600 12px/1.4 Inter,system-ui;color:var(--cv);margin-bottom:22px;animation:up .5s ease both}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--cv);animation:pulse 2s ease infinite}
+.hero h1{font-size:clamp(40px,5.5vw,76px);font-weight:900;line-height:1;letter-spacing:-2.5px;margin-bottom:12px;animation:up .5s .05s ease both;
+background:linear-gradient(120deg,#f1f5f9 30%,#93c5fd 70%,#c4b5fd 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+[data-theme="light"] .hero h1{background:linear-gradient(120deg,#0f172a 30%,#0369a1 70%,#6d28d9 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.role{font:600 clamp(17px,2vw,22px)/1.3 Inter,system-ui;color:var(--text-2);letter-spacing:-.3px;margin-bottom:16px;animation:up .5s .1s ease both}
+.summary{font:400 15px/1.75 Inter,system-ui;color:var(--muted);max-width:560px;border-left:2px solid var(--border-1);padding-left:16px;margin-bottom:26px;animation:up .5s .15s ease both}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px;animation:up .5s .2s ease both}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;border:1px solid var(--border-1);background:var(--surface);font:500 13px/1 Inter,system-ui;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;animation:up .5s .25s ease both}
+.terminal{background:var(--surface);border:1px solid var(--border-1);border-radius:14px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.03);animation:up .6s .3s ease both}
+[data-theme="light"] .terminal{box-shadow:0 24px 60px rgba(15,23,42,.12)}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--border);background:var(--surface-1)}
+.term-dot{width:10px;height:10px;border-radius:50%}.term-dot:nth-child(1){background:#ff5f57}.term-dot:nth-child(2){background:#febc2e}.term-dot:nth-child(3){background:#28c840}
+.term-title{flex:1;text-align:center;font:500 11px/1 "JetBrains Mono",monospace;color:var(--muted)}
+.term-body{padding:20px 22px;font:400 12.5px/1.85 "JetBrains Mono",monospace;color:var(--muted);white-space:pre-wrap;overflow-wrap:anywhere}
+.tp{color:var(--cv)}.tc{color:var(--text-2)}.tk{color:var(--ts)}.tv{color:var(--ok)}.tn{color:var(--mc)}
+.cursor{display:inline-block;width:7px;height:13px;background:var(--cv);animation:blink 1.1s step-end infinite;vertical-align:-1px}
+@keyframes blink{0%,100%{opacity:.9}50%{opacity:0}}
+.stats{padding:8px 28px 48px;max-width:var(--w);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);animation:up .5s .38s ease both}
+.stat{padding:22px 20px;border:1px solid var(--border);background:var(--surface);text-align:center;transition:border-color .15s,background .15s}
+.stat+.stat{border-left:none}.stat:first-child{border-radius:12px 0 0 12px}.stat:last-child{border-radius:0 12px 12px 0}
+.stat:hover{border-color:var(--border-1);background:var(--surface-1)}
+.stat-num{display:block;font:900 clamp(22px,3vw,32px)/1 Inter,system-ui;letter-spacing:-1px;margin-bottom:6px;
+background:linear-gradient(120deg,#f1f5f9 20%,#93c5fd 70%,#c4b5fd 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+[data-theme="light"] .stat-num{background:linear-gradient(120deg,#0f172a 20%,#0369a1 70%,#6d28d9 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font:500 10px/1.4 "JetBrains Mono",monospace;color:var(--muted-1);text-transform:uppercase;letter-spacing:.8px}
+section.blk{padding:0 28px 64px;max-width:var(--w);margin:0 auto}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.label{font:700 11px/1 "JetBrains Mono",monospace;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+h2{font:800 clamp(18px,2.5vw,24px)/1.1 Inter,system-ui;letter-spacing:-.3px;margin:6px 0 4px}
+.sub{font:400 14px/1.5 Inter,system-ui;color:var(--muted)}
+.view-all{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font:600 13px/1 Inter,system-ui;color:var(--muted);border:1px solid var(--border);padding:7px 13px;border-radius:8px;background:var(--surface)}
+.view-all:hover{border-color:var(--border-1);color:var(--text-2)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;transition:border-color .15s,transform .15s,box-shadow .15s;display:block;overflow:hidden}
+.card:hover{transform:translateY(-2px);border-color:var(--border-1);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;opacity:.75;background:linear-gradient(90deg,var(--cv),rgba(56,189,248,0))}
+.card.ts::before{background:linear-gradient(90deg,var(--ts),rgba(129,140,248,0))}.card.mc::before{background:linear-gradient(90deg,var(--mc),rgba(245,158,11,0))}.card.plain::before{display:none}
+.acro{font:800 14px/1 "JetBrains Mono",monospace;color:var(--ts);letter-spacing:-.3px}
+.top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px}
+.ext{display:inline-flex;align-items:center;gap:4px;font:500 10px/1 "JetBrains Mono",monospace;color:var(--muted-1);opacity:.75}
+.name{font:600 14px/1.4 Inter,system-ui;color:var(--text-2);margin-bottom:8px}
+.note{font:400 12.5px/1.5 Inter,system-ui;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font:500 10.5px/1 Inter,system-ui;padding:4px 8px;border-radius:5px;border:1px solid var(--border);background:var(--surface-1);color:var(--muted-1)}
+.dl .name{font-size:15px}.dl .meta{font:500 11px/1.5 "JetBrains Mono",monospace;color:var(--muted)}
+.dl .links{display:flex;gap:8px;margin-top:12px}
+.dl .links a{font:600 12px/1 Inter,system-ui;padding:7px 11px;border-radius:7px;border:1px solid var(--border-1);background:var(--surface-1);color:var(--text-2)}
+.dl .links a:hover{border-color:var(--cv);color:var(--cv)}
+.skills{display:grid;grid-template-columns:200px 1fr;row-gap:14px;column-gap:20px}
+.skills dt{font:600 13px/1.6 Inter,system-ui;color:var(--text-2);padding-top:4px}
+.skills dd{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:500 12.5px/1 Inter,system-ui;padding:7px 11px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text-2);transition:border-color .15s,color .15s}
+.pill:hover{border-color:var(--cv);color:var(--cv)}.pill.x{border-color:rgba(56,189,248,.35);background:var(--cv-dim);color:var(--cv)}
+.tl{position:relative;padding-left:28px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--cv),var(--ts) 60%,transparent)}
+.job{position:relative;margin-bottom:18px}
+.job::before{content:"";position:absolute;left:-26px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--cv);box-shadow:0 0 0 4px var(--cv-dim)}
+.job .card{padding:22px 24px}.job .card::before{display:none}
+.jh{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+.jt{font:700 17px/1.3 Inter,system-ui;letter-spacing:-.2px}.jt small{font:500 13px/1 Inter,system-ui;color:var(--muted)}
+.jc{color:var(--cv);font-weight:600}.jd{font:600 12px/1 "JetBrains Mono",monospace;color:var(--muted);letter-spacing:.3px;padding:6px 10px;border:1px solid var(--border);border-radius:7px;background:var(--surface-1)}
+.ctx{font:400 13px/1.55 Inter,system-ui;color:var(--muted);font-style:italic;margin:6px 0 12px}
+.job ul{list-style:none}.job li{position:relative;padding-left:18px;margin:7px 0;font:400 14.5px/1.6 Inter,system-ui;color:var(--text-2)}
+.job li::before{content:"";position:absolute;left:2px;top:.72em;width:6px;height:6px;border-radius:2px;background:var(--cv);opacity:.8}
+.job li b{color:var(--text);font-weight:700}
+.stack{margin-top:12px;font:500 11px/1.6 "JetBrains Mono",monospace;color:var(--muted-1)}.stack b{color:var(--muted);font-weight:600}
+.early .card{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px 18px}
+.early .name{margin:0}.early .meta{font:500 11px/1.4 "JetBrains Mono",monospace;color:var(--muted-1)}
+.quote{padding:22px 24px}.quote p{font:400 15px/1.65 Inter,system-ui;color:var(--text-2);font-style:italic}
+.quote footer{margin-top:12px;font:500 12px/1.4 "JetBrains Mono",monospace;color:var(--muted)}
+.quote::after{content:"“";position:absolute;right:18px;top:2px;font:900 64px/1 Georgia,serif;color:var(--cv);opacity:.12}
+.langs{display:flex;flex-wrap:wrap;gap:10px}
+.lang{padding:12px 16px;border:1px solid var(--border);background:var(--surface);border-radius:10px;font:600 13px/1 Inter,system-ui;color:var(--text-2)}
+.lang span{display:block;margin-top:5px;font:500 10px/1 "JetBrains Mono",monospace;color:var(--muted-1);text-transform:uppercase;letter-spacing:.8px}
+.contact{border-top:1px solid var(--border);padding:56px 28px}
+.contact .in{max-width:var(--w);margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.contact h2{font-size:clamp(22px,3vw,32px);letter-spacing:-.8px;margin-bottom:8px}
+footer.site{border-top:1px solid var(--border);padding:20px 28px;font:500 11px/1.6 "JetBrains Mono",monospace;color:var(--muted-1)}
+footer.site .in{max-width:var(--w);margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+footer.site a{color:var(--muted)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}.reveal.in{opacity:1;transform:none}
+@media(max-width:960px){.hero{grid-template-columns:1fr;gap:28px;padding-top:48px}.grid3,.grid4{grid-template-columns:repeat(2,1fr)}.contact .in{grid-template-columns:1fr}}
+@media(max-width:640px){.hero,section.blk,.stats,.contact{padding-left:16px;padding-right:16px}.brand .back{display:none}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-radius:0 12px 0 0}.stat:nth-child(3){border-radius:0 0 0 12px;border-top:none}.stat:nth-child(4){border-radius:0 0 12px 0;border-top:none;border-left:none}
+.grid3,.grid4,.grid2{grid-template-columns:1fr}.skills{grid-template-columns:1fr;row-gap:6px}.skills dd{margin-bottom:8px}.tl{padding-left:22px}.job::before{left:-20px}}
+@media print{.ambient,header,.actions,.stats,.dl-section,.contact,.reveal{display:none!important}body{background:#fff;color:#000}.reveal{opacity:1;transform:none}
+.hero{display:block;padding:0}.hero h1,.stat-num{-webkit-text-fill-color:#000;background:none}.terminal{display:none}.card{border:1px solid #ccc;box-shadow:none}section.blk{padding-bottom:24px}}
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -45,6 +154,7 @@ footer.site{color:var(--muted);font-size:.85rem;margin-top:48px;border-top:1px s
   "jobTitle": "Senior DevSecOps Architect & Coach",
   "description": "DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). Designs the release-orchestration and security standards that squads ship through, then coaches 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. Agent-first with Claude Code, Codex and Devin; a Java/Linux background means I speak the developers' language.",
   "url": "https://dev.felipe.sotille.com/cv",
+  "image": "https://dev.felipe.sotille.com/assets/og-image.png",
   "email": "mailto:fsotille@gmail.com",
   "address": {
     "@type": "PostalAddress",
@@ -109,77 +219,113 @@ footer.site{color:var(--muted);font-size:.85rem;margin-top:48px;border-top:1px s
   }
 }</script>
 </head><body>
-<header class="band"><div class="in"><div>
-<h1>Felipe Sotille</h1><p class="title">Senior DevSecOps Architect &amp; Coach</p>
-<p class="tagline">Freelance consultant · Italian (EU) citizen · Brussels</p>
-</div><ul class="contact">
-<li>Brussels, Belgium</li>
-<li><a href="mailto:fsotille@gmail.com">fsotille@gmail.com</a></li>
-<li><a href="https://linkedin.com/in/Felipe-Sotille" rel="me noopener">linkedin.com/in/Felipe-Sotille</a></li><li><a href="https://github.com/sotille" rel="me noopener">github.com/sotille</a></li>
-<li><a href="https://medium.com/@fsotille" rel="me noopener">medium.com/@fsotille</a></li>
-</ul></div></header><main>
-<h2>Download</h2><div class="dl">
-<div class="card"><b>Senior DevSecOps Architect &amp; Coach</b><span><a href="/cv/Felipe-Sotille-DevSecOps-Architect.pdf">PDF/A</a> · <a href="/cv/Felipe-Sotille-DevSecOps-Architect.md">Markdown</a> · 2 pages</span></div>
-<div class="card"><b>Senior Backend Engineer (Java)</b><span><a href="/cv/Felipe-Sotille-Backend-Engineer.pdf">PDF/A</a> · <a href="/cv/Felipe-Sotille-Backend-Engineer.md">Markdown</a> · 2 pages</span></div>
-<div class="card"><b>Principal DevSecOps Architect</b><span><a href="/cv/Felipe-Sotille-Principal-Architect.pdf">PDF/A</a> · <a href="/cv/Felipe-Sotille-Principal-Architect.md">Markdown</a> · 2 pages</span></div>
-<div class="card"><b>Tech Lead · Senior Software Engineer</b><span><a href="/cv/Felipe-Sotille-Tech-Lead.pdf">PDF/A</a> · <a href="/cv/Felipe-Sotille-Tech-Lead.md">Markdown</a> · 2 pages</span></div>
+<div class="ambient" aria-hidden="true"></div><div class="page">
+<header><nav class="nav">
+<a class="brand" href="/"><img src="/favicon.svg" class="logo" alt="" width="32" height="32"><span class="nm">Felipe Sotille</span><span class="back">← portfolio</span></a>
+<div class="nav-right"><div class="tg" role="group" aria-label="Theme"><button data-t="dark" title="Dark" onclick="setTheme('dark')">🌙</button><button data-t="light" title="Light" onclick="setTheme('light')">☀️</button><button data-t="auto" title="Auto" onclick="setTheme('auto')">🖥️</button></div><a class="btn btn-primary" href="/cv/Felipe-Sotille-DevSecOps-Architect.pdf"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> PDF</a></div>
+</nav></header>
+<section class="hero" aria-label="Introduction"><div>
+<div class="eyebrow"><span class="dot"></span>Open to consulting engagements</div>
+<h1>Felipe Sotille</h1>
+<p class="role">Senior DevSecOps Architect &amp; Coach</p>
+<p class="summary">DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). Designs the release-orchestration and security standards that squads ship through, then coaches 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. Agent-first with Claude Code, Codex and Devin; a Java/Linux background means I speak the developers&#x27; language.</p>
+<div class="chips"><span class="chip">Freelance consultant</span><span class="chip">Italian (EU) citizen</span><span class="chip">Brussels</span></div>
+<div class="actions"><a class="btn btn-primary" href="/cv/Felipe-Sotille-DevSecOps-Architect.pdf"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Download CV (PDF/A)</a><a class="btn" href="/cv/Felipe-Sotille-DevSecOps-Architect.md">Markdown</a><a href="https://linkedin.com/in/Felipe-Sotille" class="btn" target="_blank" rel="me noopener">LinkedIn</a><a class="btn" href="mailto:fsotille@gmail.com">Email</a></div>
 </div>
-<h2>Profile</h2>
-<p>DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). Designs the release-orchestration and security standards that squads ship through, then coaches 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. Agent-first with Claude Code, Codex and Devin; a Java/Linux background means I speak the developers&#x27; language.</p>
-<div class="tiles">
-<div class="tile"><b>17+</b><span>years in software engineering</span></div>
-<div class="tile"><b>40+</b><span>Java apps on zero-touch release orchestration</span></div>
-<div class="tile"><b>80%+</b><span>of the zero-touch deployment KPI, by my team</span></div>
-<div class="tile"><b>−40%</b><span>patching time, 300+ VMs, 20+ pipelines</span></div>
+<div class="terminal" aria-hidden="true"><div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">~/cv</span></div>
+<div class="term-body"><span class="tp">❯ </span><span class="tc">cat highlights.json</span>
+{
+  <span class="tk">"17+"</span>: <span class="tv">"years in software engineering"</span>,
+  <span class="tk">"40+"</span>: <span class="tv">"Java apps on zero-touch release orchestration"</span>,
+  <span class="tk">"80%+"</span>: <span class="tv">"of the zero-touch deployment KPI, by my team"</span>,
+  <span class="tk">"−40%"</span>: <span class="tv">"patching time, 300+ VMs, 20+ pipelines"</span>
+}
+
+<span class="tp">❯ </span><span class="tc">git log --oneline -1</span>
+<span class="tn">202609</span> DevSecOps Customer Success Architect · SWIFT · Jan 2025–Present
+
+<span class="tp">❯ </span><span class="cursor"></span></div></div>
+</section>
+<div class="stats" aria-label="Career highlights">
+<div class="stat"><span class="stat-num">17+</span><span class="stat-label">years in software engineering</span></div>
+<div class="stat"><span class="stat-num">40+</span><span class="stat-label">Java apps on zero-touch release orchestration</span></div>
+<div class="stat"><span class="stat-num">80%+</span><span class="stat-label">of the zero-touch deployment KPI, by my team</span></div>
+<div class="stat"><span class="stat-num">−40%</span><span class="stat-label">patching time, 300+ VMs, 20+ pipelines</span></div>
 </div>
-<h2>Core skills</h2><dl class="skills">
-<dt>DevSecOps &amp; CI/CD</dt><dd><span class="pill">CloudBees CI (expert)</span><span class="pill">CloudBees CD/RO (expert)</span><span class="pill">Jenkins</span><span class="pill">SAST / DAST / SCA gates</span><span class="pill">SBOM &amp; supply-chain security</span><span class="pill">Policy as code</span><span class="pill">Platform engineering (golden paths)</span><span class="pill">Secure SDLC</span><span class="pill">Ansible Automation Platform</span><span class="pill">Docker</span><span class="pill">Kubernetes</span><span class="pill">Linux</span><span class="pill">HashiCorp Vault</span></dd>
+<section class="blk dl-section reveal" aria-label="Downloads"><div class="sh"><div><span class="label">Download</span><h2>One source, four CVs</h2><p class="sub">Each variant is generated from the same data and passes the same quality gates: two pages, PDF/A-2b, tagged, fonts embedded.</p></div><a class="view-all" href="https://github.com/sotille/CV" target="_blank" rel="noopener">How it is built <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+<div class="grid4 dl">
+<div class="card "><div class="name">Senior DevSecOps Architect &amp; Coach</div><div class="meta">2 pages · PDF/A-2b · Markdown</div><div class="links"><a href="/cv/Felipe-Sotille-DevSecOps-Architect.pdf">PDF</a><a href="/cv/Felipe-Sotille-DevSecOps-Architect.md">Markdown</a></div></div>
+<div class="card ts"><div class="name">Senior Backend Engineer (Java)</div><div class="meta">2 pages · PDF/A-2b · Markdown</div><div class="links"><a href="/cv/Felipe-Sotille-Backend-Engineer.pdf">PDF</a><a href="/cv/Felipe-Sotille-Backend-Engineer.md">Markdown</a></div></div>
+<div class="card mc"><div class="name">Principal DevSecOps Architect</div><div class="meta">2 pages · PDF/A-2b · Markdown</div><div class="links"><a href="/cv/Felipe-Sotille-Principal-Architect.pdf">PDF</a><a href="/cv/Felipe-Sotille-Principal-Architect.md">Markdown</a></div></div>
+<div class="card plain"><div class="name">Tech Lead · Senior Software Engineer</div><div class="meta">2 pages · PDF/A-2b · Markdown</div><div class="links"><a href="/cv/Felipe-Sotille-Tech-Lead.pdf">PDF</a><a href="/cv/Felipe-Sotille-Tech-Lead.md">Markdown</a></div></div>
+</div></section>
+<section class="blk reveal" id="skills"><div class="sh"><div><span class="label">Core skills</span><h2>What I work with</h2></div></div><dl class="skills">
+<dt>DevSecOps &amp; CI/CD</dt><dd><span class="pill x">CloudBees CI (expert)</span><span class="pill x">CloudBees CD/RO (expert)</span><span class="pill">Jenkins</span><span class="pill">SAST / DAST / SCA gates</span><span class="pill">SBOM &amp; supply-chain security</span><span class="pill">Policy as code</span><span class="pill">Platform engineering (golden paths)</span><span class="pill">Secure SDLC</span><span class="pill">Ansible Automation Platform</span><span class="pill">Docker</span><span class="pill">Kubernetes</span><span class="pill">Linux</span><span class="pill">HashiCorp Vault</span></dd>
 <dt>AI-assisted engineering</dt><dd><span class="pill">Claude Code</span><span class="pill">OpenAI Codex</span><span class="pill">Devin</span><span class="pill">Governed agentic workflows</span><span class="pill">AI-assisted code review</span></dd>
 <dt>Governance &amp; compliance</dt><dd><span class="pill">DORA (EU Digital Operational Resilience Act)</span><span class="pill">Deployment governance</span></dd>
 <dt>Ways of working</dt><dd><span class="pill">Technical leadership &amp; mentoring</span><span class="pill">DevSecOps coaching</span><span class="pill">Standards &amp; enterprise-pattern adoption</span></dd>
 <dt>Cloud &amp; Data</dt><dd><span class="pill">AWS (EC2)</span><span class="pill">Google Cloud Platform</span><span class="pill">Oracle</span><span class="pill">PostgreSQL</span><span class="pill">SQL tuning &amp; partitioning</span></dd>
 <dt>Backend</dt><dd><span class="pill">Java 8–17</span><span class="pill">Spring Boot / Security / Web</span><span class="pill">Vert.x</span><span class="pill">REST</span><span class="pill">GraphQL</span></dd>
 <dt>Architecture</dt><dd><span class="pill">Microservices</span><span class="pill">Event-driven / CQRS</span><span class="pill">Apache Kafka</span><span class="pill">Hazelcast clustering</span></dd>
-</dl>
-<h2>Experience</h2>
-<h3>DevSecOps Customer Success Architect <small>(Consultant)</small> · SWIFT, Brussels, Belgium<span class="dates">Jan 2025 – Present</span></h3>
+</dl></section>
+<section class="blk reveal" id="experience"><div class="sh"><div><span class="label">Experience</span><h2>Where the numbers come from</h2></div></div><div class="tl">
+<article class="job"><div class="card"><div class="jh"><div class="jt">DevSecOps Customer Success Architect <small>(Consultant)</small> · <span class="jc">SWIFT</span> <small>Brussels, Belgium</small></div><span class="jd">Jan 2025 – Present</span></div>
 <p class="ctx">Global cooperative behind secure financial messaging; DevOps Engineering Services organisation serving a regulated, multi-squad platform.</p>
-<ul class="b"><li>Onboarded 40+ Java applications onto the centralised Release Orchestration platform (CloudBees CD/RO) with zero-touch deployment from commit to production; my team delivered 80%+ of the company-level KPI to move 100% of applications to zero-touch.</li><li>Designed the CI/CD blueprints (golden paths) every onboarded squad now ships through and coaches 5+ squads as DevSecOps solutions architect: enterprise patterns, delivery standards and the technical reference for secure delivery.</li><li>Built 20+ orchestrated-patching pipelines covering 300+ VMs, cutting patching time by 40% and making patch cycles repeatable enough that teams trust them; core of the company KPI for 100% orchestrated VM patching.</li><li>Integrated SAST/DAST scanning into the standard pipelines of several critical applications, turning security findings into enforced gates in the secure SDLC.</li><li>Drives SBOM generation and policy-as-code guardrails in the standard pipelines, giving supply-chain visibility and enforceable controls aligned with DORA&#x27;s ICT-risk and resilience requirements.</li><li>Works agent-first with coding agents (Claude Code, OpenAI Codex, Devin) under a governance discipline: scoped tasks, human review and the same security gates as human-written code.</li></ul>
-<h3>Senior Software Engineer <small>(Consultant)</small> · Swissquote, Geneva, Switzerland (hybrid)<span class="dates">Jul 2024 – Dec 2024</span></h3>
+<ul><li>Onboarded <b>40+</b> Java applications onto the centralised Release Orchestration platform (CloudBees CD/RO) with <b>zero-touch</b> deployment from commit to production; my team delivered <b>80%</b>+ of the company-level KPI to move <b>100%</b> of applications to <b>zero-touch</b>.</li><li>Designed the CI/CD blueprints (golden paths) every onboarded squad now ships through and coaches <b>5+</b> squads as DevSecOps solutions architect: enterprise patterns, delivery standards and the technical reference for secure delivery.</li><li>Built <b>20+</b> orchestrated-patching pipelines covering <b>300+</b> VMs, cutting patching time by <b>40%</b> and making patch cycles repeatable enough that teams trust them; core of the company KPI for <b>100%</b> orchestrated VM patching.</li><li>Integrated SAST/DAST scanning into the standard pipelines of several critical applications, turning security findings into enforced gates in the secure SDLC.</li><li>Drives SBOM generation and policy-as-code guardrails in the standard pipelines, giving supply-chain visibility and enforceable controls aligned with DORA&#x27;s ICT-risk and resilience requirements.</li><li>Works agent-first with coding agents (Claude Code, OpenAI Codex, Devin) under a governance discipline: scoped tasks, human review and the same security gates as human-written code.</li></ul>
+</div></article>
+<article class="job"><div class="card"><div class="jh"><div class="jt">Senior Software Engineer <small>(Consultant)</small> · <span class="jc">Swissquote</span> <small>Geneva, Switzerland (hybrid)</small></div><span class="jd">Jul 2024 – Dec 2024</span></div>
 <p class="ctx">Swiss online bank; regulated, high-availability financial environment.</p>
-<ul class="b"><li>Led the migration of a 2.5 billion-record financial database to Oracle, preserving data integrity and business continuity throughout.</li></ul>
-<h3>Senior Software Engineer <small>(Consultant)</small> · SWIFT, Brussels, Belgium<span class="dates">Jul 2019 – Jun 2024</span></h3>
+<ul><li>Led the migration of a <b>2.5</b> <b>billion</b>-record financial database to Oracle, preserving data integrity and business continuity throughout.</li></ul>
+</div></article>
+<article class="job"><div class="card"><div class="jh"><div class="jt">Senior Software Engineer <small>(Consultant)</small> · <span class="jc">SWIFT</span> <small>Brussels, Belgium</small></div><span class="jd">Jul 2019 – Jun 2024</span></div>
 <p class="ctx">Three squads over five years: Identity Management, Community Gateway and Knowledge Channels.</p>
-<ul class="b"><li>Spearheaded the migration of the Identity Management monolith to a microservices architecture, keeping the service live for users throughout the transition.</li><li>Owned the container strategy for two squads as Docker champion, building and hardening the images and keeping them aligned with security and tooling standards.</li></ul>
-<h3>Tech Lead &amp; Senior Software Engineer · Eleven Sports (MyCujoo), Lisbon, Portugal<span class="dates">Jun 2018 – Jun 2019</span></h3>
+<ul><li>Spearheaded the migration of the Identity Management monolith to a microservices architecture, keeping the service live for users throughout the transition.</li><li>Owned the container strategy for two squads as Docker champion, building and hardening the images and keeping them aligned with security and tooling standards.</li></ul>
+</div></article>
+<article class="job"><div class="card"><div class="jh"><div class="jt">Tech Lead &amp; Senior Software Engineer · <span class="jc">Eleven Sports (MyCujoo)</span> <small>Lisbon, Portugal</small></div><span class="jd">Jun 2018 – Jun 2019</span></div>
 <p class="ctx">Sports media group (premium TV channels and OTT); first backend engineer on the player-experience platform, reporting to the CTO.</p>
-<ul class="b"><li>Designed from scratch a cloud-native, clustered CQRS/event-driven microservices backend on Vert.x, built for high throughput and low latency.</li><li>Ran the platform on Kubernetes and GCP, supporting hundreds of thousands of concurrent interactions, with Prometheus/Grafana monitoring for availability.</li><li>Designed the CI/CD pipelines (CircleCI to GCP) the team shipped through.</li></ul>
-<h2>Open frameworks &amp; writing</h2>
-<p class="ctx">Frameworks published under Techstream, my consultancy — <a href="https://github.com/sotille" rel="me noopener">github.com/sotille</a> · articles — <a href="https://medium.com/@fsotille" rel="me noopener">medium.com/@fsotille</a>.</p>
-<ul class="b">
-<li><a href="https://github.com/sotille/release-orchestration-framework" rel="me noopener">Release Orchestration Framework</a> — deployment governance and controlled delivery across environments</li>
-<li><a href="https://github.com/sotille/software-supply-chain-security-framework" rel="me noopener">Software Supply Chain Security Framework</a> — dependencies, build systems, artifacts and deployment environments</li>
-<li><a href="https://github.com/sotille/ai-devsecops-framework" rel="me noopener">AI DevSecOps Framework</a> — securing AI-assisted and agentic software delivery</li>
-<li><a href="https://medium.com/@fsotille" rel="me noopener">Why Your AI Agent Is the Next SolarWinds: Supply Chain Security for the Agentic Era</a> · May 2026</li>
-<li><a href="https://medium.com/@fsotille" rel="me noopener">The Four Layers of Software Supply Chain Integrity</a> · May 2026</li>
-<li><a href="https://medium.com/@fsotille" rel="me noopener">The 4-Phase DevSecOps Transformation</a> · Apr 2026</li>
-</ul>
-<h2>Earlier experience</h2><ul class="b">
-<li><b>Senior Java Developer</b> · WPLEX (public transport), Brazil, 2015–2018</li>
-<li><b>Java Developer</b> · Metaway (public sector), Brazil, 2015–2015</li>
-<li><b>Java Developer</b> · Città (public management), Brazil, 2010–2014</li>
-<li><b>Junior Java Developer</b> · Allcance (industry), Brazil, 2008–2009</li>
-</ul>
-<h2>Education &amp; certifications</h2><ul class="b">
-<li><b>Postgraduate, Cloud Security &amp; Smart Contracts</b>, Universidade de Passo Fundo (UPF), Brazil, 2023</li>
-<li><b>Postgraduate, AI &amp; Data Science</b>, Universidade de Passo Fundo (UPF), Brazil, 2023</li>
-<li><b>B.Sc. Computer Science</b>, Universidade de Passo Fundo (UPF), Brazil, 2016</li>
-<li><b>Certified Kubernetes Security Specialist (CKS)</b> · CNCF / Linux Foundation (in progress), 2026</li>
-<li><b>Certified Kubernetes Administrator (CKA)</b> · CNCF / Linux Foundation (in progress), 2026</li>
-</ul>
-<h2>Languages</h2><p><span class="pill"><b>Portuguese</b> · Native</span><span class="pill"><b>English</b> · Fluent</span><span class="pill"><b>French</b> · B1 · intermediate</span></p>
-<h2>What colleagues say</h2>
-<blockquote>“His ability to solve complex technical challenges and deliver scalable solutions in such a demanding environment reflects a deep understanding of modern software engineering practices.”<footer>— Matteo Castellarin, Lead Dev/Systems Engineer, SWIFT DevOps Engineering Services, 2026</footer></blockquote>
-<blockquote>“He does not merely automate tasks; he engineers repeatable, resilient delivery systems that improve deployment reliability, enforce secure coding standards and reduce operational risk.”<footer>— Anastasios Lagos, DevSecOps Engineer, Mindwave (SWIFT programme), 2026</footer></blockquote>
-<footer class="site">Generated from <a href="https://github.com/sotille/CV">sotille/CV</a> (CV-as-code: one YAML source, Typst PDFs with quality gates). 2026-09-30.</footer>
-</main></body></html>
+<ul><li>Designed from scratch a cloud-native, clustered CQRS/event-driven microservices backend on Vert.x, built for high throughput and low latency.</li><li>Ran the platform on Kubernetes and GCP, supporting <b>hundreds of thousands</b> of concurrent interactions, with Prometheus/Grafana monitoring for availability.</li><li>Designed the CI/CD pipelines (CircleCI to GCP) the team shipped through.</li></ul>
+</div></article>
+</div></section>
+<section class="blk reveal" id="frameworks"><div class="sh"><div><span class="label">Open source</span><h2>Open frameworks &amp; writing</h2><p class="sub">Public frameworks and reference architectures under Techstream, my consultancy.</p></div><a class="view-all" href="https://github.com/sotille" target="_blank" rel="noopener">GitHub <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div><div class="grid3">
+<a class="card ts" href="https://github.com/sotille/release-orchestration-framework" target="_blank" rel="noopener"><div class="top"><span class="acro">ROF</span><span class="ext"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open</span></div><div class="name">Release Orchestration Framework</div><p class="note">deployment governance and controlled delivery across environments</p></a>
+<a class="card ts" href="https://github.com/sotille/software-supply-chain-security-framework" target="_blank" rel="noopener"><div class="top"><span class="acro">SSCSF</span><span class="ext"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open</span></div><div class="name">Software Supply Chain Security Framework</div><p class="note">dependencies, build systems, artifacts and deployment environments</p></a>
+<a class="card ts" href="https://github.com/sotille/ai-devsecops-framework" target="_blank" rel="noopener"><div class="top"><span class="acro">ADF</span><span class="ext"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open</span></div><div class="name">AI DevSecOps Framework</div><p class="note">securing AI-assisted and agentic software delivery</p></a>
+<a class="card mc" href="https://medium.com/@fsotille" target="_blank" rel="noopener"><div class="top"><span class="acro">MAY 2026</span><span class="ext"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Medium</span></div><div class="name">Why Your AI Agent Is the Next SolarWinds: Supply Chain Security for the Agentic Era</div><p class="note">the SBOM architecture problem, applied to coding agents</p></a>
+<a class="card mc" href="https://medium.com/@fsotille" target="_blank" rel="noopener"><div class="top"><span class="acro">MAY 2026</span><span class="ext"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Medium</span></div><div class="name">The Four Layers of Software Supply Chain Integrity</div><p class="note">why most SBOMs are theatre, and what actually works</p></a>
+<a class="card mc" href="https://medium.com/@fsotille" target="_blank" rel="noopener"><div class="top"><span class="acro">APR 2026</span><span class="ext"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Medium</span></div><div class="name">The 4-Phase DevSecOps Transformation</div><p class="note">a 90-day journey from policy to practice</p></a>
+</div></section>
+<section class="blk reveal early" id="earlier"><div class="sh"><div><span class="label">Earlier</span><h2>Where it started</h2></div></div><div class="grid2">
+<div class="card plain"><div><div class="name">Senior Java Developer · <span class="jc">WPLEX</span></div><div class="meta">Brazil · public transport</div></div><span class="jd">2015–2018</span></div>
+<div class="card plain"><div><div class="name">Java Developer · <span class="jc">Metaway</span></div><div class="meta">Brazil · public sector</div></div><span class="jd">2015–2015</span></div>
+<div class="card plain"><div><div class="name">Java Developer · <span class="jc">Città</span></div><div class="meta">Brazil · public management</div></div><span class="jd">2010–2014</span></div>
+<div class="card plain"><div><div class="name">Junior Java Developer · <span class="jc">Allcance</span></div><div class="meta">Brazil · industry</div></div><span class="jd">2008–2009</span></div>
+</div></section>
+<section class="blk reveal early" id="education"><div class="sh"><div><span class="label">Education</span><h2>Degrees &amp; certifications</h2></div></div><div class="grid2">
+<div class="card plain"><div><div class="name">Postgraduate, Cloud Security &amp; Smart Contracts</div><div class="meta">Universidade de Passo Fundo (UPF) · Brazil</div></div><span class="jd">2023</span></div>
+<div class="card plain"><div><div class="name">Postgraduate, AI &amp; Data Science</div><div class="meta">Universidade de Passo Fundo (UPF) · Brazil</div></div><span class="jd">2023</span></div>
+<div class="card plain"><div><div class="name">B.Sc. Computer Science</div><div class="meta">Universidade de Passo Fundo (UPF) · Brazil</div></div><span class="jd">2016</span></div>
+<div class="card plain"><div><div class="name">Certified Kubernetes Security Specialist (CKS)</div><div class="meta">CNCF / Linux Foundation · in progress</div></div><span class="jd">2026</span></div>
+<div class="card plain"><div><div class="name">Certified Kubernetes Administrator (CKA)</div><div class="meta">CNCF / Linux Foundation · in progress</div></div><span class="jd">2026</span></div>
+</div></section>
+<section class="blk reveal" id="languages"><div class="sh"><div><span class="label">Languages</span><h2>Working languages</h2></div></div><div class="langs">
+<div class="lang">Portuguese<span>Native</span></div>
+<div class="lang">English<span>Fluent</span></div>
+<div class="lang">French<span>B1 · intermediate</span></div>
+</div></section>
+<section class="blk reveal" id="recommendations"><div class="sh"><div><span class="label">Recommendations</span><h2>What colleagues say</h2></div></div><div class="grid2">
+<blockquote class="card quote"><p>His ability to solve complex technical challenges and deliver scalable solutions in such a demanding environment reflects a deep understanding of modern software engineering practices.</p><footer>— Matteo Castellarin, Lead Dev/Systems Engineer, SWIFT DevOps Engineering Services, 2026</footer></blockquote>
+<blockquote class="card quote"><p>He does not merely automate tasks; he engineers repeatable, resilient delivery systems that improve deployment reliability, enforce secure coding standards and reduce operational risk.</p><footer>— Anastasios Lagos, DevSecOps Engineer, Mindwave (SWIFT programme), 2026</footer></blockquote>
+</div></section>
+<section class="contact"><div class="in"><div><span class="label">Get in touch</span><h2>Let's make delivery boring again.</h2><p class="sub">Available for DevSecOps architecture, release-orchestration and secure-delivery engagements. Based in Brussels, working across the EU.</p></div><div class="actions"><a class="btn btn-primary" href="mailto:fsotille@gmail.com">Send email</a><a href="https://linkedin.com/in/Felipe-Sotille" class="btn" target="_blank" rel="me noopener">LinkedIn</a><a href="https://github.com/sotille" class="btn" target="_blank" rel="me noopener">GitHub</a></div></div></section>
+<footer class="site"><div class="in"><span>© Felipe Sotille · generated from <a href="https://github.com/sotille/CV">sotille/CV</a> · 2026-09-30</span><span>one YAML source · Typst PDF/A · quality gates in CI</span></div></footer>
+</div><script>
+const TK='fs-theme';
+function applyTheme(t){const r=t==='auto'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;
+document.documentElement.setAttribute('data-theme',r);
+for(const b of document.querySelectorAll('[data-t]'))b.classList.toggle('active',b.dataset.t===t);}
+function setTheme(t){localStorage.setItem(TK,t);applyTheme(t);}
+applyTheme(localStorage.getItem(TK)||'auto');
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if((localStorage.getItem(TK)||'auto')==='auto')applyTheme('auto');});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script></body></html>

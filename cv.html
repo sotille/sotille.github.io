@@ -49,7 +49,7 @@ background:rgba(5,7,15,.7);border-bottom:1px solid var(--border)}
 .nav .brand{min-width:0;white-space:nowrap}
 @media(max-width:520px){.brand .nm{display:none}}
 .brand{display:flex;align-items:center;gap:11px;font:700 14px/1 Inter,system-ui}
-.logo{width:32px;height:32px;border-radius:8px;box-shadow:0 0 0 1px rgba(56,189,248,.2),0 4px 16px rgba(0,0,0,.5)}
+.logo{width:32px;height:32px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px rgba(56,189,248,.2),0 4px 16px rgba(0,0,0,.5)}
 .brand .back{font:500 12px/1 "JetBrains Mono",monospace;color:var(--muted);margin-left:6px}
 .nav-right{display:flex;align-items:center;gap:8px}
 .tg{display:inline-flex;border:1px solid var(--border);border-radius:9px;overflow:hidden}
@@ -244,7 +244,7 @@ footer.site a{color:var(--muted)}
 </head><body>
 <div class="ambient" aria-hidden="true"></div><div class="page">
 <header><nav class="nav">
-<a class="brand" href="/"><img src="/favicon.svg" class="logo" alt="" width="32" height="32"><span class="nm">Felipe Sotille</span><span class="back">← portfolio</span></a>
+<a class="brand" href="/"><img src="/assets/felipe-avatar.jpg" class="logo" alt="" width="32" height="32"><span class="nm">Felipe Sotille</span><span class="back">← portfolio</span></a>
 <nav class="nav-links" aria-label="Sections"><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#frameworks">Frameworks</a><a href="#contact">Contact</a></nav>
 <div class="nav-right"><div class="tg" role="group" aria-label="Theme"><button data-t="dark" title="Dark" onclick="setTheme('dark')">🌙</button><button data-t="light" title="Light" onclick="setTheme('light')">☀️</button><button data-t="auto" title="Auto" onclick="setTheme('auto')">🖥️</button></div><a class="btn btn-primary" href="/cv/Felipe-Sotille-DevSecOps-Architect.pdf"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> PDF</a></div>
 </nav></header>

@@ -1,6 +1,6 @@
 ---
 name: Felipe Sotille
-title: DevSecOps Architect & Coach
+title: DevSecOps Architect & Engineer
 location: Brussels, Belgium
 email: fsotille@gmail.com
 linkedin: https://linkedin.com/in/Felipe-Sotille
@@ -9,7 +9,7 @@ github: https://github.com/sotille
 
 # Felipe Sotille
 
-**DevSecOps Architect & Coach**
+**DevSecOps Architect & Engineer**
 
 Italian (EU) citizen · Brussels
 
@@ -17,25 +17,25 @@ Brussels, Belgium · [fsotille@gmail.com](mailto:fsotille@gmail.com) · +32 456 
 
 ## Profile
 
-DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). I design the release-orchestration and security standards that squads ship through, then coach 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. I govern coding agents (Claude Code, Codex, Devin) with the same gates as human-written code, and a Java/Linux background means I speak the developers' language.
+DevSecOps architect and hands-on engineer for regulated, high-availability platforms (SWIFT, Swissquote). I design the release-orchestration and security standards that squads ship through, then coach 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. I still ship code: Java 21, Spring, Vert.x and Kafka on regulated platforms, and I govern coding agents (Claude Code, Codex, Devin) with the same gates as human-written code.
 
 > A technical reference and mentor for multiple engineering teams, frequently sought out for guidance on secure software delivery and release orchestration.
 > — Sudhir Indurti, Lead DevOps Engineer, SWIFT, 2026
 
 - **17+** years in software engineering
-- **40+** Java apps on zero-touch release orchestration
-- **300+** VMs on orchestrated patching, 40% faster
 - **2.5bn** financial records migrated to Oracle
+- **40+** Java apps on zero-touch release orchestration
+- **100k+** concurrent users on a Kafka/Vert.x platform
 
 ## Core skills
 
 - **DevSecOps & CI/CD:** CloudBees CI (expert), CloudBees CD/RO (expert), Jenkins, SAST / DAST / SCA gates, SBOM & supply-chain security, Policy as code, Platform engineering (golden paths), Secure SDLC, Ansible Automation Platform, Docker, Kubernetes, Linux, HashiCorp Vault
-- **AI-assisted engineering:** Claude Code, OpenAI Codex, Devin, Governed agentic workflows, AI-assisted code review
-- **Governance & compliance:** DORA (EU Digital Operational Resilience Act), Deployment governance
-- **Ways of working:** Technical leadership & mentoring, DevSecOps coaching, Standards & enterprise-pattern adoption
-- **Cloud & Data:** AWS (EC2), Google Cloud Platform, Oracle, PostgreSQL, SQL tuning & partitioning
 - **Backend:** Java 8–21, Spring Boot / Security / Web, Vert.x, REST, GraphQL
 - **Architecture:** Microservices, Event-driven / CQRS, Apache Kafka, Hazelcast clustering
+- **AI-assisted engineering:** Claude Code, OpenAI Codex, Devin, Governed agentic workflows, AI-assisted code review
+- **Cloud & Data:** AWS (EC2), Google Cloud Platform, Oracle, PostgreSQL, SQL tuning & partitioning
+- **Ways of working:** Technical leadership & mentoring, DevSecOps coaching, Standards & enterprise-pattern adoption
+- **Governance & compliance:** DORA (EU Digital Operational Resilience Act), Deployment governance
 
 ## Experience
 
@@ -48,6 +48,7 @@ DevSecOps architect and coach for regulated, high-availability platforms (SWIFT,
 - Built 20+ orchestrated-patching pipelines covering 300+ VMs, cutting patching time by 40% and making patch cycles repeatable enough that teams trust them; core of the company KPI for 100% orchestrated VM patching.
 - Integrated SAST/DAST scanning into the standard pipelines of several critical applications, turning security findings into enforced gates in the secure SDLC.
 - Added SBOM generation and policy-as-code guardrails to the standard pipelines, giving supply-chain visibility and enforceable controls aligned with DORA's ICT-risk and resilience requirements.
+- Built the automation and internal tooling in Java, Node.js and shell that improved developer experience, pipeline reliability and day-to-day operational efficiency.
 - Set the governance discipline for coding-agent work, scoped tasks, human review and the same security gates as human-written code, and shipped agent-first with Claude Code, OpenAI Codex and Devin.
 
 ### Senior Software Engineer (Consultant) · Swissquote, Geneva, Switzerland (hybrid) — Jul 2024–Dec 2024

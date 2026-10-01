@@ -34,7 +34,7 @@ DevSecOps architect and coach for regulated, high-availability platforms (SWIFT,
 - **Governance & compliance:** DORA (EU Digital Operational Resilience Act), Deployment governance
 - **Ways of working:** Technical leadership & mentoring, DevSecOps coaching, Standards & enterprise-pattern adoption
 - **Cloud & Data:** AWS (EC2), Google Cloud Platform, Oracle, PostgreSQL, SQL tuning & partitioning
-- **Backend:** Java 8–17, Spring Boot / Security / Web, Vert.x, REST, GraphQL
+- **Backend:** Java 8–21, Spring Boot / Security / Web, Vert.x, REST, GraphQL
 - **Architecture:** Microservices, Event-driven / CQRS, Apache Kafka, Hazelcast clustering
 
 ## Experience

@@ -26,7 +26,7 @@ Senior Backend Engineer building and modernising large-scale, high-availability 
 
 ## Core skills
 
-- **Backend:** Java 8–17, Spring Boot / Security / Web, Vert.x, REST, GraphQL, JPA / Hibernate, JUnit 5, TDD / BDD
+- **Backend:** Java 8–21, Spring Boot / Security / Web, Vert.x, REST, GraphQL, JPA / Hibernate, JUnit 5, TDD / BDD
 - **Architecture:** Microservices, Event-driven / CQRS, Apache Kafka, Hazelcast clustering, API gateways (Kong, Ambassador), SOLID & clean code, Secure coding
 - **Cloud & Data:** AWS (EC2), Google Cloud Platform, Oracle, PostgreSQL, SQL tuning & partitioning, Liquibase, Prometheus / Grafana
 - **DevSecOps & CI/CD:** CloudBees CI (expert), CloudBees CD/RO (expert), Jenkins, CircleCI, SAST / DAST / SCA gates, SBOM & supply-chain security, Policy as code, Platform engineering (golden paths)
@@ -55,7 +55,7 @@ Stack: CloudBees CI · CloudBees CD/RO · SAST / DAST · Ansible Automation Plat
 - Improved database performance through query refactoring, denormalisation and table partitioning.
 - Produced migration reports and technical documentation that DBA and engineering squads used for decisions and risk mitigation.
 
-Stack: Java · Spring · Oracle · SQL · Linux
+Stack: Java 21 · Spring · Oracle · SQL · Linux
 
 ### Senior Software Engineer (Consultant) · SWIFT, Brussels, Belgium — Jul 2019–Jun 2024
 

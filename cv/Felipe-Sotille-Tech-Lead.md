@@ -30,7 +30,7 @@ Hands-on Tech Lead across finance, payments and media. Led the backend team at E
 - **AI-assisted engineering:** Claude Code, OpenAI Codex, Devin, Governed agentic workflows, AI-assisted code review
 - **DevSecOps & CI/CD:** CloudBees CI (expert), CloudBees CD/RO (expert), Jenkins, CircleCI, SAST / DAST / SCA gates, SBOM & supply-chain security, Policy as code, Platform engineering (golden paths)
 - **Governance & compliance:** DORA (EU Digital Operational Resilience Act), Deployment governance
-- **Backend:** Java 8–17, Spring Boot / Security / Web, Vert.x, REST, GraphQL, JPA / Hibernate, JUnit 5
+- **Backend:** Java 8–21, Spring Boot / Security / Web, Vert.x, REST, GraphQL, JPA / Hibernate, JUnit 5
 - **Architecture:** Microservices, Event-driven / CQRS, Apache Kafka, Hazelcast clustering, API gateways (Kong, Ambassador)
 - **Cloud & Data:** AWS (EC2), Google Cloud Platform, Oracle, PostgreSQL, SQL tuning & partitioning
 

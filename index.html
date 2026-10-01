@@ -117,10 +117,10 @@
       display:flex;align-items:center;gap:11px;
       font:700 14px/1 Inter,system-ui;letter-spacing:.1px;white-space:nowrap;min-width:0;
     }
-    .logo{
+    .logo{object-fit:cover;
       width:32px;height:32px;flex-shrink:0;
       box-shadow:0 0 0 1px rgba(56,189,248,.2),0 4px 16px rgba(0,0,0,.5);
-      border-radius:8px;
+      border-radius:50%;
     }
     .nav-links{display:flex;gap:4px;margin-left:auto;margin-right:8px}
     .nav-links a{font:600 13px/1 Inter,system-ui;color:var(--muted);padding:7px 10px;border-radius:8px;transition:color .15s,background .15s}
@@ -314,6 +314,7 @@
     }
     .trusted-logo b{font-weight:600}
     .trusted-logo img{width:28px;height:28px;border-radius:7px;flex-shrink:0;filter:grayscale(.55);transition:filter .15s}
+    .trusted-logo img.wide{width:auto;max-width:72px}
     .trusted-logo:hover{opacity:1;color:var(--text-2)}
     .trusted-logo:hover img{filter:none}
     .trusted-logo span{
@@ -607,7 +608,7 @@
     <header>
       <nav class="nav">
         <div class="brand">
-          <img src="favicon.svg" class="logo" alt="" aria-hidden="true" width="32" height="32">
+          <img src="/assets/felipe-avatar.jpg" class="logo" alt="" aria-hidden="true" width="32" height="32">
           <span class="nm">Felipe Sotille</span>
         </div>
         <nav class="nav-links" aria-label="Sections">
@@ -721,7 +722,7 @@
           <span class="trusted-logo"><img src="/assets/logos/swift.png" alt="" width="28" height="28"><b>SWIFT<span>Brussels · 2019–Present</span></b></span>
           <span class="trusted-logo"><img src="/assets/logos/swissquote.png" alt="" width="28" height="28"><b>Swissquote<span>Geneva · 2024</span></b></span>
           <span class="trusted-logo"><img src="/assets/logos/eleven-sports.png" alt="" width="28" height="28"><b>Eleven Sports<span>Lisbon · 2018–2019</span></b></span>
-          <span class="trusted-logo"><b>WPLEX<span>Brazil · 2015–2018</span></b></span>
+          <span class="trusted-logo"><img src="/assets/logos/wplex.png" class="wide" alt="" width="99" height="28"><b>WPLEX<span>Brazil · 2015–2018</span></b></span>
         </div>
       </div>
     </div>

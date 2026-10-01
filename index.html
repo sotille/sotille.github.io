@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Felipe Sotille">
   <meta name="twitter:description" content="DevSecOps Architect & Coach · Release orchestration · Secure delivery · 17+ years">
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "ProfilePage", "url": "https://dev.felipe.sotille.com/", "name": "Felipe Sotille — DevSecOps Architect & Coach", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Felipe Sotille", "url": "https://dev.felipe.sotille.com/"}, "mainEntity": {"@type": "Person", "name": "Felipe Sotille", "jobTitle": "DevSecOps Architect & Coach", "url": "https://dev.felipe.sotille.com/", "email": "mailto:fsotille@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Brussels", "addressCountry": "BE"}, "nationality": "Italian", "sameAs": ["https://github.com/sotille", "https://www.linkedin.com/in/Felipe-Sotille/", "https://medium.com/@fsotille", "https://techstream.app"], "subjectOf": {"@type": "DigitalDocument", "name": "CV (PDF/A-2b)", "url": "https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.pdf", "encodingFormat": "application/pdf"}}}
+  {"@context": "https://schema.org", "@type": "ProfilePage", "url": "https://dev.felipe.sotille.com/", "name": "Felipe Sotille — DevSecOps Architect & Coach", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Felipe Sotille", "url": "https://dev.felipe.sotille.com/"}, "mainEntity": {"@type": "Person", "name": "Felipe Sotille", "image": "https://dev.felipe.sotille.com/assets/felipe-avatar.jpg", "jobTitle": "DevSecOps Architect & Coach", "url": "https://dev.felipe.sotille.com/", "email": "mailto:fsotille@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Brussels", "addressCountry": "BE"}, "nationality": "Italian", "sameAs": ["https://github.com/sotille", "https://www.linkedin.com/in/Felipe-Sotille/", "https://medium.com/@fsotille", "https://techstream.app"], "subjectOf": {"@type": "DigitalDocument", "name": "CV (PDF/A-2b)", "url": "https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.pdf", "encodingFormat": "application/pdf"}}}
   </script>
   <style>
     /* ── Tokens ──────────────────────────────────── */
@@ -149,6 +149,13 @@
       grid-template-columns:1fr 420px;
       gap:48px;align-items:center;
     }
+    .hero-avatar{
+      display:block;width:104px;height:104px;border-radius:50%;object-fit:cover;
+      border:3px solid var(--surface);
+      box-shadow:0 0 0 1px var(--border-1),0 12px 32px rgba(0,0,0,.35);
+      margin-bottom:20px;animation:up .5s ease both;
+    }
+    [data-theme="light"] .hero-avatar{box-shadow:0 0 0 1px var(--border-1),0 12px 32px rgba(15,23,42,.14)}
     .hero-eyebrow{
       display:inline-flex;align-items:center;gap:8px;
       padding:5px 13px 5px 10px;border-radius:999px;
@@ -303,8 +310,12 @@
       font:600 13px/1 Inter,system-ui;
       color:var(--muted);letter-spacing:.3px;
       opacity:.7;transition:opacity .15s;
+      display:inline-flex;align-items:center;gap:10px;
     }
+    .trusted-logo b{font-weight:600}
+    .trusted-logo img{width:28px;height:28px;border-radius:7px;flex-shrink:0;filter:grayscale(.55);transition:filter .15s}
     .trusted-logo:hover{opacity:1;color:var(--text-2)}
+    .trusted-logo:hover img{filter:none}
     .trusted-logo span{
       font:500 11px/1 "JetBrains Mono",monospace;
       color:var(--muted-1);font-size:10px;
@@ -622,6 +633,7 @@
     <!-- HERO -->
     <section class="hero" aria-label="Introduction">
       <div class="hero-content">
+        <img class="hero-avatar" src="/assets/felipe-avatar.jpg" width="104" height="104" alt="Felipe Sotille, speaking at a conference">
         <div class="hero-eyebrow">
           <span class="dot" aria-hidden="true"></span>
           <span data-i18n="hero_status">Open to new engagements</span>
@@ -706,10 +718,10 @@
         <span class="trusted-label" data-i18n="trusted_label">Worked at</span>
         <div class="trusted-divider" aria-hidden="true"></div>
         <div class="trusted-logos">
-          <span class="trusted-logo">SWIFT<span>Brussels · 2019–Present</span></span>
-          <span class="trusted-logo">Swissquote<span>Geneva · 2024</span></span>
-          <span class="trusted-logo">Eleven Sports<span>Lisbon · 2018–2019</span></span>
-          <span class="trusted-logo">WPLEX<span>Brazil · 2015–2018</span></span>
+          <span class="trusted-logo"><img src="/assets/logos/swift.png" alt="" width="28" height="28"><b>SWIFT<span>Brussels · 2019–Present</span></b></span>
+          <span class="trusted-logo"><img src="/assets/logos/swissquote.png" alt="" width="28" height="28"><b>Swissquote<span>Geneva · 2024</span></b></span>
+          <span class="trusted-logo"><img src="/assets/logos/eleven-sports.png" alt="" width="28" height="28"><b>Eleven Sports<span>Lisbon · 2018–2019</span></b></span>
+          <span class="trusted-logo"><b>WPLEX<span>Brazil · 2015–2018</span></b></span>
         </div>
       </div>
     </div>

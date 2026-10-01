@@ -61,6 +61,8 @@ background:rgba(5,7,15,.7);border-bottom:1px solid var(--border)}
 box-shadow:0 0 0 1px rgba(56,189,248,.3),0 4px 20px rgba(56,189,248,.2);transition:background-position .4s,transform .15s}
 .btn-primary:hover{background-position:100% 0;transform:translateY(-2px)}
 .hero{padding:72px 28px 40px;max-width:var(--w);margin:0 auto;display:grid;grid-template-columns:1fr 440px;gap:48px;align-items:center}
+.avatar{display:block;width:104px;height:104px;border-radius:50%;object-fit:cover;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--border-1),0 12px 32px rgba(0,0,0,.35);margin-bottom:20px;animation:up .5s ease both}
+[data-theme="light"] .avatar{box-shadow:0 0 0 1px var(--border-1),0 12px 32px rgba(15,23,42,.14)}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 13px 5px 10px;border-radius:999px;border:1px solid rgba(56,189,248,.25);background:rgba(56,189,248,.06);font:600 12px/1.4 Inter,system-ui;color:var(--cv);margin-bottom:22px;animation:up .5s ease both}
 .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--cv);animation:pulse 2s ease infinite}
 .hero h1{font-size:clamp(40px,5.5vw,76px);font-weight:900;line-height:1;letter-spacing:-2.5px;margin-bottom:12px;animation:up .5s .05s ease both;
@@ -174,7 +176,7 @@ footer.site a{color:var(--muted)}
     "jobTitle": "DevSecOps Architect & Coach",
     "description": "DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). I design the release-orchestration and security standards that squads ship through, then coach 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. I govern coding agents (Claude Code, Codex, Devin) with the same gates as human-written code, and a Java/Linux background means I speak the developers' language.",
     "url": "https://dev.felipe.sotille.com/cv",
-    "image": "https://dev.felipe.sotille.com/assets/og-image.png",
+    "image": "https://dev.felipe.sotille.com/assets/felipe-avatar.jpg",
     "email": "mailto:fsotille@gmail.com",
     "address": {
       "@type": "PostalAddress",
@@ -247,6 +249,7 @@ footer.site a{color:var(--muted)}
 <div class="nav-right"><div class="tg" role="group" aria-label="Theme"><button data-t="dark" title="Dark" onclick="setTheme('dark')">🌙</button><button data-t="light" title="Light" onclick="setTheme('light')">☀️</button><button data-t="auto" title="Auto" onclick="setTheme('auto')">🖥️</button></div><a class="btn btn-primary" href="/cv/Felipe-Sotille-DevSecOps-Architect.pdf"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> PDF</a></div>
 </nav></header>
 <section class="hero" aria-label="Introduction"><div>
+<img class="avatar" src="/assets/felipe-avatar.jpg" width="104" height="104" alt="Felipe Sotille, speaking at a conference">
 <div class="eyebrow"><span class="dot"></span>Open to new engagements</div>
 <h1>Felipe Sotille</h1>
 <p class="role">DevSecOps Architect &amp; Coach</p>

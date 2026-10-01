@@ -17,7 +17,7 @@ Brussels, Belgium · [fsotille@gmail.com](mailto:fsotille@gmail.com) · +32 456 
 
 ## Profile
 
-DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). I design the release-orchestration and security standards that squads ship through, then coach 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. I still ship code: Java 21, Spring, Vert.x and Kafka on regulated platforms, and I govern coding agents (Claude Code, Codex, Devin) with the same gates as human-written code.
+DevSecOps architect and hands-on engineer for regulated, high-availability platforms (SWIFT, Swissquote). I design the release-orchestration and security standards that squads ship through, then coach 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. I still ship code: Java 21, Spring, Vert.x and Kafka on regulated platforms, and I govern coding agents (Claude Code, Codex, Devin) with the same gates as human-written code.
 
 > A technical reference and mentor for multiple engineering teams, frequently sought out for guidance on secure software delivery and release orchestration.
 > — Sudhir Indurti, Lead DevOps Engineer, SWIFT, 2026

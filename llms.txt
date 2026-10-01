@@ -1,6 +1,6 @@
 # Felipe Sotille
 
-> DevSecOps Architect & Engineer. DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). I design the release-orchestration and security standards that squads ship through, then coach 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. I still ship code: Java 21, Spring, Vert.x and Kafka on regulated platforms, and I govern coding agents (Claude Code, Codex, Devin) with the same gates as human-written code.
+> DevSecOps Architect & Engineer. DevSecOps architect and hands-on engineer for regulated, high-availability platforms (SWIFT, Swissquote). I design the release-orchestration and security standards that squads ship through, then coach 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. I still ship code: Java 21, Spring, Vert.x and Kafka on regulated platforms, and I govern coding agents (Claude Code, Codex, Devin) with the same gates as human-written code.
 
 Consultant based in Brussels, Italian (EU) citizen. Current role: DevSecOps Architect (Customer Success Architect) at SWIFT (Jan 2025–Present).
 Headline numbers: 17+ years in software engineering; 2.5bn financial records migrated to Oracle; 40+ Java apps on zero-touch release orchestration; 100k+ concurrent users on a Kafka/Vert.x platform.

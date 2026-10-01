@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
+  <!-- theme before first paint: stored choice, else the OS setting -->
+  <script>(function(){try{var t=localStorage.getItem('fs-theme')||'auto';if(t==='auto')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Felipe Sotille — Senior DevSecOps Architect & Coach</title>
-  <meta name="description" content="Felipe Sotille — Senior DevSecOps Architect &amp; Coach, Brussels. 17+ years; 40+ SWIFT Java applications on zero-touch release orchestration, 300+ VMs on orchestrated patching, SBOM and policy-as-code guardrails.">
+  <title>Felipe Sotille — DevSecOps Architect & Coach</title>
+  <meta name="description" content="Felipe Sotille — DevSecOps Architect &amp; Coach, Brussels. 17+ years; 40+ SWIFT Java applications on zero-touch release orchestration, 300+ VMs on orchestrated patching, SBOM and policy-as-code guardrails.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <meta property="og:title" content="Felipe Sotille — Senior DevSecOps Architect & Coach">
+  <meta property="og:title" content="Felipe Sotille — DevSecOps Architect & Coach">
   <meta property="og:description" content="17+ years building critical systems at SWIFT, Swissquote and Eleven Sports. Release orchestration, secure delivery, coaching.">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://dev.felipe.sotille.com/">
@@ -19,9 +21,9 @@
   <meta property="og:image" content="https://dev.felipe.sotille.com/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Felipe Sotille">
-  <meta name="twitter:description" content="Senior DevSecOps Architect & Coach · Release orchestration · Secure delivery · 17+ years">
+  <meta name="twitter:description" content="DevSecOps Architect & Coach · Release orchestration · Secure delivery · 17+ years">
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "ProfilePage", "url": "https://dev.felipe.sotille.com/", "name": "Felipe Sotille — Senior DevSecOps Architect & Coach", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Felipe Sotille", "url": "https://dev.felipe.sotille.com/"}, "mainEntity": {"@type": "Person", "name": "Felipe Sotille", "jobTitle": "Senior DevSecOps Architect & Coach", "url": "https://dev.felipe.sotille.com/", "email": "mailto:fsotille@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Brussels", "addressCountry": "BE"}, "nationality": "Italian", "sameAs": ["https://github.com/sotille", "https://www.linkedin.com/in/Felipe-Sotille/", "https://medium.com/@fsotille", "https://techstream.app"], "subjectOf": {"@type": "DigitalDocument", "name": "CV (PDF/A-2b)", "url": "https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.pdf", "encodingFormat": "application/pdf"}}}
+  {"@context": "https://schema.org", "@type": "ProfilePage", "url": "https://dev.felipe.sotille.com/", "name": "Felipe Sotille — DevSecOps Architect & Coach", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Felipe Sotille", "url": "https://dev.felipe.sotille.com/"}, "mainEntity": {"@type": "Person", "name": "Felipe Sotille", "jobTitle": "DevSecOps Architect & Coach", "url": "https://dev.felipe.sotille.com/", "email": "mailto:fsotille@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Brussels", "addressCountry": "BE"}, "nationality": "Italian", "sameAs": ["https://github.com/sotille", "https://www.linkedin.com/in/Felipe-Sotille/", "https://medium.com/@fsotille", "https://techstream.app"], "subjectOf": {"@type": "DigitalDocument", "name": "CV (PDF/A-2b)", "url": "https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.pdf", "encodingFormat": "application/pdf"}}}
   </script>
   <style>
     /* ── Tokens ──────────────────────────────────── */
@@ -622,14 +624,14 @@
       <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="dot" aria-hidden="true"></span>
-          <span data-i18n="hero_status">Open to consulting &amp; OSS</span>
+          <span data-i18n="hero_status">Open to new engagements</span>
         </div>
         <h1>Felipe Sotille</h1>
         <p class="hero-role">
-          <strong data-i18n="hero_strong">Senior DevSecOps Architect &amp; Coach</strong>
+          <strong data-i18n="hero_strong">DevSecOps Architect &amp; Coach</strong>
         </p>
         <p class="hero-tagline" data-i18n="hero_tagline">
-          17+ years building critical systems at <em>SWIFT</em>, <em>Swissquote</em> and <em>Eleven Sports</em>. I design the release-orchestration and security standards squads ship through, then coach them until the standard holds. Agent-first, with governance.
+          17+ years building critical systems at <em>SWIFT</em>, <em>Swissquote</em> and <em>Eleven Sports</em>. I design the release-orchestration and security standards squads ship through, then coach them until the standard holds. Coding agents work under the same gates as human-written code.
         </p>
         <div class="hero-chips">
           <span class="chip">
@@ -642,7 +644,7 @@
           </span>
           <span class="chip">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span data-i18n="badge_avail">Freelance · Italian (EU) citizen</span>
+            <span data-i18n="badge_avail">Italian (EU) citizen · EU work rights</span>
           </span>
         </div>
         <div class="hero-actions">
@@ -677,7 +679,7 @@
           <div class="term-body">
 <span class="term-prompt">❯ </span><span class="term-cmd">whoami</span>
 <span class="term-out">Felipe Sotille</span>
-<span class="term-out">Senior DevSecOps Architect &amp; Coach</span>
+<span class="term-out">DevSecOps Architect &amp; Coach</span>
 
 <span class="term-prompt">❯ </span><span class="term-cmd">cat focus.json</span>
 <span class="term-out">{</span>
@@ -689,7 +691,7 @@
 
 <span class="term-prompt">❯ </span><span class="term-cmd">git log --oneline -3</span>
 <span class="term-out"><span class="term-warn">a3f1c2b</span> feat: 40+ apps on zero-touch releases</span>
-<span class="term-out"><span class="term-warn">7d82e19</span> feat: 300+ VMs patched, −40% time</span>
+<span class="term-out"><span class="term-warn">7d82e19</span> feat: 300+ VMs patched, 40% faster</span>
 <span class="term-out"><span class="term-warn">c0de418</span> feat: SBOM + policy-as-code gates</span>
 
 <span class="term-prompt">❯ </span><span class="term-cursor"></span>
@@ -724,7 +726,7 @@
       </div>
       <div class="stat">
         <span class="stat-num">300+</span>
-        <span class="stat-label">VMs on orchestrated patching, −40% time</span>
+        <span class="stat-label">VMs on orchestrated patching, 40% faster</span>
       </div>
       <div class="stat">
         <span class="stat-num">2.5bn</span>
@@ -763,32 +765,9 @@
           </div>
         </a>
 
-        <!-- TechStream -->
-        <a href="https://techstream.app" target="_blank" rel="noopener noreferrer" class="card card--ts" role="listitem" aria-label="Open TechStream">
-          <span class="card-num" aria-hidden="true">02</span>
-          <div class="card-body">
-            <div class="card-eyebrow" data-i18n="card_ts_eyebrow">Side project · tech news</div>
-            <div class="card-title">TechStream News</div>
-            <p class="card-desc" data-i18n="card_ts_desc">Curated daily digest of AI, security and infrastructure. Handpicked signal, no noise — covering agents, DevSecOps, releases and developer tooling.</p>
-            <div class="card-tags">
-              <span class="tag">AI &amp; Agents</span>
-              <span class="tag">Security</span>
-              <span class="tag">Infrastructure</span>
-              <span class="tag">Releases</span>
-            </div>
-          </div>
-          <div class="card-footer">
-            <span class="card-cta">
-              <span data-i18n="cta_ts">Open TechStream</span>
-              <span aria-hidden="true">→</span>
-            </span>
-            <span class="card-status" data-i18n="status_ts">Daily updates</span>
-          </div>
-        </a>
-
         <!-- Techstream frameworks -->
         <a href="#frameworks" class="card card--fw" role="listitem" aria-label="Techstream frameworks">
-          <span class="card-num" aria-hidden="true">03</span>
+          <span class="card-num" aria-hidden="true">02</span>
           <div class="card-body">
             <div class="card-eyebrow" data-i18n="card_fw_eyebrow">Open source · Techstream</div>
             <div class="card-title" data-i18n="card_fw_title">Nine DevSecOps frameworks</div>
@@ -806,6 +785,29 @@
               <span aria-hidden="true">→</span>
             </span>
             <span class="card-status" data-i18n="status_fw">Apache 2.0</span>
+          </div>
+        </a>
+
+        <!-- TechStream -->
+        <a href="https://techstream.app" target="_blank" rel="noopener noreferrer" class="card card--ts" role="listitem" aria-label="Open TechStream">
+          <span class="card-num" aria-hidden="true">03</span>
+          <div class="card-body">
+            <div class="card-eyebrow" data-i18n="card_ts_eyebrow">Side project · tech news</div>
+            <div class="card-title">TechStream News</div>
+            <p class="card-desc" data-i18n="card_ts_desc">Curated daily digest of AI, security and infrastructure. Handpicked signal, no noise — covering agents, DevSecOps, releases and developer tooling.</p>
+            <div class="card-tags">
+              <span class="tag">AI &amp; Agents</span>
+              <span class="tag">Security</span>
+              <span class="tag">Infrastructure</span>
+              <span class="tag">Releases</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="card-cta">
+              <span data-i18n="cta_ts">Open TechStream</span>
+              <span aria-hidden="true">→</span>
+            </span>
+            <span class="card-status" data-i18n="status_ts">Daily updates</span>
           </div>
         </a>
 
@@ -954,12 +956,12 @@
     const T = {
       en: {
         nav_cv: 'CV', nav_writing: 'Articles', nav_fw: 'Frameworks', nav_contact: 'Contact',
-        hero_status:    'Open to consulting & OSS',
-        hero_strong:    'Senior DevSecOps Architect & Coach',
-        hero_tagline:   '17+ years building critical systems at SWIFT, Swissquote and Eleven Sports. I design the release-orchestration and security standards squads ship through, then coach them until the standard holds. Agent-first, with governance.',
+        hero_status:    'Open to new engagements',
+        hero_strong:    'DevSecOps Architect & Coach',
+        hero_tagline:   '17+ years building critical systems at SWIFT, Swissquote and Eleven Sports. I design the release-orchestration and security standards squads ship through, then coach them until the standard holds. Coding agents work under the same gates as human-written code.',
         badge_location: 'Brussels, Belgium',
         badge_exp:      '17+ years experience',
-        badge_avail:    'Freelance · Italian (EU) citizen',
+        badge_avail:    'Italian (EU) citizen · EU work rights',
         btn_cv:         'View Résumé',
         btn_pdf:        'Download PDF',
         btn_contact:    'Get in touch',
@@ -994,12 +996,12 @@
       },
       pt: {
         nav_cv: 'CV', nav_writing: 'Artigos', nav_fw: 'Frameworks', nav_contact: 'Contato',
-        hero_status:    'Disponível para consultoria & OSS',
-        hero_strong:    'Arquiteto DevSecOps Sênior & Coach',
-        hero_tagline:   '17+ anos construindo sistemas críticos na SWIFT, Swissquote e Eleven Sports. Desenho os padrões de orquestração de releases e segurança pelos quais os squads entregam, e faço coaching até o padrão se sustentar. Agent-first, com governança.',
+        hero_status:    'Aberto a novos projetos',
+        hero_strong:    'Arquiteto DevSecOps & Coach',
+        hero_tagline:   '17+ anos construindo sistemas críticos na SWIFT, Swissquote e Eleven Sports. Desenho os padrões de orquestração de releases e segurança pelos quais os squads entregam, e faço coaching até o padrão se sustentar. Agentes de código trabalham sob os mesmos gates que código humano.',
         badge_location: 'Bruxelas, Bélgica',
         badge_exp:      '17+ anos de experiência',
-        badge_avail:    'Freelance · Cidadão italiano (UE)',
+        badge_avail:    'Cidadão italiano (UE) · pode trabalhar na UE',
         btn_cv:         'Ver Currículo',
         btn_pdf:        'Baixar PDF',
         btn_contact:    'Entrar em contato',

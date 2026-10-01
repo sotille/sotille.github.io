@@ -11,18 +11,18 @@ github: https://github.com/sotille
 
 **Principal DevSecOps Architect**
 
-Freelance consultant · Italian (EU) citizen · Brussels
+Italian (EU) citizen · Brussels
 
 Brussels, Belgium · [fsotille@gmail.com](mailto:fsotille@gmail.com) · +32 456 25 04 29 · [linkedin.com/in/Felipe-Sotille](https://linkedin.com/in/Felipe-Sotille) · [github.com/sotille](https://github.com/sotille)
 
 ## Profile
 
-Principal DevSecOps Architect and founder of Techstream. Designs secure delivery for regulated, high-availability platforms (SWIFT, Swissquote): release orchestration, golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls, then coaches squads and leadership until the standard holds. Publishes open frameworks on release governance, supply-chain security and DevSecOps maturity; agent-first with Claude Code, Codex and Devin.
+Principal DevSecOps Architect and founder of Techstream. Designs secure delivery for regulated, high-availability platforms (SWIFT, Swissquote): release orchestration, golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls, then coaches squads and leadership until the standard holds. Publishes open frameworks on release governance, supply-chain security and DevSecOps maturity; governs coding agents (Claude Code, Codex, Devin) with the same gates as human-written code.
 
 - **17+** years in software engineering
 - **40+** Java apps on zero-touch release orchestration
-- **80%+** of the zero-touch deployment KPI, by my team
-- **−40%** patching time, 300+ VMs, 20+ pipelines
+- **300+** VMs on orchestrated patching, 40% faster
+- **2.5bn** financial records migrated to Oracle
 
 ## Core skills
 
@@ -35,16 +35,16 @@ Principal DevSecOps Architect and founder of Techstream. Designs secure delivery
 
 ## Experience
 
-### DevSecOps Customer Success Architect (Consultant) · SWIFT, Brussels, Belgium — Jan 2025–Present
+### DevSecOps Architect (Customer Success Architect) (Consultant) · SWIFT, Brussels, Belgium — Jan 2025–Present
 
-*Global cooperative behind secure financial messaging; DevOps Engineering Services organisation serving a regulated, multi-squad platform.*
+*Returned to SWIFT in 2025 for the DevOps Engineering Services organisation: a regulated, multi-squad platform behind global secure financial messaging.*
 
 - Onboarded 40+ Java applications onto the centralised Release Orchestration platform (CloudBees CD/RO) with zero-touch deployment from commit to production; my team delivered 80%+ of the company-level KPI to move 100% of applications to zero-touch.
-- Designed the CI/CD blueprints (golden paths) every onboarded squad now ships through and coaches 5+ squads as DevSecOps solutions architect: enterprise patterns, delivery standards and the technical reference for secure delivery.
+- Designed the CI/CD blueprints (golden paths) every onboarded squad ships through and coached 5+ squads as DevSecOps solutions architect: enterprise patterns, delivery standards and the technical reference for secure delivery.
 - Built 20+ orchestrated-patching pipelines covering 300+ VMs, cutting patching time by 40% and making patch cycles repeatable enough that teams trust them; core of the company KPI for 100% orchestrated VM patching.
 - Integrated SAST/DAST scanning into the standard pipelines of several critical applications, turning security findings into enforced gates in the secure SDLC.
-- Drives SBOM generation and policy-as-code guardrails in the standard pipelines, giving supply-chain visibility and enforceable controls aligned with DORA's ICT-risk and resilience requirements.
-- Works agent-first with coding agents (Claude Code, OpenAI Codex, Devin) under a governance discipline: scoped tasks, human review and the same security gates as human-written code.
+- Added SBOM generation and policy-as-code guardrails to the standard pipelines, giving supply-chain visibility and enforceable controls aligned with DORA's ICT-risk and resilience requirements.
+- Set the governance discipline for coding-agent work, scoped tasks, human review and the same security gates as human-written code, and shipped agent-first with Claude Code, OpenAI Codex and Devin.
 
 ### Senior Software Engineer (Consultant) · Swissquote, Geneva, Switzerland (hybrid) — Jul 2024–Dec 2024
 
@@ -89,11 +89,9 @@ Public frameworks and reference architectures published under Techstream.
 
 ## Education & certifications
 
-- **Postgraduate, Cloud Security & Smart Contracts**, Universidade de Passo Fundo (UPF), Brazil, 2023
-- **Postgraduate, AI & Data Science**, Universidade de Passo Fundo (UPF), Brazil, 2023
+- **Postgraduate diplomas, Cloud Security & Smart Contracts and AI & Data Science**, Universidade de Passo Fundo (UPF), Brazil, 2023
 - **B.Sc. Computer Science**, Universidade de Passo Fundo (UPF), Brazil, 2016
-- **Certified Kubernetes Security Specialist (CKS)** · CNCF / Linux Foundation (in progress), 2026
-- **Certified Kubernetes Administrator (CKA)** · CNCF / Linux Foundation (in progress), 2026
+- **Certified Kubernetes Security Specialist (CKS) and Administrator (CKA)** · CNCF / Linux Foundation (in progress), 2026
 
 ## Languages
 

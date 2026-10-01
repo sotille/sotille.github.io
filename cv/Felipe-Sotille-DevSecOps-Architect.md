@@ -1,6 +1,6 @@
 ---
 name: Felipe Sotille
-title: Senior DevSecOps Architect & Coach
+title: DevSecOps Architect & Coach
 location: Brussels, Belgium
 email: fsotille@gmail.com
 linkedin: https://linkedin.com/in/Felipe-Sotille
@@ -9,20 +9,23 @@ github: https://github.com/sotille
 
 # Felipe Sotille
 
-**Senior DevSecOps Architect & Coach**
+**DevSecOps Architect & Coach**
 
-Freelance consultant · Italian (EU) citizen · Brussels
+Italian (EU) citizen · Brussels
 
 Brussels, Belgium · [fsotille@gmail.com](mailto:fsotille@gmail.com) · +32 456 25 04 29 · [linkedin.com/in/Felipe-Sotille](https://linkedin.com/in/Felipe-Sotille) · [github.com/sotille](https://github.com/sotille)
 
 ## Profile
 
-DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). Designs the release-orchestration and security standards that squads ship through, then coaches 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. Agent-first with Claude Code, Codex and Devin; a Java/Linux background means I speak the developers' language.
+DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). I design the release-orchestration and security standards that squads ship through, then coach 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. I govern coding agents (Claude Code, Codex, Devin) with the same gates as human-written code, and a Java/Linux background means I speak the developers' language.
+
+> A technical reference and mentor for multiple engineering teams, frequently sought out for guidance on secure software delivery and release orchestration.
+> — Sudhir Indurti, Lead DevOps Engineer, SWIFT, 2026
 
 - **17+** years in software engineering
 - **40+** Java apps on zero-touch release orchestration
-- **80%+** of the zero-touch deployment KPI, by my team
-- **−40%** patching time, 300+ VMs, 20+ pipelines
+- **300+** VMs on orchestrated patching, 40% faster
+- **2.5bn** financial records migrated to Oracle
 
 ## Core skills
 
@@ -36,16 +39,16 @@ DevSecOps architect and coach for regulated, high-availability platforms (SWIFT,
 
 ## Experience
 
-### DevSecOps Customer Success Architect (Consultant) · SWIFT, Brussels, Belgium — Jan 2025–Present
+### DevSecOps Architect (Customer Success Architect) (Consultant) · SWIFT, Brussels, Belgium — Jan 2025–Present
 
-*Global cooperative behind secure financial messaging; DevOps Engineering Services organisation serving a regulated, multi-squad platform.*
+*Returned to SWIFT in 2025 for the DevOps Engineering Services organisation: a regulated, multi-squad platform behind global secure financial messaging.*
 
 - Onboarded 40+ Java applications onto the centralised Release Orchestration platform (CloudBees CD/RO) with zero-touch deployment from commit to production; my team delivered 80%+ of the company-level KPI to move 100% of applications to zero-touch.
-- Designed the CI/CD blueprints (golden paths) every onboarded squad now ships through and coaches 5+ squads as DevSecOps solutions architect: enterprise patterns, delivery standards and the technical reference for secure delivery.
+- Designed the CI/CD blueprints (golden paths) every onboarded squad ships through and coached 5+ squads as DevSecOps solutions architect: enterprise patterns, delivery standards and the technical reference for secure delivery.
 - Built 20+ orchestrated-patching pipelines covering 300+ VMs, cutting patching time by 40% and making patch cycles repeatable enough that teams trust them; core of the company KPI for 100% orchestrated VM patching.
 - Integrated SAST/DAST scanning into the standard pipelines of several critical applications, turning security findings into enforced gates in the secure SDLC.
-- Drives SBOM generation and policy-as-code guardrails in the standard pipelines, giving supply-chain visibility and enforceable controls aligned with DORA's ICT-risk and resilience requirements.
-- Works agent-first with coding agents (Claude Code, OpenAI Codex, Devin) under a governance discipline: scoped tasks, human review and the same security gates as human-written code.
+- Added SBOM generation and policy-as-code guardrails to the standard pipelines, giving supply-chain visibility and enforceable controls aligned with DORA's ICT-risk and resilience requirements.
+- Set the governance discipline for coding-agent work, scoped tasks, human review and the same security gates as human-written code, and shipped agent-first with Claude Code, OpenAI Codex and Devin.
 
 ### Senior Software Engineer (Consultant) · Swissquote, Geneva, Switzerland (hybrid) — Jul 2024–Dec 2024
 
@@ -88,11 +91,9 @@ Public frameworks and reference architectures published under Techstream.
 
 ## Education & certifications
 
-- **Postgraduate, Cloud Security & Smart Contracts**, Universidade de Passo Fundo (UPF), Brazil, 2023
-- **Postgraduate, AI & Data Science**, Universidade de Passo Fundo (UPF), Brazil, 2023
+- **Postgraduate diplomas, Cloud Security & Smart Contracts and AI & Data Science**, Universidade de Passo Fundo (UPF), Brazil, 2023
 - **B.Sc. Computer Science**, Universidade de Passo Fundo (UPF), Brazil, 2016
-- **Certified Kubernetes Security Specialist (CKS)** · CNCF / Linux Foundation (in progress), 2026
-- **Certified Kubernetes Administrator (CKA)** · CNCF / Linux Foundation (in progress), 2026
+- **Certified Kubernetes Security Specialist (CKS) and Administrator (CKA)** · CNCF / Linux Foundation (in progress), 2026
 
 ## Languages
 
@@ -100,8 +101,8 @@ Portuguese (Native), English (Fluent), French (B1 · intermediate)
 
 ## What colleagues say
 
-> His ability to solve complex technical challenges and deliver scalable solutions in such a demanding environment reflects a deep understanding of modern software engineering practices.
-> — Matteo Castellarin, Lead Dev/Systems Engineer, SWIFT DevOps Engineering Services, 2026
-
 > He does not merely automate tasks; he engineers repeatable, resilient delivery systems that improve deployment reliability, enforce secure coding standards and reduce operational risk.
 > — Anastasios Lagos, DevSecOps Engineer, Mindwave (SWIFT programme), 2026
+
+> Probably the most skilled developer I have ever met. Enthusiastic about new technologies and making things work.
+> — Arnau Rovira, DevOps Engineer, Eleven Sports

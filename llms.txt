@@ -1,13 +1,13 @@
 # Felipe Sotille
 
-> Senior DevSecOps Architect & Coach. DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). Designs the release-orchestration and security standards that squads ship through, then coaches 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. Agent-first with Claude Code, Codex and Devin; a Java/Linux background means I speak the developers' language.
+> DevSecOps Architect & Coach. DevSecOps architect and coach for regulated, high-availability platforms (SWIFT, Swissquote). I design the release-orchestration and security standards that squads ship through, then coach 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. I govern coding agents (Claude Code, Codex, Devin) with the same gates as human-written code, and a Java/Linux background means I speak the developers' language.
 
-Freelance consultant based in Brussels, Italian (EU) citizen. Current role: DevSecOps Customer Success Architect at SWIFT (Jan 2025–Present).
-Headline numbers: 17+ years in software engineering; 40+ Java apps on zero-touch release orchestration; 80%+ of the zero-touch deployment KPI, by my team; −40% patching time, 300+ VMs, 20+ pipelines.
+Consultant based in Brussels, Italian (EU) citizen. Current role: DevSecOps Architect (Customer Success Architect) at SWIFT (Jan 2025–Present).
+Headline numbers: 17+ years in software engineering; 40+ Java apps on zero-touch release orchestration; 300+ VMs on orchestrated patching, 40% faster; 2.5bn financial records migrated to Oracle.
 
 ## CV (Markdown, preferred for machines)
 
-- [Senior DevSecOps Architect & Coach](https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.pdf
+- [DevSecOps Architect & Coach](https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.pdf
 - [Senior Backend Engineer (Java)](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Backend-Engineer.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Backend-Engineer.pdf
 - [Principal DevSecOps Architect](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Principal-Architect.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Principal-Architect.pdf
 - [Tech Lead · Senior Software Engineer](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Tech-Lead.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Tech-Lead.pdf

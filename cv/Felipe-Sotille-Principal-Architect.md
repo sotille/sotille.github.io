@@ -60,7 +60,7 @@ Principal DevSecOps Architect and founder of Techstream. Designs secure delivery
 - Spearheaded the migration of the Identity Management monolith to a microservices architecture, keeping the service live for users throughout the transition.
 - Owned the container strategy for two squads as Docker champion, building and hardening the images and keeping them aligned with security and tooling standards.
 
-### Tech Lead & Senior Software Engineer · Eleven Sports, Lisbon, Portugal — Jun 2018–Jun 2019
+### Tech Lead & Senior Software Engineer · Eleven Sports (formerly MyCujoo), Lisbon, Portugal — Jun 2018–Jun 2019
 
 *Sports media group (premium TV channels and OTT); first backend engineer on the player-experience platform, reporting to the CTO.*
 
@@ -85,7 +85,7 @@ Public frameworks and reference architectures published under Techstream.
 - **Senior Java Developer** · WPLEX (public transport), Brazil, 2015–2018
 - **Java Developer** · Metaway (public sector), Brazil, 2015–2015
 - **Java Developer** · Città (public management), Brazil, 2010–2014
-- **Junior Java Developer** · Allcance (industry), Brazil, 2008–2009
+- **Junior Java Developer** · Allcance (formerly Holma Software) (industry), Brazil, 2008–2009
 
 ## Education & certifications
 

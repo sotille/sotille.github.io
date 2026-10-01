@@ -68,7 +68,7 @@ Stack: Java 21 · Spring · Oracle · SQL · Linux
 
 Stack: Java 11 / 17 · Spring Boot · Angular 16 · Docker / Compose · AWS EC2 · Jenkins · Ansible · REST · Coveo · Adobe Experience Manager
 
-### Tech Lead & Senior Software Engineer · Eleven Sports, Lisbon, Portugal — Jun 2018–Jun 2019
+### Tech Lead & Senior Software Engineer · Eleven Sports (formerly MyCujoo), Lisbon, Portugal — Jun 2018–Jun 2019
 
 *Sports media group (premium TV channels and OTT); first backend engineer on the player-experience platform, reporting to the CTO.*
 
@@ -90,7 +90,7 @@ Public frameworks and reference architectures published under Techstream.
 - **Senior Java Developer** · WPLEX (public transport), Brazil, 2015–2018
 - **Java Developer** · Metaway (public sector), Brazil, 2015–2015
 - **Java Developer** · Città (public management), Brazil, 2010–2014
-- **Junior Java Developer** · Allcance (industry), Brazil, 2008–2009
+- **Junior Java Developer** · Allcance (formerly Holma Software) (industry), Brazil, 2008–2009
 
 ## Education & certifications
 

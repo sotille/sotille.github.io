@@ -11,7 +11,7 @@ github: https://github.com/sotille
 
 **Senior Backend Engineer (Java)**
 
-Freelance consultant · Italian (EU) citizen · Brussels
+Italian (EU) citizen · Brussels
 
 Brussels, Belgium · [fsotille@gmail.com](mailto:fsotille@gmail.com) · +32 456 25 04 29 · [linkedin.com/in/Felipe-Sotille](https://linkedin.com/in/Felipe-Sotille) · [github.com/sotille](https://github.com/sotille)
 
@@ -26,7 +26,7 @@ Senior Backend Engineer building and modernising large-scale, high-availability 
 
 ## Core skills
 
-- **Backend:** Java 8–17, Spring Boot / Security / Web, Vert.x, REST, GraphQL, JPA / Hibernate, JUnit 5, TDD / BDD
+- **Backend:** Java 8–21, Spring Boot / Security / Web, Vert.x, REST, GraphQL, JPA / Hibernate, JUnit 5, TDD / BDD
 - **Architecture:** Microservices, Event-driven / CQRS, Apache Kafka, Hazelcast clustering, API gateways (Kong, Ambassador), SOLID & clean code, Secure coding
 - **Cloud & Data:** AWS (EC2), Google Cloud Platform, Oracle, PostgreSQL, SQL tuning & partitioning, Liquibase, Prometheus / Grafana
 - **DevSecOps & CI/CD:** CloudBees CI (expert), CloudBees CD/RO (expert), Jenkins, CircleCI, SAST / DAST / SCA gates, SBOM & supply-chain security, Policy as code, Platform engineering (golden paths)
@@ -35,12 +35,12 @@ Senior Backend Engineer building and modernising large-scale, high-availability 
 
 ## Experience
 
-### DevSecOps Customer Success Architect (Consultant) · SWIFT, Brussels, Belgium — Jan 2025–Present
+### DevSecOps Architect (Customer Success Architect) (Consultant) · SWIFT, Brussels, Belgium — Jan 2025–Present
 
-*Global cooperative behind secure financial messaging; DevOps Engineering Services organisation serving a regulated, multi-squad platform.*
+*Returned to SWIFT in 2025 for the DevOps Engineering Services organisation: a regulated, multi-squad platform behind global secure financial messaging.*
 
 - Onboarded 40+ Java applications onto a centralised Release Orchestration platform (CloudBees CD/RO) for zero-touch deployment from commit to production.
-- Designed the CI/CD pipeline blueprints that 5+ engineering squads now build and ship with.
+- Designed the CI/CD pipeline blueprints that 5+ engineering squads build and ship with.
 - Built 20+ orchestrated-patching pipelines covering 300+ VMs, cutting patching time by 40% and making patch cycles repeatable enough that teams trust them; core of the company KPI for 100% orchestrated VM patching.
 - Integrated SAST/DAST scanning into the standard pipelines of several critical applications, turning security findings into enforced gates in the secure SDLC.
 
@@ -55,7 +55,7 @@ Stack: CloudBees CI · CloudBees CD/RO · SAST / DAST · Ansible Automation Plat
 - Improved database performance through query refactoring, denormalisation and table partitioning.
 - Produced migration reports and technical documentation that DBA and engineering squads used for decisions and risk mitigation.
 
-Stack: Java · Spring · Oracle · SQL · Linux
+Stack: Java 21 · Spring · Oracle · SQL · Linux
 
 ### Senior Software Engineer (Consultant) · SWIFT, Brussels, Belgium — Jul 2019–Jun 2024
 
@@ -94,11 +94,9 @@ Public frameworks and reference architectures published under Techstream.
 
 ## Education & certifications
 
-- **Postgraduate, Cloud Security & Smart Contracts**, Universidade de Passo Fundo (UPF), Brazil, 2023
-- **Postgraduate, AI & Data Science**, Universidade de Passo Fundo (UPF), Brazil, 2023
+- **Postgraduate diplomas, Cloud Security & Smart Contracts and AI & Data Science**, Universidade de Passo Fundo (UPF), Brazil, 2023
 - **B.Sc. Computer Science**, Universidade de Passo Fundo (UPF), Brazil, 2016
-- **Certified Kubernetes Security Specialist (CKS)** · CNCF / Linux Foundation (in progress), 2026
-- **Certified Kubernetes Administrator (CKA)** · CNCF / Linux Foundation (in progress), 2026
+- **Certified Kubernetes Security Specialist (CKS) and Administrator (CKA)** · CNCF / Linux Foundation (in progress), 2026
 
 ## Languages
 

@@ -68,7 +68,7 @@ Stack: Java 21 · Spring · Oracle · SQL · Linux
 
 Stack: Java 11 / 17 · Spring Boot · Angular 16 · Docker / Compose · AWS EC2 · Jenkins · Ansible · REST · Coveo · Adobe Experience Manager
 
-### Tech Lead & Senior Software Engineer · Eleven Sports (MyCujoo), Lisbon, Portugal — Jun 2018–Jun 2019
+### Tech Lead & Senior Software Engineer · Eleven Sports, Lisbon, Portugal — Jun 2018–Jun 2019
 
 *Sports media group (premium TV channels and OTT); first backend engineer on the player-experience platform, reporting to the CTO.*
 

@@ -44,7 +44,7 @@ Principal DevSecOps Architect and founder of Techstream. Designs secure delivery
 - Built 20+ orchestrated-patching pipelines covering 300+ VMs, cutting patching time by 40% and making patch cycles repeatable enough that teams trust them; core of the company KPI for 100% orchestrated VM patching.
 - Integrated SAST/DAST scanning into the standard pipelines of several critical applications, turning security findings into enforced gates in the secure SDLC.
 - Added SBOM generation and policy-as-code guardrails to the standard pipelines, giving supply-chain visibility and enforceable controls aligned with DORA's ICT-risk and resilience requirements.
-- Set the governance discipline for coding-agent work, scoped tasks, human review and the same security gates as human-written code, and shipped agent-first with Claude Code, OpenAI Codex and Devin.
+- Built the automation and internal tooling in Java, Node.js and shell that improved developer experience, pipeline reliability and day-to-day operational efficiency.
 
 ### Senior Software Engineer (Consultant) · Swissquote, Geneva, Switzerland (hybrid) — Jul 2024–Dec 2024
 

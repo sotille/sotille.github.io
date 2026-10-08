@@ -5,19 +5,20 @@ location: Brussels, Belgium
 email: fsotille@gmail.com
 linkedin: https://linkedin.com/in/Felipe-Sotille
 github: https://github.com/sotille
+medium: https://medium.com/@fsotille
 ---
 
 # Felipe Sotille
 
 **Senior Backend Engineer (Java)**
 
-Italian (EU) citizen · Brussels
+Italian (EU) citizen
 
-Brussels, Belgium · [fsotille@gmail.com](mailto:fsotille@gmail.com) · +32 456 25 04 29 · [linkedin.com/in/Felipe-Sotille](https://linkedin.com/in/Felipe-Sotille) · [github.com/sotille](https://github.com/sotille)
+Brussels, Belgium · [fsotille@gmail.com](mailto:fsotille@gmail.com) · +32 456 25 04 29 · [linkedin.com/in/Felipe-Sotille](https://linkedin.com/in/Felipe-Sotille) · [github.com/sotille](https://github.com/sotille) · [medium.com/@fsotille](https://medium.com/@fsotille)
 
 ## Profile
 
-Senior Backend Engineer building and modernising large-scale, high-availability Java systems in finance, payments and media: a monolith-to-microservices migration at SWIFT, an event-driven Kafka/Vert.x platform on Kubernetes, and a 2.5 billion-record migration to Oracle without loss of integrity. Owns CI/CD and security as part of the job, not as someone else's problem.
+Senior Backend Engineer building and modernising large-scale, high-availability Java systems in finance and media: a monolith-to-microservices migration at SWIFT, an event-driven Kafka/Vert.x platform on Kubernetes, and a 2.5 billion-record migration to Oracle without loss of integrity. Owns CI/CD and security as part of the job, not as someone else's problem.
 
 - **17+** years in software engineering
 - **2.5bn** financial records migrated to Oracle
@@ -35,7 +36,7 @@ Senior Backend Engineer building and modernising large-scale, high-availability 
 
 ## Experience
 
-### DevSecOps Architect (Customer Success Architect) (Consultant) · SWIFT, Brussels, Belgium — Jan 2025–Present
+### DevSecOps Architect (Customer Success Architect), SWIFT · Brussels, Belgium · Consultant — Jan 2025–Present
 
 *Returned to SWIFT in 2025 for the DevOps Engineering Services organisation: a regulated, multi-squad platform behind global secure financial messaging.*
 
@@ -46,7 +47,7 @@ Senior Backend Engineer building and modernising large-scale, high-availability 
 
 Stack: CloudBees CI · CloudBees CD/RO · SAST / DAST · Ansible Automation Platform · Docker · Java / Maven · Node.js · Linux · Shell scripting · Bitbucket / Jira
 
-### Senior Software Engineer (Consultant) · Swissquote, Geneva, Switzerland (hybrid) — Jul 2024–Dec 2024
+### Senior Software Engineer, Swissquote · Geneva, Switzerland (hybrid) · Consultant — Jul 2024–Dec 2024
 
 *Swiss online bank; regulated, high-availability financial environment.*
 
@@ -57,7 +58,7 @@ Stack: CloudBees CI · CloudBees CD/RO · SAST / DAST · Ansible Automation Plat
 
 Stack: Java 21 · Spring · Oracle · SQL · Linux
 
-### Senior Software Engineer (Consultant) · SWIFT, Brussels, Belgium — Jul 2019–Jun 2024
+### Senior Software Engineer, SWIFT · Brussels, Belgium · Consultant — Jul 2019–Jun 2024
 
 *Three squads over five years: Identity Management, Community Gateway and Knowledge Channels.*
 
@@ -68,7 +69,7 @@ Stack: Java 21 · Spring · Oracle · SQL · Linux
 
 Stack: Java 11 / 17 · Spring Boot · Angular 16 · Docker / Compose · AWS EC2 · Jenkins · Ansible · REST · Coveo · Adobe Experience Manager
 
-### Tech Lead & Senior Software Engineer · Eleven Sports (formerly MyCujoo), Lisbon, Portugal — Jun 2018–Jun 2019
+### Tech Lead & Senior Software Engineer, Eleven Sports (formerly MyCujoo) · Lisbon, Portugal — Jun 2018–Jun 2019
 
 *Sports media group (premium TV channels and OTT); first backend engineer on the player-experience platform, reporting to the CTO.*
 
@@ -80,23 +81,28 @@ Stack: Java 9 · Vert.x · Kafka · Kubernetes · Google Cloud Platform · Vault
 
 ## Open frameworks
 
-Frameworks published under Techstream, my consultancy.
+Frameworks published under Techstream, my consultancy — [github.com/sotille](https://github.com/sotille).
 
 - [Secure CI/CD Reference Architecture](https://github.com/sotille/secure-ci-cd-reference-architecture) — reference architectures for secure pipelines, cloud-native and enterprise
 - [Release Orchestration Framework](https://github.com/sotille/release-orchestration-framework) — deployment governance and controlled delivery across environments
 
 ## Earlier experience
 
-- **Senior Java Developer** · WPLEX (public transport), Brazil, 2015–2018
-- **Java Developer** · Metaway (public sector), Brazil, 2015–2015
-- **Java Developer** · Città (public management), Brazil, 2010–2014
-- **Junior Java Developer** · Allcance (formerly Holma Software) (industry), Brazil, 2008–2009
+- **Senior Java Developer, WPLEX** · public transport · Brazil — 2015–2018
+- **Java Developer, Metaway** · public sector · Brazil — 2015
+- **Java Developer, Città** · public management · Brazil — 2010–2014
+- **Junior Java Developer, Allcance (formerly Holma Software)** · industry · Brazil — 2008–2009
 
 ## Education & certifications
 
-- **Postgraduate diplomas, Cloud Security & Smart Contracts and AI & Data Science**, Universidade de Passo Fundo (UPF), Brazil, 2023
-- **B.Sc. Computer Science**, Universidade de Passo Fundo (UPF), Brazil, 2016
-- **Certified Kubernetes Security Specialist (CKS) and Administrator (CKA)** · CNCF / Linux Foundation (in progress), 2026
+Universidade de Passo Fundo (UPF) · Brazil
+
+- **Postgraduate diplomas, Cloud Security & Smart Contracts and AI & Data Science**, 2023
+- **B.Sc. Computer Science**, 2016
+
+CNCF / Linux Foundation
+
+- **Certified Kubernetes Security Specialist (CKS) and Administrator (CKA)**, 2026 (in progress)
 
 ## Languages
 

@@ -74,7 +74,7 @@ DevSecOps architect and hands-on engineer for regulated, high-availability platf
 
 ## Open frameworks & writing
 
-Public frameworks and reference architectures published under Techstream.
+Frameworks published under Techstream, my consultancy.
 
 - [Release Orchestration Framework](https://github.com/sotille/release-orchestration-framework) — deployment governance and controlled delivery across environments
 - [Software Supply Chain Security Framework](https://github.com/sotille/software-supply-chain-security-framework) — dependencies, build systems, artifacts and deployment environments

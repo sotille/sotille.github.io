@@ -70,7 +70,7 @@ Principal DevSecOps Architect and founder of Techstream. Designs secure delivery
 
 ## Open frameworks & writing
 
-Public frameworks and reference architectures published under Techstream.
+Frameworks published under Techstream, my consultancy.
 
 - [DevSecOps Maturity Model](https://github.com/sotille/devsecops-maturity-model) — assess and guide organisations towards secure software delivery
 - [Release Orchestration Framework](https://github.com/sotille/release-orchestration-framework) — deployment governance and controlled delivery across environments

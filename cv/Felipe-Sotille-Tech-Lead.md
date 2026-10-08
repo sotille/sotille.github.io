@@ -73,7 +73,7 @@ Hands-on Tech Lead across finance, payments and media. Led the backend team at E
 
 ## Open frameworks
 
-Public frameworks and reference architectures published under Techstream.
+Frameworks published under Techstream, my consultancy.
 
 - [DevSecOps Framework](https://github.com/sotille/devsecops-framework) — principles, architecture patterns, security controls and implementation guidelines
 - [DevSecOps Maturity Model](https://github.com/sotille/devsecops-maturity-model) — assess and guide organisations towards secure software delivery

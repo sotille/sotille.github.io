@@ -1,40 +1,47 @@
 # Felipe Sotille
 
-> DevSecOps Architect & Engineer. DevSecOps architect and hands-on engineer for regulated, high-availability platforms (SWIFT, Swissquote). I design the release-orchestration and security standards that squads ship through, then coach 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. I still ship code: Java 21, Spring, Vert.x and Kafka on regulated platforms, and I govern coding agents (Claude Code, Codex, Devin) with the same gates as human-written code.
+> DevSecOps architect and hands-on engineer for regulated, high-availability platforms (SWIFT, Swissquote). I design the release-orchestration and security standards that squads ship through, then coach 5+ squads until the standard holds: golden-path pipelines, SBOM, policy-as-code and DORA-aligned controls. I still ship code: Java 21, Spring, Vert.x and Kafka on regulated platforms, and I govern coding agents (Claude Code, Codex, Devin) with the same gates as human-written code.
 
-Consultant based in Brussels, Italian (EU) citizen. Current role: DevSecOps Architect (Customer Success Architect) at SWIFT (Jan 2025–Present).
+Based in Brussels, Belgium; Italian (EU) citizen. Current role: DevSecOps Architect (Customer Success Architect) at SWIFT (Jan 2025–Present).
 Headline numbers: 17+ years in software engineering; 2.5bn financial records migrated to Oracle; 40+ Java apps on zero-touch release orchestration; 100k+ concurrent users on a Kafka/Vert.x platform.
 
 ## CV (Markdown, preferred for machines)
 
-- [DevSecOps Architect & Engineer](https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.pdf
-- [Senior Backend Engineer (Java)](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Backend-Engineer.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Backend-Engineer.pdf
-- [Principal DevSecOps Architect](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Principal-Architect.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Principal-Architect.pdf
-- [Tech Lead · Senior Software Engineer](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Tech-Lead.md): the same CV tailored for this role; PDF/A at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Tech-Lead.pdf
+- [DevSecOps Architect & Engineer](https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.md): the full CV, tailored for this title; PDF at https://dev.felipe.sotille.com/cv/Felipe-Sotille-DevSecOps-Architect.pdf
+- [Senior Backend Engineer (Java)](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Backend-Engineer.md): the full CV, tailored for this title; PDF at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Backend-Engineer.pdf
+- [Principal DevSecOps Architect](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Principal-Architect.md): the full CV, tailored for this title; PDF at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Principal-Architect.pdf
+- [Tech Lead · Senior Software Engineer](https://dev.felipe.sotille.com/cv/Felipe-Sotille-Tech-Lead.md): the full CV, tailored for this title; PDF at https://dev.felipe.sotille.com/cv/Felipe-Sotille-Tech-Lead.pdf
 
 ## Pages
 
-- [Portfolio](https://dev.felipe.sotille.com/): overview, projects, frameworks
-- [CV page](https://dev.felipe.sotille.com/cv): the DevSecOps CV as HTML with schema.org/Person
+- [Portfolio](https://dev.felipe.sotille.com/): overview, CV, articles, frameworks and contact (English)
+- [Portfólio](https://dev.felipe.sotille.com/pt/): the same page in Brazilian Portuguese
+- [CV page](https://dev.felipe.sotille.com/cv.html): the DevSecOps Architect & Engineer CV as one HTML page, with schema.org/Person
+- [Techstream Weekly](https://techstream.app/en/news): the newsletter (https://techstream.app/pt/news in Portuguese)
 
-## Open frameworks (Techstream, the consultancy)
+## Frameworks
+
+Frameworks published under Techstream, my consultancy.
 
 - [Release Orchestration Framework](https://github.com/sotille/release-orchestration-framework): deployment governance and controlled delivery across environments
 - [Software Supply Chain Security Framework](https://github.com/sotille/software-supply-chain-security-framework): dependencies, build systems, artifacts and deployment environments
+- [Secure CI/CD Reference Architecture](https://github.com/sotille/secure-ci-cd-reference-architecture): reference architectures for secure pipelines, cloud-native and enterprise
+- [DevSecOps Framework](https://github.com/sotille/devsecops-framework): principles, architecture patterns, security controls and implementation guidelines
+- [DevSecOps Maturity Model](https://github.com/sotille/devsecops-maturity-model): assess and guide organisations towards secure software delivery
+- [Compliance Automation Framework](https://github.com/sotille/compliance-automation-framework): automating security and compliance controls across pipelines and cloud
 - [AI DevSecOps Framework](https://github.com/sotille/ai-devsecops-framework): securing AI-assisted and agentic software delivery
+- [DevSecOps Methodology](https://github.com/sotille/devsecops-methodology): processes, governance, tooling and transformation roadmap
+- [Forensics & Incident Response Framework](https://github.com/sotille/forensics-and-incident-response-framework): evidence handling, incident response and post-mortems for delivery platforms
 
 ## Articles
 
-- [Why Your AI Agent Is the Next SolarWinds: Supply Chain Security for the Agentic Era](https://medium.com/@fsotille): May 2026
-- [The Four Layers of Software Supply Chain Integrity](https://medium.com/@fsotille): May 2026
-- [The 4-Phase DevSecOps Transformation](https://medium.com/@fsotille): Apr 2026
+- Why Your AI Agent Is the Next SolarWinds: Supply Chain Security for the Agentic Era (May 2026)
+- The Four Layers of Software Supply Chain Integrity (May 2026)
+- The 4-Phase DevSecOps Transformation (Apr 2026)
+- All articles: https://medium.com/@fsotille
 
 ## Profiles
 
 - LinkedIn: https://linkedin.com/in/Felipe-Sotille
 - GitHub: https://github.com/sotille
 - Medium: https://medium.com/@fsotille
-
-## Optional
-
-- [Source repository](https://github.com/sotille/CV): CV-as-code, one YAML source, Typst PDFs, quality gates

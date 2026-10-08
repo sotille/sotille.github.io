@@ -80,7 +80,7 @@ Stack: Java 9 · Vert.x · Kafka · Kubernetes · Google Cloud Platform · Vault
 
 ## Open frameworks
 
-Public frameworks and reference architectures published under Techstream.
+Frameworks published under Techstream, my consultancy.
 
 - [Secure CI/CD Reference Architecture](https://github.com/sotille/secure-ci-cd-reference-architecture) — reference architectures for secure pipelines, cloud-native and enterprise
 - [Release Orchestration Framework](https://github.com/sotille/release-orchestration-framework) — deployment governance and controlled delivery across environments

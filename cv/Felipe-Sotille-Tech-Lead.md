@@ -70,7 +70,7 @@ Hands-on Tech Lead across finance and media. I led the backend team at Eleven Sp
 - Designed from scratch a cloud-native, clustered CQRS/event-driven microservices backend on Vert.x, built for high throughput and low latency.
 - Architected a real-time fan-engagement platform on Kafka enabling live, social-network-style interaction between football players and their fans.
 - Ran the platform on Kubernetes and GCP, supporting hundreds of thousands of concurrent interactions, with Prometheus/Grafana monitoring for availability.
-- Designed the CI/CD pipelines (CircleCI to GCP) the team shipped through.
+- Led and mentored the backend team, reported progress directly to the CTO and helped other teams adopt Vert.x.
 
 ## Open frameworks
 
